@@ -11,7 +11,10 @@ El curso opera en **tres lineas de contenido** que corren en paralelo y se refue
 | **Notebooks** | Laboratorio computacional, herramientas reproducibles | Jupyter (.ipynb) con celdas interactivas | Estudiante (manos en codigo) |
 | **Saga Colombia** | Caso de estudio integrador del SIN colombiano | Jupyter ejecutivo (DSS, dashboards, recomendaciones) | Profesor (demo), Estudiante (referencia de proyecto) |
 
-![Estructura del material](paquete.png)
+Así, la estructura del material, semana a semana, se muestra a continuación:
+
+
+![Estructura del material](Paquete.png)
 
 ---
 
