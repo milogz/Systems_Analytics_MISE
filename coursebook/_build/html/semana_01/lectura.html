@@ -1,0 +1,1290 @@
+
+<!DOCTYPE html>
+
+
+<html lang="es" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Semana 1 — ¿Qué es la complejidad y por qué importa en energía? &#8212; Analisis de Sistemas para la Industria Energetica</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="../_static/documentation_options.js?v=78d55cf8"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Haz clic para mostrar';</script>
+    <script>let toggleHintHide = 'Haz clic para ocultar';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script src="../_static/translations.js?v=d190bf04"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'semana_01/lectura';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="next" title="Semana 1: Complejidad — ¿Por qué los sistemas nos sorprenden?" href="notebook.html" />
+    <link rel="prev" title="Preludio — Los Cimientos Científicos" href="../preludio/notebook.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Saltar al contenido principal</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Volver arriba</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Advertencia de versión"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Navegación del sitio">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="En esta página">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Analisis de Sistemas para la Industria Energetica</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Analisis de Sistemas para la Industria Energetica
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fundamentos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../preludio/lectura.html">Preludio — Los Cimientos Científicos del Análisis de Sistemas Complejos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../preludio/notebook.html">Preludio — Los Cimientos Científicos</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semana 1: Que Significa Sistemico</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Semana 1 — ¿Qué es la complejidad y por qué importa en energía?</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebook.html">Semana 1: Complejidad — ¿Por qué los sistemas nos sorprenden?</a></li>
+
+
+
+
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semana 2: Redes I — Topologia y Vulnerabilidades</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../semana_02/lectura.html">Semana 2 — Redes complejas: la estructura oculta de los sistemas energéticos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../semana_02/notebook.html">Semana 2: Redes y Topología</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semana 3: Redes II — Actores y Difusion</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../semana_03/lectura.html">Semana 3 — Dinámica sobre Redes y Redes de Actores: Más Allá de la Estructura Estática</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../semana_03/notebook.html">Semana 3: Dinámica sobre Redes</a></li>
+
+
+
+
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semana 4: Dinamica de Sistemas I</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../semana_04/lectura.html">Semana 4 — Dinámica de Sistemas I: Stocks, Flujos y el Ciclo de Inversión</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../semana_04/notebook.html">Semana 4 — Dinámica de Sistemas I: Stocks, Flujos y el Ciclo de Inversión</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semana 5: Dinamica de Sistemas II — Politicas y Escenarios</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../semana_05/lectura.html">Semana 5 — Dinámica de Sistemas II: Políticas, Escenarios e Incertidumbre</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../semana_05/notebook.html">Semana 5 — Dinámica de Sistemas II: Políticas, Escenarios e Incertidumbre</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Cierre e Integracion</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../cierre/integracion.html">Cierre e Integracion (Semanas 6-8)</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/YOUR_USER/Systems_Analytics_MISE" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Repositorio de origen"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/semana_01/lectura.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Descargar archivo fuente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir en PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Tema" data-bs-title="Tema"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Claro"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Oscuro"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="Sistema"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Semana 1 — ¿Qué es la complejidad y por qué importa en energía?</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#marco-teorico-systems-analytics-mise-universidad-de-los-andes">Marco Teórico · Systems Analytics — MISE, Universidad de los Andes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#del-pensamiento-lineal-al-pensamiento-complejo-en-sistemas-energeticos">Del pensamiento lineal al pensamiento complejo en sistemas energéticos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apertura-por-que-necesitamos-pensar-diferente">1. Apertura: ¿Por qué necesitamos pensar diferente?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#los-limites-del-analisis-convencional">Los límites del análisis convencional</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#por-que-los-sistemas-energeticos-son-fundamentalmente-diferentes">¿Por qué los sistemas energéticos son fundamentalmente diferentes?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-rompecabezas-de-el-nino-20152016">El rompecabezas de El Niño 2015–2016</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complicado-vs-complejo-la-distincion-fundamental">2. Complicado vs. complejo: la distinción fundamental</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lo-complicado-muchas-partes-pero-predecible">Lo complicado: muchas partes, pero predecible</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lo-complejo-interacciones-que-generan-sorpresas">Lo complejo: interacciones que generan sorpresas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-sistema-electrico-colombiano-complicado-o-complejo">El sistema eléctrico colombiano: ¿complicado o complejo?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#los-conceptos-clave-de-la-complejidad">3. Los conceptos clave de la complejidad</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retroalimentacion-feedback">3.1 Retroalimentación (<em>feedback</em>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#no-linealidad">3.2 No linealidad</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#emergencia">3.3 Emergencia</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adaptacion-y-aprendizaje-efectos-de-memoria">3.4 Adaptación y aprendizaje (efectos de memoria)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cisnes-negros-y-eventos-extremos">3.5 Cisnes negros y eventos extremos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dependencia-del-camino-y-lock-in">3.6 Dependencia del camino y <em>lock-in</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#puntos-de-inflexion-tipping-points">3.7 Puntos de inflexión (<em>tipping points</em>)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-diagrama-de-lazos-causales-cld-primera-herramienta">4. El Diagrama de Lazos Causales (CLD): primera herramienta</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-un-cld-y-por-que-es-util">¿Qué es un CLD y por qué es útil?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notacion">Notación</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#como-leer-un-cld-trazar-la-historia">Cómo leer un CLD: trazar la historia</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-cld-de-la-crisis-de-el-nino-20152016">Ejemplo: CLD de la crisis de El Niño 2015–2016</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#errores-comunes-en-la-construccion-de-clds">Errores comunes en la construcción de CLDs</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-caso-de-la-semana-la-crisis-de-el-nino-20152016">5. El caso de la semana: La crisis de El Niño 2015–2016</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#narrativa-detallada">Narrativa detallada</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#por-que-fallo-el-analisis-convencional">¿Por qué falló el análisis convencional?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-a-traves-del-lente-de-la-complejidad">Análisis a través del lente de la complejidad</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tour-de-casos-internacionales">6. Tour de casos internacionales</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#blackout-del-noreste-de-ee-uu-agosto-2003-fallas-en-cascada">Blackout del Noreste de EE.UU. (agosto 2003): fallas en cascada</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#blackout-de-india-julio-2012-escala-y-fragilidad">Blackout de India (julio 2012): escala y fragilidad</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#blackout-de-espana-y-portugal-abril-2025-interdependencia">Blackout de España y Portugal (abril 2025): interdependencia</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-energiewende-alemana-no-linealidad-y-tipping-points-en-la-adopcion-solar">La Energiewende alemana: no linealidad y tipping points en la adopción solar</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lock-in-del-gas-natural-en-colombia-dependencia-del-camino">Lock-in del gas natural en Colombia: dependencia del camino</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mapa-del-curso-de-la-intuicion-a-las-herramientas">7. Mapa del curso: de la intuición a las herramientas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#por-que-necesitamos-tanto-redes-como-dinamica-de-sistemas">¿Por qué necesitamos tanto redes como dinámica de sistemas?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptos-clave-de-la-semana">8. Conceptos clave de la semana</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mensajes-clave">Mensajes clave</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#glosario-de-terminos-introducidos">Glosario de términos introducidos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lecturas-recomendadas-para-esta-semana">Lecturas recomendadas para esta semana</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="semana-1-que-es-la-complejidad-y-por-que-importa-en-energia">
+<h1>Semana 1 — ¿Qué es la complejidad y por qué importa en energía?<a class="headerlink" href="#semana-1-que-es-la-complejidad-y-por-que-importa-en-energia" title="Link to this heading">#</a></h1>
+<section id="marco-teorico-systems-analytics-mise-universidad-de-los-andes">
+<h2>Marco Teórico · Systems Analytics — MISE, Universidad de los Andes<a class="headerlink" href="#marco-teorico-systems-analytics-mise-universidad-de-los-andes" title="Link to this heading">#</a></h2>
+</section>
+<section id="del-pensamiento-lineal-al-pensamiento-complejo-en-sistemas-energeticos">
+<h2>Del pensamiento lineal al pensamiento complejo en sistemas energéticos<a class="headerlink" href="#del-pensamiento-lineal-al-pensamiento-complejo-en-sistemas-energeticos" title="Link to this heading">#</a></h2>
+</section>
+<hr class="docutils" />
+<section id="apertura-por-que-necesitamos-pensar-diferente">
+<h2>1. Apertura: ¿Por qué necesitamos pensar diferente?<a class="headerlink" href="#apertura-por-que-necesitamos-pensar-diferente" title="Link to this heading">#</a></h2>
+<p>Imagine que usted es consultor y le piden evaluar la viabilidad de un nuevo parque solar de 200 MW en La Guajira. Usted hace lo que aprendió: proyecta los ingresos con un precio de energía estimado, descuenta los flujos de caja a una tasa apropiada, calcula el Valor Presente Neto (VPN) y la Tasa Interna de Retorno (TIR), y ejecuta un análisis de sensibilidad variando ±20% el precio de la energía, el costo de los módulos y la tasa de descuento. El resultado es positivo: el proyecto es “viable.”</p>
+<p>Seis meses después, una sequía extrema asociada a El Niño dispara los precios de bolsa. La entrada del parque solar se retrasa por problemas de consulta previa. La línea de transmisión que conectaría el parque al Sistema Interconectado Nacional (SIN) no está lista. Otros generadores térmicos, anticipando la escasez, acumulan gas y elevan sus ofertas. El regulador, presionado políticamente, modifica las reglas del Cargo por Confiabilidad. Los precios oscilan violentamente. El VPN que usted calculó resulta irrelevante — no porque los números estuvieran mal, sino porque el <em>marco mental</em> era insuficiente.</p>
+<p>Este no es un escenario hipotético. Es, en esencia, lo que ocurrió durante la crisis de El Niño 2015–2016 en Colombia, una crisis que costó billones de pesos, llevó al sistema al borde del racionamiento, y que los modelos convencionales no anticiparon.</p>
+<section id="los-limites-del-analisis-convencional">
+<h3>Los límites del análisis convencional<a class="headerlink" href="#los-limites-del-analisis-convencional" title="Link to this heading">#</a></h3>
+<p>Las herramientas clásicas de evaluación de proyectos —VPN, TIR, análisis de sensibilidad estático, punto de equilibrio— fueron diseñadas para un mundo donde se cumplen ciertas condiciones implícitas:</p>
+<ul class="simple">
+<li><p><strong>Independencia</strong>: las variables clave (precio, demanda, costo) se mueven de manera relativamente independiente.</p></li>
+<li><p><strong>Proporcionalidad</strong>: un cambio del 10% en un insumo produce un cambio proporcional en el resultado.</p></li>
+<li><p><strong>Estabilidad estructural</strong>: las “reglas del juego” (regulación, tecnologías disponibles, actores) no cambian fundamentalmente durante el horizonte del proyecto.</p></li>
+<li><p><strong>Distribuciones bien comportadas</strong>: los riesgos siguen distribuciones normales (gaussianas) donde los eventos extremos son prácticamente imposibles.</p></li>
+</ul>
+<p>En un sistema energético real, <em>ninguna</em> de estas condiciones se cumple plenamente. El precio de la energía en bolsa no es independiente de la hidrología, que no es independiente del clima global (El Niño), que no es independiente de las decisiones de los generadores térmicos, que no son independientes del precio de la energía en bolsa. Estamos ante un <em>círculo</em>, no ante una línea recta. Y ese círculo puede amplificarse.</p>
+</section>
+<section id="por-que-los-sistemas-energeticos-son-fundamentalmente-diferentes">
+<h3>¿Por qué los sistemas energéticos son fundamentalmente diferentes?<a class="headerlink" href="#por-que-los-sistemas-energeticos-son-fundamentalmente-diferentes" title="Link to this heading">#</a></h3>
+<p>Un puente, un motor diésel o un circuito electrónico son problemas de ingeniería donde, con suficiente conocimiento de los componentes, podemos predecir el comportamiento del sistema completo. Un sistema energético no funciona así. En el sistema eléctrico colombiano interactúan simultáneamente:</p>
+<ul class="simple">
+<li><p><strong>Física</strong>: flujos de potencia gobernados por las leyes de Kirchhoff en una red de transmisión de más de 27,000 km.</p></li>
+<li><p><strong>Hidrología y clima</strong>: embalses cuyo nivel depende de patrones climáticos globales como ENSO (El Niño–Southern Oscillation).</p></li>
+<li><p><strong>Mercados</strong>: un mercado mayorista donde generadores ofertan cada hora y los precios se forman por mérito económico.</p></li>
+<li><p><strong>Regulación</strong>: un marco institucional (CREG, XM, UPME, MME) que establece reglas que los agentes interpretan y explotan estratégicamente.</p></li>
+<li><p><strong>Comportamiento humano</strong>: generadores que aprenden, inversionistas que reaccionan a señales de precio, comunidades que se oponen o apoyan proyectos, consumidores que responden (o no) a incentivos.</p></li>
+<li><p><strong>Tecnología</strong>: la entrada acelerada de Fuentes No Convencionales de Energía Renovable (FNCER) que cambia la estructura misma del sistema.</p></li>
+</ul>
+<p>Cuando todos estos elementos interactúan, el resultado no es simplemente la “suma de las partes”. El sistema produce comportamientos que ningún componente individual genera por sí solo: oscilaciones de precios, ciclos de inversión, crisis repentinas, transiciones tecnológicas que se aceleran inesperadamente. A estos comportamientos los llamaremos <em>emergentes</em>, y su estudio es el corazón de la ciencia de la complejidad.</p>
+</section>
+<section id="el-rompecabezas-de-el-nino-20152016">
+<h3>El rompecabezas de El Niño 2015–2016<a class="headerlink" href="#el-rompecabezas-de-el-nino-20152016" title="Link to this heading">#</a></h3>
+<p>Entre octubre de 2015 y abril de 2016, Colombia enfrentó uno de los episodios de El Niño más intensos registrados. Los niveles de los embalses cayeron por debajo del 30% de su capacidad útil. El precio de bolsa de energía se disparó desde aproximadamente 150 COP/kWh a más de 700 COP/kWh en pocos meses. El país estuvo a semanas del racionamiento — algo que no ocurría desde 1992.</p>
+<p>¿Por qué fue tan severa esta crisis? No fue solo la sequía. Fue la <em>interacción</em> entre múltiples factores que se reforzaron mutuamente:</p>
+<ol class="arabic simple">
+<li><p>La reducción de aportes hídricos redujo la generación hidroeléctrica disponible.</p></li>
+<li><p>La mayor demanda de generación térmica elevó el consumo de gas natural y combustibles líquidos.</p></li>
+<li><p>Los generadores térmicos, enfrentando restricciones de suministro de gas, ofertaron a precios más altos.</p></li>
+<li><p>Los precios elevados en bolsa activaron señales de escasez en el mercado.</p></li>
+<li><p>Los generadores hidráulicos, ante la incertidumbre sobre la duración de El Niño, retuvieron agua en los embalses (comportamiento racional individual que agravó la escasez colectiva).</p></li>
+<li><p>El regulador intervino con resoluciones de emergencia que cambiaron las reglas del juego a mitad de la crisis.</p></li>
+<li><p>Cada una de estas respuestas afectó a las demás, creando espirales de retroalimentación.</p></li>
+</ol>
+<p>Ningún modelo lineal — por sofisticado que fuera su análisis de sensibilidad — podía capturar esta cadena de retroalimentaciones, decisiones adaptativas y efectos no lineales. Necesitamos un marco diferente. Ese marco es el <strong>pensamiento complejo</strong> (<em>complex systems thinking</em>), y este capítulo es su introducción.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="complicado-vs-complejo-la-distincion-fundamental">
+<h2>2. Complicado vs. complejo: la distinción fundamental<a class="headerlink" href="#complicado-vs-complejo-la-distincion-fundamental" title="Link to this heading">#</a></h2>
+<p>Antes de definir formalmente qué es un sistema complejo, necesitamos deshacernos de una confusión común. En el lenguaje cotidiano usamos “complicado” y “complejo” como sinónimos. En la ciencia de sistemas, son categorías radicalmente diferentes.</p>
+<section id="lo-complicado-muchas-partes-pero-predecible">
+<h3>Lo complicado: muchas partes, pero predecible<a class="headerlink" href="#lo-complicado-muchas-partes-pero-predecible" title="Link to this heading">#</a></h3>
+<p>Un <strong>sistema complicado</strong> tiene muchos componentes, pero su comportamiento puede —en principio— predecirse si conocemos todas las partes y sus relaciones. Ejemplos:</p>
+<ul class="simple">
+<li><p>Un <strong>avión Boeing 787</strong>: tiene más de 2.3 millones de componentes, pero cada uno cumple una función específica. Si desmontamos el avión pieza por pieza y lo volvemos a armar, funciona exactamente igual. No hay sorpresas. Los ingenieros pueden predecir su comportamiento con modelos detallados.</p></li>
+<li><p>Un <strong>reloj suizo</strong>: miles de engranajes interconectados con precisión extrema. Cada engranaje tiene una función determinada. Si uno falla, sabemos exactamente cuál es el efecto.</p></li>
+<li><p>La <strong>resolución de un sistema de ecuaciones lineales grande</strong>: puede tener miles de variables, pero hay un algoritmo para resolverlo y el resultado es determinista.</p></li>
+</ul>
+<p>La palabra clave es <em>predecible</em>. Un sistema complicado puede requerir enorme esfuerzo de análisis, pero existe una relación clara entre las partes y el todo. Los expertos pueden descomponerlo, analizarlo por partes, y reconstruir el comportamiento global.</p>
+</section>
+<section id="lo-complejo-interacciones-que-generan-sorpresas">
+<h3>Lo complejo: interacciones que generan sorpresas<a class="headerlink" href="#lo-complejo-interacciones-que-generan-sorpresas" title="Link to this heading">#</a></h3>
+<p>Un <strong>sistema complejo</strong> también tiene muchos componentes, pero aquí las interacciones entre ellos generan comportamientos que no se pueden deducir —ni siquiera en principio— del análisis de los componentes individuales. Ejemplos:</p>
+<ul class="simple">
+<li><p>Una <strong>ciudad</strong>: millones de personas tomando decisiones individuales (dónde vivir, dónde trabajar, qué comprar) producen patrones urbanos (barrios, congestión, gentrificación) que nadie diseñó. No podemos predecir la ciudad estudiando a cada persona por separado.</p></li>
+<li><p>Un <strong>ecosistema</strong>: la interacción entre especies, clima y geografía produce dinámicas (extinciones, invasiones, ciclos de población) imposibles de deducir del estudio aislado de cada especie.</p></li>
+<li><p>El <strong>tráfico vehicular</strong>: cada conductor toma decisiones racionales individuales (elegir la ruta más rápida), pero el resultado colectivo es un embotellamiento — algo que ningún conductor quiere ni causa individualmente.</p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Característica</p></th>
+<th class="head"><p>Complicado</p></th>
+<th class="head"><p>Complejo</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Relación partes-todo</p></td>
+<td><p>El todo es la suma de las partes</p></td>
+<td><p>El todo es <em>más</em> que la suma de las partes</p></td>
+</tr>
+<tr class="row-odd"><td><p>Predicción</p></td>
+<td><p>Difícil pero posible con suficiente información</p></td>
+<td><p>Fundamentalmente limitada; sorpresas son normales</p></td>
+</tr>
+<tr class="row-even"><td><p>Respuesta a perturbaciones</p></td>
+<td><p>Proporcional y localizada</p></td>
+<td><p>Puede ser desproporcionada y propagarse</p></td>
+</tr>
+<tr class="row-odd"><td><p>Descomposición</p></td>
+<td><p>Se puede analizar por partes y reconstruir</p></td>
+<td><p>Descomponer destruye las propiedades del sistema</p></td>
+</tr>
+<tr class="row-even"><td><p>Ejemplo canónico</p></td>
+<td><p>Un avión</p></td>
+<td><p>Una bandada de pájaros</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ejemplo energético</p></td>
+<td><p>Una turbina de gas (compleja internamente, pero predecible)</p></td>
+<td><p>El mercado eléctrico colombiano</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="el-sistema-electrico-colombiano-complicado-o-complejo">
+<h3>El sistema eléctrico colombiano: ¿complicado o complejo?<a class="headerlink" href="#el-sistema-electrico-colombiano-complicado-o-complejo" title="Link to this heading">#</a></h3>
+<p>El SIN colombiano es, sin duda, <strong>complejo</strong>. ¿Quiénes son los “agentes” (los componentes que interactúan)?</p>
+<ul class="simple">
+<li><p><strong>Generadores</strong>: ~70 agentes con plantas hidráulicas, térmicas, eólicas y solares, que toman decisiones de oferta cada hora basándose en sus costos, expectativas de precio y estrategia.</p></li>
+<li><p><strong>El operador del sistema (XM)</strong>: despacha la generación por orden de mérito, gestiona restricciones de transmisión, administra el mercado.</p></li>
+<li><p><strong>El regulador (CREG)</strong>: define las reglas del mercado, los cargos, los mecanismos de confiabilidad.</p></li>
+<li><p><strong>El planificador (UPME)</strong>: decide la expansión de transmisión y generación a largo plazo.</p></li>
+<li><p><strong>Los consumidores</strong>: responden (o no) a señales de precio, adoptan (o no) nuevas tecnologías como techos solares.</p></li>
+<li><p><strong>Las comunidades</strong>: en La Guajira, la consulta previa Wayuu es determinante para la viabilidad de proyectos eólicos.</p></li>
+<li><p><strong>El clima</strong>: El Niño y La Niña modulan la disponibilidad hídrica de forma no determinista.</p></li>
+<li><p><strong>Los inversionistas</strong>: responden a señales de rentabilidad con retardos de 3–7 años (el tiempo de construcción de una planta).</p></li>
+</ul>
+<p>¿Qué <em>interacciones</em> existen? Los generadores ofertan al mercado. El precio de bolsa depende de las ofertas. Los inversionistas observan los precios para decidir si construir nuevas plantas. La CREG observa el mercado y cambia las reglas. Los generadores se adaptan a las nuevas reglas. El clima afecta los embalses, que afectan las ofertas hidráulicas, que afectan los precios. Las comunidades Wayuu afectan los cronogramas de los proyectos eólicos, que afectan la capacidad futura, que afecta los precios futuros.</p>
+<p>¿Qué <em>emerge</em>? El precio de bolsa no es diseñado por nadie — emerge de las interacciones entre todos los agentes. Los ciclos de sobreinversión y escasez no son planeados — emergen de los retardos entre la decisión de invertir y la entrada en operación. Las crisis como la de El Niño 2015–2016 no son causadas por un solo factor — emergen de la combinación de retroalimentaciones.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="los-conceptos-clave-de-la-complejidad">
+<h2>3. Los conceptos clave de la complejidad<a class="headerlink" href="#los-conceptos-clave-de-la-complejidad" title="Link to this heading">#</a></h2>
+<p>En esta sección presentamos los siete conceptos fundamentales de la complejidad, uno por uno. Para cada concepto seguiremos la misma estructura: primero una explicación intuitiva, luego un ejemplo concreto del sector energético, después una definición más formal, y finalmente las implicaciones para la toma de decisiones.</p>
+<section id="retroalimentacion-feedback">
+<h3>3.1 Retroalimentación (<em>feedback</em>)<a class="headerlink" href="#retroalimentacion-feedback" title="Link to this heading">#</a></h3>
+<p><strong>Intuición:</strong> Imagine que está en una sala de conferencias con un micrófono conectado a un parlante. Si acerca el micrófono al parlante, el sonido del parlante entra al micrófono, se amplifica, sale por el parlante, vuelve al micrófono, se amplifica más, y en segundos se produce un chirrido ensordecedor. Eso es un ciclo de <strong>retroalimentación positiva</strong> (<em>positive feedback</em> o <em>reinforcing loop</em>): un efecto que se refuerza a sí mismo.</p>
+<p>Ahora imagine el termostato de un aire acondicionado. Cuando la temperatura sube, el termostato enciende el aire frío. El aire frío baja la temperatura. Cuando baja lo suficiente, el termostato apaga el aire. La temperatura sube de nuevo. Eso es un ciclo de <strong>retroalimentación negativa</strong> (<em>negative feedback</em> o <em>balancing loop</em>): un efecto que se contrarresta y busca un equilibrio.</p>
+<p><strong>Ejemplo energético — el ciclo precio-inversión-capacidad:</strong></p>
+<p>El mercado eléctrico colombiano tiene un ciclo de retroalimentación fundamental:</p>
+<ol class="arabic simple">
+<li><p>Cuando la demanda crece más rápido que la capacidad instalada, hay escasez relativa → los precios suben.</p></li>
+<li><p>Los precios altos atraen inversión → se inician nuevos proyectos de generación.</p></li>
+<li><p>Después de 3–5 años de construcción, las nuevas plantas entran en operación → la capacidad aumenta.</p></li>
+<li><p>El exceso de capacidad genera sobreoferta → los precios bajan.</p></li>
+<li><p>Los precios bajos desincentivan la inversión → no se construyen nuevas plantas.</p></li>
+<li><p>Mientras tanto, la demanda sigue creciendo → eventual escasez → el ciclo se repite.</p></li>
+</ol>
+<p>Este es un ciclo de retroalimentación negativa (busca el equilibrio entre oferta y demanda), pero el <em>retardo</em> de 3–5 años entre la señal de precio y la entrada de nueva capacidad genera oscilaciones. El sistema nunca está en equilibrio: siempre está persiguiéndolo.</p>
+<p><strong>Definición formal:</strong> Una <strong>retroalimentación</strong> es una estructura circular de causalidad en la que la variable de salida de un proceso influye en la variable de entrada del mismo proceso. Un <em>ciclo de refuerzo</em> ® amplifica las desviaciones; un <em>ciclo de balance</em> (B) las contrarresta. Formalmente, si tenemos una cadena causal <span class="math notranslate nohighlight">\(A \rightarrow B \rightarrow C \rightarrow A\)</span>, existe retroalimentación si el efecto neto de una perturbación en <span class="math notranslate nohighlight">\(A\)</span>, al recorrer todo el ciclo, regresa a <span class="math notranslate nohighlight">\(A\)</span> reforzando ® o contrarrestando (B) la perturbación original.</p>
+<p><strong>Implicación para decisiones:</strong> Cuando interviene en un sistema con retroalimentación, el efecto de su intervención no es lineal ni inmediato. Una política que parece correcta en el corto plazo puede generar efectos perversos en el largo plazo a través de los ciclos de retroalimentación. Por ejemplo, subsidiar la generación térmica durante El Niño resuelve la crisis inmediata, pero puede crear un ciclo de dependencia que desincentiva la diversificación.</p>
+</section>
+<section id="no-linealidad">
+<h3>3.2 No linealidad<a class="headerlink" href="#no-linealidad" title="Link to this heading">#</a></h3>
+<p><strong>Intuición:</strong> En un sistema lineal, si duplico la causa, duplico el efecto. Si empujo un carrito con el doble de fuerza, se mueve con el doble de velocidad. La vida cotidiana nos entrena a pensar linealmente. Pero muchos fenómenos reales no funcionan así: a veces un pequeño empujón no produce efecto visible, y luego un empujón apenas un poco mayor produce un cambio enorme. Piense en una represa: puede acumular agua sin problema hasta cierto nivel. Un centímetro más y se desborda.</p>
+<p><strong>Ejemplo energético — el gas y las cascadas de costos:</strong></p>
+<p>Considere qué pasa cuando el precio del gas natural se duplica en Colombia. Si el sistema fuera lineal, el costo promedio de generación aumentaría proporcionalmente a la participación del gas en la mezcla (~30%). Pero lo que realmente ocurre es:</p>
+<ol class="arabic simple">
+<li><p>Los generadores térmicos a gas ofertan más caro → salen del orden de mérito en condiciones normales.</p></li>
+<li><p>Se despachan plantas más costosas (combustibles líquidos) → el precio de bolsa sube mucho más que proporcional.</p></li>
+<li><p>Los generadores hidráulicos, viendo precios altos, elevan el “valor del agua” y retienen agua en embalses para vender a precios futuros aún más altos.</p></li>
+<li><p>La retención reduce la oferta hidráulica disponible → se despachan aún más térmicas costosas.</p></li>
+<li><p>El precio de bolsa se puede multiplicar por 5 o más, no por 2.</p></li>
+</ol>
+<p>El efecto es <strong>no lineal</strong>: una duplicación del precio del gas puede quintuplicar el precio de la energía en bolsa. La relación entre causa y efecto no es proporcional — tiene umbrales, saltos y amplificaciones.</p>
+<p><strong>Definición formal:</strong> Un sistema es <strong>no lineal</strong> cuando la respuesta no es proporcional al estímulo. Matemáticamente, un sistema lineal satisface el principio de superposición: <span class="math notranslate nohighlight">\(f(a + b) = f(a) + f(b)\)</span> y <span class="math notranslate nohighlight">\(f(\alpha \cdot a) = \alpha \cdot f(a)\)</span>. Si cualquiera de estas propiedades se viola, el sistema es no lineal. En la práctica, casi todos los sistemas reales de interés son no lineales; la linealidad es la excepción.</p>
+<p><strong>Implicación para decisiones:</strong> Los análisis de sensibilidad convencionales asumen linealidad implícita: “si el precio del gas varía ±20%, el VPN varía ±X%.” Esto es peligrosamente engañoso en sistemas no lineales. Los resultados dependen de <em>dónde</em> se está en el espacio de estados. Un cambio del 5% puede no importar en condiciones normales, pero puede ser catastrófico si el sistema ya está cerca de un umbral. Necesitamos herramientas que capturen estas no linealidades — como la dinámica de sistemas (Semanas 4–5).</p>
+</section>
+<section id="emergencia">
+<h3>3.3 Emergencia<a class="headerlink" href="#emergencia" title="Link to this heading">#</a></h3>
+<p><strong>Intuición:</strong> Considere una bandada de estorninos al atardecer. Miles de pájaros se mueven en patrones fluidos y coordinados que parecen coreografiados. Pero no hay coreógrafo. Ningún pájaro tiene un plan para la bandada. Cada pájaro sigue tres reglas simples: (1) mantente cerca de tus vecinos, (2) evita chocar con ellos, (3) vuela en la dirección promedio del grupo. De estas reglas individuales simples emerge un patrón colectivo complejo y bello. Ese patrón no existe en ningún pájaro individual — es una propiedad del <em>sistema</em>.</p>
+<p><strong>Ejemplo energético — el precio de bolsa como propiedad emergente:</strong></p>
+<p>El precio de la energía en la bolsa del mercado mayorista colombiano no es fijado por nadie. No es una decisión de XM, ni de la CREG, ni de ningún generador individual. Es el resultado de un proceso donde:</p>
+<ul class="simple">
+<li><p>Cada generador presenta una oferta de precio y cantidad para cada hora del día siguiente.</p></li>
+<li><p>XM ordena las ofertas de menor a mayor precio (curva de oferta por mérito).</p></li>
+<li><p>La oferta que cubre el último kWh de demanda fija el precio para todos.</p></li>
+</ul>
+<p>El precio resultante es una <strong>propiedad emergente</strong>: surge de las interacciones entre los agentes individuales (las ofertas), la estructura del mercado (el mecanismo de despacho por mérito) y las restricciones físicas (disponibilidad hídrica, capacidad de transmisión). Ningún agente individual controla el precio, pero todos lo influyen. Y el precio, a su vez, influye en las decisiones futuras de todos los agentes.</p>
+<p><strong>Definición formal:</strong> Una propiedad es <strong>emergente</strong> cuando pertenece al sistema como un todo y no puede atribuirse a ninguno de sus componentes individuales. Formalmente, si el sistema <span class="math notranslate nohighlight">\(S\)</span> está compuesto por los agentes <span class="math notranslate nohighlight">\(\{a_1, a_2, ..., a_n\}\)</span>, una propiedad <span class="math notranslate nohighlight">\(P\)</span> de <span class="math notranslate nohighlight">\(S\)</span> es emergente si <span class="math notranslate nohighlight">\(P\)</span> no aparece en el análisis de ningún <span class="math notranslate nohighlight">\(a_i\)</span> individual ni puede deducirse de la simple suma de propiedades de los <span class="math notranslate nohighlight">\(a_i\)</span>.</p>
+<p>Es importante enfatizar que la emergencia no es mística ni mágica. Tiene <strong>mecanismos concretos</strong>: las reglas de interacción entre los agentes, combinadas con la estructura de sus conexiones y las restricciones del entorno, producen patrones a nivel macro. Si cambiamos las reglas de interacción (por ejemplo, cambiamos el mecanismo de despacho por mérito), cambian las propiedades emergentes (el patrón de precios).</p>
+<p><strong>Implicación para decisiones:</strong> Si el comportamiento del sistema es emergente, no podemos controlarlo directamente. No podemos “fijar” el precio de bolsa ordenándole a cada generador qué ofertar (eso destruiría el mecanismo de mercado). Pero <em>sí</em> podemos influir en él cambiando las reglas de interacción — las “reglas del juego.” Esto es exactamente lo que hace la regulación. Entender la emergencia nos dice dónde buscar las palancas: no en los componentes individuales, sino en las <em>reglas de interacción</em> y la <em>estructura de conexiones</em>.</p>
+</section>
+<section id="adaptacion-y-aprendizaje-efectos-de-memoria">
+<h3>3.4 Adaptación y aprendizaje (efectos de memoria)<a class="headerlink" href="#adaptacion-y-aprendizaje-efectos-de-memoria" title="Link to this heading">#</a></h3>
+<p><strong>Intuición:</strong> Un termostato simple siempre reacciona igual: si la temperatura sube, enfría; si baja, calienta. No tiene memoria, no aprende. Pero los agentes en un sistema energético sí aprenden: recuerdan lo que pasó antes, ajustan sus estrategias, anticipan el futuro basándose en el pasado. Un generador que fue sorprendido por El Niño de 1997–1998 se comportó diferente durante El Niño de 2015–2016. La historia importa.</p>
+<p><strong>Ejemplo energético — generadores que aprenden:</strong></p>
+<p>Después de la crisis de El Niño 1997–1998, que llevó a un racionamiento eléctrico de un año, el sector colombiano introdujo el Cargo por Confiabilidad (CxC) para garantizar respaldo firme. Los generadores aprendieron a valorar la energía firme y a gestionar sus contratos de gas con más cuidado. El regulador aprendió que necesitaba un mecanismo de incentivo para la disponibilidad.</p>
+<p>Cuando llegó El Niño 2015–2016, los agentes se comportaron de forma diferente a 1998:</p>
+<ul class="simple">
+<li><p>Algunos generadores habían almacenado combustibles líquidos con anticipación.</p></li>
+<li><p>El CxC estaba vigente como mecanismo de respaldo (aunque mostró limitaciones).</p></li>
+<li><p>Los generadores hidráulicos gestionaron los embalses con estrategias más conservadoras.</p></li>
+<li><p>El regulador intervino más rápidamente con resoluciones de emergencia.</p></li>
+</ul>
+<p>El sistema “recordaba” la crisis anterior. Pero esa memoria no eliminó la crisis — la transformó. Los agentes que habían aprendido de 1998 actuaron de formas que a veces mejoraron y a veces empeoraron la situación de 2016. La adaptación no garantiza mejora; solo garantiza que el sistema no repite exactamente el mismo patrón.</p>
+<p><strong>Definición formal:</strong> Un <strong>sistema adaptativo complejo</strong> (<em>complex adaptive system</em>, CAS) es un sistema compuesto por agentes que: (1) tienen <em>reglas de decisión</em> que guían su comportamiento, (2) <em>aprenden</em> y modifican esas reglas basándose en la experiencia pasada, y (3) sus interacciones producen propiedades emergentes que, a su vez, afectan las condiciones en las que los agentes toman decisiones futuras. Los <strong>efectos de memoria</strong> (<em>memory effects</em>) son la manifestación de este aprendizaje: el comportamiento del sistema en el tiempo <span class="math notranslate nohighlight">\(t\)</span> depende no solo del estado actual sino de la trayectoria histórica.</p>
+<p><strong>Implicación para decisiones:</strong> Si los agentes se adaptan, las políticas que funcionaron ayer pueden no funcionar mañana. Los agentes aprenden a “jugar” las reglas del regulador. El regulador debe entonces anticipar la adaptación de los agentes y diseñar reglas que sean robustas ante comportamiento estratégico — un problema fundamentalmente diferente al de diseñar un puente o un circuito.</p>
+</section>
+<section id="cisnes-negros-y-eventos-extremos">
+<h3>3.5 Cisnes negros y eventos extremos<a class="headerlink" href="#cisnes-negros-y-eventos-extremos" title="Link to this heading">#</a></h3>
+<p><strong>Intuición:</strong> Antes del descubrimiento de Australia, todos los cisnes observados en Europa eran blancos. La afirmación “todos los cisnes son blancos” parecía sólida — confirmada por millones de observaciones. Bastó un solo cisne negro para refutarla. Nassim Nicholas Taleb usa esta metáfora para describir eventos que son: (1) raros e inesperados, (2) de enorme impacto, y (3) retrospectivamente explicables (después de que ocurren, todos dicen “era obvio”).</p>
+<p>En estadística, la distribución normal (gaussiana) predice que los eventos extremos son extraordinariamente raros. Si los precios de bolsa siguieran una distribución normal, un precio 5 desviaciones estándar por encima de la media debería ocurrir cada 14,000 años. En la práctica, en el mercado eléctrico colombiano, estos eventos ocurren cada pocos años. ¿Por qué? Porque los precios de bolsa no siguen una distribución normal — siguen distribuciones de <strong>colas pesadas</strong> (<em>fat tails</em>), donde los eventos extremos son mucho más frecuentes de lo que la estadística convencional predice.</p>
+<p><strong>Ejemplo energético — El Niño 2015–2016 como cisne negro:</strong></p>
+<p>Los modelos de riesgo del sector eléctrico colombiano utilizaban escenarios hidrológicos basados en la serie histórica de aportes. El Niño de 2015–2016 resultó ser uno de los tres más intensos desde que se tienen registros. Los precios de bolsa alcanzaron niveles que los modelos de riesgo convencionales consideraban “virtualmente imposibles.” Si se hubiera modelado la distribución de precios como gaussiana, la probabilidad de observar los precios de febrero-marzo de 2016 habría sido del orden de <span class="math notranslate nohighlight">\(10^{-6}\)</span> — una en un millón. Pero ocurrió.</p>
+<p>La razón es que las retroalimentaciones positivas del sistema (las espirales descritas en la sección anterior) amplifican las perturbaciones extremas. La distribución resultante no es gaussiana; tiene colas pesadas. En lenguaje técnico, exhibe <strong>curtosis excesiva</strong> (<em>leptokurtosis</em>): los eventos extremos son más probables de lo que esperaríamos bajo supuestos gaussianos.</p>
+<p><strong>Definición formal:</strong> Un <strong>cisne negro</strong> (Taleb, 2007) es un evento que cumple tres criterios: (1) está fuera del rango de las expectativas normales basadas en la experiencia previa; (2) tiene un impacto extremo; y (3) la naturaleza humana busca explicaciones <em>ex post</em> que lo hacen parecer predecible en retrospectiva. Estadísticamente, los cisnes negros son síntomas de distribuciones con <strong>colas pesadas</strong> (<em>heavy-tailed distributions</em>), donde la probabilidad de eventos extremos decae más lentamente que en una gaussiana. Una distribución de colas pesadas común es la <strong>ley de potencia</strong> (<em>power law</em>): <span class="math notranslate nohighlight">\(P(X &gt; x) \propto x^{-\alpha}\)</span>, donde <span class="math notranslate nohighlight">\(\alpha\)</span> es el exponente de la cola. (Nota: en la Semana 2, cuando apliquemos leyes de potencia a distribuciones de grado en redes, usaremos la convención <span class="math notranslate nohighlight">\(P(k) \sim k^{-\gamma}\)</span>, donde <span class="math notranslate nohighlight">\(\gamma\)</span> es el exponente del grado. Son la misma familia matemática en contextos distintos.) Volveremos a las leyes de potencia en la Semana 2 cuando analicemos redes.</p>
+<p><strong>Implicación para decisiones:</strong> Si su análisis de riesgo asume una distribución gaussiana, está subestimando sistemáticamente la probabilidad de eventos catastróficos. En el sector energético colombiano, esto tiene consecuencias concretas: subvalorar el riesgo de sequías extremas, de fallas en cascada del sistema de transmisión, o de crisis de suministro de gas. La gestión del riesgo en sistemas complejos requiere abandonar la distribución normal como supuesto por defecto y trabajar con distribuciones que reconozcan la existencia de colas pesadas. En la Semana 5, cuando abordemos la toma de decisiones bajo incertidumbre profunda, retomaremos este punto.</p>
+</section>
+<section id="dependencia-del-camino-y-lock-in">
+<h3>3.6 Dependencia del camino y <em>lock-in</em><a class="headerlink" href="#dependencia-del-camino-y-lock-in" title="Link to this heading">#</a></h3>
+<p><strong>Intuición:</strong> ¿Por qué el teclado de su computador tiene las letras organizadas en el orden QWERTY? No es porque sea la disposición más eficiente — de hecho, existen disposiciones (como Dvorak) que permiten escribir más rápido. El teclado QWERTY fue diseñado en la década de 1870 para <em>evitar</em> que las barras mecánicas de las máquinas de escribir se trabaran, separando las letras más frecuentes. Ese problema desapareció con los teclados electrónicos, pero para entonces ya había millones de personas entrenadas en QWERTY, millones de teclados fabricados, y un ecosistema completo que hacía prohibitivamente costoso cambiar. El sistema quedó <em>atrapado</em> (<em>locked in</em>) en una solución subóptima por una decisión tomada 150 años atrás.</p>
+<p><strong>Ejemplo energético — el <em>lock-in</em> térmico en Colombia:</strong></p>
+<p>Colombia tiene un enorme potencial de energía renovable: uno de los mejores recursos solares de América Latina en La Guajira y los Santanderes, y un recurso eólico de clase mundial en La Guajira. Sin embargo, la matriz de generación sigue teniendo una componente térmica significativa (~30% de la capacidad instalada), y el Cargo por Confiabilidad ha sido históricamente más favorable para plantas térmicas que para renovables.</p>
+<p>¿Por qué? Dependencia del camino:</p>
+<ol class="arabic simple">
+<li><p>En la década de 1990, tras la privatización del sector, se invirtió fuertemente en plantas térmicas a gas porque era la tecnología más competitiva en ese momento.</p></li>
+<li><p>Se construyó infraestructura de gasoductos para abastecer esas plantas.</p></li>
+<li><p>Se diseñó el CxC con métricas de energía firme que favorecían a las plantas que podían garantizar generación constante (térmicas) sobre las intermitentes (renovables).</p></li>
+<li><p>Se crearon contratos de largo plazo de suministro de gas y de energía firme.</p></li>
+<li><p>Se formó un ecosistema de empresas, empleos, conocimientos y lobbies alrededor de la generación térmica.</p></li>
+</ol>
+<p>Cada decisión reforzó las anteriores. Hoy, cambiar hacia renovables requiere no solo que las renovables sean más baratas (ya lo son), sino deshacer todo ese ecosistema: renegociar contratos, rediseñar el CxC, construir nueva infraestructura de transmisión, reentrenar personal, superar la resistencia de los actores incumbentes. El sistema está <em>locked in</em>.</p>
+<p><strong>Definición formal:</strong> Existe <strong>dependencia del camino</strong> (<em>path dependence</em>) cuando el estado actual del sistema no puede entenderse únicamente a partir de las condiciones presentes; la historia de decisiones pasadas y eventos pasados condiciona el rango de opciones disponibles hoy. Un sistema está en <em><strong>lock-in</strong></em> cuando los costos de transición hacia una alternativa superior son tan altos que el sistema permanece en un estado subóptimo, reforzado por rendimientos crecientes de adopción (<em>increasing returns</em>), infraestructura hundida (<em>sunk infrastructure</em>), y complementariedades institucionales.</p>
+<p><strong>Implicación para decisiones:</strong> La dependencia del camino implica que <em>cuándo</em> se toma una decisión importa tanto como <em>qué</em> decisión se toma. Las decisiones de hoy no solo afectan el presente — moldean el espacio de posibilidades futuras. Invertir en infraestructura de gas natural hoy puede parecer económicamente eficiente a corto plazo, pero puede dificultar la transición renovable durante décadas. El análisis de proyectos debe considerar explícitamente el riesgo de <em>lock-in</em>.</p>
+</section>
+<section id="puntos-de-inflexion-tipping-points">
+<h3>3.7 Puntos de inflexión (<em>tipping points</em>)<a class="headerlink" href="#puntos-de-inflexion-tipping-points" title="Link to this heading">#</a></h3>
+<p><strong>Intuición:</strong> Imagine que empuja una bola que está en la cima de una colina. Si la empuja un poco, la bola se queda donde está (más o menos). Si la empuja un poco más, sigue sin moverse mucho. Pero hay un punto — el borde de la colina — donde un empujón apenas perceptible más hace que la bola caiga al otro lado y ruede sin detenerse. El sistema pasa de un estado (estable en la cima) a otro cualitativamente diferente (rodando valle abajo). Ese punto es un <strong>punto de inflexión</strong> (<em>tipping point</em>).</p>
+<p><strong>Ejemplo energético — la curva de adopción solar:</strong></p>
+<p>La adopción de energía solar distribuida en muchos mercados ha seguido un patrón no lineal. Durante años, la penetración solar crece lentamente: los paneles son caros, pocos los conocen, la regulación no los favorece. Pero hay un punto donde confluyen tres factores:</p>
+<ol class="arabic simple">
+<li><p>El costo de los paneles cae por debajo de un umbral de paridad con la red (<em>grid parity</em>).</p></li>
+<li><p>Suficientes vecinos instalan paneles como para que la tecnología se vuelva socialmente visible y confiable (contagio social).</p></li>
+<li><p>La regulación se adapta para permitir medición neta (<em>net metering</em>) o esquemas equivalentes.</p></li>
+</ol>
+<p>Cuando estos tres factores coinciden, la adopción pasa de crecimiento lento a exponencial. En Alemania, la Energiewende mostró exactamente este patrón: años de crecimiento modesto en los 2000 seguidos de una explosión de capacidad solar entre 2010 y 2013 que transformó la matriz energética más rápido de lo que cualquier planificador había previsto.</p>
+<p>Otro ejemplo: el retiro de plantas de carbón. Cuando los costos de operación del carbón superan cierto umbral (por impuestos al CO₂, caída de precios renovables o presión regulatoria), no se retira una planta: se desencadena un efecto cascada donde el retiro de cada planta reduce las economías de escala del suministro de carbón, encarece las plantas restantes, y acelera el retiro de la siguiente. El sistema “pivota” de un régimen a otro.</p>
+<p><strong>Definición formal:</strong> Un <strong>punto de inflexión</strong> (<em>tipping point</em>) es un umbral crítico en un parámetro o variable de estado del sistema, más allá del cual el sistema transita de un régimen de comportamiento a otro cualitativamente diferente, a menudo de forma irreversible o muy difícil de revertir. Formalmente, puede modelarse como una <strong>bifurcación</strong> en un sistema dinámico: un valor del parámetro <span class="math notranslate nohighlight">\(p\)</span> en el que la estructura cualitativa de las soluciones del sistema <span class="math notranslate nohighlight">\(\dot{x} = f(x, p)\)</span> cambia.</p>
+<p><strong>Implicación para decisiones:</strong> Los puntos de inflexión implican que los cambios no son siempre graduales. Una política que parece tener un efecto marginal puede estar acercando el sistema al borde de un tipping point. Y una vez cruzado, el cambio puede ser irreversible. Esto tiene dos caras: el riesgo de cruzar un tipping point negativo (como un colapso de suministro) y la oportunidad de <em>catalizar</em> un tipping point positivo (como la adopción masiva de renovables). En la Semana 5, veremos cómo identificar estos puntos con modelos de dinámica de sistemas.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="el-diagrama-de-lazos-causales-cld-primera-herramienta">
+<h2>4. El Diagrama de Lazos Causales (CLD): primera herramienta<a class="headerlink" href="#el-diagrama-de-lazos-causales-cld-primera-herramienta" title="Link to this heading">#</a></h2>
+<p>Ahora que tenemos el vocabulario de la complejidad, necesitamos una herramienta para <em>visualizar</em> la estructura de un sistema complejo. Esa herramienta es el <strong>Diagrama de Lazos Causales</strong> (<em>Causal Loop Diagram</em>, CLD), también conocido como mapa causal o diagrama causal. Es la primera —y más accesible— herramienta del pensamiento sistémico.</p>
+<section id="que-es-un-cld-y-por-que-es-util">
+<h3>¿Qué es un CLD y por qué es útil?<a class="headerlink" href="#que-es-un-cld-y-por-que-es-util" title="Link to this heading">#</a></h3>
+<p>Un CLD es un diagrama que muestra las relaciones causales entre las variables de un sistema y los ciclos de retroalimentación que generan. No es un modelo cuantitativo (no calcula nada), pero es extraordinariamente poderoso como herramienta de <em>pensamiento</em>: nos obliga a hacer explícitas las relaciones que intuimos, a identificar los ciclos de retroalimentación, y a comunicar nuestra comprensión del sistema a otros.</p>
+<p>En las Semanas 4 y 5, transformaremos los CLDs en modelos cuantitativos de dinámica de sistemas (con stocks, flujos y ecuaciones). Pero el CLD viene primero porque captura la <em>estructura causal</em> del sistema antes de que nos perdamos en los detalles numéricos.</p>
+</section>
+<section id="notacion">
+<h3>Notación<a class="headerlink" href="#notacion" title="Link to this heading">#</a></h3>
+<p>Un CLD utiliza tres elementos:</p>
+<p><strong>1. Variables:</strong> Representadas con texto. Son magnitudes que pueden aumentar o disminuir. Ejemplos: <em>Precio de Bolsa</em>, <em>Nivel de Embalses</em>, <em>Inversión en Nuevas Plantas</em>, <em>Demanda Eléctrica</em>.</p>
+<p><strong>2. Flechas con polaridad:</strong> Una flecha de <span class="math notranslate nohighlight">\(A\)</span> hacia <span class="math notranslate nohighlight">\(B\)</span> indica que <span class="math notranslate nohighlight">\(A\)</span> influye causalmente en <span class="math notranslate nohighlight">\(B\)</span>. La polaridad indica <em>cómo</em>:</p>
+<ul class="simple">
+<li><p><strong>Flecha con signo (+):</strong> Si <span class="math notranslate nohighlight">\(A\)</span> aumenta, <span class="math notranslate nohighlight">\(B\)</span> tiende a aumentar (y si <span class="math notranslate nohighlight">\(A\)</span> disminuye, <span class="math notranslate nohighlight">\(B\)</span> tiende a disminuir). La relación es <em>en el mismo sentido</em>. Ejemplo: si aumenta la <em>Demanda Eléctrica</em>, aumenta el <em>Precio de Bolsa</em> (+).</p></li>
+<li><p><strong>Flecha con signo (−):</strong> Si <span class="math notranslate nohighlight">\(A\)</span> aumenta, <span class="math notranslate nohighlight">\(B\)</span> tiende a disminuir (y viceversa). La relación es <em>en sentido contrario</em>. Ejemplo: si aumenta el <em>Nivel de Embalses</em>, disminuye el <em>Precio de Bolsa</em> (−), porque hay más agua disponible para generar.</p></li>
+</ul>
+<blockquote>
+<div><p><strong>Nota importante:</strong> La polaridad indica la <em>dirección</em> de la influencia <em>ceteris paribus</em> (todo lo demás constante), no la dirección del cambio en un momento dado.</p>
+</div></blockquote>
+<p><strong>3. Identificación de lazos:</strong> Cuando las flechas forman un ciclo cerrado, se identifica con una etiqueta:</p>
+<ul class="simple">
+<li><p><strong>R (Refuerzo):</strong> El ciclo amplifica los cambios. Se identifica cuando el número de flechas negativas en el ciclo es <em>par</em> (0, 2, 4…). Un ciclo R produce crecimiento exponencial (si el ciclo se activa en dirección positiva) o colapso exponencial (si se activa en dirección negativa).</p></li>
+<li><p><strong>B (Balance):</strong> El ciclo se opone a los cambios y busca un equilibrio. Se identifica cuando el número de flechas negativas en el ciclo es <em>impar</em> (1, 3, 5…). Un ciclo B produce búsqueda de meta (<em>goal-seeking</em>), es decir, el sistema tiende hacia un valor estable.</p></li>
+</ul>
+</section>
+<section id="como-leer-un-cld-trazar-la-historia">
+<h3>Cómo leer un CLD: trazar la historia<a class="headerlink" href="#como-leer-un-cld-trazar-la-historia" title="Link to this heading">#</a></h3>
+<p>La clave para leer un CLD no es mirarlo como un diagrama estático, sino <em>recorrer las flechas contando una historia</em>. Comience en una variable, suponga que cambia, y siga las flechas preguntándose: “si esta variable aumenta, ¿qué pasa con la siguiente?”</p>
+<p><strong>Ejemplo simple — el ciclo básico del mercado eléctrico:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  Demanda Eléctrica ──(+)──→ Precio de Bolsa ──(+)──→ Inversión
+        ↑                                                  │
+        │                                                  │
+        │              (retardo: 3-5 años)                 │
+        │                                                  ↓
+        └───────(−)──── Capacidad Instalada ←──(+)─── Construcción
+</pre></div>
+</div>
+<p>Leamos la historia:</p>
+<ol class="arabic simple">
+<li><p>Si <em>Demanda Eléctrica</em> aumenta → <em>Precio de Bolsa</em> aumenta (+).</p></li>
+<li><p>Si <em>Precio de Bolsa</em> aumenta → <em>Inversión</em> aumenta (+).</p></li>
+<li><p>Si <em>Inversión</em> aumenta → <em>Construcción</em> de proyectos aumenta (+).</p></li>
+<li><p>Si <em>Construcción</em> aumenta → <em>Capacidad Instalada</em> aumenta (+), pero con un retardo de 3–5 años.</p></li>
+<li><p>Si <em>Capacidad Instalada</em> aumenta → la escasez relativa disminuye, y <em>Demanda Eléctrica</em> no cubierta disminuye (−) — o más precisamente, la brecha entre oferta y demanda que impulsa los precios disminuye.</p></li>
+</ol>
+<p>Contemos las flechas negativas: hay una (−). Número impar → es un <strong>ciclo de Balance (B)</strong>. El sistema busca equilibrar oferta y demanda. Pero el retardo de 3–5 años entre inversión y entrada en operación causa que el sistema <em>oscile</em> alrededor del equilibrio en vez de converger suavemente.</p>
+</section>
+<section id="ejemplo-cld-de-la-crisis-de-el-nino-20152016">
+<h3>Ejemplo: CLD de la crisis de El Niño 2015–2016<a class="headerlink" href="#ejemplo-cld-de-la-crisis-de-el-nino-20152016" title="Link to this heading">#</a></h3>
+<p>Construyamos paso a paso un CLD que capture las dinámicas principales de la crisis. Empezamos con las variables clave:</p>
+<p><strong>Variables del CLD:</strong></p>
+<ul class="simple">
+<li><p>Aportes Hídricos (nivel de lluvias que alimentan los embalses)</p></li>
+<li><p>Nivel de Embalses</p></li>
+<li><p>Generación Hidráulica Disponible</p></li>
+<li><p>Precio de Bolsa</p></li>
+<li><p>Generación Térmica Requerida</p></li>
+<li><p>Demanda de Gas Natural</p></li>
+<li><p>Precio del Gas</p></li>
+<li><p>Valor del Agua Percibido (expectativa de los generadores hidráulicos sobre el valor futuro del agua en embalses)</p></li>
+<li><p>Retención de Agua (decisión de los generadores de guardar agua para después)</p></li>
+<li><p>Intervención Regulatoria</p></li>
+<li><p>Confianza del Público</p></li>
+</ul>
+<p><strong>Lazo B1 — Balance hídrico normal:</strong>
+Aportes Hídricos →(+) Nivel de Embalses →(+) Generación Hidráulica Disponible →(−) Precio de Bolsa →(−) Generación Térmica Requerida →(−) Demanda de Gas Natural. Este es el funcionamiento normal: cuando llueve, los embalses suben, se genera más hidráulica, los precios bajan, y se necesita menos térmica. Ciclo de balance que busca el equilibrio.</p>
+<p><strong>Lazo R1 — Espiral de escasez (refuerzo):</strong>
+Precio de Bolsa →(+) Valor del Agua Percibido →(+) Retención de Agua →(−) Generación Hidráulica Disponible →(−) Precio de Bolsa. Leamos: si el precio sube, los generadores hidráulicos perciben que el agua vale más (podrían vender más caro después), retienen agua, lo que reduce la generación hidráulica disponible <em>ahora</em>, lo que sube el precio aún más. Dos flechas negativas (par) → <strong>ciclo de Refuerzo ®</strong>. Este es el ciclo perverso que amplificó la crisis.</p>
+<p><strong>Lazo R2 — Espiral térmica:</strong>
+Precio de Bolsa →(+) Generación Térmica Requerida →(+) Demanda de Gas Natural →(+) Precio del Gas →(+) Costos de Generación Térmica →(+) Precio de Bolsa. Cuando suben los precios, se despacha más térmica, lo cual sube la demanda (y el precio) del gas, lo cual encarece la generación térmica, lo cual sube los precios de bolsa. Cero flechas negativas → <strong>ciclo de Refuerzo ®</strong>.</p>
+<p><strong>Lazo B2 — Intervención regulatoria:</strong>
+Precio de Bolsa →(+) Presión Política →(+) Intervención Regulatoria →(−) Precio de Bolsa. Cuando los precios se disparan, la presión política lleva al regulador a intervenir (resoluciones de emergencia, topes de precio, obligaciones de generación), lo que reduce los precios. Ciclo de Balance. Pero la intervención llega con <em>retardo</em> y puede tener efectos secundarios no deseados.</p>
+<p><strong>El disparador externo:</strong>
+El fenómeno de El Niño reduce los <em>Aportes Hídricos</em>. Esto no es parte de un ciclo interno del sistema — es una perturbación externa que activa los ciclos. Pero la severidad de la crisis no se explica por la perturbación sola; se explica por los ciclos de refuerzo R1 y R2 que amplifican la perturbación.</p>
+</section>
+<section id="errores-comunes-en-la-construccion-de-clds">
+<h3>Errores comunes en la construcción de CLDs<a class="headerlink" href="#errores-comunes-en-la-construccion-de-clds" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Confundir correlación con causalidad:</strong> Una flecha en un CLD debe representar una relación <em>causal</em>, no una mera correlación. Que dos variables se muevan juntas no significa que una cause la otra.</p></li>
+<li><p><strong>Olvidar la pregunta “¿en el mismo sentido o en sentido contrario?”:</strong> La polaridad debe verificarse siempre con la pregunta: “Si A aumenta, <em>ceteris paribus</em>, ¿B aumenta (+) o disminuye (−)?”</p></li>
+<li><p><strong>Incluir demasiadas variables:</strong> Un CLD útil captura las variables y relaciones <em>esenciales</em>. Un CLD con 50 variables es ilegible y no aclara nada. Empezar con 5–8 variables y expandir según sea necesario.</p></li>
+<li><p><strong>Olvidar los retardos:</strong> Muchas relaciones causales no son instantáneas. El retardo entre inversión y capacidad instalada (3–5 años) es crucial para entender las oscilaciones. Los retardos se indican con dos líneas paralelas cruzando la flecha (‖).</p></li>
+<li><p><strong>Confundir variables con acciones:</strong> Las variables de un CLD son <em>magnitudes que pueden aumentar o disminuir</em> (Precio, Capacidad, Demanda), no acciones (construir, ofertar, regular). Las acciones son los mecanismos <em>detrás</em> de las flechas.</p></li>
+</ol>
+</section>
+</section>
+<hr class="docutils" />
+<section id="el-caso-de-la-semana-la-crisis-de-el-nino-20152016">
+<h2>5. El caso de la semana: La crisis de El Niño 2015–2016<a class="headerlink" href="#el-caso-de-la-semana-la-crisis-de-el-nino-20152016" title="Link to this heading">#</a></h2>
+<section id="narrativa-detallada">
+<h3>Narrativa detallada<a class="headerlink" href="#narrativa-detallada" title="Link to this heading">#</a></h3>
+<p>El fenómeno de El Niño es un calentamiento anómalo de las aguas superficiales del Océano Pacífico ecuatorial que reduce las precipitaciones en la región Andina colombiana. Colombia, con aproximadamente el 70% de su generación eléctrica proveniente de fuentes hidráulicas, es particularmente vulnerable a este fenómeno.</p>
+<p><strong>Cronología de la crisis:</strong></p>
+<p><em>Julio–septiembre 2015:</em> Las agencias meteorológicas internacionales confirman un episodio de El Niño en desarrollo, con pronósticos de intensidad entre fuerte y muy fuerte. Los embalses del SIN comienzan a descender. Los aportes hídricos caen al 60% de la media histórica.</p>
+<p><em>Octubre–diciembre 2015:</em> Los embalses caen por debajo del 50% de su capacidad útil agregada. XM activa protocolos de seguimiento reforzado. Los precios de bolsa, que habían estado alrededor de 150–200 COP/kWh, superan los 300 COP/kWh. El gobierno declara alerta naranja.</p>
+<p><em>Enero–marzo 2016:</em> Los aportes hídricos alcanzan mínimos históricos en varias cuencas. Los embalses caen por debajo del 30%. Los precios de bolsa superan los 500 COP/kWh, llegando a picos superiores a 700 COP/kWh. Se presentan restricciones de suministro de gas natural. Varias plantas térmicas no pueden arrancar o tienen que operar con combustibles líquidos (diésel, fuel oil) mucho más costosos. Se habla abiertamente de un posible racionamiento.</p>
+<p><em>Abril–mayo 2016:</em> Las lluvias regresan gradualmente. Los embalses comienzan a recuperarse. Los precios se normalizan lentamente. Colombia evitó el racionamiento, pero apenas.</p>
+<p><strong>Datos clave (fuente: XM, informes operativos 2015–2016):</strong></p>
+<ul class="simple">
+<li><p>El precio promedio de bolsa de 2015 fue ~180 COP/kWh; en el primer trimestre de 2016 superó los 450 COP/kWh.</p></li>
+<li><p>Los embalses agregados tocaron fondo alrededor del 27% de capacidad útil en marzo de 2016.</p></li>
+<li><p>La generación térmica pasó de cubrir ~20% de la demanda a más del 45% en los meses pico de la crisis.</p></li>
+<li><p>El sobrecosto para el sistema fue estimado en varios billones de pesos.</p></li>
+</ul>
+</section>
+<section id="por-que-fallo-el-analisis-convencional">
+<h3>¿Por qué falló el análisis convencional?<a class="headerlink" href="#por-que-fallo-el-analisis-convencional" title="Link to this heading">#</a></h3>
+<p>Los modelos de planificación del sector (como los de UPME y XM) utilizaban escenarios hidrológicos basados en series históricas y simulaciones estocásticas con distribuciones que subestimaban la probabilidad de sequías extremas. Los análisis de riesgo de los generadores utilizaban VPN con sensibilidades que no capturaban las retroalimentaciones entre precios, retención hídrica y restricciones de gas.</p>
+<p>Las razones fundamentales del fallo:</p>
+<ol class="arabic simple">
+<li><p><strong>No capturaban los ciclos de retroalimentación:</strong> Los modelos trataban cada variable (hidrología, precios, generación térmica) de forma relativamente independiente, sin modelar los ciclos R1 y R2 descritos arriba.</p></li>
+<li><p><strong>Asumían distribuciones gaussianas:</strong> La probabilidad de aportes tan bajos como los observados era considerada negligible bajo las distribuciones calibradas con la serie histórica “normal”.</p></li>
+<li><p><strong>No modelaban la adaptación de los agentes:</strong> Los generadores no son autómatas; cambian su comportamiento ante la crisis (retención de agua, acaparamiento de gas). Estos comportamientos estratégicos amplificaron la crisis.</p></li>
+<li><p><strong>Ignoraban los efectos no lineales:</strong> La relación entre nivel de embalses y precio no es lineal. Por debajo de cierto umbral (~35–40%), la relación se vuelve exponencial porque la escasez percibida se amplifica.</p></li>
+</ol>
+</section>
+<section id="analisis-a-traves-del-lente-de-la-complejidad">
+<h3>Análisis a través del lente de la complejidad<a class="headerlink" href="#analisis-a-traves-del-lente-de-la-complejidad" title="Link to this heading">#</a></h3>
+<p>Ahora veamos cómo cada concepto de la Sección 3 se manifiesta en la crisis:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Concepto</p></th>
+<th class="head"><p>Manifestación en la crisis</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Retroalimentación</strong></p></td>
+<td><p>Lazo R1 (espiral de escasez: precio ↑ → retención de agua ↑ → menos hidro disponible → precio ↑). Lazo R2 (espiral térmica: precio ↑ → más térmica → más demanda de gas → gas más caro → precio ↑).</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>No linealidad</strong></p></td>
+<td><p>La relación embalse-precio es exponencial por debajo del 35%. Un 5% menos de embalse puede duplicar el precio.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Emergencia</strong></p></td>
+<td><p>El nivel de precios de crisis no fue decidido por nadie — emergió de las interacciones de todos los agentes.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Adaptación</strong></p></td>
+<td><p>Los generadores hidráulicos retuvieron agua (aprendieron de crisis anteriores que el agua sería más valiosa después). Los térmicos buscaron contratos spot de gas. El regulador emitió resoluciones de emergencia.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Cisne negro</strong></p></td>
+<td><p>La intensidad de El Niño 2015–2016 fue una de las tres mayores registradas. Los modelos estándar no asignaban probabilidad significativa a ese escenario.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Dependencia del camino</strong></p></td>
+<td><p>La dependencia del sector de ~70% hidro (decisión histórica desde los 1960s-70s) determinó la vulnerabilidad. El <em>lock-in</em> en una matriz hidroeléctrica hizo al sistema estructuralmente frágil ante sequías.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Tipping point</strong></p></td>
+<td><p>Hubo un umbral de embalses (~28–30%) por debajo del cual la retención hídrica se volvió masiva y los precios entraron en espiral. Si se hubiera cruzado un umbral inferior, el racionamiento habría sido inevitable.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="tour-de-casos-internacionales">
+<h2>6. Tour de casos internacionales<a class="headerlink" href="#tour-de-casos-internacionales" title="Link to this heading">#</a></h2>
+<p>La complejidad no es exclusiva del sistema colombiano. Los siguientes casos internacionales ilustran cada uno de los conceptos de este capítulo y demuestran que las lecciones son universales.</p>
+<section id="blackout-del-noreste-de-ee-uu-agosto-2003-fallas-en-cascada">
+<h3>Blackout del Noreste de EE.UU. (agosto 2003): fallas en cascada<a class="headerlink" href="#blackout-del-noreste-de-ee-uu-agosto-2003-fallas-en-cascada" title="Link to this heading">#</a></h3>
+<p>El 14 de agosto de 2003, un apagón dejó sin electricidad a 55 millones de personas en el noreste de Estados Unidos y Canadá durante hasta 48 horas. La causa inicial fue trivial: unas líneas de transmisión en Ohio tocaron ramas de árboles no podadas. Pero el sistema de alarmas de la empresa FirstEnergy estaba caído (un <em>bug</em> de software), así que nadie detectó las fallas iniciales. La carga se redistribuyó a otras líneas, que se sobrecargaron y desconectaron, redistribuyendo la carga a las líneas restantes, que se sobrecargaron a su vez. En menos de 9 segundos, una falla local se propagó como una avalancha a través de la red de transmisión de todo el noreste del continente. Este caso ilustra la propiedad de los sistemas complejos en red de ser <strong>robustos pero frágiles</strong> (<em>robust-yet-fragile</em>): la red de transmisión es extremadamente robusta ante fallas aleatorias (un transformador aleatorio que falla no afecta al sistema), pero es frágil ante fallas en nodos críticos o ante <em>secuencias</em> específicas de fallas que activan cascadas.</p>
+</section>
+<section id="blackout-de-india-julio-2012-escala-y-fragilidad">
+<h3>Blackout de India (julio 2012): escala y fragilidad<a class="headerlink" href="#blackout-de-india-julio-2012-escala-y-fragilidad" title="Link to this heading">#</a></h3>
+<p>El 30 y 31 de julio de 2012, India sufrió los dos apagones más grandes de la historia. El primero afectó a 350 millones de personas; el segundo, al día siguiente, a 620 millones — casi el 10% de la población mundial. La causa combinó sobredemanda por una ola de calor, extracción excesiva de energía por parte de estados del norte que violaban sus cuotas asignadas, y una red de transmisión operando al límite de su capacidad. Este caso ilustra cómo la <strong>escala</strong> de un sistema complejo interconectado amplifica las consecuencias de fallas: un sistema que conecta a 1,300 millones de personas tiene modos de falla cualitativamente diferentes a uno que conecta a 50 millones. La interconexión que en tiempos normales permite compartir recursos eficientemente se convierte, en tiempos de estrés, en el canal por el que se propagan las fallas.</p>
+</section>
+<section id="blackout-de-espana-y-portugal-abril-2025-interdependencia">
+<h3>Blackout de España y Portugal (abril 2025): interdependencia<a class="headerlink" href="#blackout-de-espana-y-portugal-abril-2025-interdependencia" title="Link to this heading">#</a></h3>
+<p>El 28 de abril de 2025, un apagón masivo afectó a España y Portugal, dejando sin electricidad a aproximadamente 60 millones de personas durante varias horas. El evento, aún bajo investigación, ocurrió en un contexto de alta penetración de energía renovable variable (solar y eólica), desconexión de la interconexión con Francia, y una posible caída abrupta de generación solar combinada con oscilaciones de frecuencia que los mecanismos de inercia reducida del sistema no pudieron absorber. Este caso ilustra la <strong>interdependencia</strong> entre la transformación de la matriz energética y la estabilidad del sistema: la transición hacia renovables cambia la <em>naturaleza física</em> del sistema (menor inercia rotacional, mayor variabilidad) y crea nuevas vulnerabilidades que requieren nuevas soluciones sistémicas, no solo más capacidad instalada.</p>
+</section>
+<section id="la-energiewende-alemana-no-linealidad-y-tipping-points-en-la-adopcion-solar">
+<h3>La Energiewende alemana: no linealidad y tipping points en la adopción solar<a class="headerlink" href="#la-energiewende-alemana-no-linealidad-y-tipping-points-en-la-adopcion-solar" title="Link to this heading">#</a></h3>
+<p>Alemania inició su “giro energético” (<em>Energiewende</em>) en 2000 con la Ley de Energías Renovables (EEG), que estableció tarifas de alimentación (<em>feed-in tariffs</em>) garantizadas para energía solar. Durante la primera década, la penetración solar creció modestamente. Pero alrededor de 2010, la caída de costos de los módulos fotovoltaicos (que habían bajado ~75% en una década) cruzó un umbral de rentabilidad, y la adopción se aceleró dramáticamente: entre 2010 y 2013, Alemania instaló más capacidad solar que en toda la década anterior. Este caso ilustra un <strong>tipping point</strong> clásico: años de crecimiento lento seguidos de una transición explosiva cuando se cruza un umbral. También muestra la <strong>no linealidad</strong> de las transiciones: la reducción del subsidio que acompañó la caída de costos no frenó la adopción proporcionalmente, porque para entonces el ecosistema de instaladores, financiamiento y demanda social ya tenía masa crítica.</p>
+</section>
+<section id="lock-in-del-gas-natural-en-colombia-dependencia-del-camino">
+<h3>Lock-in del gas natural en Colombia: dependencia del camino<a class="headerlink" href="#lock-in-del-gas-natural-en-colombia-dependencia-del-camino" title="Link to this heading">#</a></h3>
+<p>Como discutimos en la Sección 3.6, Colombia desarrolló una infraestructura significativa de generación termoeléctrica a gas natural a partir de la década de 1990. Los gasoductos, las plantas, los contratos de suministro, las regulaciones (incluyendo el Cargo por Confiabilidad), los empleos y el conocimiento técnico generaron un ecosistema que se refuerza a sí mismo. Aun cuando las FNCER son ahora competitivas en costo, la transición enfrenta barreras sistémicas: falta de líneas de transmisión desde La Guajira, reglas del CxC diseñadas para firme térmico, contratos de largo plazo vigentes, y una cultura sectorial familiarizada con la operación térmica. Este caso colombiano es un ejemplo de <strong>dependencia del camino y <em>lock-in</em></strong> con implicaciones directas para los proyectos de los estudiantes del curso.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="mapa-del-curso-de-la-intuicion-a-las-herramientas">
+<h2>7. Mapa del curso: de la intuición a las herramientas<a class="headerlink" href="#mapa-del-curso-de-la-intuicion-a-las-herramientas" title="Link to this heading">#</a></h2>
+<p>Esta semana hemos construido una intuición cualitativa sobre la complejidad y sus conceptos clave. Hemos aprendido a “ver” retroalimentaciones, no linealidades, emergencia, adaptación, cisnes negros, dependencia del camino y tipping points en los sistemas energéticos. Y hemos introducido el CLD como primera herramienta para hacer visible la estructura del sistema.</p>
+<p>Pero la intuición y los CLDs no son suficientes para tomar decisiones. Necesitamos herramientas cuantitativas que nos permitan:</p>
+<ol class="arabic simple">
+<li><p><strong>Analizar la estructura de las conexiones</strong> del sistema (¿qué componentes están conectados? ¿cuáles son críticos? ¿qué pasa si falla uno?).</p></li>
+<li><p><strong>Simular el comportamiento en el tiempo</strong> del sistema (¿cómo evolucionan los precios, la capacidad, los embalses bajo diferentes escenarios y políticas?).</p></li>
+</ol>
+<p>Para la primera necesidad, usaremos <strong>análisis de redes complejas</strong> (Semanas 2 y 3). Para la segunda, usaremos <strong>dinámica de sistemas</strong> (Semanas 4 y 5). El curso se estructura así:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SEMANA 1: Complejidad (vocabulario, intuición, CLD)
+    ↓
+    Lo cualitativo es necesario, pero no suficiente.
+    Necesitamos formalizar la ESTRUCTURA y el COMPORTAMIENTO.
+    ↓
+┌──────────────────────────────┬──────────────────────────────────┐
+│  SEMANAS 2–3: REDES          │  SEMANAS 4–5: DINÁMICA           │
+│  (Estructura)                │  (Comportamiento en el tiempo)   │
+│                              │                                  │
+│  ¿Cómo están conectados     │  ¿Cómo cambian las variables     │
+│  los componentes?            │  en el tiempo?                   │
+│                              │                                  │
+│  ¿Qué nodos son críticos?   │  ¿Qué produce las oscilaciones?  │
+│                              │                                  │
+│  ¿Cómo se propagan fallas   │  ¿Qué efecto tiene una política? │
+│  o innovaciones?             │                                  │
+│                              │  ¿Qué escenarios son posibles?   │
+│  Herramientas: grafos,       │                                  │
+│  métricas, centralidad,      │  Herramientas: stocks, flujos,   │
+│  leyes de potencia,          │  ecuaciones diferenciales,       │
+│  fallas en cascada           │  simulación, escenarios          │
+│                              │                                  │
+│  Software: NetworkX          │  Software: scipy, mise_sd        │
+└──────────────────────────────┴──────────────────────────────────┘
+    ↓                              ↓
+    └──────────┬───────────────────┘
+               ↓
+    SEMANA 6: INTEGRACIÓN + GOBERNANZA
+    Las herramientas cuantitativas no capturan todo.
+    La dimensión social, ambiental y de gobernanza
+    completa el análisis sistémico.
+               ↓
+    SEMANAS 7–8: PROYECTO INTEGRADOR
+    Aplicar todo a un caso real colombiano.
+    Producir un informe de consultoría sistémica.
+</pre></div>
+</div>
+<section id="por-que-necesitamos-tanto-redes-como-dinamica-de-sistemas">
+<h3>¿Por qué necesitamos tanto redes como dinámica de sistemas?<a class="headerlink" href="#por-que-necesitamos-tanto-redes-como-dinamica-de-sistemas" title="Link to this heading">#</a></h3>
+<p>Cada herramienta captura una dimensión que la otra no:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Dimensión</p></th>
+<th class="head"><p>Redes</p></th>
+<th class="head"><p>Dinámica de Sistemas</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Pregunta central</p></td>
+<td><p>¿Cómo está <em>estructurado</em> el sistema?</p></td>
+<td><p>¿Cómo se <em>comporta</em> el sistema en el tiempo?</p></td>
+</tr>
+<tr class="row-odd"><td><p>Fortaleza</p></td>
+<td><p>Identifica quién está conectado con quién, qué nodos son críticos, cómo se propagan efectos por la estructura</p></td>
+<td><p>Simula cómo evolucionan las variables, captura retroalimentaciones y retardos, permite evaluar políticas</p></td>
+</tr>
+<tr class="row-even"><td><p>Limitación</p></td>
+<td><p>Es un <em>snapshot</em> estático (no muestra evolución temporal, excepto en modelos de dinámica sobre redes)</p></td>
+<td><p>No muestra la estructura de las conexiones individuales (trabaja con variables agregadas)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ejemplo</p></td>
+<td><p>“La subestación X es la más crítica del SIN”</p></td>
+<td><p>“Si se duplica el retardo de construcción, las oscilaciones de precio se amplifican”</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Para un análisis sistémico completo de un proyecto energético, necesitamos ambas. Las redes nos dicen <em>dónde</em> están los puntos vulnerables y las palancas de cambio en la estructura. La dinámica de sistemas nos dice <em>qué pasa</em> cuando activamos esas palancas en el tiempo. La Semana 6 integrará ambos enfoques con la dimensión de gobernanza y justicia energética.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="conceptos-clave-de-la-semana">
+<h2>8. Conceptos clave de la semana<a class="headerlink" href="#conceptos-clave-de-la-semana" title="Link to this heading">#</a></h2>
+<section id="mensajes-clave">
+<h3>Mensajes clave<a class="headerlink" href="#mensajes-clave" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Los sistemas energéticos son <strong>complejos</strong>, no meramente complicados. No podemos entenderlos analizando cada componente por separado; las interacciones generan comportamientos emergentes.</p></li>
+<li><p>El <strong>análisis convencional</strong> (VPN, TIR, sensibilidad estática) es necesario pero insuficiente. Falla cuando el sistema tiene retroalimentaciones, no linealidades, agentes que se adaptan, y eventos extremos de colas pesadas.</p></li>
+<li><p>Los siete conceptos de la complejidad — <strong>retroalimentación, no linealidad, emergencia, adaptación, cisnes negros, dependencia del camino y tipping points</strong> — son las lentes que necesitamos para analizar proyectos energéticos de forma más realista.</p></li>
+<li><p>El <strong>Diagrama de Lazos Causales (CLD)</strong> es nuestra primera herramienta para hacer visible la estructura causal de un sistema. No es cuantitativo, pero es imprescindible para pensar con claridad antes de modelar.</p></li>
+<li><p>La <strong>crisis de El Niño 2015–2016</strong> ilustra todos estos conceptos: retroalimentaciones que amplificaron la sequía, no linealidades en la relación embalse-precio, emergencia del nivel de precios, adaptación de generadores y reguladores, un evento extremo que los modelos no anticiparon, y la dependencia del camino de una matriz dominada por hidroelectricidad.</p></li>
+<li><p>Este curso ofrece tres herramientas progresivas: <strong>pensamiento complejo</strong> (cualitativo, esta semana) → <strong>redes</strong> (estructura, semanas 2–3) → <strong>dinámica de sistemas</strong> (comportamiento temporal, semanas 4–5) → <strong>integración con gobernanza</strong> (semana 6).</p></li>
+</ul>
+</section>
+<section id="glosario-de-terminos-introducidos">
+<h3>Glosario de términos introducidos<a class="headerlink" href="#glosario-de-terminos-introducidos" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Término en español</p></th>
+<th class="head"><p>Término en inglés</p></th>
+<th class="head"><p>Definición breve</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Adaptación</p></td>
+<td><p>Adaptation</p></td>
+<td><p>Capacidad de los agentes de un sistema de modificar su comportamiento basándose en la experiencia.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ciclo de balance</p></td>
+<td><p>Balancing loop (B)</p></td>
+<td><p>Ciclo de retroalimentación que contrarresta perturbaciones y busca un equilibrio.</p></td>
+</tr>
+<tr class="row-even"><td><p>Ciclo de refuerzo</p></td>
+<td><p>Reinforcing loop ®</p></td>
+<td><p>Ciclo de retroalimentación que amplifica perturbaciones, generando crecimiento o colapso.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cisne negro</p></td>
+<td><p>Black swan</p></td>
+<td><p>Evento raro, de alto impacto, e inesperado pero retrospectivamente explicable.</p></td>
+</tr>
+<tr class="row-even"><td><p>Colas pesadas</p></td>
+<td><p>Fat tails / Heavy tails</p></td>
+<td><p>Distribuciones de probabilidad donde los eventos extremos son más frecuentes que en una gaussiana.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Dependencia del camino</p></td>
+<td><p>Path dependence</p></td>
+<td><p>Condición donde el estado actual del sistema depende de su historia, no solo de las condiciones presentes.</p></td>
+</tr>
+<tr class="row-even"><td><p>Diagrama de Lazos Causales (CLD)</p></td>
+<td><p>Causal Loop Diagram</p></td>
+<td><p>Diagrama que muestra relaciones causales entre variables y los ciclos de retroalimentación que forman.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Efectos de memoria</p></td>
+<td><p>Memory effects</p></td>
+<td><p>Manifestación de la adaptación: el comportamiento del sistema depende de su trayectoria pasada.</p></td>
+</tr>
+<tr class="row-even"><td><p>Emergencia</p></td>
+<td><p>Emergence</p></td>
+<td><p>Propiedad del sistema como un todo que no puede atribuirse a ningún componente individual.</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Lock-in</em></p></td>
+<td><p>Lock-in</p></td>
+<td><p>Estado donde el sistema está atrapado en una solución subóptima debido a rendimientos crecientes de adopción, infraestructura hundida y complementariedades.</p></td>
+</tr>
+<tr class="row-even"><td><p>No linealidad</p></td>
+<td><p>Nonlinearity</p></td>
+<td><p>Ausencia de proporcionalidad entre causa y efecto; el sistema viola el principio de superposición.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Punto de inflexión</p></td>
+<td><p>Tipping point</p></td>
+<td><p>Umbral crítico más allá del cual el sistema transita a un régimen de comportamiento cualitativamente diferente.</p></td>
+</tr>
+<tr class="row-even"><td><p>Retroalimentación</p></td>
+<td><p>Feedback</p></td>
+<td><p>Estructura circular de causalidad donde la salida de un proceso influye en su propia entrada.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sistema adaptativo complejo</p></td>
+<td><p>Complex adaptive system (CAS)</p></td>
+<td><p>Sistema compuesto por agentes que interactúan, aprenden y producen propiedades emergentes.</p></td>
+</tr>
+<tr class="row-even"><td><p>Sistema complicado</p></td>
+<td><p>Complicated system</p></td>
+<td><p>Sistema con muchos componentes cuyo comportamiento es predecible con suficiente información.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sistema complejo</p></td>
+<td><p>Complex system</p></td>
+<td><p>Sistema donde las interacciones entre componentes generan comportamientos impredecibles a nivel macro.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="lecturas-recomendadas-para-esta-semana">
+<h3>Lecturas recomendadas para esta semana<a class="headerlink" href="#lecturas-recomendadas-para-esta-semana" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Meadows, D. (2008).</strong> <em>Thinking in Systems: A Primer.</em> Capítulos 1–2. — La introducción más accesible al pensamiento sistémico. Lectura obligatoria.</p></li>
+<li><p><strong>Taleb, N. N. (2007).</strong> <em>The Black Swan.</em> Extractos seleccionados. — La crítica definitiva a los modelos de riesgo basados en distribuciones gaussianas.</p></li>
+<li><p><strong>UPME. (2020).</strong> <em>Plan Energético Nacional 2020–2050.</em> Resumen ejecutivo. — Contexto del sector energético colombiano.</p></li>
+<li><p><strong>XM. (2016).</strong> <em>Informe de gestión de El Niño 2015–2016.</em> — Datos y narrativa oficial de la crisis.</p></li>
+<li><p><strong>Mitchell, M. (2009).</strong> <em>Complexity: A Guided Tour.</em> Capítulos 1–4. — Introducción rigurosa pero legible a la ciencia de la complejidad. Recomendada.</p></li>
+<li><p><strong>Sterman, J. (2000).</strong> <em>Business Dynamics.</em> Capítulo 1. — Motivación magistral de por qué necesitamos dinámica de sistemas. Recomendada.</p></li>
+</ol>
+<hr class="docutils" />
+<p><em>En la Semana 2 formalizaremos la estructura del sistema usando el lenguaje de las redes complejas. El mapa causal informal que dibujamos esta semana se convertirá en un grafo con métricas cuantitativas. Pasaremos de “el SIN es una red compleja” a “la subestación X tiene la mayor centralidad de intermediación del sistema, lo que la convierte en un cuello de botella crítico.” De la intuición a la medición.</em></p>
+</section>
+</section>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./semana_01"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../preludio/notebook.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Preludio — Los Cimientos Científicos</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="notebook.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">Semana 1: Complejidad — ¿Por qué los sistemas nos sorprenden?</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#marco-teorico-systems-analytics-mise-universidad-de-los-andes">Marco Teórico · Systems Analytics — MISE, Universidad de los Andes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#del-pensamiento-lineal-al-pensamiento-complejo-en-sistemas-energeticos">Del pensamiento lineal al pensamiento complejo en sistemas energéticos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apertura-por-que-necesitamos-pensar-diferente">1. Apertura: ¿Por qué necesitamos pensar diferente?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#los-limites-del-analisis-convencional">Los límites del análisis convencional</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#por-que-los-sistemas-energeticos-son-fundamentalmente-diferentes">¿Por qué los sistemas energéticos son fundamentalmente diferentes?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-rompecabezas-de-el-nino-20152016">El rompecabezas de El Niño 2015–2016</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complicado-vs-complejo-la-distincion-fundamental">2. Complicado vs. complejo: la distinción fundamental</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lo-complicado-muchas-partes-pero-predecible">Lo complicado: muchas partes, pero predecible</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lo-complejo-interacciones-que-generan-sorpresas">Lo complejo: interacciones que generan sorpresas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-sistema-electrico-colombiano-complicado-o-complejo">El sistema eléctrico colombiano: ¿complicado o complejo?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#los-conceptos-clave-de-la-complejidad">3. Los conceptos clave de la complejidad</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retroalimentacion-feedback">3.1 Retroalimentación (<em>feedback</em>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#no-linealidad">3.2 No linealidad</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#emergencia">3.3 Emergencia</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adaptacion-y-aprendizaje-efectos-de-memoria">3.4 Adaptación y aprendizaje (efectos de memoria)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cisnes-negros-y-eventos-extremos">3.5 Cisnes negros y eventos extremos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dependencia-del-camino-y-lock-in">3.6 Dependencia del camino y <em>lock-in</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#puntos-de-inflexion-tipping-points">3.7 Puntos de inflexión (<em>tipping points</em>)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-diagrama-de-lazos-causales-cld-primera-herramienta">4. El Diagrama de Lazos Causales (CLD): primera herramienta</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-un-cld-y-por-que-es-util">¿Qué es un CLD y por qué es útil?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notacion">Notación</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#como-leer-un-cld-trazar-la-historia">Cómo leer un CLD: trazar la historia</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-cld-de-la-crisis-de-el-nino-20152016">Ejemplo: CLD de la crisis de El Niño 2015–2016</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#errores-comunes-en-la-construccion-de-clds">Errores comunes en la construcción de CLDs</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-caso-de-la-semana-la-crisis-de-el-nino-20152016">5. El caso de la semana: La crisis de El Niño 2015–2016</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#narrativa-detallada">Narrativa detallada</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#por-que-fallo-el-analisis-convencional">¿Por qué falló el análisis convencional?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-a-traves-del-lente-de-la-complejidad">Análisis a través del lente de la complejidad</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tour-de-casos-internacionales">6. Tour de casos internacionales</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#blackout-del-noreste-de-ee-uu-agosto-2003-fallas-en-cascada">Blackout del Noreste de EE.UU. (agosto 2003): fallas en cascada</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#blackout-de-india-julio-2012-escala-y-fragilidad">Blackout de India (julio 2012): escala y fragilidad</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#blackout-de-espana-y-portugal-abril-2025-interdependencia">Blackout de España y Portugal (abril 2025): interdependencia</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-energiewende-alemana-no-linealidad-y-tipping-points-en-la-adopcion-solar">La Energiewende alemana: no linealidad y tipping points en la adopción solar</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lock-in-del-gas-natural-en-colombia-dependencia-del-camino">Lock-in del gas natural en Colombia: dependencia del camino</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mapa-del-curso-de-la-intuicion-a-las-herramientas">7. Mapa del curso: de la intuición a las herramientas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#por-que-necesitamos-tanto-redes-como-dinamica-de-sistemas">¿Por qué necesitamos tanto redes como dinámica de sistemas?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptos-clave-de-la-semana">8. Conceptos clave de la semana</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mensajes-clave">Mensajes clave</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#glosario-de-terminos-introducidos">Glosario de términos introducidos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lecturas-recomendadas-para-esta-semana">Lecturas recomendadas para esta semana</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por Maestria en Ingenieria de Sistemas Energeticos (MISE)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>Material del curso Analisis de Sistemas — MISE, Universidad de los Andes</p>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

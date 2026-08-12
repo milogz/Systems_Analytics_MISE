@@ -1,0 +1,901 @@
+
+<!DOCTYPE html>
+
+
+<html lang="es" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Semana 5 — Dinámica de Sistemas II: Políticas, Escenarios e Incertidumbre &#8212; Analisis de Sistemas para la Industria Energetica</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="../_static/documentation_options.js?v=78d55cf8"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Haz clic para mostrar';</script>
+    <script>let toggleHintHide = 'Haz clic para ocultar';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script src="../_static/translations.js?v=d190bf04"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'semana_05/lectura';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="next" title="Semana 5 — Dinámica de Sistemas II: Políticas, Escenarios e Incertidumbre" href="notebook.html" />
+    <link rel="prev" title="Semana 4 — Dinámica de Sistemas I: Stocks, Flujos y el Ciclo de Inversión" href="../semana_04/notebook.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Saltar al contenido principal</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Volver arriba</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Advertencia de versión"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Navegación del sitio">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="En esta página">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Analisis de Sistemas para la Industria Energetica</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Analisis de Sistemas para la Industria Energetica
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fundamentos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../preludio/lectura.html">Preludio — Los Cimientos Científicos del Análisis de Sistemas Complejos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../preludio/notebook.html">Preludio — Los Cimientos Científicos</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semana 1: Que Significa Sistemico</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../semana_01/lectura.html">Semana 1 — ¿Qué es la complejidad y por qué importa en energía?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../semana_01/notebook.html">Semana 1: Complejidad — ¿Por qué los sistemas nos sorprenden?</a></li>
+
+
+
+
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semana 2: Redes I — Topologia y Vulnerabilidades</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../semana_02/lectura.html">Semana 2 — Redes complejas: la estructura oculta de los sistemas energéticos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../semana_02/notebook.html">Semana 2: Redes y Topología</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semana 3: Redes II — Actores y Difusion</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../semana_03/lectura.html">Semana 3 — Dinámica sobre Redes y Redes de Actores: Más Allá de la Estructura Estática</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../semana_03/notebook.html">Semana 3: Dinámica sobre Redes</a></li>
+
+
+
+
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semana 4: Dinamica de Sistemas I</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../semana_04/lectura.html">Semana 4 — Dinámica de Sistemas I: Stocks, Flujos y el Ciclo de Inversión</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../semana_04/notebook.html">Semana 4 — Dinámica de Sistemas I: Stocks, Flujos y el Ciclo de Inversión</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semana 5: Dinamica de Sistemas II — Politicas y Escenarios</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Semana 5 — Dinámica de Sistemas II: Políticas, Escenarios e Incertidumbre</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebook.html">Semana 5 — Dinámica de Sistemas II: Políticas, Escenarios e Incertidumbre</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Cierre e Integracion</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../cierre/integracion.html">Cierre e Integracion (Semanas 6-8)</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/YOUR_USER/Systems_Analytics_MISE" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Repositorio de origen"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/semana_05/lectura.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Descargar archivo fuente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir en PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Tema" data-bs-title="Tema"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Claro"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Oscuro"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="Sistema"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Semana 5 — Dinámica de Sistemas II: Políticas, Escenarios e Incertidumbre</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#marco-teorico-systems-analytics-mise-universidad-de-los-andes">Marco Teórico · Systems Analytics — MISE, Universidad de los Andes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apertura-funciono-el-cargo-por-confiabilidad">1. Apertura: ¿Funcionó el Cargo por Confiabilidad?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intervenciones-de-politica-en-modelos-sd">2. Intervenciones de política en modelos SD</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-jerarquia-de-los-puntos-de-apalancamiento">La Jerarquía de los Puntos de Apalancamiento</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-cxc-como-intervencion-sistemica">3. El CxC como intervención sistémica</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-mecanica-estructural-del-cxc">La mecánica estructural del CxC</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-paradoja-del-lock-in-termico">La paradoja del Lock-in Térmico</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fncer-la-disrupcion-renovable">4. FNCER: la disrupción renovable</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-nuevo-loop-la-espiral-deflacionaria-termica">El nuevo loop: La espiral deflacionaria térmica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dinamica-de-costos-la-curva-de-aprendizaje">Dinámica de costos: La curva de aprendizaje</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#escenarios-pensar-en-futuros-radicalmente-diferentes">5. Escenarios: pensar en futuros radicalmente diferentes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#robustez-sobre-optimalidad">6. Robustez sobre optimalidad</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-tabla-de-robustez-y-el-minimax-regret">La Tabla de Robustez y el Minimax Regret</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-sensibilidad">7. Análisis de sensibilidad</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-caso-cxc-fncer-bajo-4-escenarios">8. El caso: CxC + FNCER bajo 4 escenarios</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cierre-del-modulo-sd">9. Cierre del módulo SD</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#glosario-completo">Glosario Completo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">Referencias</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="semana-5-dinamica-de-sistemas-ii-politicas-escenarios-e-incertidumbre">
+<h1>Semana 5 — Dinámica de Sistemas II: Políticas, Escenarios e Incertidumbre<a class="headerlink" href="#semana-5-dinamica-de-sistemas-ii-politicas-escenarios-e-incertidumbre" title="Link to this heading">#</a></h1>
+<section id="marco-teorico-systems-analytics-mise-universidad-de-los-andes">
+<h2>Marco Teórico · Systems Analytics — MISE, Universidad de los Andes<a class="headerlink" href="#marco-teorico-systems-analytics-mise-universidad-de-los-andes" title="Link to this heading">#</a></h2>
+</section>
+<hr class="docutils" />
+<section id="apertura-funciono-el-cargo-por-confiabilidad">
+<h2>1. Apertura: ¿Funcionó el Cargo por Confiabilidad?<a class="headerlink" href="#apertura-funciono-el-cargo-por-confiabilidad" title="Link to this heading">#</a></h2>
+<p>El Cargo por Confiabilidad (CxC), implementado mediante la Resolución CREG 071 de 2006, representa una de las intervenciones de política más significativas, complejas y debatidas en la historia del mercado eléctrico colombiano. Para comprender su impacto desde la perspectiva de la analítica de sistemas, debemos retroceder a los orígenes del mercado mayorista y entender el problema estructural que el CxC pretendía resolver. Tras el severo racionamiento eléctrico de 1992-1993, ocasionado por el fenómeno de El Niño y exacerbado por la falta de previsión y el deterioro del parque generador público, Colombia reestructuró su sector eléctrico. Se pasó de un monopolio estatal a un mercado competitivo, inspirado en las reformas del Reino Unido.</p>
+<p>En este nuevo diseño, se adoptó inicialmente un esquema de mercado de energía (“energy-only market”) complementado con un cargo por capacidad. Sin embargo, se hizo evidente con el tiempo que un mercado que solo remunera la energía generada no proveía incentivos suficientes ni señales de largo plazo adecuadas para garantizar la expansión óptima de la capacidad de respaldo, específicamente la capacidad térmica necesaria para cubrir la demanda durante eventos de sequía extrema. En un país donde cerca del 70% de la energía proviene de fuentes hidroeléctricas, la vulnerabilidad hidrológica es el principal riesgo sistémico. Las termoeléctricas (a gas, carbón o líquidos) operan pocas horas al año durante periodos de hidrología normal, lo que significa que sus ingresos son esporádicos y altamente inciertos. Sin una garantía de ingresos fijos, los inversionistas no tienen el caso de negocio para construir plantas costosas que podrían estar apagadas el 80% del tiempo, a pesar de que el sistema las necesita desesperadamente durante un Niño.</p>
+<p>El diseño del CxC introdujo un cambio fundamental en las reglas del juego: un pago fijo (expresado en dólares por megavatio-hora, USD/MWh) a los generadores por mantener una “capacidad firme” disponible. A cambio de este pago constante y predecible que estabiliza sus flujos de caja, los generadores asumen la obligación de entregar energía al sistema a un precio predeterminado (el Precio de Escasez) cuando el precio de bolsa supera este umbral. Esta intervención buscaba mitigar el riesgo de inversión para las tecnologías de respaldo, asegurando así la confiabilidad del suministro eléctrico ante las peores condiciones climáticas.</p>
+<p>Desde su implementación, el CxC ha superado varias pruebas de estrés, incluyendo los intensos fenómenos de El Niño de 2009-2010 y 2015-2016. Durante estas crisis, el país evitó el racionamiento, lo cual es frecuentemente citado por la Comisión de Regulación de Energía y Gas (CREG) y los defensores del mecanismo como prueba innegable de su éxito. El sistema demostró ser resiliente, y las plantas térmicas, en su mayoría, respondieron cuando fueron llamadas a despachar.</p>
+<p>Sin embargo, al analizar los datos recientes de la evolución de la matriz energética y observar los resultados de las subastas de expansión y de Fuentes No Convencionales de Energía Renovable (FNCER) realizadas entre 2019 y 2024, surge una paradoja crítica desde la perspectiva de la dinámica de sistemas y la teoría de la dependencia del camino (<em>path dependence</em>). La pregunta fundamental es: ¿el CxC estabilizó el sistema de forma eficiente, o creó un <em>lock-in</em> (bloqueo) tecnológico hacia la generación térmica convencional?</p>
+<p>Al asegurar ingresos estables a largo plazo para las plantas térmicas fósiles, la política pudo haber retrasado involuntariamente la adopción de tecnologías renovables más limpias. Las métricas para definir la Energía Firme para el Cargo por Confiabilidad (ENFICC) favorecen inherentemente a las tecnologías despachables y penalizan a las tecnologías intermitentes como la solar y la eólica, cuyas ENFICC resultan ser fracciones pequeñas de su capacidad instalada real. Esto alteró los ciclos de inversión natural del mercado. Mientras en otros mercados las renovables experimentaban un auge impulsado por la caída radical de sus costos de capital, en Colombia el esquema regulatorio seguía atrayendo capital primariamente hacia plantas de gas y líquidos para asegurar la confiabilidad, creando dependencias estructurales a largo plazo (contratos de suministro de combustibles, infraestructura de ductos, lobbies institucionales).</p>
+<p>La Ley 2099 de 2021 (Ley de Transición Energética) y resoluciones posteriores han intentado nivelar el campo de juego, integrando el almacenamiento y ajustando las reglas para promover las FNCER. Pero la paradoja persiste: las políticas diseñadas para resolver la crisis de ayer a menudo se convierten en las barreras para la innovación de mañana. En las próximas secciones, desglosaremos esta dinámica utilizando el lenguaje de stocks, flujos y lazos de retroalimentación.</p>
+</section>
+<hr class="docutils" />
+<section id="intervenciones-de-politica-en-modelos-sd">
+<h2>2. Intervenciones de política en modelos SD<a class="headerlink" href="#intervenciones-de-politica-en-modelos-sd" title="Link to this heading">#</a></h2>
+<p>En el ámbito de la Dinámica de Sistemas (SD), un modelo no es solo una representación pasiva del mundo; es un laboratorio virtual para la experimentación de políticas. Una política se entiende como un cambio deliberado, exógeno o endógeno, en la estructura o en los parámetros del sistema, diseñado con el fin explícito de modificar su comportamiento futuro, corregir trayectorias indeseables o mitigar oscilaciones perniciosas. Para intervenir eficazmente, el analista debe entender con precisión quirúrgica dónde se “inserta” la política en el diagrama de Stocks y Flujos (S&amp;F).</p>
+<p>En la arquitectura matemática y conceptual de un modelo SD, existen cuatro tipos principales de intervenciones o “puntos de palanca”, ordenados desde el más superficial hasta el más profundo:</p>
+<ol class="arabic simple">
+<li><p><strong>Sobre flujos (Cambio de Parámetros):</strong> Esta es la forma más común y tradicional de intervención gubernamental. Actúa alterando las constantes o parámetros que rigen las tasas de cambio (los flujos) sin alterar la estructura topológica del modelo.</p>
+<ul class="simple">
+<li><p><em>Ejemplos:</em> Cambiar la tasa de un impuesto a las emisiones de carbono, incrementar un subsidio a los bienes de capital para plantas solares, ajustar la tasa de interés de referencia.</p></li>
+<li><p><em>Dinámica:</em> Matemáticamente, esto cambia el valor de <span class="math notranslate nohighlight">\(k\)</span> en una ecuación diferencial como <span class="math notranslate nohighlight">\(\frac{dS}{dt} = k \cdot S\)</span>. El impacto suele ser cuantitativo, pero rara vez cambia cualitativamente el régimen del sistema.</p></li>
+</ul>
+</li>
+<li><p><strong>Sobre stocks (Amortiguadores y Reservas):</strong> Implica modificar físicamente los niveles de acumulación, ya sea inyectando o extrayendo recursos del sistema de forma directa, o estableciendo nuevas capacidades de almacenamiento estratégico.</p>
+<ul class="simple">
+<li><p><em>Ejemplos:</em> La construcción de una planta regasificadora (FSRU) como la de SPEC en Cartagena, que actúa como un amortiguador (<em>buffer</em>) para el stock de gas natural disponible en el país; o las reservas estratégicas de petróleo.</p></li>
+<li><p><em>Dinámica:</em> Aumenta la inercia del sistema, permitiendo absorber shocks externos (como la interrupción de un gasoducto o una sequía) antes de que estos se propaguen como señales extremas de precios.</p></li>
+</ul>
+</li>
+<li><p><strong>Sobre información (Señales y Retardos):</strong> Modifica la forma en que los actores dentro del sistema perciben el estado del mundo y toman decisiones. Esto implica alterar la red de conexiones de información (las flechas delgadas en un diagrama S&amp;F).</p>
+<ul class="simple">
+<li><p><em>Ejemplos:</em> Reducir los tiempos de trámite de licencias ambientales (disminuyendo un retardo material), implementar medidores inteligentes (smart meters) que brinden señales de precio en tiempo real a los consumidores, o publicar reportes diarios de disponibilidad hídrica.</p></li>
+<li><p><em>Dinámica:</em> Reducir los retardos (<em>delays</em>) de información o de percepción frecuentemente ayuda a estabilizar los sistemas oscilatorios. Cuando los agentes reaccionan a información más fresca, se reduce el sobreimpulso (<em>overshoot</em>) característico de los ciclos de inversión.</p></li>
+</ul>
+</li>
+<li><p><strong>Sobre estructura (Regulación y Nuevas Reglas):</strong> La intervención más profunda. Implica rediseñar el mapa causal, añadiendo nuevos ciclos de retroalimentación, eliminando ciclos existentes o cambiando el objetivo intrínseco del sistema.</p>
+<ul class="simple">
+<li><p><em>Ejemplos:</em> Pasar de un mercado de energía puro a uno con mercado de capacidad (como el CxC); implementar normativas de despacho vinculantes; establecer subastas de contratación a largo plazo exclusivas para tecnologías limpias.</p></li>
+<li><p><em>Dinámica:</em> Altera radicalmente las ecuaciones diferenciales que gobiernan el sistema, creando dinámicas de convergencia donde antes había divergencia, o introduciendo nuevas interacciones no lineales.</p></li>
+</ul>
+</li>
+</ol>
+<p>A continuación, resumimos estas intervenciones en el contexto del sector eléctrico:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Política / Intervención</p></th>
+<th class="head text-left"><p>Dónde actúa en el modelo (Estructura S&amp;F)</p></th>
+<th class="head text-left"><p>Qué ciclo (loop) de retroalimentación modifica</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><strong>Subsidios de capital a FNCER</strong></p></td>
+<td class="text-left"><p>Parámetro en el flujo de decisión de inversión</p></td>
+<td class="text-left"><p>Acelera el ciclo de refuerzo ® de adopción y aprendizaje tecnológico</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Cargo por Confiabilidad (CxC)</strong></p></td>
+<td class="text-left"><p>Crea un nuevo flujo de ingresos estable (Información/Estructura)</p></td>
+<td class="text-left"><p>Atenúa el ciclo de balance (B) con retardo (oscilaciones de capacidad); crea un loop de refuerzo de incumbencia térmica</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Transparencia de datos de embalses</strong></p></td>
+<td class="text-left"><p>Conector de información hacia expectativas</p></td>
+<td class="text-left"><p>Acorta los retardos en el ciclo de fijación de precios, reduciendo oscilaciones a corto plazo</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Subastas de Contratos de Largo Plazo (PPA)</strong></p></td>
+<td class="text-left"><p>Nueva estructura en la asignación de riesgo</p></td>
+<td class="text-left"><p>Transforma la decisión de inversión de un proceso de mercado spot a un proceso planificado centralizado</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="la-jerarquia-de-los-puntos-de-apalancamiento">
+<h3>La Jerarquía de los Puntos de Apalancamiento<a class="headerlink" href="#la-jerarquia-de-los-puntos-de-apalancamiento" title="Link to this heading">#</a></h3>
+<p>Esta tipología resuena profundamente con el célebre ensayo de la pensadora de sistemas Donella Meadows, <em>“Leverage Points: Places to Intervene in a System”</em> (1999). Meadows identificó 12 niveles de intervención, argumentando que los analistas y los políticos suelen gastar enormes cantidades de energía peleando en los niveles de menor apalancamiento (como ajustar los parámetros, tarifas y subsidios, es decir, intervenciones sobre los flujos), cuando en realidad estos cambios rara vez resuelven problemas estructurales.</p>
+<p>Si un sistema eléctrico es propenso a ciclos inestables debido a sus profundos retardos de construcción y a su inelasticidad de demanda, un subsidio o un impuesto solo moverá las oscilaciones un poco hacia arriba o hacia abajo, pero no las detendrá.</p>
+<p>Por el contrario, los puntos de mayor apalancamiento residen en el rediseño de las reglas (la regulación que altera la estructura S&amp;F) y los objetivos del sistema. El diseño del Cargo por Confiabilidad, al cambiar las reglas fundamentales de cómo se remunera el capital, actuó en un nivel alto de apalancamiento. Cambió la meta implícita de los inversionistas de “maximizar las ventas de energía cuando los precios son altos” a “asegurar el pago por capacidad minimizando los costos de disponibilidad”.</p>
+<p>Entender que “cambiar parámetros es débil, pero cambiar la estructura del sistema es poderoso” es la lección principal del modelado de políticas. Nos obliga a buscar soluciones que modifiquen la red causal, en lugar de simplemente inyectar dinero para forzar al sistema en contra de su propia tendencia natural.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="el-cxc-como-intervencion-sistemica">
+<h2>3. El CxC como intervención sistémica<a class="headerlink" href="#el-cxc-como-intervencion-sistemica" title="Link to this heading">#</a></h2>
+<p>Para visualizar verdaderamente el impacto del Cargo por Confiabilidad, debemos mapearlo como una intervención sistémica sobre el diagrama base del mercado eléctrico. Recordemos de la semana anterior que el mercado de energía “energy-only” sufre de un bucle pernicioso: el ciclo de Inversión y Escasez.</p>
+<p>En el modelo sin CxC, la decisión de construir una nueva planta térmica dependía de proyectar el precio spot (precio de bolsa) a futuro. Dado que las térmicas (especialmente las de ciclo simple) solo despachan en escasez, su viabilidad requería proyectar precios spot astronómicos durante eventos de El Niño.
+El lazo de retroalimentación era: <em>Menor Margen de Reserva → Mayor Probabilidad de Escasez → Mayores Precios Spot Proyectados → Aumenta Rentabilidad Esperada → Inicio de Inversión Térmica → (Retardo de Construcción) → Aumento de Capacidad → Aumenta Margen de Reserva.</em>
+Este es un clásico ciclo de balance (B) con un gran retardo, que matemáticamente genera oscilaciones violentas (<em>boom and bust</em>), donde largos periodos de sequía de inversión son seguidos por pánicos y sobre-construcción.</p>
+<section id="la-mecanica-estructural-del-cxc">
+<h3>La mecánica estructural del CxC<a class="headerlink" href="#la-mecanica-estructural-del-cxc" title="Link to this heading">#</a></h3>
+<p>El Cargo por Confiabilidad intervino en esta estructura modificando radicalmente las reglas de remuneración. Se diseñó como un esquema de opciones (call options) de confiabilidad. Los generadores reciben un pago fijo regular (el Cargo) por la cantidad de Energía Firme (ENFICC) que pueden certificar. A cambio, cuando el precio de bolsa supera el “Precio de Escasez”, ellos deben devolver la diferencia, asegurando así a la demanda.</p>
+<p>Al mapear el CxC en nuestro modelo S&amp;F, añadimos un nuevo flujo continuo de “Ingresos por Capacidad” a la ecuación de caja de las termoeléctricas, paralelo al esporádico flujo de “Ingresos Spot”.</p>
+<p>El lazo que se crea es un potente ciclo estabilizador:</p>
+<ol class="arabic simple">
+<li><p><strong>Ingreso fijo y garantizado</strong> proveniente del CxC.</p></li>
+<li><p><strong>Reducción sustancial del riesgo financiero</strong> (menor costo promedio ponderado de capital, WACC).</p></li>
+<li><p><strong>Incentivo constante para la inversión y el mantenimiento</strong> de capacidad firme.</p></li>
+<li><p><strong>Disponibilidad térmica asegurada</strong> incluso en ausencia de altas rentas de escasez.</p></li>
+</ol>
+<p>Esto soluciona elegantemente el problema del <em>missing money</em> (dinero faltante) típico de los mercados marginalistas, amortiguando las oscilaciones de la inversión térmica. Al simular el modelo con esta intervención, las curvas de capacidad instalada se alisan; el margen de reserva se mantiene más cercano al nivel óptimo regulatorio y los picos extremos de precios al consumidor durante las sequías se recortan mediante el techo del Precio de Escasez.</p>
+</section>
+<section id="la-paradoja-del-lock-in-termico">
+<h3>La paradoja del Lock-in Térmico<a class="headerlink" href="#la-paradoja-del-lock-in-termico" title="Link to this heading">#</a></h3>
+<p>Sin embargo, como dicta un axioma informal de la dinámica de sistemas, “las soluciones de hoy son los problemas de mañana”. El CxC, al funcionar exactamente como se diseñó, introdujo consecuencias sistémicas no previstas a largo plazo.</p>
+<p>La metodología para calcular la ENFICC —la métrica de cuánta firmeza aporta una planta— fue calibrada basándose en perfiles de tecnologías convencionales (hídrica con embalse y termoeléctrica). Las plantas térmicas a gas y carbón pueden certificar altos niveles de ENFICC en relación con su capacidad instalada, otorgándoles flujos de caja masivos provenientes del esquema.</p>
+<p>En contraste, cuando las renovables intermitentes (solar fotovoltaica y eólica) empezaron a volverse competitivas en el mundo, en Colombia enfrentaron una barrera sistémica. Debido a su variabilidad, se les asignó metodológicamente una ENFICC baja. Por lo tanto, un inversionista que evaluara un proyecto solar en Colombia encontraba que no podía acceder a la misma tajada del generoso pago por confiabilidad que subsidiaba a las térmicas.</p>
+<p>Este bucle estabilizador para las térmicas se convirtió en un mecanismo de exclusión implícita. Las termoeléctricas, con ingresos garantizados a 10 o 20 años, afianzaron su posición dominante, justificando la firma de contratos rígidos de largo plazo para suministro de gas natural y carbón, y promoviendo la expansión de gasoductos (infraestructura hundida). Todo este ecosistema forma un ciclo de refuerzo (<em>lock-in</em> institucional y físico):
+<em>Ingresos CxC → Inversión térmica y contratos de gas a largo plazo → Lobby y poder de mercado de incumbentes fósiles → Regulación que mantiene la centralidad de la energía firme tradicional → Más ingresos CxC.</em></p>
+<p>La paradoja es clara: el CxC es una política de enorme éxito para garantizar la luz en los Niños históricos, pero al mitigar tan eficientemente el riesgo fósil, actuó como un bloqueador de la transición energética al desincentivar la penetración acelerada de fuentes alternativas. Esto ilustra magistralmente cómo la robustez estática (asegurar el corto plazo) puede comprometer la resiliencia evolutiva (adaptarse a nuevas tecnologías a largo plazo).</p>
+</section>
+</section>
+<section id="fncer-la-disrupcion-renovable">
+<h2>4. FNCER: la disrupción renovable<a class="headerlink" href="#fncer-la-disrupcion-renovable" title="Link to this heading">#</a></h2>
+<p>A pesar de las inercias estructurales como el Cargo por Confiabilidad, la revolución de las Fuentes No Convencionales de Energía Renovable (FNCER) terminó llegando a Colombia, impulsada principalmente por tendencias tecnológicas globales indetenibles. La dinámica de sistemas nos proporciona las herramientas ideales para entender por qué la inserción masiva de energía solar fotovoltaica y eólica no es simplemente una adición a la matriz energética, sino una disrupción que altera fundamentalmente el comportamiento del mercado en su conjunto.</p>
+<p>La característica económica definitoria de la energía solar y eólica es que tienen costos de capital (CAPEX) significativos, pero un costo marginal de operación (OPEX y costo de combustible) prácticamente de cero. El sol y el viento son gratuitos y no requieren extracción, transporte ni procesamiento. En un mercado eléctrico liberalizado como el colombiano, donde el despacho de las plantas se realiza siguiendo el “orden de mérito” —se despachan primero las plantas más baratas y el precio de bolsa es fijado por la planta más cara necesaria para cubrir la demanda—, el impacto de los costos marginales cero es profundo.</p>
+<p>Cuando entran en operación grandes bloques de capacidad FNCER, estas plantas se ubican al principio del orden de mérito. Esto desplaza sistemáticamente la curva de oferta agregada hacia la derecha. El resultado inmediato es el famoso <strong><em>merit order effect</em> (efecto del orden de mérito)</strong>: las plantas térmicas, con sus altos costos de combustibles fósiles, son empujadas fuera del despacho base, y el precio de compensación del mercado (precio spot) disminuye drásticamente, especialmente durante las horas de sol o alta pluviosidad.</p>
+<section id="el-nuevo-loop-la-espiral-deflacionaria-termica">
+<h3>El nuevo loop: La espiral deflacionaria térmica<a class="headerlink" href="#el-nuevo-loop-la-espiral-deflacionaria-termica" title="Link to this heading">#</a></h3>
+<p>Este fenómeno introduce un nuevo e importantísimo lazo de retroalimentación en el sistema. Anteriormente, las termoeléctricas dependían de las horas marginales para rentabilizar sus inversiones por encima del CxC. Ahora enfrentamos este ciclo:</p>
+<ol class="arabic simple">
+<li><p><strong>Entrada de mayor capacidad FNCER.</strong></p></li>
+<li><p><strong>Mayor oferta con costo marginal nulo.</strong></p></li>
+<li><p><strong>Caída del precio spot promedio en el mercado mayorista.</strong></p></li>
+<li><p><strong>Desplazamiento y menor despacho de las plantas térmicas (menor factor de planta).</strong></p></li>
+<li><p><strong>Reducción drástica de los ingresos y rentabilidad de la generación térmica.</strong></p></li>
+<li><p><strong>Las térmicas se vuelven comercialmente menos atractivas y el capital huye hacia las renovables.</strong></p></li>
+</ol>
+<p>Este es un <strong>ciclo de refuerzo ®</strong> que actúa en detrimento de la tecnología incumbente. A medida que las FNCER hunden los precios spot, destruyen el caso de negocio de cualquier futura inversión térmica sin fuertes subsidios estatales. Algunos académicos han alertado sobre el riesgo de una “espiral deflacionaria”, donde el mercado pierde tanta capacidad térmica (que se retira prematuramente por falta de ingresos operativos) que la confiabilidad del sistema ante una sequía (cuando el sol no brilla lo suficiente o hay intermitencia prolongada) queda seriamente comprometida. Esta es la tensión fundamental de la transición energética moderna.</p>
+</section>
+<section id="dinamica-de-costos-la-curva-de-aprendizaje">
+<h3>Dinámica de costos: La curva de aprendizaje<a class="headerlink" href="#dinamica-de-costos-la-curva-de-aprendizaje" title="Link to this heading">#</a></h3>
+<p>Para modelar la penetración de las FNCER de manera realista, no podemos tratar su costo como una constante exógena. Históricamente, el costo de los módulos solares y turbinas eólicas ha experimentado descensos exponenciales asombrosos. En dinámica de sistemas, esto se modela utilizando la <strong>Ley de Wright</strong> o curvas de aprendizaje (<em>learning curves</em>).</p>
+<p>La Ley de Wright postula que por cada duplicación en la capacidad acumulada producida de una tecnología a nivel global, su costo unitario cae en un porcentaje constante (la tasa de aprendizaje, que ronda el 20-25% para la energía solar fotovoltaica). Esto genera un poderoso ciclo virtuoso:
+<em>Mayor adopción global → Mayor experiencia en manufactura, economías de escala e innovación → Caída en los costos de capital (CAPEX) → Aumento de la competitividad frente a tecnologías fósiles → Mayor adopción global.</em></p>
+<p>En nuestro modelo, las FNCER se representan como un nuevo <strong>stock</strong> de capacidad. Su dinámica de crecimiento es diferente a la de las hidráulicas y térmicas: están impulsadas fuertemente por la caída de costos (flujo de inversión facilitado) y políticas de subastas de largo plazo (como las exitosas rondas promovidas en Colombia desde 2019). Este stock interactúa con el sistema antiguo robándole participación de mercado y reescribiendo la ecuación de formación de precios.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="escenarios-pensar-en-futuros-radicalmente-diferentes">
+<h2>5. Escenarios: pensar en futuros radicalmente diferentes<a class="headerlink" href="#escenarios-pensar-en-futuros-radicalmente-diferentes" title="Link to this heading">#</a></h2>
+<p>Al integrar el comportamiento de las tecnologías tradicionales, la intervención regulatoria (CxC) y las disrupciones tecnológicas (FNCER), nuestro modelo de dinámica de sistemas se vuelve capaz de simular trayectorias ricas y complejas. Sin embargo, surge un problema epistemológico masivo: los resultados del modelo dependen de los parámetros de entrada. ¿Cómo introducimos el crecimiento de la demanda para el 2040? ¿Cuál será el precio internacional del gas natural? ¿Qué tan frecuente será el fenómeno de El Niño?</p>
+<p>En la planificación convencional (evaluación de proyectos clásica), la tendencia ha sido hacer pronósticos. Se toma una tendencia histórica, se le aplica un modelo econométrico, se calcula un escenario “base” y tal vez se añaden variaciones estocásticas asumiendo distribuciones de probabilidad normales.</p>
+<p>Frank Knight, en su obra seminal <em>Risk, Uncertainty and Profit</em> (1921), y más tarde John Maynard Keynes, trazaron una distinción filosófica y práctica que es central para la analítica de sistemas: la diferencia entre <strong>riesgo</strong> e <strong>incertidumbre profunda</strong> (<em>deep uncertainty</em>).</p>
+<ul class="simple">
+<li><p><strong>Riesgo</strong> se refiere a situaciones donde no conocemos el resultado específico, pero conocemos todas las posibilidades y podemos asignarles distribuciones de probabilidad rigurosas basadas en datos históricos. (Ej. Tirar un dado, o la hidrología histórica colombiana asumiendo clima estacionario).</p></li>
+<li><p><strong>Incertidumbre Profunda</strong> se refiere a situaciones donde el sistema es tan complejo, o los cambios estructurales son tan inéditos (cambio climático, disrupción tecnológica masiva, geopolítica), que ni siquiera podemos acordar un modelo único, los resultados posibles, o las probabilidades. No podemos usar promedios matemáticos de manera sensata.</p></li>
+</ul>
+<p>Para abordar la política energética bajo incertidumbre profunda, debemos abandonar la pretensión de predecir el futuro mediante proyecciones puntuales, y abrazar el <strong>pensamiento de escenarios</strong>.</p>
+<p>Un escenario no es una predicción, ni un caso “alto, medio, bajo” de una sola variable. Es una narrativa coherente sobre un futuro cualitativamente distinto, construida combinando conjuntos plausibles de variables exógenas. Esta metodología fue pionera por los equipos de planeación estratégica de Royal Dutch Shell en la década de 1970, permitiéndoles anticipar y sobrevivir a los shocks petroleros mucho mejor que sus competidores.</p>
+<p>El método más robusto para diseñar escenarios es la <strong>Caja Morfológica</strong> (<em>Morphological box method</em>). Se identifican las 3 o 4 dimensiones más críticas e inciertas (ej. ritmo de electrificación, precio de los fósiles, cambio climático), y se definen estados extremos para cada una. Al cruzar estas dimensiones, se genera un abanico de futuros radicalmente disímiles.</p>
+<p>El propósito de los escenarios en dinámica de sistemas es estresar el modelo. Corremos el sistema bajo estas diferentes combinaciones no para averiguar “cuál es el más probable”, sino para identificar las vulnerabilidades de nuestras políticas.</p>
+</section>
+<hr class="docutils" />
+<section id="robustez-sobre-optimalidad">
+<h2>6. Robustez sobre optimalidad<a class="headerlink" href="#robustez-sobre-optimalidad" title="Link to this heading">#</a></h2>
+<p>Cuando los tomadores de decisiones enfrentan múltiples escenarios futuros que son profundamente inciertos, el enfoque convencional es tratar de encontrar la política “óptima” bajo el escenario que consideran más probable. Matemáticamente, esto equivale a optimizar el sistema (minimizar costos o maximizar beneficios) apostando a que una predicción específica se cumplirá. El peligro es obvio: si el futuro diverge de la predicción, la política óptima para ese mundo imaginario suele ser desastrosa en el mundo real. Es una estrategia frágil.</p>
+<p>En el paradigma de Systems Analytics bajo incertidumbre profunda, sustituimos la búsqueda de la <em>optimalidad</em> por la búsqueda de la <strong>robustez</strong>. Una política robusta no necesariamente arroja el mejor resultado absoluto en un escenario específico, pero funciona razonablemente bien y evita resultados catastróficos en <em>todos</em> los escenarios posibles. Prefiere una ganancia modesta segura sobre la posibilidad de una gran ganancia a costa de un riesgo de ruina.</p>
+<p>El marco teórico de la <strong>Toma de Decisiones Robustas (Robust Decision Making, RDM)</strong>, desarrollado extensamente por la RAND Corporation, formaliza este enfoque. RDM invierte el proceso de planeación tradicional: en lugar de predecir primero y planear después (predict-then-act), RDM prueba múltiples políticas contra cientos o miles de escenarios para descubrir bajo qué condiciones fallan, y luego refina las políticas para hacerlas resilientes.</p>
+<section id="la-tabla-de-robustez-y-el-minimax-regret">
+<h3>La Tabla de Robustez y el Minimax Regret<a class="headerlink" href="#la-tabla-de-robustez-y-el-minimax-regret" title="Link to this heading">#</a></h3>
+<p>El corazón del método RDM, de forma simplificada, es la evaluación estructurada a través de una tabla de robustez. Esta matriz cruza las <strong>Estrategias</strong> (las políticas que controlamos) contra los <strong>Escenarios</strong> (los estados del mundo que no controlamos), y en cada intersección calcula el desempeño del sistema (ej. el costo total del sistema eléctrico en trillones de pesos).</p>
+<p>Para elegir la estrategia más robusta, empleamos el criterio de <strong>Minimax Regret</strong> (minimizar el arrepentimiento máximo), derivado de la teoría de juegos y la toma de decisiones.
+El “regret” (arrepentimiento o costo de oportunidad) se define como la diferencia entre el desempeño de una estrategia en un escenario determinado y el desempeño de la <em>mejor</em> estrategia posible en ese mismo escenario. Representa “cuánto peor nos fue por no haber adivinado el futuro correctamente”.</p>
+<p><strong>Ejemplo Numérico Aplicado:</strong>
+Supongamos que el regulador debe elegir entre tres estrategias para la expansión de generación en Colombia:</p>
+<ol class="arabic simple">
+<li><p><strong>Estrategia A (Térmica Centralizada):</strong> Mantener fuertes incentivos al gas.</p></li>
+<li><p><strong>Estrategia B (Renovable Agresiva):</strong> Subsidios enormes a eólica/solar, eliminar térmicas.</p></li>
+<li><p><strong>Estrategia C (Diversificada):</strong> Balance entre base renovable y respaldo térmico moderado.</p></li>
+</ol>
+<p>Y enfrentamos tres Escenarios Futuros (los valores son Costo Total en Unidades Arbitrarias, donde <em>menor</em> es mejor):</p>
+<ul class="simple">
+<li><p>Escenario 1 (Status Quo Climático y Fósil Barato): A=100, B=130, C=110</p></li>
+<li><p>Escenario 2 (Super-Niño con Gas Caro): A=180, B=140, C=120</p></li>
+<li><p>Escenario 3 (Revolución Solar con Clima Húmedo): A=140, B=80, C=90</p></li>
+</ul>
+<p>Cálculo del Regret (Costo - Mejor Costo del Escenario):</p>
+<ul class="simple">
+<li><p>En Escenario 1 (Mejor es A=100): Regret(A)=0, Regret(B)=30, Regret©=10</p></li>
+<li><p>En Escenario 2 (Mejor es C=120): Regret(A)=60, Regret(B)=20, Regret©=0</p></li>
+<li><p>En Escenario 3 (Mejor es B=80): Regret(A)=60, Regret(B)=0, Regret©=10</p></li>
+</ul>
+<p>Determinación del Arrepentimiento Máximo (Max Regret) por Estrategia:</p>
+<ul class="simple">
+<li><p>Estrategia A: Max Regret = 60 (ocurre en Esc. 2 y 3)</p></li>
+<li><p>Estrategia B: Max Regret = 30 (ocurre en Esc. 1)</p></li>
+<li><p>Estrategia C: Max Regret = 10 (ocurre en Esc. 1 y 3)</p></li>
+</ul>
+<p><strong>Decisión Minimax:</strong> La regla Minimax Regret nos indica escoger la estrategia que tiene el menor arrepentimiento máximo. En este caso, escogemos la <strong>Estrategia C (Diversificada)</strong>, cuyo peor arrepentimiento posible es de solo 10 unidades.
+Observe la profunda implicación conceptual: La Estrategia C <em>no fue la estrategia óptima ganadora en la mayoría de los escenarios</em> (perdió ante A en el Escenario 1 y ante B en el Escenario 3). Si hubiéramos asignado probabilidades ilusorias, podríamos haber elegido equivocadamente. Sin embargo, la estrategia diversificada garantiza evitar el desastre (evita la exposición al gas carísimo del Esc. 2 de la térmica, y evita el sobrecosto innecesario del Esc. 1 de la renovable pura).</p>
+<p>En el sector energético, la diversificación sistemáticamente surge como la estrategia más robusta ante la incertidumbre climática y tecnológica. Modelar esto formalmente en Dinámica de Sistemas ofrece una justificación cuantitativa y científica irrefutable a favor de carteras de inversión equilibradas.</p>
+</section>
+</section>
+<section id="analisis-de-sensibilidad">
+<h2>7. Análisis de sensibilidad<a class="headerlink" href="#analisis-de-sensibilidad" title="Link to this heading">#</a></h2>
+<p>Antes de confiar ciegamente en las tablas de robustez, el modelador debe someter su simulación de dinámica de sistemas a rigurosas pruebas de sensibilidad. El análisis de sensibilidad no pretende predecir el futuro, sino diagnosticar el modelo en sí mismo: nos permite entender qué supuestos, parámetros o estructuras matemáticas son las verdaderas fuerzas motoras que impulsan los resultados (outputs).</p>
+<ol class="arabic simple">
+<li><p><strong>Análisis OAT (One-at-a-time):</strong> Es la técnica fundamental, en la que se varía un solo parámetro a la vez, manteniendo todos los demás estrictamente en sus valores base. Aunque limitado (porque ignora las interacciones sinérgicas entre múltiples variables), es el primer paso indispensable para verificar la coherencia mecánica de las ecuaciones.</p></li>
+<li><p><strong>Diagrama de Tornado (Tornado Diagram):</strong> Esta visualización jerarquiza la importancia de los parámetros evaluados. En el eje horizontal se grafica el rango de impacto sobre un indicador clave (por ejemplo, el precio promedio de la energía a 2030), y en el eje vertical se ubican las variables, ordenadas de mayor a menor impacto (formando un embudo que asemeja un tornado). El analista y el formulador de políticas pueden ver inmediatamente dónde está el mayor riesgo. Si el costo del combustible térmico encabeza el tornado, el sistema es altamente vulnerable a mercados de commodities extranjeros, lo que justifica enfocar los esfuerzos en mitigar ese factor.</p></li>
+<li><p><strong>Pruebas de Condiciones Extremas (Extreme Condition Tests):</strong> Un modelo de dinámica de sistemas robusto debe mantener la coherencia lógica frente a entradas absurdas o extremas, sin “romperse” matemáticamente. ¿Qué pasa si el costo de los paneles solares cae literalmente a cero? El modelo no debería proyectar capacidades instaladas infinitas (porque existen límites estructurales como área disponible o requerimientos de reserva técnica). ¿Qué pasa si los aportes hídricos caen a cero durante 36 meses? El nivel de los embalses nunca debe hacerse negativo, la demanda racionada debe aumentar y las térmicas despacharse a plena capacidad. Si un modelo falla pruebas extremas, su formulación ecuacional en condiciones normales es estructuralmente sospechosa.</p></li>
+<li><p><strong>Validación Estructural y Conductual:</strong> Todo esto forma parte de la validación del modelo. El éxito de un modelo SD no se mide primariamente por su capacidad de ajustar con <span class="math notranslate nohighlight">\(R^2\)</span> alto una serie de tiempo del pasado, sino por su fidelidad estructural para reproducir los patrones de comportamiento fundamentales (oscilaciones, tipping points) observados en la realidad empírica.</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="el-caso-cxc-fncer-bajo-4-escenarios">
+<h2>8. El caso: CxC + FNCER bajo 4 escenarios<a class="headerlink" href="#el-caso-cxc-fncer-bajo-4-escenarios" title="Link to this heading">#</a></h2>
+<p>Sintetizando los conceptos abordados en esta sesión, construiremos un experimento final integrado simulando el caso colombiano. Analizaremos las implicaciones de mantener el Cargo por Confiabilidad (diseñado para una matriz hidro-térmica) frente a la penetración masiva de FNCER.</p>
+<p>Construiremos un diseño experimental factorial enfrentando las decisiones de política (Estrategias) a los futuros plausibles (Escenarios).</p>
+<p><strong>Los 4 Escenarios de Futuro Incierto:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>BAU (Business As Usual):</strong> Continuación de las tendencias de la última década. Crecimiento moderado de demanda, hidrología con variabilidad histórica conocida, y reducción parsimoniosa de costos de capital FNCER.</p></li>
+<li><p><strong>Gas Shock (Choque de Combustibles Fósiles):</strong> Una interrupción masiva de importaciones, declive prematuro de reservas de gas nacional o disrupción geopolítica que dispara los precios del GNV, del carbón y los combustibles líquidos de respaldo a precios prohibitivos.</p></li>
+<li><p><strong>Solar Revolution (Revolución Renovable Exponencial):</strong> Disrupción tecnológica acelerada. Los costos de los módulos solares y el almacenamiento en baterías colapsan de precio. El almacenamiento viable soluciona sustancialmente el problema de intermitencia sin necesidad de termoeléctricas.</p></li>
+<li><p><strong>El Niño Extremo + Demanda Alta:</strong> La pesadilla climática. Fenómenos de El Niño se vuelven el doble de severos y prolongados por el cambio climático severo, ocurriendo simultáneamente con un salto disruptivo en la demanda eléctrica (por ejemplo, debido a la electrificación rápida del transporte).</p></li>
+</ol>
+<p><strong>Las 3 Estrategias Regulatorias (Intervenciones de Estructura/Información):</strong></p>
+<ul class="simple">
+<li><p><strong>S1: Conservadora (CxC Reforzado):</strong> Se prioriza la seguridad energética tradicional. Se aumentan las subastas del Cargo por Confiabilidad asegurando nuevas termoeléctricas a gas de ciclo combinado y terminales de regasificación, limitando la integración de FNCER si comprometen la estabilidad del sistema por intermitencia.</p></li>
+<li><p><strong>S2: Agresiva Renovable (Fin del CxC Fósil):</strong> Desmonte del subsidio del CxC a plantas que emiten carbono. Todos los recursos se desvían a masivas subastas de contratos PPA (Power Purchase Agreements) para asegurar inversión en eólica y solar. Las térmicas quedan libradas a la dinámica pura del mercado spot.</p></li>
+<li><p><strong>S3: Diversificada (Transición Justa / Híbrida):</strong> Se mantiene un CxC ajustado y decreciente para un parque térmico de respaldo estratégico mínimo, mientras se escala agresivamente y a través de mecanismos separados una vasta flota de FNCER y baterías.</p></li>
+</ul>
+<p><strong>Resultados de la Simulación en la Tabla de Robustez:</strong>
+Al ejecutar nuestro modelo Dinámico con <span class="math notranslate nohighlight">\(Ecuaciones \times Parámetros\)</span> para las 12 combinaciones, emergen patrones reveladores en los indicadores de confiabilidad (horas de racionamiento) y costo económico (tarifa final).</p>
+<ul class="simple">
+<li><p>La estrategia <strong>S1 (Conservadora)</strong> salva al sistema sin problemas en el Escenario 4 (El Niño), pero resulta catastróficamente costosa en el Escenario 3 (Revolución Solar), y genera altas facturas de la luz ante el <em>Gas Shock</em>.</p></li>
+<li><p>La estrategia <strong>S2 (Agresiva Renovable)</strong> brilla como la política más barata y óptima bajo los Escenarios 1 y 3. El costo promedio de la energía cae enormemente. Sin embargo, frente al Escenario 4 (El Niño Extremo), el modelo estalla: el racionamiento de energía es brutal por la ausencia de firmeza térmica y los costos de destrucción económica son astronómicos.</p></li>
+<li><p>La estrategia <strong>S3 (Diversificada)</strong>. Siguiendo el método de Minimax Regret discutido anteriormente, al compilar todos los arrepentimientos máximos, S3 emerge como la recomendación indiscutible de política.</p></li>
+</ul>
+<p>La interpretación cualitativa de este ejercicio cuantitativo es poderosa: la política regulatoria no debe aferrarse rígidamente ni a los fantasmas del pasado (obsesión por firmeza fósil absoluta) ni a los entusiasmos irreales del futuro (solarización sin respaldo). La modelación sistémica prueba que el abandono abrupto de la estructura del CxC antes de que exista almacenamiento masivo es profundamente arriesgado, pero su mantenimiento irrestricto crea una ineficiencia letal. La reforma paulatina —donde se diseña la obsolescencia programada de la vieja estructura— es el único camino robusto.</p>
+</section>
+<hr class="docutils" />
+<section id="cierre-del-modulo-sd">
+<h2>9. Cierre del módulo SD<a class="headerlink" href="#cierre-del-modulo-sd" title="Link to this heading">#</a></h2>
+<p>Al llegar a la conclusión del bloque metodológico de Dinámica de Sistemas (SD) del curso de Systems Analytics, es fundamental hacer un balance honesto de los superpoderes, pero también de los puntos ciegos estructurales, de la herramienta que acabamos de dominar.</p>
+<p>A través del lenguaje de stocks y flujos, hemos sido capaces de formular representaciones cuantitativas que capturan las características esenciales de los sistemas complejos reales que la econometría clásica ignora. La Dinámica de Sistemas nos ha permitido demostrar cómo los <em>retardos temporales</em> (como el tiempo de licenciamiento ambiental de una represa), los <em>bucles de retroalimentación</em> y la <em>acumulación física</em> en sí misma explican las formidables oscilaciones de ciclos económicos en el sector eléctrico, y por qué intervenciones superficiales terminan en fracaso rotundo (fixes that fail).</p>
+<p>Sin embargo, como un telescopio diseñado para mirar galaxias masivas, SD es excelente para lo agregado, pero no fue diseñado para distinguir a los planetas individuales y sus lunas.</p>
+<p><strong>La gran limitación de la Dinámica de Sistemas:</strong>
+Un modelo S&amp;F asume que los agentes dentro del sistema (los inversionistas, los consumidores, los generadores) son promedios agregados y homogéneos (“la demanda reacciona”, “el inversionista invierte”) o representados como ecuaciones mecánicas de fluidos. La Dinámica de Sistemas sufre para capturar adecuadamente la enorme <em>heterogeneidad, topología espacial y la agencia estratégica</em> de los individuos y las instituciones. Un embalse no es un simple balde que se vacía matemáticamente; es administrado por una junta directiva que analiza las ofertas de sus rivales y reacciona a los rumores del regulador usando teoría de juegos compleja.</p>
+<p>Si queremos modelar no solo el “funcionamiento” del mercado bajo reglas estáticas, sino la “gobernanza” del mercado, las negociaciones políticas, y cómo las estructuras de poder determinan las decisiones (¿por qué algunas comunidades bloquean líneas de transmisión eólicas, deteniendo todo un pipeline de capacidad?), necesitamos incorporar nuevas herramientas a nuestro arsenal.</p>
+<p>Por ello, en las próximas semanas del programa pasaremos de los fluidos continuos a las entidades discretas y conectadas. Iniciaremos el módulo de Teoría de Redes Complejas y los Modelos Basados en Agentes (Agent-Based Modeling, ABM). Estas aproximaciones complementarán y llenarán el vacío de SD.</p>
+<p>Al formular y correr sus modelos SD para los entregables de política pública, recuerden este aforismo fundamental para cualquier consultor de analítica:</p>
+<blockquote>
+<div><p><em>“El modelo nunca sustituye el juicio y el debate del tomador de decisiones; su verdadero valor radica en informar y afinar dicho juicio, haciendo explícitos los sesgos y revelando futuros posibles.”</em></p>
+</div></blockquote>
+<p>El diseño de políticas para un sector tan vital y volátil requiere combinar el rigor de las ecuaciones diferenciales robustas (lo técnico) con la legitimidad de las instituciones (lo político). Nuestro próximo destino metodológico profundizará en esta intersección. Bienvenidos al final de la Dinámica de Sistemas, y a las fronteras de la Gobernanza en la Semana 6.</p>
+<hr class="docutils" />
+<section id="glosario-completo">
+<h3>Glosario Completo<a class="headerlink" href="#glosario-completo" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Cargo por Confiabilidad (CxC):</strong> Esquema regulatorio colombiano diseñado para remunerar la disponibilidad de capacidad de generación firme frente a periodos críticos (sequías), mitigando la volatilidad del mercado mayorista.</p></li>
+<li><p><strong>Ciclo de Refuerzo / Balance:</strong> Estructuras causales fundamentales en SD. Refuerzo amplifica perturbaciones (desestabiliza); Balance resiste perturbaciones buscando metas (estabiliza).</p></li>
+<li><p><strong>Curva de Aprendizaje (Ley de Wright):</strong> Principio empírico que dicta que el costo unitario de una tecnología decae porcentualmente con cada duplicación de su producción global acumulada, crucial para explicar el abaratamiento de las renovables.</p></li>
+<li><p><strong>Incertidumbre Profunda (<em>Deep Uncertainty</em>):</strong> Condiciones analíticas en las cuales expertos o modeladores no pueden conocer ni acordar modelos del sistema, distribuciones de probabilidad a variables clave, o la valoración de resultados deseados.</p></li>
+<li><p><strong>Lock-in Tecnológico/Estructural:</strong> Situación de dependencia del camino (<em>path dependence</em>) donde un mercado queda atrapado usando un estándar subóptimo o antiguo porque el ecosistema e incentivos creados hacen prohibitivamente costosa la transición.</p></li>
+<li><p><strong>Minimax Regret (Arrepentimiento Mínimo Máximo):</strong> Métrica decisional robusta de la teoría de juegos enfocada en seleccionar políticas cuyo peor resultado posible (comparado con la política óptima) produzca el menor daño (arrepentimiento).</p></li>
+<li><p><strong>Merit Order Effect (Efecto del Orden de Mérito):</strong> Desplazamiento estructural de las curvas de costos de un mercado marginalista provocado por el despacho prioritario de tecnologías renovables de costo marginal cercano a cero, depreciando el precio general.</p></li>
+<li><p><strong>Robustez (<em>Robustness</em>):</strong> En el contexto de evaluación de políticas, la capacidad de una estrategia de desempeñarse razonablemente bien frente a un amplio y exhaustivo abanico de escenarios futuros, sin colapsar.</p></li>
+<li><p><strong>Validación Estructural:</strong> Proceso para comprobar empírica y lógicamente que las relaciones mecánicas descritas por las matemáticas del modelo SD reflejan la arquitectura causal genuina de la realidad.</p></li>
+</ul>
+</section>
+<section id="referencias">
+<h3>Referencias<a class="headerlink" href="#referencias" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Arango, S., &amp; Larsen, E. R. (2011). “Cycles in deregulated electricity markets: Empirical evidence from two decades”. <em>Energy Policy</em>, 39(5), 2457-2466.</p></li>
+<li><p>Comisión de Regulación de Energía y Gas (CREG). Resolución CREG 071 de 2006 (Metodología para la remuneración del Cargo por Confiabilidad).</p></li>
+<li><p>Farmer, J. D. et al. (2019). “Sensitive intervention points in the post-carbon transition”. <em>Science</em>, 364(6436), 132-134.</p></li>
+<li><p>Ley 2099 de 2021 (Ley de Transición Energética).</p></li>
+<li><p>Marchau, V. A. W. J., Walker, W. E., Bloemen, P. J. T. M., &amp; Popper, S. W. (Eds.). (2019). <em>Decision Making under Deep Uncertainty: From Theory to Practice</em>. Springer Open (Acceso abierto).</p></li>
+<li><p>Meadows, D. H. (1999). <em>Leverage Points: Places to Intervene in a System</em>. The Sustainability Institute.</p></li>
+</ul>
+</section>
+</section>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./semana_05"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../semana_04/notebook.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Semana 4 — Dinámica de Sistemas I: Stocks, Flujos y el Ciclo de Inversión</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="notebook.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">Semana 5 — Dinámica de Sistemas II: Políticas, Escenarios e Incertidumbre</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#marco-teorico-systems-analytics-mise-universidad-de-los-andes">Marco Teórico · Systems Analytics — MISE, Universidad de los Andes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apertura-funciono-el-cargo-por-confiabilidad">1. Apertura: ¿Funcionó el Cargo por Confiabilidad?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intervenciones-de-politica-en-modelos-sd">2. Intervenciones de política en modelos SD</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-jerarquia-de-los-puntos-de-apalancamiento">La Jerarquía de los Puntos de Apalancamiento</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-cxc-como-intervencion-sistemica">3. El CxC como intervención sistémica</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-mecanica-estructural-del-cxc">La mecánica estructural del CxC</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-paradoja-del-lock-in-termico">La paradoja del Lock-in Térmico</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fncer-la-disrupcion-renovable">4. FNCER: la disrupción renovable</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-nuevo-loop-la-espiral-deflacionaria-termica">El nuevo loop: La espiral deflacionaria térmica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dinamica-de-costos-la-curva-de-aprendizaje">Dinámica de costos: La curva de aprendizaje</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#escenarios-pensar-en-futuros-radicalmente-diferentes">5. Escenarios: pensar en futuros radicalmente diferentes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#robustez-sobre-optimalidad">6. Robustez sobre optimalidad</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-tabla-de-robustez-y-el-minimax-regret">La Tabla de Robustez y el Minimax Regret</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-sensibilidad">7. Análisis de sensibilidad</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-caso-cxc-fncer-bajo-4-escenarios">8. El caso: CxC + FNCER bajo 4 escenarios</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cierre-del-modulo-sd">9. Cierre del módulo SD</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#glosario-completo">Glosario Completo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">Referencias</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por Maestria en Ingenieria de Sistemas Energeticos (MISE)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>Material del curso Analisis de Sistemas — MISE, Universidad de los Andes</p>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

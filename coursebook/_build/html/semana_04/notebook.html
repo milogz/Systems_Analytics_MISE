@@ -1,0 +1,1367 @@
+
+<!DOCTYPE html>
+
+
+<html lang="es" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Semana 4 — Dinámica de Sistemas I: Stocks, Flujos y el Ciclo de Inversión &#8212; Analisis de Sistemas para la Industria Energetica</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="../_static/documentation_options.js?v=78d55cf8"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Haz clic para mostrar';</script>
+    <script>let toggleHintHide = 'Haz clic para ocultar';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script src="../_static/translations.js?v=d190bf04"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'semana_04/notebook';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="next" title="Semana 5 — Dinámica de Sistemas II: Políticas, Escenarios e Incertidumbre" href="../semana_05/lectura.html" />
+    <link rel="prev" title="Semana 4 — Dinámica de Sistemas I: Stocks, Flujos y el Ciclo de Inversión" href="lectura.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Saltar al contenido principal</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Volver arriba</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Advertencia de versión"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Navegación del sitio">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="En esta página">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Analisis de Sistemas para la Industria Energetica</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Analisis de Sistemas para la Industria Energetica
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fundamentos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../preludio/lectura.html">Preludio — Los Cimientos Científicos del Análisis de Sistemas Complejos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../preludio/notebook.html">Preludio — Los Cimientos Científicos</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semana 1: Que Significa Sistemico</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../semana_01/lectura.html">Semana 1 — ¿Qué es la complejidad y por qué importa en energía?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../semana_01/notebook.html">Semana 1: Complejidad — ¿Por qué los sistemas nos sorprenden?</a></li>
+
+
+
+
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semana 2: Redes I — Topologia y Vulnerabilidades</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../semana_02/lectura.html">Semana 2 — Redes complejas: la estructura oculta de los sistemas energéticos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../semana_02/notebook.html">Semana 2: Redes y Topología</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semana 3: Redes II — Actores y Difusion</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../semana_03/lectura.html">Semana 3 — Dinámica sobre Redes y Redes de Actores: Más Allá de la Estructura Estática</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../semana_03/notebook.html">Semana 3: Dinámica sobre Redes</a></li>
+
+
+
+
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semana 4: Dinamica de Sistemas I</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="lectura.html">Semana 4 — Dinámica de Sistemas I: Stocks, Flujos y el Ciclo de Inversión</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Semana 4 — Dinámica de Sistemas I: Stocks, Flujos y el Ciclo de Inversión</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semana 5: Dinamica de Sistemas II — Politicas y Escenarios</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../semana_05/lectura.html">Semana 5 — Dinámica de Sistemas II: Políticas, Escenarios e Incertidumbre</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../semana_05/notebook.html">Semana 5 — Dinámica de Sistemas II: Políticas, Escenarios e Incertidumbre</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Cierre e Integracion</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../cierre/integracion.html">Cierre e Integracion (Semanas 6-8)</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/YOUR_USER/Systems_Analytics_MISE" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Repositorio de origen"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/semana_04/notebook.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Descargar archivo fuente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir en PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Tema" data-bs-title="Tema"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Claro"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Oscuro"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="Sistema"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Semana 4 — Dinámica de Sistemas I: Stocks, Flujos y el Ciclo de Inversión</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-interactivo-systems-analytics-mise">Notebook Interactivo · Systems Analytics — MISE</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-1-nivel-1-intuicion-sin-energia">Nivel 1 <strong>Nivel 1 —</strong> (Intuición sin energía)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-2-nivel-2-aplicaciones-en-energia">Nivel 2 <strong>Nivel 2 —</strong> (Aplicaciones en Energía)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-3-nivel-3-profesional">Nivel 3 <strong>Nivel 3 —</strong> (Profesional)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cierre-resumen-y-previa-de-s5">Cierre — Resumen y Previa de S5</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="semana-4-dinamica-de-sistemas-i-stocks-flujos-y-el-ciclo-de-inversion">
+<h1>Semana 4 — Dinámica de Sistemas I: Stocks, Flujos y el Ciclo de Inversión<a class="headerlink" href="#semana-4-dinamica-de-sistemas-i-stocks-flujos-y-el-ciclo-de-inversion" title="Link to this heading">#</a></h1>
+<section id="notebook-interactivo-systems-analytics-mise">
+<h2>Notebook Interactivo · Systems Analytics — MISE<a class="headerlink" href="#notebook-interactivo-systems-analytics-mise" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span><span class="p">;</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mise_utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">viz</span><span class="p">,</span> <span class="n">dynamics</span><span class="p">,</span> <span class="n">energy_data</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mise_utils.viz</span><span class="w"> </span><span class="kn">import</span> <span class="n">COLORS</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.integrate</span><span class="w"> </span><span class="kn">import</span> <span class="n">solve_ivp</span>
+<span class="n">viz</span><span class="o">.</span><span class="n">apply_mise_style</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="nivel-1-nivel-1-intuicion-sin-energia">
+<h3>Nivel 1 <strong>Nivel 1 —</strong> (Intuición sin energía)<a class="headerlink" href="#nivel-1-nivel-1-intuicion-sin-energia" title="Link to this heading">#</a></h3>
+<p><strong>4.1 La bañera más famosa del mundo</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">modelo_banera</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">flujo_in</span><span class="p">,</span> <span class="n">flujo_out</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">flujo_in</span> <span class="o">-</span> <span class="n">flujo_out</span><span class="p">]</span>
+
+<span class="n">t_span</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">t_eval</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">sol</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">modelo_banera</span><span class="p">,</span> <span class="n">t_span</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">t_eval</span><span class="o">=</span><span class="n">t_eval</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Nivel Bañera&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Stock vs Tiempo (In=5, Out=3)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/c4f38e983843fc1f78a184596214ab6ead92fa4486dc51015ceab726ea69a3b9.png" src="../_images/c4f38e983843fc1f78a184596214ab6ead92fa4486dc51015ceab726ea69a3b9.png" />
+</div>
+</div>
+<p><strong><strong>Insight:</strong> Insight 4.1:</strong> Mientras el flujo de entrada sea mayor al de salida, el stock crecerá linealmente. La dinámica simple de acumulación.</p>
+<p><strong>4.2 Crecimiento vs estabilización</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">loop_R</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span> <span class="k">return</span> <span class="p">[</span><span class="n">r</span> <span class="o">*</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">loop_B</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span> <span class="k">return</span> <span class="p">[</span><span class="n">k</span> <span class="o">*</span> <span class="p">(</span><span class="n">obj</span> <span class="o">-</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">])]</span>
+
+<span class="n">sol_R</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">loop_R</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,),</span> <span class="n">t_eval</span><span class="o">=</span><span class="n">t_eval</span><span class="p">)</span>
+<span class="n">sol_B</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">loop_B</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">t_eval</span><span class="o">=</span><span class="n">t_eval</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sol_R</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">sol_R</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span> <span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Loop R (Crecimiento)&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sol_B</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">sol_B</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span> <span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Loop B (Estabilización)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/4b7b598465a91e14aa95c90677f52d8f10448bd392bff0800119bd081691eef1.png" src="../_images/4b7b598465a91e14aa95c90677f52d8f10448bd392bff0800119bd081691eef1.png" />
+</div>
+</div>
+<p><strong><strong>Insight:</strong> Insight 4.2:</strong> El Loop R genera curvas exponenciales. El Loop B genera curvas de búsqueda de objetivo asintóticas.</p>
+<p><strong>4.3 ¿Por qué todo oscila?</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Slider: delay from 0 to 6</span>
+<span class="n">delay</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">dynamics</span><span class="o">.</span><span class="n">plot_modelo_ducha</span><span class="p">(</span><span class="n">delay</span><span class="o">=</span><span class="n">delay</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: title={&#39;center&#39;: &#39;La ducha con retardo: oscilaciones por delay de 3.0s&#39;}, xlabel=&#39;Tiempo (s)&#39;, ylabel=&#39;Temperatura (°C)&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/a94e8552da5b5e37711a39f9713cdeaf0971932518053680289894918c9c23e4.png" src="../_images/a94e8552da5b5e37711a39f9713cdeaf0971932518053680289894918c9c23e4.png" />
+</div>
+</div>
+<p><strong><strong>Insight:</strong> Insight 4.3:</strong> Un retardo en la percepción y acción convierte un ciclo estable de balance (Loop B) en un sistema oscilatorio que sobre-corrige.</p>
+<p><strong>4.4 Beer Game simplificado</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dynamics</span><span class="o">.</span><span class="n">modelo_beer_game</span><span class="p">(</span><span class="n">delay_entrega</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">delay_percepcion</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>t</th>
+      <th>demanda_consumidor</th>
+      <th>inventario_Tienda</th>
+      <th>inventario_Distribuidor</th>
+      <th>inventario_Fábrica</th>
+      <th>pedidos_Tienda</th>
+      <th>pedidos_Distribuidor</th>
+      <th>pedidos_Fábrica</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>101.523585</td>
+      <td>200.000000</td>
+      <td>200.000000</td>
+      <td>200.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>94.800079</td>
+      <td>205.199921</td>
+      <td>300.000000</td>
+      <td>300.000000</td>
+      <td>99.963609</td>
+      <td>70.000000</td>
+      <td>70.000000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>103.752256</td>
+      <td>201.447665</td>
+      <td>300.036391</td>
+      <td>330.000000</td>
+      <td>101.089286</td>
+      <td>69.989083</td>
+      <td>61.000000</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>104.702824</td>
+      <td>196.744841</td>
+      <td>298.947105</td>
+      <td>360.010917</td>
+      <td>95.776627</td>
+      <td>70.279478</td>
+      <td>21.996725</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>90.244824</td>
+      <td>206.500017</td>
+      <td>303.170478</td>
+      <td>389.731439</td>
+      <td>101.802251</td>
+      <td>70.138143</td>
+      <td>13.069651</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>5</td>
+      <td>93.489102</td>
+      <td>212.974524</td>
+      <td>271.368227</td>
+      <td>389.593297</td>
+      <td>100.810466</td>
+      <td>74.366159</td>
+      <td>13.401489</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>6</td>
+      <td>100.639202</td>
+      <td>213.424608</td>
+      <td>240.546843</td>
+      <td>376.227137</td>
+      <td>86.217442</td>
+      <td>89.638198</td>
+      <td>17.270002</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>7</td>
+      <td>98.418787</td>
+      <td>210.782448</td>
+      <td>224.608879</td>
+      <td>308.585664</td>
+      <td>90.254368</td>
+      <td>93.427803</td>
+      <td>41.790460</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>8</td>
+      <td>99.915994</td>
+      <td>212.668705</td>
+      <td>204.492654</td>
+      <td>228.227512</td>
+      <td>96.838591</td>
+      <td>84.869646</td>
+      <td>81.169944</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>9</td>
+      <td>95.734780</td>
+      <td>217.744391</td>
+      <td>182.020222</td>
+      <td>156.759356</td>
+      <td>93.095470</td>
+      <td>95.648301</td>
+      <td>106.399996</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>10</td>
+      <td>124.396990</td>
+      <td>179.564843</td>
+      <td>178.562950</td>
+      <td>78.381056</td>
+      <td>106.046541</td>
+      <td>103.269706</td>
+      <td>121.355329</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>11</td>
+      <td>123.888960</td>
+      <td>145.930251</td>
+      <td>165.944212</td>
+      <td>16.901810</td>
+      <td>111.955705</td>
+      <td>103.312206</td>
+      <td>150.577758</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>12</td>
+      <td>120.330153</td>
+      <td>122.438688</td>
+      <td>138.858152</td>
+      <td>-5.240452</td>
+      <td>147.665383</td>
+      <td>124.389096</td>
+      <td>164.841841</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>13</td>
+      <td>125.636206</td>
+      <td>89.897952</td>
+      <td>86.841070</td>
+      <td>-23.229552</td>
+      <td>156.919574</td>
+      <td>145.903384</td>
+      <td>170.281072</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>14</td>
+      <td>122.337547</td>
+      <td>73.606947</td>
+      <td>33.191202</td>
+      <td>-47.777607</td>
+      <td>158.248069</td>
+      <td>197.708023</td>
+      <td>198.722378</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>15</td>
+      <td>115.703538</td>
+      <td>69.859114</td>
+      <td>-21.744661</td>
+      <td>-94.907871</td>
+      <td>164.678472</td>
+      <td>223.442973</td>
+      <td>234.375745</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>16</td>
+      <td>121.843754</td>
+      <td>95.680744</td>
+      <td>-62.034037</td>
+      <td>-153.509003</td>
+      <td>153.633324</td>
+      <td>236.858281</td>
+      <td>303.760724</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>17</td>
+      <td>115.205587</td>
+      <td>137.394731</td>
+      <td>-69.763977</td>
+      <td>-220.086212</td>
+      <td>134.485118</td>
+      <td>245.607665</td>
+      <td>349.468836</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>18</td>
+      <td>124.392252</td>
+      <td>171.250549</td>
+      <td>-6.541073</td>
+      <td>-266.971499</td>
+      <td>130.468589</td>
+      <td>215.595645</td>
+      <td>376.949730</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>19</td>
+      <td>119.750370</td>
+      <td>216.178650</td>
+      <td>86.433311</td>
+      <td>-248.191399</td>
+      <td>110.351992</td>
+      <td>168.555125</td>
+      <td>380.065085</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>20</td>
+      <td>119.075688</td>
+      <td>250.736285</td>
+      <td>212.939599</td>
+      <td>-112.985800</td>
+      <td>109.171366</td>
+      <td>126.586710</td>
+      <td>309.491386</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>21</td>
+      <td>116.595352</td>
+      <td>268.626052</td>
+      <td>349.375898</td>
+      <td>109.896326</td>
+      <td>99.162555</td>
+      <td>65.539222</td>
+      <td>195.586227</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>22</td>
+      <td>126.112707</td>
+      <td>272.981934</td>
+      <td>465.808989</td>
+      <td>421.306834</td>
+      <td>97.181108</td>
+      <td>29.428669</td>
+      <td>60.194659</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>23</td>
+      <td>119.227353</td>
+      <td>264.106574</td>
+      <td>537.183006</td>
+      <td>771.943249</td>
+      <td>97.363380</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>24</td>
+      <td>117.858361</td>
+      <td>255.419579</td>
+      <td>566.406336</td>
+      <td>1081.434635</td>
+      <td>109.486833</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>25</td>
+      <td>118.239332</td>
+      <td>236.342801</td>
+      <td>522.458725</td>
+      <td>1277.020862</td>
+      <td>108.324512</td>
+      <td>0.625763</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>26</td>
+      <td>122.661546</td>
+      <td>210.862363</td>
+      <td>443.562882</td>
+      <td>1336.589759</td>
+      <td>114.599652</td>
+      <td>36.417968</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>27</td>
+      <td>121.827220</td>
+      <td>186.398523</td>
+      <td>328.963230</td>
+      <td>1300.171791</td>
+      <td>122.319775</td>
+      <td>69.635543</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>28</td>
+      <td>122.063663</td>
+      <td>173.821693</td>
+      <td>206.643455</td>
+      <td>1230.536247</td>
+      <td>130.515038</td>
+      <td>112.606615</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>29</td>
+      <td>122.154105</td>
+      <td>159.992100</td>
+      <td>76.754180</td>
+      <td>1117.929632</td>
+      <td>133.829590</td>
+      <td>159.293521</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>30</td>
+      <td>130.708238</td>
+      <td>143.883514</td>
+      <td>-20.657442</td>
+      <td>958.636111</td>
+      <td>138.898609</td>
+      <td>196.712271</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>31</td>
+      <td>117.967925</td>
+      <td>148.235365</td>
+      <td>-89.920508</td>
+      <td>761.923840</td>
+      <td>137.683496</td>
+      <td>220.805743</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>32</td>
+      <td>117.438786</td>
+      <td>161.311616</td>
+      <td>-114.997388</td>
+      <td>541.118097</td>
+      <td>142.314753</td>
+      <td>233.397825</td>
+      <td>94.376841</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>33</td>
+      <td>115.931136</td>
+      <td>179.210070</td>
+      <td>-98.018620</td>
+      <td>307.720272</td>
+      <td>124.204904</td>
+      <td>227.089082</td>
+      <td>188.489661</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>34</td>
+      <td>123.079897</td>
+      <td>195.028782</td>
+      <td>-25.511253</td>
+      <td>80.631191</td>
+      <td>118.930152</td>
+      <td>209.968129</td>
+      <td>269.208468</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>35</td>
+      <td>125.644861</td>
+      <td>207.067416</td>
+      <td>76.364338</td>
+      <td>-129.336938</td>
+      <td>113.810912</td>
+      <td>161.295603</td>
+      <td>325.890163</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>36</td>
+      <td>119.430263</td>
+      <td>229.951906</td>
+      <td>195.951251</td>
+      <td>-196.255700</td>
+      <td>114.094325</td>
+      <td>120.144776</td>
+      <td>328.844839</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>37</td>
+      <td>115.799218</td>
+      <td>238.357593</td>
+      <td>308.946008</td>
+      <td>-127.910815</td>
+      <td>114.137584</td>
+      <td>81.127109</td>
+      <td>259.668847</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>38</td>
+      <td>115.877594</td>
+      <td>241.410151</td>
+      <td>404.776553</td>
+      <td>60.170544</td>
+      <td>107.007218</td>
+      <td>52.661359</td>
+      <td>162.093613</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>39</td>
+      <td>123.252964</td>
+      <td>231.968098</td>
+      <td>459.064938</td>
+      <td>333.399347</td>
+      <td>106.208788</td>
+      <td>36.418102</td>
+      <td>41.107305</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>40</td>
+      <td>123.716271</td>
+      <td>222.346153</td>
+      <td>473.000926</td>
+      <td>625.826084</td>
+      <td>109.173748</td>
+      <td>25.106940</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>41</td>
+      <td>122.715771</td>
+      <td>213.767965</td>
+      <td>444.954287</td>
+      <td>860.387991</td>
+      <td>119.122574</td>
+      <td>32.722502</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>42</td>
+      <td>116.672451</td>
+      <td>204.102731</td>
+      <td>378.493072</td>
+      <td>989.759103</td>
+      <td>122.485452</td>
+      <td>55.625826</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>43</td>
+      <td>121.160807</td>
+      <td>189.150712</td>
+      <td>292.425723</td>
+      <td>975.240581</td>
+      <td>125.970558</td>
+      <td>91.394858</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>44</td>
+      <td>120.583429</td>
+      <td>177.741032</td>
+      <td>191.562105</td>
+      <td>883.845724</td>
+      <td>123.350142</td>
+      <td>125.016820</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>45</td>
+      <td>121.093443</td>
+      <td>175.770163</td>
+      <td>100.934465</td>
+      <td>758.828904</td>
+      <td>128.429758</td>
+      <td>155.690218</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>46</td>
+      <td>124.357144</td>
+      <td>173.898471</td>
+      <td>28.130534</td>
+      <td>603.138686</td>
+      <td>128.413888</td>
+      <td>174.910982</td>
+      <td>4.075214</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>47</td>
+      <td>121.117978</td>
+      <td>178.751051</td>
+      <td>-8.888496</td>
+      <td>428.227704</td>
+      <td>127.468128</td>
+      <td>191.096307</td>
+      <td>87.221907</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>48</td>
+      <td>123.394568</td>
+      <td>178.706625</td>
+      <td>-11.339804</td>
+      <td>237.131397</td>
+      <td>130.745156</td>
+      <td>191.815829</td>
+      <td>163.771563</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>49</td>
+      <td>120.337895</td>
+      <td>186.798487</td>
+      <td>13.605258</td>
+      <td>45.315568</td>
+      <td>125.078432</td>
+      <td>183.386551</td>
+      <td>237.501636</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><strong><strong>Insight:</strong> Insight 4.4:</strong> El efecto látigo (Bullwhip effect) demuestra cómo pequeños cambios en el inicio de la cadena se amplifican masivamente debido a los retardos.</p>
+</section>
+<section id="nivel-2-nivel-2-aplicaciones-en-energia">
+<h3>Nivel 2 <strong>Nivel 2 —</strong> (Aplicaciones en Energía)<a class="headerlink" href="#nivel-2-nivel-2-aplicaciones-en-energia" title="Link to this heading">#</a></h3>
+<p><strong>4.5 El ciclo inversión-capacidad colombiano</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Las ecuaciones del ciclo de inversion-capacidad</span>
+<span class="c1"># (ya implementadas en dynamics.modelo_inversion_capacidad)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">ciclo_inversion</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
+    <span class="n">cap</span><span class="p">,</span> <span class="n">pipeline</span><span class="p">,</span> <span class="n">demanda</span> <span class="o">=</span> <span class="n">y</span>
+    <span class="n">gap</span> <span class="o">=</span> <span class="p">(</span><span class="n">demanda</span> <span class="o">-</span> <span class="n">cap</span><span class="p">)</span> <span class="o">/</span> <span class="nb">max</span><span class="p">(</span><span class="n">demanda</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">precio</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;precio_base&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;k_precio&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">gap</span><span class="p">)</span>
+    
+    <span class="n">inicio</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;inversion_base&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">precio</span> <span class="o">/</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;precio_base&#39;</span><span class="p">])</span>
+    <span class="n">puesta</span> <span class="o">=</span> <span class="n">pipeline</span> <span class="o">/</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;delay_construccion&#39;</span><span class="p">]</span>
+    <span class="n">retiro</span> <span class="o">=</span> <span class="n">cap</span> <span class="o">/</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;vida_util&#39;</span><span class="p">]</span>
+    <span class="n">crec</span> <span class="o">=</span> <span class="n">demanda</span> <span class="o">*</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;tasa_crecimiento&#39;</span><span class="p">]</span>
+    
+    <span class="k">return</span> <span class="p">[</span><span class="n">puesta</span> <span class="o">-</span> <span class="n">retiro</span><span class="p">,</span> <span class="n">inicio</span> <span class="o">-</span> <span class="n">puesta</span><span class="p">,</span> <span class="n">crec</span><span class="p">]</span>
+
+<span class="c1"># Simular y visualizar el ciclo completo</span>
+<span class="n">df_ciclo</span> <span class="o">=</span> <span class="n">dynamics</span><span class="o">.</span><span class="n">modelo_inversion_capacidad</span><span class="p">()</span>
+<span class="n">dynamics</span><span class="o">.</span><span class="n">plot_ciclo_inversion</span><span class="p">(</span><span class="n">df_ciclo</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&lt;Figure size 1400x1000 with 4 Axes&gt;,
+ array([[&lt;Axes: title={&#39;center&#39;: &#39;Capacidad vs Demanda&#39;}, ylabel=&#39;MW&#39;&gt;,
+         &lt;Axes: title={&#39;center&#39;: &#39;Precio de Bolsa&#39;}, ylabel=&#39;COP/kWh&#39;&gt;],
+        [&lt;Axes: title={&#39;center&#39;: &#39;Pipeline de Proyectos&#39;}, xlabel=&#39;Año&#39;, ylabel=&#39;MW en construcción&#39;&gt;,
+         &lt;Axes: title={&#39;center&#39;: &#39;Margen de Reserva&#39;}, xlabel=&#39;Año&#39;, ylabel=&#39;Margen de reserva (%)&#39;&gt;]],
+       dtype=object))
+</pre></div>
+</div>
+<img alt="../_images/d0a8d0abbc3870f772ca4878d5ecc7cd7b7aad41d6b56eadc954dad7215a508b.png" src="../_images/d0a8d0abbc3870f772ca4878d5ecc7cd7b7aad41d6b56eadc954dad7215a508b.png" />
+</div>
+</div>
+<p><strong><strong>Insight:</strong> Insight 4.5:</strong> El sector exhibe oscilaciones crónicas de alrededor de 8-10 años. Alta demanda detona precios altos, atrayendo sobre-inversión que luego colapsa el mercado.</p>
+<p><strong>4.6 ¿Qué pasa si duplicamos el retardo?</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Efecto de un retardo largo de construccion</span>
+<span class="n">df_largo</span> <span class="o">=</span> <span class="n">dynamics</span><span class="o">.</span><span class="n">modelo_inversion_capacidad</span><span class="p">(</span>
+    <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;delay_construccion&#39;</span><span class="p">:</span> <span class="mi">8</span><span class="p">}</span>
+<span class="p">)</span>
+<span class="n">dynamics</span><span class="o">.</span><span class="n">plot_ciclo_inversion</span><span class="p">(</span>
+    <span class="n">df_largo</span><span class="p">,</span>
+    <span class="n">titulo</span><span class="o">=</span><span class="s1">&#39;Ciclo inversion-capacidad con retardo de 8 anos&#39;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&lt;Figure size 1400x1000 with 4 Axes&gt;,
+ array([[&lt;Axes: title={&#39;center&#39;: &#39;Capacidad vs Demanda&#39;}, ylabel=&#39;MW&#39;&gt;,
+         &lt;Axes: title={&#39;center&#39;: &#39;Precio de Bolsa&#39;}, ylabel=&#39;COP/kWh&#39;&gt;],
+        [&lt;Axes: title={&#39;center&#39;: &#39;Pipeline de Proyectos&#39;}, xlabel=&#39;Año&#39;, ylabel=&#39;MW en construcción&#39;&gt;,
+         &lt;Axes: title={&#39;center&#39;: &#39;Margen de Reserva&#39;}, xlabel=&#39;Año&#39;, ylabel=&#39;Margen de reserva (%)&#39;&gt;]],
+       dtype=object))
+</pre></div>
+</div>
+<img alt="../_images/9d3a57fb121104a0590cb167ea2be63a05e3c822ad4bca71d873918497177903.png" src="../_images/9d3a57fb121104a0590cb167ea2be63a05e3c822ad4bca71d873918497177903.png" />
+</div>
+</div>
+<p><strong><strong>Insight:</strong> Insight 4.6:</strong> Aumentar el tiempo de construcción de 4 a 8 años (ej. demoras ambientales) incrementa la amplitud de las oscilaciones y el riesgo de apagones.</p>
+<p><strong>4.7 Precio lineal vs no-lineal</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Comportamiento lineal vs exponencial: por que importa la estructura</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="c1"># Crecimiento exponencial (lazo de refuerzo)</span>
+<span class="n">res_exp</span> <span class="o">=</span> <span class="n">dynamics</span><span class="o">.</span><span class="n">modelo_crecimiento_exponencial</span><span class="p">(</span><span class="n">r</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">N0</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+<span class="n">dynamics</span><span class="o">.</span><span class="n">plot_modelo_basico</span><span class="p">(</span>
+    <span class="n">res_exp</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;N&#39;</span><span class="p">],</span>
+    <span class="n">titulo</span><span class="o">=</span><span class="s1">&#39;Lazo de refuerzo: crecimiento exponencial&#39;</span><span class="p">,</span>
+    <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Capacidad (MW)&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># Busqueda de objetivo (lazo de balance)</span>
+<span class="n">res_obj</span> <span class="o">=</span> <span class="n">dynamics</span><span class="o">.</span><span class="n">modelo_busqueda_objetivo</span><span class="p">(</span><span class="n">k</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">objetivo</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">S0</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+<span class="n">dynamics</span><span class="o">.</span><span class="n">plot_modelo_basico</span><span class="p">(</span>
+    <span class="n">res_obj</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">],</span>
+    <span class="n">titulo</span><span class="o">=</span><span class="s1">&#39;Lazo de balance: busqueda de objetivo&#39;</span><span class="p">,</span>
+    <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Stock&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/b56fa86af6ef9e9ad4683e0849ac45515b4788bb00f01b13029afc99e73e12a6.png" src="../_images/b56fa86af6ef9e9ad4683e0849ac45515b4788bb00f01b13029afc99e73e12a6.png" />
+</div>
+</div>
+<p><strong><strong>Insight:</strong> Insight 4.7:</strong> Las funciones de precio de escasez (no-lineales) amplifican la respuesta del inversionista, agravando las oscilaciones si no hay regulación estabilizadora.</p>
+</section>
+<section id="nivel-3-nivel-3-profesional">
+<h3>Nivel 3 <strong>Nivel 3 —</strong> (Profesional)<a class="headerlink" href="#nivel-3-nivel-3-profesional" title="Link to this heading">#</a></h3>
+<p><strong>4.8 Arquetipos Sistémicos</strong></p>
+<ul class="simple">
+<li><p><strong>Limits to Growth:</strong> La expansión del sector eléctrico colombiano choca periódicamente con límites (agua, capacidad de red, licencias). El crecimiento incentiva a buscar capacidad, pero los retardos exacerban los frenazos forzosos.</p></li>
+<li><p><strong>Fixes that Fail:</strong> Intentar limitar precios transitoriamente durante sequías para proteger la inflación desincentiva la inversión de largo plazo, incubando la próxima escasez.</p></li>
+</ul>
+<p><strong>4.9 Puente a Modelado Basado en Agentes (ABM)</strong>
+La dinámica de sistemas asume agentes homogéneos agregados (una sola “bañera” de capacidad). En el mundo real, las diferentes empresas tienen diferentes apetitos de riesgo. En etapas futuras, exploraremos ABM para modelar estas heterogeneidades.</p>
+</section>
+<section id="cierre-resumen-y-previa-de-s5">
+<h3>Cierre — Resumen y Previa de S5<a class="headerlink" href="#cierre-resumen-y-previa-de-s5" title="Link to this heading">#</a></h3>
+<p>Hemos construido un modelo endógeno capaz de replicar las oscilaciones que azotan los mercados eléctricos liberalizados. Los retardos y las señales no lineales de precios generan sobre-correcciones (ciclos de boom y caída).</p>
+<p><em>“Sabemos construir el modelo. ¿Pero qué pasa si cambiamos las reglas?”</em></p>
+<p>En la <strong>Semana 5</strong>, introduciremos instrumentos regulatorios virtuales (como el Cargo por Confiabilidad o las subastas a largo plazo) en este mismo código, evaluando su eficacia para amortiguar el sistema.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./semana_04"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="lectura.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Semana 4 — Dinámica de Sistemas I: Stocks, Flujos y el Ciclo de Inversión</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../semana_05/lectura.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">Semana 5 — Dinámica de Sistemas II: Políticas, Escenarios e Incertidumbre</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-interactivo-systems-analytics-mise">Notebook Interactivo · Systems Analytics — MISE</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-1-nivel-1-intuicion-sin-energia">Nivel 1 <strong>Nivel 1 —</strong> (Intuición sin energía)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-2-nivel-2-aplicaciones-en-energia">Nivel 2 <strong>Nivel 2 —</strong> (Aplicaciones en Energía)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-3-nivel-3-profesional">Nivel 3 <strong>Nivel 3 —</strong> (Profesional)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cierre-resumen-y-previa-de-s5">Cierre — Resumen y Previa de S5</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por Maestria en Ingenieria de Sistemas Energeticos (MISE)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>Material del curso Analisis de Sistemas — MISE, Universidad de los Andes</p>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

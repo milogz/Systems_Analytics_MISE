@@ -1,0 +1,36 @@
+format: jb-book
+root: intro
+parts:
+  - caption: Fundamentos
+    chapters:
+      - file: preludio/lectura
+        sections:
+          - file: preludio/notebook
+  - caption: "Semana 1: Que Significa Sistemico"
+    chapters:
+      - file: semana_01/lectura
+        sections:
+          - file: semana_01/notebook
+  - caption: "Semana 2: Redes I — Topologia y Vulnerabilidades"
+    chapters:
+      - file: semana_02/lectura
+        sections:
+          - file: semana_02/notebook
+  - caption: "Semana 3: Redes II — Actores y Difusion"
+    chapters:
+      - file: semana_03/lectura
+        sections:
+          - file: semana_03/notebook
+  - caption: "Semana 4: Dinamica de Sistemas I"
+    chapters:
+      - file: semana_04/lectura
+        sections:
+          - file: semana_04/notebook
+  - caption: "Semana 5: Dinamica de Sistemas II — Politicas y Escenarios"
+    chapters:
+      - file: semana_05/lectura
+        sections:
+          - file: semana_05/notebook
+  - caption: Cierre e Integracion
+    chapters:
+      - file: cierre/integracion

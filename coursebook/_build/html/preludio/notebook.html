@@ -1,0 +1,884 @@
+
+<!DOCTYPE html>
+
+
+<html lang="es" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Preludio — Los Cimientos Científicos &#8212; Analisis de Sistemas para la Industria Energetica</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="../_static/documentation_options.js?v=78d55cf8"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Haz clic para mostrar';</script>
+    <script>let toggleHintHide = 'Haz clic para ocultar';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script src="../_static/translations.js?v=d190bf04"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'preludio/notebook';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="next" title="Semana 1 — ¿Qué es la complejidad y por qué importa en energía?" href="../semana_01/lectura.html" />
+    <link rel="prev" title="Preludio — Los Cimientos Científicos del Análisis de Sistemas Complejos" href="lectura.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Saltar al contenido principal</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Volver arriba</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Advertencia de versión"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Navegación del sitio">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="En esta página">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Analisis de Sistemas para la Industria Energetica</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Analisis de Sistemas para la Industria Energetica
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fundamentos</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="lectura.html">Preludio — Los Cimientos Científicos del Análisis de Sistemas Complejos</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Preludio — Los Cimientos Científicos</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semana 1: Que Significa Sistemico</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../semana_01/lectura.html">Semana 1 — ¿Qué es la complejidad y por qué importa en energía?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../semana_01/notebook.html">Semana 1: Complejidad — ¿Por qué los sistemas nos sorprenden?</a></li>
+
+
+
+
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semana 2: Redes I — Topologia y Vulnerabilidades</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../semana_02/lectura.html">Semana 2 — Redes complejas: la estructura oculta de los sistemas energéticos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../semana_02/notebook.html">Semana 2: Redes y Topología</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semana 3: Redes II — Actores y Difusion</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../semana_03/lectura.html">Semana 3 — Dinámica sobre Redes y Redes de Actores: Más Allá de la Estructura Estática</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../semana_03/notebook.html">Semana 3: Dinámica sobre Redes</a></li>
+
+
+
+
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semana 4: Dinamica de Sistemas I</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../semana_04/lectura.html">Semana 4 — Dinámica de Sistemas I: Stocks, Flujos y el Ciclo de Inversión</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../semana_04/notebook.html">Semana 4 — Dinámica de Sistemas I: Stocks, Flujos y el Ciclo de Inversión</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semana 5: Dinamica de Sistemas II — Politicas y Escenarios</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../semana_05/lectura.html">Semana 5 — Dinámica de Sistemas II: Políticas, Escenarios e Incertidumbre</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../semana_05/notebook.html">Semana 5 — Dinámica de Sistemas II: Políticas, Escenarios e Incertidumbre</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Cierre e Integracion</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../cierre/integracion.html">Cierre e Integracion (Semanas 6-8)</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/YOUR_USER/Systems_Analytics_MISE" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Repositorio de origen"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/preludio/notebook.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Descargar archivo fuente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir en PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Tema" data-bs-title="Tema"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Claro"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Oscuro"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="Sistema"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Preludio — Los Cimientos Científicos</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-problema-de-tres-cuerpos">1. El problema de tres cuerpos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-ecuacion-logistica">2. La ecuación logística</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-atractor-de-lorenz">3. El atractor de Lorenz</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pendulo-simple-vs-pendulo-doble">4. Péndulo simple vs péndulo doble</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sincronizacion-espontanea-kuramoto">5. Sincronización espontánea (Kuramoto)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transicion-de-fase-en-redes">6. Transición de fase en redes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#criticidad-auto-organizada-pila-de-arena">7. Criticidad auto-organizada (pila de arena)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-tabla-de-strogatz">8. La tabla de Strogatz</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-mapa-del-campo">9. El mapa del campo</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span><span class="p">;</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mise_utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">viz</span><span class="p">,</span> <span class="n">foundations</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mise_utils.viz</span><span class="w"> </span><span class="kn">import</span> <span class="n">COLORS</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.integrate</span><span class="w"> </span><span class="kn">import</span> <span class="n">solve_ivp</span>
+<span class="n">viz</span><span class="o">.</span><span class="n">apply_mise_style</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="preludio-los-cimientos-cientificos">
+<h1>Preludio — Los Cimientos Científicos<a class="headerlink" href="#preludio-los-cimientos-cientificos" title="Link to this heading">#</a></h1>
+<p><em>Un recorrido por las raíces matemáticas y físicas de la ciencia de sistemas complejos.</em></p>
+<section id="el-problema-de-tres-cuerpos">
+<h2>1. El problema de tres cuerpos<a class="headerlink" href="#el-problema-de-tres-cuerpos" title="Link to this heading">#</a></h2>
+<p>A finales del siglo XIX, el rey Oscar II de Suecia ofreció un premio a quien pudiera demostrar la estabilidad del sistema solar. Henri Poincaré, al intentar resolver el problema de tres cuerpos interactuando gravitacionalmente, descubrió algo perturbador: las ecuaciones eran deterministas, pero las trayectorias eran impredecibles a largo plazo. Pequeños errores en las condiciones iniciales crecían sin límite. Había descubierto el caos determinista.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simulación del problema de tres cuerpos</span>
+<span class="n">resultado</span> <span class="o">=</span> <span class="n">foundations</span><span class="o">.</span><span class="n">tres_cuerpos</span><span class="p">(</span><span class="n">T</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">foundations</span><span class="o">.</span><span class="n">plot_tres_cuerpos</span><span class="p">(</span><span class="n">resultado</span><span class="p">,</span> <span class="n">titulo</span><span class="o">=</span><span class="s1">&#39;El Problema de Tres Cuerpos de Poincaré&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/5d7138cdc2ca14da3c869c884c5615a39b9888f51b57bd85f2faae5ed8ee79d1.png" src="../_images/5d7138cdc2ca14da3c869c884c5615a39b9888f51b57bd85f2faae5ed8ee79d1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">foundations</span><span class="o">.</span><span class="n">plot_tres_cuerpos_frames</span><span class="p">(</span><span class="n">resultado</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&lt;Figure size 1500x1000 with 6 Axes&gt;,
+ array([&lt;Axes: title={&#39;center&#39;: &#39;t = 0.0&#39;}&gt;,
+        &lt;Axes: title={&#39;center&#39;: &#39;t = 3.0&#39;}&gt;,
+        &lt;Axes: title={&#39;center&#39;: &#39;t = 6.0&#39;}&gt;,
+        &lt;Axes: title={&#39;center&#39;: &#39;t = 9.0&#39;}&gt;,
+        &lt;Axes: title={&#39;center&#39;: &#39;t = 12.0&#39;}&gt;,
+        &lt;Axes: title={&#39;center&#39;: &#39;t = 15.0&#39;}&gt;], dtype=object))
+</pre></div>
+</div>
+<img alt="../_images/585cec6f89ed6f9066c9c27fc541f7f51b62215249cf59ad9fa96c4a3077f053.png" src="../_images/585cec6f89ed6f9066c9c27fc541f7f51b62215249cf59ad9fa96c4a3077f053.png" />
+</div>
+</div>
+<p><strong>Insight:</strong> “Tres cuerpos, ecuaciones conocidas, trayectorias impredecibles. Poincaré descubrió que el determinismo no garantiza la predictibilidad.”</p>
+</section>
+<section id="la-ecuacion-logistica">
+<h2>2. La ecuación logística<a class="headerlink" href="#la-ecuacion-logistica" title="Link to this heading">#</a></h2>
+<p>Imagina una población de conejos en una isla. La tasa de crecimiento está dada por un parámetro <span class="math notranslate nohighlight">\(r\)</span>. Al principio, la población crece exponencialmente, pero a medida que los recursos se agotan (representado por el término <span class="math notranslate nohighlight">\(1-x\)</span>), el crecimiento se frena. Esta simple ecuación captura la interacción no lineal entre crecimiento y limitación de recursos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">foundations</span><span class="o">.</span><span class="n">plot_logistica_regimenes</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&lt;Figure size 1400x1000 with 4 Axes&gt;,
+ array([[&lt;Axes: title={&#39;center&#39;: &#39;Equilibrio estable (r=2.8)&#39;}, xlabel=&#39;Iteración n&#39;, ylabel=&#39;$x_n$&#39;&gt;,
+         &lt;Axes: title={&#39;center&#39;: &#39;Ciclo de período 2 (r=3.3)&#39;}, xlabel=&#39;Iteración n&#39;, ylabel=&#39;$x_n$&#39;&gt;],
+        [&lt;Axes: title={&#39;center&#39;: &#39;Ciclo de período 4 (r=3.5)&#39;}, xlabel=&#39;Iteración n&#39;, ylabel=&#39;$x_n$&#39;&gt;,
+         &lt;Axes: title={&#39;center&#39;: &#39;Caos (r=3.9)&#39;}, xlabel=&#39;Iteración n&#39;, ylabel=&#39;$x_n$&#39;&gt;]],
+       dtype=object))
+</pre></div>
+</div>
+<img alt="../_images/8d9f082e4cbe5910d118b6daab5d2419c7fed5122781112399272a4fc5d40fbf.png" src="../_images/8d9f082e4cbe5910d118b6daab5d2419c7fed5122781112399272a4fc5d40fbf.png" />
+</div>
+</div>
+<p>Los paneles muestran cómo al aumentar la tasa de crecimiento (<span class="math notranslate nohighlight">\(r\)</span>), la población pasa de estabilizarse en un número fijo, a oscilar entre dos valores, a oscilar entre cuatro, y finalmente a comportarse de forma aparentemente aleatoria o caótica.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bif</span> <span class="o">=</span> <span class="n">foundations</span><span class="o">.</span><span class="n">diagrama_bifurcacion</span><span class="p">(</span><span class="n">r_min</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">r_max</span><span class="o">=</span><span class="mf">4.0</span><span class="p">,</span> <span class="n">n_r</span><span class="o">=</span><span class="mi">3000</span><span class="p">)</span>
+<span class="n">foundations</span><span class="o">.</span><span class="n">plot_bifurcacion</span><span class="p">(</span><span class="n">bif</span><span class="p">,</span> <span class="n">titulo</span><span class="o">=</span><span class="s1">&#39;Diagrama de Bifurcación: la huella digital del caos&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/b106bb1f90391c5454b395c35df3a954e58896691ecc4b62090707d0ee6d4444.png" src="../_images/b106bb1f90391c5454b395c35df3a954e58896691ecc4b62090707d0ee6d4444.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Zoom: estructura fractal — el patrón se repite a toda escala</span>
+<span class="n">bif_zoom</span> <span class="o">=</span> <span class="n">foundations</span><span class="o">.</span><span class="n">diagrama_bifurcacion</span><span class="p">(</span><span class="n">r_min</span><span class="o">=</span><span class="mf">3.84</span><span class="p">,</span> <span class="n">r_max</span><span class="o">=</span><span class="mf">3.856</span><span class="p">,</span> <span class="n">n_r</span><span class="o">=</span><span class="mi">3000</span><span class="p">)</span>
+<span class="n">foundations</span><span class="o">.</span><span class="n">plot_bifurcacion</span><span class="p">(</span><span class="n">bif_zoom</span><span class="p">,</span> <span class="n">titulo</span><span class="o">=</span><span class="s1">&#39;Zoom: auto-similitud fractal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/41e4c1357f5d62cd1a925361b7c415724d952eaae2d91a973c429d7fe378701c.png" src="../_images/41e4c1357f5d62cd1a925361b7c415724d952eaae2d91a973c429d7fe378701c.png" />
+</div>
+</div>
+<p><strong>Insight:</strong> “Una ecuación, un parámetro, toda la riqueza del universo. El caos no es desorden — tiene estructura.”</p>
+</section>
+<section id="el-atractor-de-lorenz">
+<h2>3. El atractor de Lorenz<a class="headerlink" href="#el-atractor-de-lorenz" title="Link to this heading">#</a></h2>
+<p>En 1963, el meteorólogo Edward Lorenz simulaba el clima en su computadora. Para ahorrar tiempo, reingresó datos de una corrida anterior, pero redondeados (0.506 en lugar de 0.506127). El resultado fue un clima completamente diferente. Había descubierto el “efecto mariposa” (butterfly effect): sensibilidad extrema a las condiciones iniciales.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">resultado</span> <span class="o">=</span> <span class="n">foundations</span><span class="o">.</span><span class="n">lorenz_attractor</span><span class="p">(</span><span class="n">T</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">y0</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">y0_perturbado</span><span class="o">=</span><span class="p">[</span><span class="mf">1.001</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">foundations</span><span class="o">.</span><span class="n">plot_lorenz_3d</span><span class="p">(</span><span class="n">resultado</span><span class="p">,</span> <span class="n">titulo</span><span class="o">=</span><span class="s1">&#39;El Atractor Extraño de Lorenz&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/82e768396d87df815e49657b5cd913de93ca07f2c2aefdc2d76281848e0557f5.png" src="../_images/82e768396d87df815e49657b5cd913de93ca07f2c2aefdc2d76281848e0557f5.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">foundations</span><span class="o">.</span><span class="n">plot_lorenz_divergencia</span><span class="p">(</span><span class="n">resultado</span><span class="p">,</span> <span class="n">titulo</span><span class="o">=</span><span class="s1">&#39;Sensibilidad a Condiciones Iniciales&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/211d99b5df5cb144375236b217f8ce8ac16c829d4cabf800ee699b63a4262474.png" src="../_images/211d99b5df5cb144375236b217f8ce8ac16c829d4cabf800ee699b63a4262474.png" />
+</div>
+</div>
+<p><strong>Insight:</strong> “Determinista pero impredecible. Las dos trayectorias empiezan casi idénticas pero divergen exponencialmente. Esto limita fundamentalmente nuestra capacidad de predecir.”</p>
+</section>
+<section id="pendulo-simple-vs-pendulo-doble">
+<h2>4. Péndulo simple vs péndulo doble<a class="headerlink" href="#pendulo-simple-vs-pendulo-doble" title="Link to this heading">#</a></h2>
+<p>Según el Teorema de Poincaré-Bendixson, el caos no puede existir en sistemas continuos de 2 dimensiones (como un péndulo simple). Las trayectorias no pueden cruzarse sin intersecarse de formas que el plano restringe. Sin embargo, en 4 dimensiones (como un péndulo doble), hay suficiente “espacio” para que emerja el caos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">foundations</span><span class="o">.</span><span class="n">plot_pendulos_comparacion</span><span class="p">(</span><span class="n">perturbacion</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/1e4a4615f3c2f70d233ca13261ef17a0914c5f23a4e1931cbc2f55b33079c529.png" src="../_images/1e4a4615f3c2f70d233ca13261ef17a0914c5f23a4e1931cbc2f55b33079c529.png" />
+</div>
+</div>
+<p><strong>Insight:</strong> “El péndulo simple es predecible; el doble es caótico. La diferencia: dimensionalidad. El caos necesita al menos 3 variables continuas.”</p>
+</section>
+<section id="sincronizacion-espontanea-kuramoto">
+<h2>5. Sincronización espontánea (Kuramoto)<a class="headerlink" href="#sincronizacion-espontanea-kuramoto" title="Link to this heading">#</a></h2>
+<p>En 1665, Christiaan Huygens observó que dos relojes de péndulo en la misma pared terminaban sincronizándose. Este modelo, estudiado formalmente por Yoshiki Kuramoto, muestra cómo osciladores con frecuencias naturales distintas pueden sincronizarse espontáneamente si están acoplados mediante una plataforma común.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">foundations</span><span class="o">.</span><span class="n">plot_kuramoto_transicion</span><span class="p">(</span><span class="n">K_values</span><span class="o">=</span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">],</span> <span class="n">N</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/95f88bb092687bab2e3fc2707687d1528cced32ab44930f779de05d528e1a0bc.png" src="../_images/95f88bb092687bab2e3fc2707687d1528cced32ab44930f779de05d528e1a0bc.png" />
+</div>
+</div>
+<p><strong>Insight:</strong> “La auto-organización no requiere director de orquesta — emerge de la interacción. Los generadores eléctricos deben sincronizarse a 60 Hz: el mismo fenómeno.”</p>
+</section>
+<section id="transicion-de-fase-en-redes">
+<h2>6. Transición de fase en redes<a class="headerlink" href="#transicion-de-fase-en-redes" title="Link to this heading">#</a></h2>
+<p>Cuando conectamos nodos aleatoriamente en una red, la conectividad global no crece de forma suave. Existe un punto crítico donde de repente emerge un “componente gigante”, de manera similar a cómo el agua se congela (percolation). La transición es abrupta.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">resultado</span> <span class="o">=</span> <span class="n">foundations</span><span class="o">.</span><span class="n">percolacion_red</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">n_muestras</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">foundations</span><span class="o">.</span><span class="n">plot_percolacion</span><span class="p">(</span><span class="n">resultado</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/f8876b4661b0777e99bb3d848a2d163dfd4e9e58e9569b8becefe3ca416edfb6.png" src="../_images/f8876b4661b0777e99bb3d848a2d163dfd4e9e58e9569b8becefe3ca416edfb6.png" />
+</div>
+</div>
+<p><strong>Insight:</strong> “La red no se fragmenta gradualmente — colapsa en un punto crítico. ¿Cuántas líneas de transmisión deben fallar antes de que el SIN colapse?”</p>
+</section>
+<section id="criticidad-auto-organizada-pila-de-arena">
+<h2>7. Criticidad auto-organizada (pila de arena)<a class="headerlink" href="#criticidad-auto-organizada-pila-de-arena" title="Link to this heading">#</a></h2>
+<p>El modelo propuesto por Bak, Tang y Wiesenfeld (1987) ilustra cómo algunos sistemas complejos evolucionan naturalmente hacia un estado crítico sin intervención externa. Al agregar granos de arena uno por uno, la pila desarrolla avalanchas de todos los tamaños (self-organized criticality).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">resultado</span> <span class="o">=</span> <span class="n">foundations</span><span class="o">.</span><span class="n">sandpile_btw</span><span class="p">(</span><span class="n">grid_size</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">n_grains</span><span class="o">=</span><span class="mi">5000</span><span class="p">)</span>
+<span class="n">foundations</span><span class="o">.</span><span class="n">plot_sandpile</span><span class="p">(</span><span class="n">resultado</span><span class="p">,</span> <span class="n">titulo</span><span class="o">=</span><span class="s1">&#39;Criticidad Auto-Organizada&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/053f2da372cb6826c9e9a1c16c38487b7e1dec87f9100f5819eb9163b2985d42.png" src="../_images/053f2da372cb6826c9e9a1c16c38487b7e1dec87f9100f5819eb9163b2985d42.png" />
+</div>
+</div>
+<p><strong>Insight:</strong> “El sistema se auto-organiza hacia la criticidad. Las avalanchas siguen una ley de potencia — los eventos extremos son inevitables, no accidentes.”</p>
+</section>
+<section id="la-tabla-de-strogatz">
+<h2>8. La tabla de Strogatz<a class="headerlink" href="#la-tabla-de-strogatz" title="Link to this heading">#</a></h2>
+<p>Steven Strogatz propuso una clasificación de los sistemas dinámicos según su linealidad y dimensionalidad. Es como una tabla periódica del comportamiento matemático.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tabla</span> <span class="o">=</span> <span class="n">foundations</span><span class="o">.</span><span class="n">tabla_strogatz_visual</span><span class="p">()</span>
+<span class="n">tabla</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">set_properties</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="s1">&#39;text-align&#39;</span><span class="p">:</span> <span class="s1">&#39;left&#39;</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style type="text/css">
+#T_d8e94_row0_col0, #T_d8e94_row0_col1, #T_d8e94_row0_col2, #T_d8e94_row0_col3, #T_d8e94_row1_col0, #T_d8e94_row1_col1, #T_d8e94_row1_col2, #T_d8e94_row1_col3, #T_d8e94_row2_col0, #T_d8e94_row2_col1, #T_d8e94_row2_col2, #T_d8e94_row2_col3, #T_d8e94_row3_col0, #T_d8e94_row3_col1, #T_d8e94_row3_col2, #T_d8e94_row3_col3, #T_d8e94_row4_col0, #T_d8e94_row4_col1, #T_d8e94_row4_col2, #T_d8e94_row4_col3, #T_d8e94_row5_col0, #T_d8e94_row5_col1, #T_d8e94_row5_col2, #T_d8e94_row5_col3 {
+  text-align: left;
+}
+</style>
+<table id="T_d8e94">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_d8e94_level0_col0" class="col_heading level0 col0" >λ₁, λ₂</th>
+      <th id="T_d8e94_level0_col1" class="col_heading level0 col1" >Tipo</th>
+      <th id="T_d8e94_level0_col2" class="col_heading level0 col2" >Comportamiento</th>
+      <th id="T_d8e94_level0_col3" class="col_heading level0 col3" >Ejemplo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_d8e94_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_d8e94_row0_col0" class="data row0 col0" >Reales, ambos < 0</td>
+      <td id="T_d8e94_row0_col1" class="data row0 col1" >Nodo estable</td>
+      <td id="T_d8e94_row0_col2" class="data row0 col2" >Convergencia monotónica</td>
+      <td id="T_d8e94_row0_col3" class="data row0 col3" >Amortiguamiento sobredamped</td>
+    </tr>
+    <tr>
+      <th id="T_d8e94_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_d8e94_row1_col0" class="data row1 col0" >Reales, ambos > 0</td>
+      <td id="T_d8e94_row1_col1" class="data row1 col1" >Nodo inestable</td>
+      <td id="T_d8e94_row1_col2" class="data row1 col2" >Divergencia monotónica</td>
+      <td id="T_d8e94_row1_col3" class="data row1 col3" >Explosión exponencial</td>
+    </tr>
+    <tr>
+      <th id="T_d8e94_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_d8e94_row2_col0" class="data row2 col0" >Reales, signos opuestos</td>
+      <td id="T_d8e94_row2_col1" class="data row2 col1" >Punto silla</td>
+      <td id="T_d8e94_row2_col2" class="data row2 col2" >Atrae y repele</td>
+      <td id="T_d8e94_row2_col3" class="data row2 col3" >Equilibrio de mercado inestable</td>
+    </tr>
+    <tr>
+      <th id="T_d8e94_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_d8e94_row3_col0" class="data row3 col0" >Complejos, Re < 0</td>
+      <td id="T_d8e94_row3_col1" class="data row3 col1" >Espiral estable</td>
+      <td id="T_d8e94_row3_col2" class="data row3 col2" >Oscilaciones amortiguadas</td>
+      <td id="T_d8e94_row3_col3" class="data row3 col3" >Precio que oscila y converge</td>
+    </tr>
+    <tr>
+      <th id="T_d8e94_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_d8e94_row4_col0" class="data row4 col0" >Complejos, Re > 0</td>
+      <td id="T_d8e94_row4_col1" class="data row4 col1" >Espiral inestable</td>
+      <td id="T_d8e94_row4_col2" class="data row4 col2" >Oscilaciones crecientes</td>
+      <td id="T_d8e94_row4_col3" class="data row4 col3" >Ciclo inversión sin control</td>
+    </tr>
+    <tr>
+      <th id="T_d8e94_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_d8e94_row5_col0" class="data row5 col0" >Imaginarios puros</td>
+      <td id="T_d8e94_row5_col1" class="data row5 col1" >Centro</td>
+      <td id="T_d8e94_row5_col2" class="data row5 col2" >Oscilaciones perpetuas</td>
+      <td id="T_d8e94_row5_col3" class="data row5 col3" >Péndulo sin fricción</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p><strong>Insight:</strong> “Los eigenvalores del Jacobiano son como un diagnóstico médico del punto de equilibrio — nos dicen si es estable, oscilatorio o caótico, sin necesidad de simular.”</p>
+</section>
+<section id="el-mapa-del-campo">
+<h2>9. El mapa del campo<a class="headerlink" href="#el-mapa-del-campo" title="Link to this heading">#</a></h2>
+<p>La ciencia de los sistemas complejos bebe de muchas disciplinas:</p>
+<ul class="simple">
+<li><p><strong>Sistemas Dinámicos y Teoría del Caos</strong>: El estudio matemático del cambio temporal (Edward Lorenz, Henri Poincaré).</p></li>
+<li><p><strong>Física Estadística</strong>: Transiciones de fase, criticidad, leyes de potencia (Per Bak).</p></li>
+<li><p><strong>Teoría de Redes</strong>: Topología e interacciones (Steven Strogatz, Albert-László Barabási).</p></li>
+<li><p><strong>Sistemas Adaptativos Complejos</strong>: Evolución, aprendizaje, emergencia.</p></li>
+</ul>
+<p><strong>Instituciones Clave:</strong></p>
+<ul class="simple">
+<li><p>Santa Fe Institute (SFI): Pioneros mundiales en ciencias de la complejidad.</p></li>
+<li><p>New England Complex Systems Institute (NECSI).</p></li>
+<li><p>Max Planck Institute for Dynamics and Self-Organization.</p></li>
+<li><p>London Mathematical Laboratory (LML).</p></li>
+</ul>
+<p><strong>Lecturas Recomendadas:</strong></p>
+<ul class="simple">
+<li><p><em>Sync</em> por Steven Strogatz: La ciencia de la sincronización espontánea.</p></li>
+<li><p><em>Complexity: A Guided Tour</em> por Melanie Mitchell: Excelente introducción general.</p></li>
+<li><p><em>Nonlinear Dynamics and Chaos</em> por Steven Strogatz: El libro de texto estándar.</p></li>
+</ul>
+<blockquote>
+<div><p><em>“El mercado eléctrico ES un sistema dinámico no-lineal acoplado en red. Los generadores son osciladores acoplados, los precios son funciones no-lineales, las decisiones de inversión tienen retardos, las fallas se propagan como cascadas. La ciencia de la complejidad no es una analogía — es la descripción matemática exacta de lo que ocurre. El curso toma las herramientas más accesibles de esta tradición y las aplica al sector. Pero ahora saben que hay un edificio científico enorme detrás.”</em></p>
+</div></blockquote>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./preludio"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="lectura.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Preludio — Los Cimientos Científicos del Análisis de Sistemas Complejos</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../semana_01/lectura.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">Semana 1 — ¿Qué es la complejidad y por qué importa en energía?</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-problema-de-tres-cuerpos">1. El problema de tres cuerpos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-ecuacion-logistica">2. La ecuación logística</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-atractor-de-lorenz">3. El atractor de Lorenz</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pendulo-simple-vs-pendulo-doble">4. Péndulo simple vs péndulo doble</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sincronizacion-espontanea-kuramoto">5. Sincronización espontánea (Kuramoto)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transicion-de-fase-en-redes">6. Transición de fase en redes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#criticidad-auto-organizada-pila-de-arena">7. Criticidad auto-organizada (pila de arena)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-tabla-de-strogatz">8. La tabla de Strogatz</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-mapa-del-campo">9. El mapa del campo</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por Maestria en Ingenieria de Sistemas Energeticos (MISE)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>Material del curso Analisis de Sistemas — MISE, Universidad de los Andes</p>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

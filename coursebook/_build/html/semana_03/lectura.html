@@ -1,0 +1,1440 @@
+
+<!DOCTYPE html>
+
+
+<html lang="es" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Semana 3 — Dinámica sobre Redes y Redes de Actores: Más Allá de la Estructura Estática &#8212; Analisis de Sistemas para la Industria Energetica</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="../_static/documentation_options.js?v=78d55cf8"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Haz clic para mostrar';</script>
+    <script>let toggleHintHide = 'Haz clic para ocultar';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script src="../_static/translations.js?v=d190bf04"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'semana_03/lectura';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="next" title="Semana 3: Dinámica sobre Redes" href="notebook.html" />
+    <link rel="prev" title="Semana 2: Redes y Topología" href="../semana_02/notebook.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Saltar al contenido principal</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Volver arriba</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Advertencia de versión"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Navegación del sitio">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="En esta página">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Analisis de Sistemas para la Industria Energetica</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Analisis de Sistemas para la Industria Energetica
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fundamentos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../preludio/lectura.html">Preludio — Los Cimientos Científicos del Análisis de Sistemas Complejos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../preludio/notebook.html">Preludio — Los Cimientos Científicos</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semana 1: Que Significa Sistemico</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../semana_01/lectura.html">Semana 1 — ¿Qué es la complejidad y por qué importa en energía?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../semana_01/notebook.html">Semana 1: Complejidad — ¿Por qué los sistemas nos sorprenden?</a></li>
+
+
+
+
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semana 2: Redes I — Topologia y Vulnerabilidades</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../semana_02/lectura.html">Semana 2 — Redes complejas: la estructura oculta de los sistemas energéticos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../semana_02/notebook.html">Semana 2: Redes y Topología</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semana 3: Redes II — Actores y Difusion</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Semana 3 — Dinámica sobre Redes y Redes de Actores: Más Allá de la Estructura Estática</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebook.html">Semana 3: Dinámica sobre Redes</a></li>
+
+
+
+
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semana 4: Dinamica de Sistemas I</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../semana_04/lectura.html">Semana 4 — Dinámica de Sistemas I: Stocks, Flujos y el Ciclo de Inversión</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../semana_04/notebook.html">Semana 4 — Dinámica de Sistemas I: Stocks, Flujos y el Ciclo de Inversión</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semana 5: Dinamica de Sistemas II — Politicas y Escenarios</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../semana_05/lectura.html">Semana 5 — Dinámica de Sistemas II: Políticas, Escenarios e Incertidumbre</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../semana_05/notebook.html">Semana 5 — Dinámica de Sistemas II: Políticas, Escenarios e Incertidumbre</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Cierre e Integracion</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../cierre/integracion.html">Cierre e Integracion (Semanas 6-8)</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/YOUR_USER/Systems_Analytics_MISE" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Repositorio de origen"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/semana_03/lectura.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Descargar archivo fuente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir en PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Tema" data-bs-title="Tema"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Claro"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Oscuro"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="Sistema"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Semana 3 — Dinámica sobre Redes y Redes de Actores: Más Allá de la Estructura Estática</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#marco-teorico-systems-analytics-mise-universidad-de-los-andes">Marco Teórico · Systems Analytics — MISE, Universidad de los Andes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apertura-de-la-fotografia-a-la-pelicula">1. Apertura: de la fotografía a la película</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dinamica-sobre-redes-nodos-con-estado">2. Dinámica sobre redes: nodos con estado</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-idea-fundamental">La idea fundamental</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modos-de-actualizacion">Modos de actualización</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contraste-con-la-semana-2">Contraste con la Semana 2</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-de-difusion-y-contagio">3. Modelos de difusión y contagio</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contagio-simple-modelo-si-sir-adaptado">3.1 Contagio simple (modelo SI/SIR adaptado)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#intuicion">Intuición</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-formal">Definición formal</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicacion-energetica">Aplicación energética</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#que-predice">¿Qué predice?</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contagio-complejo-centola-macy">3.2 Contagio complejo (Centola &amp; Macy)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Intuición</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Definición formal</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#por-que-esto-cambia-todo">¿Por qué esto cambia todo?</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Aplicación energética</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-de-umbral-granovetter-watts">3.3 Modelos de umbral (Granovetter, Watts)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Intuición</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Definición formal</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#la-condicion-de-cascada-de-watts">La condición de cascada de Watts</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicacion-energetica-cuando-despega-la-solar-distribuida">Aplicación energética: ¿cuándo “despega” la solar distribuida?</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-de-bass-difusion-a-nivel-agregado">3.4 Modelo de Bass: difusión a nivel agregado</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Intuición</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Definición formal</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#los-parametros-cuentan-una-historia">Los parámetros cuentan una historia</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicacion-energetica-fncer-en-colombia">Aplicación energética: FNCER en Colombia</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#conexion-con-los-modelos-de-red">Conexión con los modelos de red</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fallas-en-cascada-como-dinamica-sobre-redes">4. Fallas en cascada como dinámica sobre redes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-cascada-como-proceso-temporal">La cascada como proceso temporal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-papel-de-la-topologia-en-el-tamano-de-la-cascada">El papel de la topología en el tamaño de la cascada</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#robusto-pero-fragil-ahora-con-dinamica">Robusto-pero-frágil, ahora con dinámica</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#redes-de-actores-y-stakeholders">5. Redes de actores y stakeholders</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#del-cable-al-actor">5.1 Del cable al actor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-mercado-mayorista-colombiano-como-red">5.2 El mercado mayorista colombiano como red</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#que-nos-dice-la-centralidad">¿Qué nos dice la centralidad?</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#y-si-un-hub-sale-del-mercado">¿Y si un hub sale del mercado?</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#redes-bipartitas-y-de-afiliacion">5.3 Redes bipartitas y de afiliación</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-una-red-bipartita">¿Qué es una red bipartita?</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#proyecciones-de-redes-bipartitas">Proyecciones de redes bipartitas</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#redes-de-afiliacion">Redes de afiliación</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deteccion-de-comunidades">6. Detección de comunidades</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-una-comunidad-en-una-red">¿Qué es una comunidad en una red?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modularidad-como-medida">Modularidad como medida</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritmos-de-deteccion">Algoritmos de detección</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-caso-de-la-semana-adopcion-de-energia-solar-distribuida-en-colombia">7. El caso de la semana: adopción de energía solar distribuida en Colombia</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#los-datos">Los datos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#por-que-fallan-los-modelos-puramente-economicos">¿Por qué fallan los modelos puramente económicos?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-papel-del-contagio-social">El papel del contagio social</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicacion-conceptual-de-los-modelos">Aplicación conceptual de los modelos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implicaciones-para-politica-publica">Implicaciones para política pública</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cierre-del-modulo-de-redes-que-aprendimos-y-que-falta">8. Cierre del módulo de redes: ¿qué aprendimos y qué falta?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lo-que-las-redes-si-pueden-hacer">Lo que las redes SÍ pueden hacer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lo-que-las-redes-no-pueden-hacer">Lo que las redes NO pueden hacer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-puente-conceptual">El puente conceptual</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#horizonte-modelamiento-basado-en-agentes-abm">9. Horizonte: modelamiento basado en agentes (ABM)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#de-nodos-con-reglas-a-agentes-con-estrategias">De “nodos con reglas” a “agentes con estrategias”</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#framework-mesa-python">Framework Mesa (Python)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-conceptual-mercado-de-energia-peer-to-peer-p2p">Ejemplo conceptual: mercado de energía peer-to-peer (P2P)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resumen-y-conceptos-para-llevar">10. Resumen y conceptos para llevar</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptos-clave-de-la-semana">Conceptos clave de la semana</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#glosario-de-terminos-introducidos">Glosario de términos introducidos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#puente-a-la-semana-4">Puente a la Semana 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias-principales">Referencias principales</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="semana-3-dinamica-sobre-redes-y-redes-de-actores-mas-alla-de-la-estructura-estatica">
+<h1>Semana 3 — Dinámica sobre Redes y Redes de Actores: Más Allá de la Estructura Estática<a class="headerlink" href="#semana-3-dinamica-sobre-redes-y-redes-de-actores-mas-alla-de-la-estructura-estatica" title="Link to this heading">#</a></h1>
+<section id="marco-teorico-systems-analytics-mise-universidad-de-los-andes">
+<h2>Marco Teórico · Systems Analytics — MISE, Universidad de los Andes<a class="headerlink" href="#marco-teorico-systems-analytics-mise-universidad-de-los-andes" title="Link to this heading">#</a></h2>
+</section>
+<hr class="docutils" />
+<section id="apertura-de-la-fotografia-a-la-pelicula">
+<h2>1. Apertura: de la fotografía a la película<a class="headerlink" href="#apertura-de-la-fotografia-a-la-pelicula" title="Link to this heading">#</a></h2>
+<p>La Semana 2 nos dio un conjunto de herramientas poderoso: aprendimos a traducir infraestructura eléctrica en grafos, a calcular métricas de centralidad, a identificar nodos críticos y a entender la paradoja “robusto pero frágil”. Sin embargo, todo ese análisis comparte una limitación fundamental: es <strong>estático</strong>. Tomamos una fotografía del sistema — la topología del STN en un instante — y la analizamos como si estuviera congelada en el tiempo.</p>
+<p>Pero los sistemas energéticos no están congelados. Las tecnologías se difunden: un vecino instala paneles solares y su vecina empieza a considerarlo. Los actores forman alianzas: un generador firma contratos con comercializadores, un regulador emite una resolución que reconfigura las relaciones de mercado. La información se propaga: un rumor sobre un subsidio viaja por redes sociales, una falla eléctrica desencadena una cascada de sobrecargas en milisegundos.</p>
+<p>Consideremos un dato revelador: la adopción de techos solares en Colombia entre 2017 y 2024 no siguió una trayectoria lineal. Si graficamos las instalaciones acumuladas, vemos una <strong>curva en S</strong> — crecimiento lento inicial, aceleración dramática alrededor de 2020-2021, y un principio de desaceleración cuando el mercado empieza a saturarse en ciertos segmentos. Un modelo puramente económico — basado en el valor presente neto (VPN) de la inversión — predeciría que todos los usuarios para quienes el VPN es positivo adoptarían de inmediato. Pero no es así. La adopción es gradual, desigual geográficamente, y muestra claros patrones de agrupamiento espacial: en ciertos barrios de Medellín o Bogotá hay muchas instalaciones, mientras que barrios económicamente similares apenas tienen una.</p>
+<p>¿Por qué? Porque la decisión de adoptar no depende solo de la economía individual, sino de <strong>a cuántos vecinos, amigos o colegas vemos que ya adoptaron</strong>. En otras palabras: la <strong>estructura de la red social</strong> determina <em>cómo</em> se difunde una tecnología, no solo <em>si</em> se difunde.</p>
+<p>Esta semana damos el salto de la fotografía a la película. Aprenderemos a poner los nodos de una red “en movimiento” — a darles estados que cambian en el tiempo según reglas que dependen de sus vecinos. Y extenderemos el análisis de redes más allá de la infraestructura física: las mismas herramientas que usamos para analizar subestaciones y líneas de transmisión nos permiten analizar <strong>actores</strong> — generadores, reguladores, comunidades, inversionistas — y sus relaciones.</p>
+</section>
+<hr class="docutils" />
+<section id="dinamica-sobre-redes-nodos-con-estado">
+<h2>2. Dinámica sobre redes: nodos con estado<a class="headerlink" href="#dinamica-sobre-redes-nodos-con-estado" title="Link to this heading">#</a></h2>
+<section id="la-idea-fundamental">
+<h3>La idea fundamental<a class="headerlink" href="#la-idea-fundamental" title="Link to this heading">#</a></h3>
+<p>En la Semana 2, un nodo era simplemente un punto con propiedades topológicas: tenía grado, betweenness, pertenecía a cierta componente conecta. Pero el nodo no <em>hacía</em> nada. No cambiaba.</p>
+<p>Ahora le agregamos una dimensión nueva: cada nodo tiene un <strong>estado</strong> (<em>state</em>). Por ejemplo:</p>
+<ul class="simple">
+<li><p>En un modelo de adopción tecnológica: el estado puede ser <strong>“adoptó”</strong> o <strong>“no adoptó”</strong> (binario).</p></li>
+<li><p>En un modelo de difusión de información: <strong>“informado”</strong> o <strong>“no informado”</strong>.</p></li>
+<li><p>En un modelo de falla en cascada: <strong>“operativo”</strong> o <strong>“fallado”</strong>.</p></li>
+<li><p>En un modelo más sofisticado: el estado podría ser un número continuo — el nivel de convicción de un actor, la carga de un transformador, el precio en un nodo del mercado.</p></li>
+</ul>
+<p>Lo que hace que la red “cobre vida” es una <strong>regla de actualización</strong> (<em>update rule</em>): una función que dice cómo cambia el estado de un nodo en función de los estados de sus <strong>vecinos</strong>. Formalmente, si <span class="math notranslate nohighlight">\(s_i(t)\)</span> es el estado del nodo <span class="math notranslate nohighlight">\(i\)</span> en el tiempo <span class="math notranslate nohighlight">\(t\)</span>, y <span class="math notranslate nohighlight">\(\mathcal{N}(i)\)</span> es el conjunto de vecinos de <span class="math notranslate nohighlight">\(i\)</span>, entonces:</p>
+<div class="math notranslate nohighlight">
+\[s_i(t+1) = f\Big(s_i(t), \{s_j(t) : j \in \mathcal{N}(i)\}\Big)\]</div>
+<p>Esta ecuación, simple en apariencia, es la puerta de entrada a fenómenos extraordinariamente ricos: difusión de tecnologías, cascadas de fallas, propagación de pánico financiero, formación de consenso social.</p>
+</section>
+<section id="modos-de-actualizacion">
+<h3>Modos de actualización<a class="headerlink" href="#modos-de-actualizacion" title="Link to this heading">#</a></h3>
+<p>Existen dos formas principales de actualizar los estados:</p>
+<ul class="simple">
+<li><p><strong>Actualización sincrónica</strong>: todos los nodos actualizan su estado simultáneamente, usando los estados del paso anterior. Es como si todos los actores tomaran sus decisiones al mismo tiempo, sin ver las decisiones de los demás en esa ronda.</p></li>
+<li><p><strong>Actualización asincrónica</strong>: los nodos actualizan uno por uno, en un orden (que puede ser aleatorio). Cuando un nodo actualiza, ya “ve” los nuevos estados de los vecinos que actualizaron antes que él.</p></li>
+</ul>
+<p>La elección importa. En muchos modelos de difusión tecnológica, la actualización asincrónica es más realista: las personas no toman decisiones simultáneamente, sino secuencialmente, influidas por lo que ven alrededor.</p>
+</section>
+<section id="contraste-con-la-semana-2">
+<h3>Contraste con la Semana 2<a class="headerlink" href="#contraste-con-la-semana-2" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Semana 2: Red estática</p></th>
+<th class="head"><p>Semana 3: Dinámica sobre la red</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Nodo = punto con propiedades topológicas</p></td>
+<td><p>Nodo = entidad con estado que cambia</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pregunta: ¿cuál es la estructura?</p></td>
+<td><p>Pregunta: ¿cómo evoluciona el comportamiento?</p></td>
+</tr>
+<tr class="row-even"><td><p>Análisis: métricas, centralidad, vulnerabilidad</p></td>
+<td><p>Análisis: difusión, cascadas, adopción</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tiempo: ausente</p></td>
+<td><p>Tiempo: variable central</p></td>
+</tr>
+<tr class="row-even"><td><p>Resultado: mapa de vulnerabilidades</p></td>
+<td><p>Resultado: trayectoria de adopción/falla</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>La topología sigue siendo crucial — es el “tablero de juego” sobre el cual se despliega la dinámica — pero ahora el interés está en la <strong>película</strong>, no solo en la fotografía.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="modelos-de-difusion-y-contagio">
+<h2>3. Modelos de difusión y contagio<a class="headerlink" href="#modelos-de-difusion-y-contagio" title="Link to this heading">#</a></h2>
+<section id="contagio-simple-modelo-si-sir-adaptado">
+<h3>3.1 Contagio simple (modelo SI/SIR adaptado)<a class="headerlink" href="#contagio-simple-modelo-si-sir-adaptado" title="Link to this heading">#</a></h3>
+<section id="intuicion">
+<h4>Intuición<a class="headerlink" href="#intuicion" title="Link to this heading">#</a></h4>
+<p>Imagine que en un barrio de Medellín, un vecino se entera de un subsidio del gobierno para instalar paneles solares (Ley 1715 de 2014, ampliada por la Ley 2099 de 2021). Cada vez que habla con otro vecino, hay una cierta probabilidad de que le transmita la información. Si el vecino se entera, a su vez empieza a contárselo a sus conocidos. Este proceso es análogo al contagio de un virus: cada contacto con un “infectado” (informado) tiene una probabilidad independiente de transmitir la “infección” (información).</p>
+</section>
+<section id="definicion-formal">
+<h4>Definición formal<a class="headerlink" href="#definicion-formal" title="Link to this heading">#</a></h4>
+<p>En el modelo <strong>SI</strong> (<em>Susceptible-Infected</em>), cada nodo está en uno de dos estados:</p>
+<ul class="simple">
+<li><p><strong>S</strong> (Susceptible): no ha recibido la información / no ha adoptado.</p></li>
+<li><p><strong>I</strong> (Infectado/Informado): ya tiene la información / ya adoptó.</p></li>
+</ul>
+<p>La regla de actualización es:</p>
+<blockquote>
+<div><p>En cada paso de tiempo, cada nodo susceptible <span class="math notranslate nohighlight">\(i\)</span> tiene una probabilidad <span class="math notranslate nohighlight">\(p\)</span> de “contagiarse” por cada vecino infectado <span class="math notranslate nohighlight">\(j \in \mathcal{N}(i)\)</span>.</p>
+</div></blockquote>
+<p>La probabilidad de que <span class="math notranslate nohighlight">\(i\)</span> permanezca susceptible después de un paso es:</p>
+<div class="math notranslate nohighlight">
+\[P(s_i(t+1) = S \mid s_i(t) = S) = (1-p)^{k_i^I(t)}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(k_i^I(t)\)</span> es el número de vecinos de <span class="math notranslate nohighlight">\(i\)</span> que están en estado I en el tiempo <span class="math notranslate nohighlight">\(t\)</span>. Entonces la probabilidad de contagio es:</p>
+<div class="math notranslate nohighlight">
+\[P(s_i(t+1) = I \mid s_i(t) = S) = 1 - (1-p)^{k_i^I(t)}\]</div>
+<p>Note algo importante: basta <strong>un solo</strong> contacto exitoso para contagiarse. Tener más vecinos infectados simplemente aumenta la probabilidad, pero no hay un umbral mínimo. Esto es lo que define el contagio como “simple”.</p>
+</section>
+<section id="aplicacion-energetica">
+<h4>Aplicación energética<a class="headerlink" href="#aplicacion-energetica" title="Link to this heading">#</a></h4>
+<p>Este modelo funciona bien para modelar la <strong>difusión de información</strong> sobre subsidios, regulaciones o nuevas tecnologías a través de redes sociales. En el sector energético colombiano, cuando la CREG emite una resolución que permite la autogeneración a pequeña escala, la noticia no llega simultáneamente a todos los potenciales beneficiarios. Se difunde a través de redes profesionales, gremios (ACOLGÉN, SER Colombia), redes sociales y conversaciones personales.</p>
+</section>
+<section id="que-predice">
+<h4>¿Qué predice?<a class="headerlink" href="#que-predice" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>La velocidad de difusión depende de la <strong>densidad de la red</strong> y de la presencia de <strong>hubs</strong> (nodos de alto grado). Un hub informado contagia a muchos vecinos rápidamente.</p></li>
+<li><p>En redes con distribución de grado tipo ley de potencia (<em>scale-free</em>), la difusión es explosiva: no existe un umbral epidémico — incluso con <span class="math notranslate nohighlight">\(p\)</span> muy pequeño, la información eventualmente llega a toda la red.</p></li>
+<li><p>La difusión es más rápida en redes con bajo coeficiente de agrupamiento (<em>clustering</em>): los puentes entre comunidades permiten que la información salte entre grupos distantes.</p></li>
+</ul>
+</section>
+</section>
+<section id="contagio-complejo-centola-macy">
+<h3>3.2 Contagio complejo (Centola &amp; Macy)<a class="headerlink" href="#contagio-complejo-centola-macy" title="Link to this heading">#</a></h3>
+<section id="id1">
+<h4>Intuición<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<p>Enterarse de que existe un subsidio solar es una cosa; decidir invertir 20 millones de pesos en una instalación fotovoltaica es otra muy diferente. Para tomar esa decisión, la mayoría de las personas necesitan más que un solo vecino que les cuente: necesitan ver que <strong>varios</strong> de sus conocidos ya lo hicieron. Necesitan evidencia social múltiple.</p>
+<p>Esto se conoce como <strong>contagio complejo</strong> (<em>complex contagion</em>), un concepto desarrollado por Damon Centola y Michael Macy. La diferencia fundamental con el contagio simple es:</p>
+<blockquote>
+<div><p>En el contagio complejo, un nodo necesita <strong>refuerzo social múltiple</strong> — exposición a múltiples vecinos adoptantes — para cambiar de estado.</p>
+</div></blockquote>
+</section>
+<section id="id2">
+<h4>Definición formal<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<p>La regla de actualización cambia radicalmente:</p>
+<blockquote>
+<div><p>El nodo <span class="math notranslate nohighlight">\(i\)</span> adopta en el paso <span class="math notranslate nohighlight">\(t+1\)</span> si y solo si la fracción de sus vecinos que ya adoptaron supera un umbral <span class="math notranslate nohighlight">\(\phi_i\)</span>:</p>
+</div></blockquote>
+<div class="math notranslate nohighlight">
+\[\begin{split}s_i(t+1) = \begin{cases} 1 &amp; \text{si } \frac{k_i^I(t)}{k_i} \geq \phi_i \\ 0 &amp; \text{en caso contrario} \end{cases}\end{split}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(k_i\)</span> es el grado total del nodo <span class="math notranslate nohighlight">\(i\)</span> y <span class="math notranslate nohighlight">\(k_i^I(t)\)</span> es la cantidad de vecinos adoptantes.</p>
+</section>
+<section id="por-que-esto-cambia-todo">
+<h4>¿Por qué esto cambia todo?<a class="headerlink" href="#por-que-esto-cambia-todo" title="Link to this heading">#</a></h4>
+<p>El resultado más sorprendente del contagio complejo es que invierte la relación entre topología y difusión:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Propiedad</p></th>
+<th class="head"><p>Contagio simple</p></th>
+<th class="head"><p>Contagio complejo</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Puentes débiles (entre comunidades)</p></td>
+<td><p>Aceleran la difusión</p></td>
+<td><p>No ayudan (un solo contacto no basta)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Clustering alto</p></td>
+<td><p>Retarda la difusión</p></td>
+<td><p><strong>Favorece</strong> la difusión</p></td>
+</tr>
+<tr class="row-even"><td><p>Hubs</p></td>
+<td><p>Aceleran la difusión</p></td>
+<td><p>Pueden retardarla (necesitan más vecinos)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>En el contagio complejo, el <strong>agrupamiento</strong> (<em>clustering</em>) es beneficioso porque crea grupos donde los nodos comparten muchos vecinos. Dentro de un grupo denso, si unos pocos adoptan, la fracción de vecinos adoptantes sube rápidamente para los demás, disparando una cascada local. Esto explica por qué la adopción de tecnologías frecuentemente ocurre en <strong>clústeres geográficos</strong>: los barrios donde varios vecinos instalan paneles solares ven adopción acelerada, mientras que barrios aislados — incluso con la misma economía — se quedan atrás.</p>
+</section>
+<section id="id3">
+<h4>Aplicación energética<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
+<p>La adopción de techos solares en Colombia muestra claros patrones de contagio complejo:</p>
+<ol class="arabic simple">
+<li><p><strong>Clústeres espaciales</strong>: en Medellín, conjuntos residenciales con alta visibilidad de instalaciones solares muestran tasas de adopción significativamente mayores.</p></li>
+<li><p><strong>Efecto demostración</strong>: no basta con saber que la tecnología existe; los potenciales adoptantes necesitan ver varias instalaciones funcionando, hablar con varios vecinos satisfechos, y percibir que “es lo normal” en su entorno.</p></li>
+<li><p><strong>Adopción de vehículos eléctricos</strong>: sigue un patrón similar. La infraestructura de carga visible y la presencia de múltiples conocidos con VE reducen la incertidumbre percibida.</p></li>
+</ol>
+</section>
+</section>
+<section id="modelos-de-umbral-granovetter-watts">
+<h3>3.3 Modelos de umbral (Granovetter, Watts)<a class="headerlink" href="#modelos-de-umbral-granovetter-watts" title="Link to this heading">#</a></h3>
+<section id="id4">
+<h4>Intuición<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<p>Mark Granovetter, en un artículo seminal de 1978, propuso una idea elegante: cada persona tiene un <strong>umbral</strong> personal de adopción — el porcentaje de su entorno que debe haber adoptado antes de que ella adopte. Este umbral varía de persona a persona: los “innovadores” tienen umbral bajo (adoptan aunque nadie a su alrededor lo haya hecho), mientras que los “rezagados” tienen umbral alto (solo adoptan cuando casi todos ya lo hicieron).</p>
+</section>
+<section id="id5">
+<h4>Definición formal<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
+<p>Cada nodo <span class="math notranslate nohighlight">\(i\)</span> tiene un umbral <span class="math notranslate nohighlight">\(\theta_i\)</span> extraído de una distribución poblacional <span class="math notranslate nohighlight">\(F(\theta)\)</span>. El nodo adopta cuando:</p>
+<div class="math notranslate nohighlight">
+\[\frac{|\{j \in \mathcal{N}(i) : s_j = 1\}|}{|\mathcal{N}(i)|} \geq \theta_i\]</div>
+<p>La pregunta clave es: <strong>dada una distribución de umbrales <span class="math notranslate nohighlight">\(F(\theta)\)</span> y una topología de red, ¿cuándo puede una pequeña semilla de adoptantes iniciales desencadenar una cascada global?</strong></p>
+</section>
+<section id="la-condicion-de-cascada-de-watts">
+<h4>La condición de cascada de Watts<a class="headerlink" href="#la-condicion-de-cascada-de-watts" title="Link to this heading">#</a></h4>
+<p>Duncan Watts (2002) formalizó esta pregunta para redes aleatorias. El resultado, expresado intuitivamente:</p>
+<blockquote>
+<div><p>Una cascada global es posible si y solo si existe una “masa crítica” de nodos <strong>vulnerables</strong> — nodos con umbral suficientemente bajo como para ser activados por un solo vecino adoptante.</p>
+</div></blockquote>
+<p>Formalmente, un nodo con grado <span class="math notranslate nohighlight">\(k\)</span> y umbral <span class="math notranslate nohighlight">\(\theta\)</span> es <strong>vulnerable</strong> si <span class="math notranslate nohighlight">\(\theta \leq 1/k\)</span> (basta que uno de sus <span class="math notranslate nohighlight">\(k\)</span> vecinos adopte para que él también lo haga). La condición de cascada requiere que estos nodos vulnerables formen un <strong>componente conectado gigante</strong> en la red — es decir, que estén suficientemente interconectados entre sí como para transmitir la cascada de uno a otro.</p>
+<p>Este resultado tiene implicaciones profundas para la política energética:</p>
+<ul class="simple">
+<li><p>No basta con que la tecnología sea económicamente viable para “todo el mundo”.</p></li>
+<li><p>La distribución de umbrales en la población — que depende de factores culturales, de aversión al riesgo, de confianza en la tecnología — es tan importante como la economía.</p></li>
+<li><p>La topología de la red — cómo están conectados los potenciales adoptantes — determina si una cascada puede propagarse.</p></li>
+</ul>
+</section>
+<section id="aplicacion-energetica-cuando-despega-la-solar-distribuida">
+<h4>Aplicación energética: ¿cuándo “despega” la solar distribuida?<a class="headerlink" href="#aplicacion-energetica-cuando-despega-la-solar-distribuida" title="Link to this heading">#</a></h4>
+<p>En el contexto colombiano, la condición de cascada de Watts nos dice que:</p>
+<ol class="arabic simple">
+<li><p><strong>La semilla importa</strong>: no es lo mismo comenzar la adopción con un usuario aislado que con un grupo de vecinos interconectados.</p></li>
+<li><p><strong>Las redes profesionales son palancas</strong>: ingenieros que trabajan en el sector y que instalan paneles en sus casas pueden actuar como “nodos semilla” que inician cascadas en sus redes sociales.</p></li>
+<li><p><strong>Los subsidios deben ser estratégicos</strong>: en lugar de distribuir subsidios uniformemente, la teoría de cascadas sugiere concentrarlos en comunidades donde la densidad de conexiones sociales maximice la probabilidad de cascada.</p></li>
+</ol>
+</section>
+</section>
+<section id="modelo-de-bass-difusion-a-nivel-agregado">
+<h3>3.4 Modelo de Bass: difusión a nivel agregado<a class="headerlink" href="#modelo-de-bass-difusion-a-nivel-agregado" title="Link to this heading">#</a></h3>
+<section id="id6">
+<h4>Intuición<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
+<p>Frank Bass (1969) propuso un modelo de difusión de innovaciones que captura dos fuerzas:</p>
+<ol class="arabic simple">
+<li><p><strong>Influencia externa</strong> (publicidad, política pública, regulación): las personas adoptan porque reciben información de fuentes externas al sistema social.</p></li>
+<li><p><strong>Influencia interna</strong> (imitación, boca a boca, contagio social): las personas adoptan porque ven que otros lo han hecho.</p></li>
+</ol>
+<p>El modelo de Bass es, en cierto sentido, la versión <strong>agregada</strong> (“de campo medio” o <em>mean-field</em>) de los modelos de umbral que acabamos de ver: en lugar de modelar nodo por nodo, modela la fracción total de adoptantes como una cantidad continua.</p>
+</section>
+<section id="id7">
+<h4>Definición formal<a class="headerlink" href="#id7" title="Link to this heading">#</a></h4>
+<p>Sea <span class="math notranslate nohighlight">\(F(t)\)</span> la fracción acumulada de adoptantes al tiempo <span class="math notranslate nohighlight">\(t\)</span>. La tasa de adopción es:</p>
+<div class="math notranslate nohighlight">
+\[\frac{dF}{dt} = \big(p + q \cdot F(t)\big) \cdot \big(1 - F(t)\big)\]</div>
+<p>donde:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(p\)</span> = <strong>coeficiente de innovación</strong>: tasa de adopción por influencia externa (publicidad, regulación, incentivos gubernamentales).</p></li>
+<li><p><span class="math notranslate nohighlight">\(q\)</span> = <strong>coeficiente de imitación</strong>: tasa de adopción por influencia de otros adoptantes (efecto red, contagio social).</p></li>
+<li><p><span class="math notranslate nohighlight">\((1 - F(t))\)</span> = fracción de no adoptantes restantes (mercado potencial remanente).</p></li>
+</ul>
+<p>La solución analítica produce la característica <strong>curva en S</strong>:</p>
+<div class="math notranslate nohighlight">
+\[F(t) = \frac{1 - e^{-(p+q)t}}{1 + \frac{q}{p} e^{-(p+q)t}}\]</div>
+</section>
+<section id="los-parametros-cuentan-una-historia">
+<h4>Los parámetros cuentan una historia<a class="headerlink" href="#los-parametros-cuentan-una-historia" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Si <span class="math notranslate nohighlight">\(p \gg q\)</span>: la adopción es impulsada principalmente por factores externos (subsidios, mandatos regulatorios). La curva crece rápido al inicio y luego se satura.</p></li>
+<li><p>Si <span class="math notranslate nohighlight">\(q \gg p\)</span>: la adopción es impulsada por imitación social. La curva tiene un arranque lento (pocos adoptantes iniciales para imitar) seguido de una aceleración explosiva.</p></li>
+<li><p>La mayoría de las tecnologías energéticas muestran <span class="math notranslate nohighlight">\(q &gt; p\)</span>: la imitación domina sobre la publicidad.</p></li>
+</ul>
+</section>
+<section id="aplicacion-energetica-fncer-en-colombia">
+<h4>Aplicación energética: FNCER en Colombia<a class="headerlink" href="#aplicacion-energetica-fncer-en-colombia" title="Link to this heading">#</a></h4>
+<p>El modelo de Bass permite estimar los parámetros <span class="math notranslate nohighlight">\(p\)</span> y <span class="math notranslate nohighlight">\(q\)</span> a partir de datos históricos de adopción. Para la energía solar distribuida en Colombia:</p>
+<ul class="simple">
+<li><p>Los incentivos tributarios de la Ley 1715/2014 y la Ley 2099/2021 operan como el coeficiente <span class="math notranslate nohighlight">\(p\)</span>.</p></li>
+<li><p>La visibilidad de instalaciones, la recomendación boca a boca y la reducción de incertidumbre operan como el coeficiente <span class="math notranslate nohighlight">\(q\)</span>.</p></li>
+<li><p>Un <span class="math notranslate nohighlight">\(q\)</span> alto sugiere que la política más efectiva no es un subsidio masivo, sino facilitar las condiciones para que el efecto imitación se active — por ejemplo, haciendo visibles las instalaciones existentes y facilitando el intercambio de experiencias entre usuarios.</p></li>
+</ul>
+</section>
+<section id="conexion-con-los-modelos-de-red">
+<h4>Conexión con los modelos de red<a class="headerlink" href="#conexion-con-los-modelos-de-red" title="Link to this heading">#</a></h4>
+<p>El modelo de Bass asume una población homogénea y bien mezclada — todos interactúan con todos por igual. Esta es su limitación. Los modelos de umbral y contagio complejo sobre redes <strong>desagregan</strong> esta dinámica: permiten ver que la difusión no ocurre uniformemente sino a lo largo de las conexiones de la red, con velocidades que dependen de la topología local. El modelo de Bass es el promedio; los modelos de red revelan la heterogeneidad oculta detrás de ese promedio.</p>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="fallas-en-cascada-como-dinamica-sobre-redes">
+<h2>4. Fallas en cascada como dinámica sobre redes<a class="headerlink" href="#fallas-en-cascada-como-dinamica-sobre-redes" title="Link to this heading">#</a></h2>
+<p>En la Semana 2 introdujimos las fallas en cascada usando el modelo de capacidad-carga (Motter-Lai): cuando un nodo falla, su carga se redistribuye entre los nodos vecinos, potencialmente sobrecargándolos y causando nuevas fallas. Ahora podemos entender este fenómeno como un caso particular de <strong>dinámica sobre redes</strong>.</p>
+<section id="la-cascada-como-proceso-temporal">
+<h3>La cascada como proceso temporal<a class="headerlink" href="#la-cascada-como-proceso-temporal" title="Link to this heading">#</a></h3>
+<p>Reescribamos la falla en cascada como una secuencia temporal explícita:</p>
+<ol class="arabic simple">
+<li><p><strong><span class="math notranslate nohighlight">\(t=0\)</span></strong>: Un nodo <span class="math notranslate nohighlight">\(i_0\)</span> falla (por ataque dirigido, falla mecánica o evento natural).</p></li>
+<li><p><strong><span class="math notranslate nohighlight">\(t=1\)</span></strong>: La carga de <span class="math notranslate nohighlight">\(i_0\)</span> se redistribuye entre sus vecinos. Los nodos cuya nueva carga supera su capacidad fallan.</p></li>
+<li><p><strong><span class="math notranslate nohighlight">\(t=2\)</span></strong>: La carga de los nodos que fallaron en <span class="math notranslate nohighlight">\(t=1\)</span> se redistribuye. Nuevos nodos pueden fallar.</p></li>
+<li><p><strong><span class="math notranslate nohighlight">\(t=k\)</span></strong>: El proceso continúa hasta que no se producen nuevas fallas (equilibrio) o hasta el colapso total.</p></li>
+</ol>
+<p>Formalmente, si <span class="math notranslate nohighlight">\(L_i(t)\)</span> es la carga del nodo <span class="math notranslate nohighlight">\(i\)</span> en el paso <span class="math notranslate nohighlight">\(t\)</span> y <span class="math notranslate nohighlight">\(C_i\)</span> es su capacidad máxima:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}s_i(t+1) = \begin{cases} \text{fallado} &amp; \text{si } L_i(t) &gt; C_i \\ \text{operativo} &amp; \text{en caso contrario} \end{cases}\end{split}\]</div>
+<p>La redistribución de carga sigue alguna regla que depende de la topología — por ejemplo, la carga se reparte proporcionalmente entre los vecinos operativos del nodo fallado.</p>
+</section>
+<section id="el-papel-de-la-topologia-en-el-tamano-de-la-cascada">
+<h3>El papel de la topología en el tamaño de la cascada<a class="headerlink" href="#el-papel-de-la-topologia-en-el-tamano-de-la-cascada" title="Link to this heading">#</a></h3>
+<p>La topología determina dos cosas cruciales:</p>
+<ol class="arabic simple">
+<li><p><strong>La vulnerabilidad inicial</strong>: qué nodos, al fallar, disparan la cascada más grande (típicamente los de mayor betweenness, como vimos en la Semana 2).</p></li>
+<li><p><strong>La propagación</strong>: cómo se ramifica la cascada a través de la red. En redes altamente conectadas, una falla puede propagarse ampliamente; en redes modularizadas, la cascada puede quedar contenida dentro de un módulo.</p></li>
+</ol>
+</section>
+<section id="robusto-pero-fragil-ahora-con-dinamica">
+<h3>Robusto-pero-frágil, ahora con dinámica<a class="headerlink" href="#robusto-pero-fragil-ahora-con-dinamica" title="Link to this heading">#</a></h3>
+<p>La paradoja “robusto pero frágil” de la Semana 2 adquiere una dimensión temporal. Las redes tipo ley de potencia (<em>scale-free</em>):</p>
+<ul class="simple">
+<li><p>Son <strong>robustas</strong> a fallas aleatorias no solo topológicamente, sino también dinámicamente: las fallas aleatorias rara vez desencadenan cascadas grandes porque los nodos de bajo grado tienen poca carga para redistribuir.</p></li>
+<li><p>Son <strong>frágiles</strong> a ataques dirigidos no solo porque la red se desconecta, sino porque la cascada dinámica es explosiva: la falla de un hub redistribuye una cantidad enorme de carga, sobrecargando múltiples nodos simultáneamente, que a su vez redistribuyen más carga.</p></li>
+</ul>
+<p>El apagón del noreste de Estados Unidos en 2003, que mencionamos en las Semanas 1 y 2, es un ejemplo canónico: una falla local en Ohio desencadenó una cascada que se propagó a través de la red eléctrica interconectada, dejando sin electricidad a 55 millones de personas. La dinámica temporal fue clave: la cascada se desarrolló en aproximadamente 9 minutos, demasiado rápido para que los operadores intervinieran eficazmente.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="redes-de-actores-y-stakeholders">
+<h2>5. Redes de actores y stakeholders<a class="headerlink" href="#redes-de-actores-y-stakeholders" title="Link to this heading">#</a></h2>
+<section id="del-cable-al-actor">
+<h3>5.1 Del cable al actor<a class="headerlink" href="#del-cable-al-actor" title="Link to this heading">#</a></h3>
+<p>Hasta ahora hemos usado las redes para representar infraestructura física: subestaciones conectadas por líneas de transmisión. Pero las herramientas de análisis de redes son igualmente poderosas — y a veces más reveladoras — cuando las aplicamos a <strong>relaciones sociales, institucionales y comerciales</strong>.</p>
+<p>En una red de actores del sistema energético:</p>
+<ul class="simple">
+<li><p><strong>Nodos</strong> = actores: generadores (EPM, Enel, Celsia), comercializadores, el regulador (CREG), el operador del mercado (XM), comunidades locales, inversionistas, ONGs ambientales, ministerios (MME, MinAmbiente), autoridades ambientales (ANLA), gremios (ACOLGÉN, SER Colombia).</p></li>
+<li><p><strong>Aristas</strong> = relaciones: contratos de compraventa de energía, relaciones de supervisión regulatoria, flujos de información, alianzas estratégicas, relaciones de conflicto, dependencia financiera.</p></li>
+</ul>
+<p>Las redes de actores suelen tener propiedades que las redes físicas no tienen:</p>
+<ul class="simple">
+<li><p><strong>Direccionalidad</strong>: la relación “A regula a B” no es simétrica. Se modelan como <strong>grafos dirigidos</strong>.</p></li>
+<li><p><strong>Múltiples tipos de relación</strong>: dos actores pueden estar conectados por un contrato comercial y simultáneamente por una relación de supervisión. Esto da lugar a <strong>redes multiplex</strong> (varias capas de relación sobre los mismos nodos).</p></li>
+<li><p><strong>Pesos variables</strong>: la intensidad de una relación (por ejemplo, el volumen de energía transado) se modela con <strong>aristas ponderadas</strong>.</p></li>
+</ul>
+</section>
+<section id="el-mercado-mayorista-colombiano-como-red">
+<h3>5.2 El mercado mayorista colombiano como red<a class="headerlink" href="#el-mercado-mayorista-colombiano-como-red" title="Link to this heading">#</a></h3>
+<p>El mercado mayorista de energía de Colombia, operado por XM, ofrece un caso fascinante de análisis de redes. En este mercado, los <strong>generadores</strong> venden energía a los <strong>comercializadores</strong>, quienes a su vez la venden a los usuarios finales.</p>
+<p>Podemos construir un grafo donde:</p>
+<ul class="simple">
+<li><p><strong>Nodo tipo 1</strong>: generadores (Emgea-EPM, Enel-Emgesa, Celsia, ISAGEN, AES Colombia, etc.).</p></li>
+<li><p><strong>Nodo tipo 2</strong>: comercializadores (que pueden ser las mismas empresas u otras).</p></li>
+<li><p><strong>Aristas</strong>: contratos bilaterales, con peso proporcional al volumen de energía transado (en GWh).</p></li>
+</ul>
+<section id="que-nos-dice-la-centralidad">
+<h4>¿Qué nos dice la centralidad?<a class="headerlink" href="#que-nos-dice-la-centralidad" title="Link to this heading">#</a></h4>
+<p>Las métricas de centralidad, que en la Semana 2 aplicamos a subestaciones, adquieren un significado nuevo:</p>
+<ul class="simple">
+<li><p><strong>Centralidad de grado</strong> alta = un actor con muchos contratos o relaciones comerciales. Indica <strong>diversificación</strong> o <strong>dominancia de mercado</strong> según el contexto.</p></li>
+<li><p><strong>Centralidad de intermediación</strong> (<em>betweenness</em>) alta = un actor que conecta grupos de actores que de otro modo estarían desconectados. En el mercado, podría ser un comercializador que sirve de puente entre generadores grandes y pequeños comercializadores regionales. Este actor tiene <strong>poder de intermediación</strong>.</p></li>
+<li><p><strong>Centralidad de cercanía</strong> (<em>closeness</em>) alta = un actor que puede llegar rápida y eficientemente a todos los demás. En una red de influencia política, esto indica capacidad de hacer <em>lobby</em> efectivo.</p></li>
+</ul>
+</section>
+<section id="y-si-un-hub-sale-del-mercado">
+<h4>¿Y si un hub sale del mercado?<a class="headerlink" href="#y-si-un-hub-sale-del-mercado" title="Link to this heading">#</a></h4>
+<p>Aquí es donde la teoría de la Semana 2 sobre redes “libres de escala” se vuelve un instrumento de análisis de <strong>riesgo sistémico</strong>. Si la red de contratos del mercado mayorista es concentrada — pocos actores participan en la mayor parte del volumen transado — entonces la salida abrupta de un actor dominante (por quiebra, por decisión regulatoria, o por un evento extraordinario) podría:</p>
+<ol class="arabic simple">
+<li><p>Dejar a múltiples comercializadores sin suministro contratado.</p></li>
+<li><p>Forzar a esos comercializadores a comprar en bolsa, disparando los precios.</p></li>
+<li><p>Generar un efecto en cascada donde otros actores con contratos vinculados se ven afectados.</p></li>
+</ol>
+<p>Este análisis no es hipotético: la concentración del mercado mayorista colombiano ha sido objeto de debate regulatorio durante años.</p>
+</section>
+</section>
+<section id="redes-bipartitas-y-de-afiliacion">
+<h3>5.3 Redes bipartitas y de afiliación<a class="headerlink" href="#redes-bipartitas-y-de-afiliacion" title="Link to this heading">#</a></h3>
+<section id="que-es-una-red-bipartita">
+<h4>¿Qué es una red bipartita?<a class="headerlink" href="#que-es-una-red-bipartita" title="Link to this heading">#</a></h4>
+<p>Una red <strong>bipartita</strong> (<em>bipartite network</em>) es un grafo con dos tipos de nodos, donde las aristas solo conectan nodos de tipos diferentes — nunca dos nodos del mismo tipo. Formalmente, el conjunto de nodos <span class="math notranslate nohighlight">\(V\)</span> se particiona en dos conjuntos disjuntos <span class="math notranslate nohighlight">\(V_1\)</span> y <span class="math notranslate nohighlight">\(V_2\)</span>, y toda arista <span class="math notranslate nohighlight">\(e \in E\)</span> conecta un nodo de <span class="math notranslate nohighlight">\(V_1\)</span> con un nodo de <span class="math notranslate nohighlight">\(V_2\)</span>.</p>
+<p>Ejemplos en el sector energético:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(V_1\)</span> (Tipo 1)</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(V_2\)</span> (Tipo 2)</p></th>
+<th class="head"><p>Arista</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Generadores</p></td>
+<td><p>Comercializadores</p></td>
+<td><p>Contrato bilateral</p></td>
+</tr>
+<tr class="row-odd"><td><p>Proyectos FNCER</p></td>
+<td><p>Comunidades afectadas</p></td>
+<td><p>Proceso de consulta/impacto</p></td>
+</tr>
+<tr class="row-even"><td><p>Empresas</p></td>
+<td><p>Tecnologías</p></td>
+<td><p>Adopción/inversión</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reguladores</p></td>
+<td><p>Regulaciones</p></td>
+<td><p>Autoría/emisión</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="proyecciones-de-redes-bipartitas">
+<h4>Proyecciones de redes bipartitas<a class="headerlink" href="#proyecciones-de-redes-bipartitas" title="Link to this heading">#</a></h4>
+<p>Una operación clave es la <strong>proyección</strong>: a partir de una red bipartita, podemos crear una red de un solo tipo de nodo. En la proyección sobre <span class="math notranslate nohighlight">\(V_1\)</span>, dos nodos de tipo 1 están conectados si comparten al menos un vecino de tipo 2.</p>
+<p><strong>Ejemplo concreto</strong>: si tenemos la red bipartita generadores-comercializadores, la proyección sobre generadores crea una red donde dos generadores están conectados si venden a al menos un comercializador en común. Esta red de proyección revela <strong>competencia directa</strong>: los generadores conectados compiten por los mismos clientes.</p>
+<p>Similarmente, la proyección sobre comercializadores crea una red donde dos comercializadores están conectados si compran a al menos un generador en común. Esto revela <strong>dependencia compartida</strong>: si ese generador falla, ambos comercializadores se ven afectados.</p>
+</section>
+<section id="redes-de-afiliacion">
+<h4>Redes de afiliación<a class="headerlink" href="#redes-de-afiliacion" title="Link to this heading">#</a></h4>
+<p>Las redes bipartitas donde un tipo de nodo representa una “membresía” o “afiliación” se llaman <strong>redes de afiliación</strong> (<em>affiliation networks</em>). Por ejemplo:</p>
+<ul class="simple">
+<li><p>Actores del sector energético afiliados a gremios o mesas de trabajo regulatorias.</p></li>
+<li><p>Investigadores afiliados a proyectos de I+D en energía.</p></li>
+<li><p>Comunidades afectadas por múltiples proyectos energéticos.</p></li>
+</ul>
+<p>La proyección de estas redes revela estructuras sociales ocultas: ¿qué actores se encuentran recurrentemente en los mismos espacios? ¿Qué comunidades enfrentan impactos acumulativos de múltiples proyectos?</p>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="deteccion-de-comunidades">
+<h2>6. Detección de comunidades<a class="headerlink" href="#deteccion-de-comunidades" title="Link to this heading">#</a></h2>
+<section id="que-es-una-comunidad-en-una-red">
+<h3>¿Qué es una comunidad en una red?<a class="headerlink" href="#que-es-una-comunidad-en-una-red" title="Link to this heading">#</a></h3>
+<p>En el análisis de redes, una <strong>comunidad</strong> (<em>community</em>) o <strong>módulo</strong> es un grupo de nodos que están más densamente conectados entre sí que con el resto de la red. No hay una definición única y universal, pero la intuición es clara: son “clústeres” naturales dentro de la red.</p>
+<p>En el contexto energético:</p>
+<ul class="simple">
+<li><p>En la red del STN: las comunidades podrían corresponder a regiones del sistema (Costa Atlántica, Antioquia, Centro, Suroccidente) que están internamente bien conectadas pero con pocas líneas de interconexión entre ellas.</p></li>
+<li><p>En la red de actores del mercado: las comunidades podrían revelar “bloques” de generadores y comercializadores que operan preferentemente entre sí.</p></li>
+<li><p>En una red de adopción solar: las comunidades podrían corresponder a barrios o grupos sociales donde la adopción se difunde internamente.</p></li>
+</ul>
+</section>
+<section id="modularidad-como-medida">
+<h3>Modularidad como medida<a class="headerlink" href="#modularidad-como-medida" title="Link to this heading">#</a></h3>
+<p>La medida más usada para evaluar la calidad de una partición en comunidades es la <strong>modularidad</strong> (<em>modularity</em>), propuesta por Newman y Girvan (2004):</p>
+<div class="math notranslate nohighlight">
+\[Q = \frac{1}{2m} \sum_{ij} \left[ A_{ij} - \frac{k_i k_j}{2m} \right] \delta(c_i, c_j)\]</div>
+<p>donde:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(A_{ij}\)</span> es la entrada de la matriz de adyacencia (1 si hay arista, 0 si no).</p></li>
+<li><p><span class="math notranslate nohighlight">\(k_i, k_j\)</span> son los grados de los nodos <span class="math notranslate nohighlight">\(i\)</span> y <span class="math notranslate nohighlight">\(j\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> es el número total de aristas.</p></li>
+<li><p><span class="math notranslate nohighlight">\(c_i\)</span> es la comunidad asignada al nodo <span class="math notranslate nohighlight">\(i\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\delta(c_i, c_j) = 1\)</span> si <span class="math notranslate nohighlight">\(i\)</span> y <span class="math notranslate nohighlight">\(j\)</span> están en la misma comunidad, 0 en caso contrario.</p></li>
+</ul>
+<p><strong>Lectura intuitiva</strong>: la modularidad compara la densidad de aristas <em>dentro</em> de cada comunidad con la densidad que esperaríamos si las aristas estuvieran distribuidas al azar. Un valor de <span class="math notranslate nohighlight">\(Q\)</span> cercano a 0 indica una partición no mejor que la aleatoria; valores de <span class="math notranslate nohighlight">\(Q &gt; 0.3\)</span> se consideran indicativos de estructura comunitaria significativa.</p>
+</section>
+<section id="algoritmos-de-deteccion">
+<h3>Algoritmos de detección<a class="headerlink" href="#algoritmos-de-deteccion" title="Link to this heading">#</a></h3>
+<p>Existen múltiples algoritmos para detectar comunidades. Los más utilizados en la práctica (implementados en NetworkX y bibliotecas como <code class="docutils literal notranslate"><span class="pre">community</span></code> o <code class="docutils literal notranslate"><span class="pre">leidenalg</span></code>):</p>
+<ul class="simple">
+<li><p><strong>Louvain</strong>: algoritmo voraz que optimiza la modularidad iterativamente. Rápido y efectivo para redes grandes.</p></li>
+<li><p><strong>Leiden</strong>: mejora sobre Louvain con garantías teóricas más fuertes.</p></li>
+<li><p><strong>Girvan-Newman</strong>: basado en la remoción iterativa de aristas con mayor betweenness.</p></li>
+</ul>
+<p>En el Laboratorio 2 de esta semana, los estudiantes aplicarán detección de comunidades a la red de actores del mercado mayorista colombiano para identificar clústeres de mercado y evaluar si la estructura modular del mercado tiene implicaciones de riesgo sistémico.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="el-caso-de-la-semana-adopcion-de-energia-solar-distribuida-en-colombia">
+<h2>7. El caso de la semana: adopción de energía solar distribuida en Colombia<a class="headerlink" href="#el-caso-de-la-semana-adopcion-de-energia-solar-distribuida-en-colombia" title="Link to this heading">#</a></h2>
+<section id="los-datos">
+<h3>Los datos<a class="headerlink" href="#los-datos" title="Link to this heading">#</a></h3>
+<p>La generación distribuida en Colombia ha experimentado un crecimiento notable. Según datos de la UPME y del registro de autogeneración de XM, la capacidad instalada de techos solares pasó de menos de 10 MW en 2017 a más de 800 MW en 2024, con más de 6.000 instalaciones registradas. La curva de adopción acumulada muestra una forma inconfundible: la <strong>curva en S</strong>.</p>
+</section>
+<section id="por-que-fallan-los-modelos-puramente-economicos">
+<h3>¿Por qué fallan los modelos puramente económicos?<a class="headerlink" href="#por-que-fallan-los-modelos-puramente-economicos" title="Link to this heading">#</a></h3>
+<p>Un modelo de decisión basado únicamente en el VPN predeciría que:</p>
+<ol class="arabic simple">
+<li><p>Todo usuario para quien el VPN es positivo (dados los precios de electricidad, el costo de los paneles y los incentivos tributarios) adoptaría inmediatamente.</p></li>
+<li><p>La adopción sería un escalón: cero antes de que la tecnología sea viable, 100% después.</p></li>
+<li><p>La distribución geográfica de la adopción sería uniforme entre usuarios con características económicas similares.</p></li>
+</ol>
+<p>Ninguna de estas tres predicciones se cumple. La adopción es gradual, sigue una S, y muestra fuertes patrones geográficos. ¿Qué falta?</p>
+</section>
+<section id="el-papel-del-contagio-social">
+<h3>El papel del contagio social<a class="headerlink" href="#el-papel-del-contagio-social" title="Link to this heading">#</a></h3>
+<p>La explicación reside en los mecanismos de contagio social que hemos estudiado:</p>
+<ol class="arabic simple">
+<li><p><strong>Visibilidad</strong>: las instalaciones solares son <strong>visibles</strong> — se ven en los techos. Cada instalación es un “anuncio” permanente para los vecinos. Esto genera el efecto de imitación (<span class="math notranslate nohighlight">\(q\)</span>) en el modelo de Bass.</p></li>
+<li><p><strong>Contagio complejo</strong>: instalar paneles solares es una decisión costosa e irreversible. La mayoría de las personas necesitan ver a <strong>varios</strong> vecinos o conocidos con la tecnología antes de dar el paso. Esto explica la formación de clústeres geográficos.</p></li>
+<li><p><strong>Heterogeneidad de umbrales</strong>: los “innovadores” (ingenieros del sector, ambientalistas convencidos, entusiastas tecnológicos) tienen umbrales bajos — adoptan temprano, a menudo por motivaciones no puramente económicas. Ellos sirven como semilla. La “mayoría temprana” tiene umbrales intermedios y necesita ver al innovador vecino y a un par de conocidos más. La “mayoría tardía” y los “rezagados” esperan hasta que sea casi la norma.</p></li>
+<li><p><strong>Efecto red local</strong>: en conjuntos residenciales o barrios con asociaciones de vecinos fuertes, la adopción se difunde más rápido porque las conexiones sociales son más densas (alto clustering).</p></li>
+</ol>
+</section>
+<section id="aplicacion-conceptual-de-los-modelos">
+<h3>Aplicación conceptual de los modelos<a class="headerlink" href="#aplicacion-conceptual-de-los-modelos" title="Link to this heading">#</a></h3>
+<p>Podemos usar los modelos de esta semana para interpretar la curva observada:</p>
+<ul class="simple">
+<li><p><strong>Fase 1 (2017-2019): arranque lento</strong>. Pocos innovadores. El modelo de Bass con <span class="math notranslate nohighlight">\(p\)</span> pequeño (poca publicidad, incentivos poco conocidos) y <span class="math notranslate nohighlight">\(q\)</span> que aún no opera (pocos adoptantes para imitar).</p></li>
+<li><p><strong>Fase 2 (2020-2022): aceleración</strong>. La Ley 2099 (2021) aumenta <span class="math notranslate nohighlight">\(p\)</span> (más incentivos, más visibilidad regulatoria). Simultáneamente, los adoptantes tempranos generan el efecto de imitación (<span class="math notranslate nohighlight">\(q\)</span> se activa). La combinación es explosiva: <span class="math notranslate nohighlight">\(dF/dt = (p + qF)(1-F)\)</span> crece rápidamente cuando <span class="math notranslate nohighlight">\(F\)</span> empieza a ser apreciable.</p></li>
+<li><p><strong>Fase 3 (2023-2024): saturación incipiente</strong>. El mercado de early adopters se va agotando. <span class="math notranslate nohighlight">\((1-F)\)</span> disminuye. La tasa de crecimiento empieza a desacelerarse, formando la parte superior de la S.</p></li>
+</ul>
+</section>
+<section id="implicaciones-para-politica-publica">
+<h3>Implicaciones para política pública<a class="headerlink" href="#implicaciones-para-politica-publica" title="Link to this heading">#</a></h3>
+<p>La teoría de difusión en redes ofrece recomendaciones concretas:</p>
+<ol class="arabic simple">
+<li><p><strong>Focalizar los subsidios iniciales</strong> en comunidades con alta densidad de conexiones sociales (conjuntos residenciales, barrios con organizaciones comunitarias activas) para maximizar la cascada de adopción.</p></li>
+<li><p><strong>Hacer visible lo invisible</strong>: programas que muestren las instalaciones existentes y sus resultados (ahorro real, confiabilidad) amplifican el coeficiente <span class="math notranslate nohighlight">\(q\)</span>.</p></li>
+<li><p><strong>Identificar y apoyar a los “nodos semilla”</strong>: profesionales del sector, líderes comunitarios, figuras públicas locales. Un innovador bien conectado puede disparar una cascada que un subsidio uniforme no logra.</p></li>
+<li><p><strong>No subestimar la estructura social</strong>: dos municipios con idénticas condiciones de radiación solar y capacidad económica pueden tener tasas de adopción dramáticamente diferentes si uno tiene redes sociales más densas y el otro tiene una población más fragmentada.</p></li>
+</ol>
+</section>
+</section>
+<hr class="docutils" />
+<section id="cierre-del-modulo-de-redes-que-aprendimos-y-que-falta">
+<h2>8. Cierre del módulo de redes: ¿qué aprendimos y qué falta?<a class="headerlink" href="#cierre-del-modulo-de-redes-que-aprendimos-y-que-falta" title="Link to this heading">#</a></h2>
+<section id="lo-que-las-redes-si-pueden-hacer">
+<h3>Lo que las redes SÍ pueden hacer<a class="headerlink" href="#lo-que-las-redes-si-pueden-hacer" title="Link to this heading">#</a></h3>
+<p>En dos semanas hemos construido un arsenal analítico considerable:</p>
+<ul class="simple">
+<li><p><strong>Revelar estructura</strong>: traducir sistemas complejos (infraestructura eléctrica, mercados, relaciones sociales) en grafos analizables.</p></li>
+<li><p><strong>Identificar nodos críticos</strong>: betweenness, grado, centralidad de cercanía nos dicen dónde están los cuellos de botella y los actores clave.</p></li>
+<li><p><strong>Modelar difusión y cascadas</strong>: los modelos de contagio y umbral predicen cómo se propagan tecnologías, información y fallas a través de la red.</p></li>
+<li><p><strong>Detectar comunidades</strong>: la detección de módulos revela agrupamientos naturales en mercados, regiones y ecosistemas de actores.</p></li>
+<li><p><strong>Cuantificar vulnerabilidad</strong>: la paradoja robusto-pero-frágil, verificada con ataques dirigidos y fallas aleatorias.</p></li>
+</ul>
+</section>
+<section id="lo-que-las-redes-no-pueden-hacer">
+<h3>Lo que las redes NO pueden hacer<a class="headerlink" href="#lo-que-las-redes-no-pueden-hacer" title="Link to this heading">#</a></h3>
+<p>Sin embargo, las redes tienen una <strong>limitación fundamental</strong> que nos obliga a buscar herramientas complementarias:</p>
+<blockquote>
+<div><p>Las redes son excelentes para modelar <strong>conexiones</strong> y <strong>estados discretos</strong> (adoptó/no adoptó, operativo/fallado), pero no están diseñadas para modelar la <strong>evolución temporal de cantidades continuas</strong> que se <strong>acumulan</strong> y <strong>fluyen</strong>.</p>
+</div></blockquote>
+<p>Considere las siguientes preguntas que el análisis de redes no puede responder bien:</p>
+<ul class="simple">
+<li><p>¿Cómo evoluciona el <strong>precio de la electricidad</strong> en el tiempo, y cómo responde a cambios en la capacidad instalada?</p></li>
+<li><p>¿Cuánta <strong>capacidad instalada</strong> habrá en 2030 si se invierte a la tasa actual? ¿Y si cambia la regulación?</p></li>
+<li><p>¿Cómo interactúan la <strong>oferta</strong>, la <strong>demanda</strong>, los <strong>inventarios</strong> de embalses y los <strong>retardos</strong> de construcción de nuevas plantas?</p></li>
+</ul>
+<p>Estas preguntas involucran <strong>stocks</strong> (acumuladores: capacidad instalada, volumen de embalse, capital acumulado) y <strong>flujos</strong> (tasas: inversión por año, generación por hora, consumo por día) que evolucionan continuamente en el tiempo, con <strong>retroalimentaciones</strong> y <strong>retardos</strong>.</p>
+<p>Este es precisamente el dominio de la <strong>Dinámica de Sistemas</strong> (<em>System Dynamics</em>), que estudiaremos en las Semanas 4 y 5.</p>
+</section>
+<section id="el-puente-conceptual">
+<h3>El puente conceptual<a class="headerlink" href="#el-puente-conceptual" title="Link to this heading">#</a></h3>
+<p>Piénselo así:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Redes (Semanas 2-3)</p></th>
+<th class="head"><p>Dinámica de Sistemas (Semanas 4-5)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Estructura: ¿quién está conectado con quién?</p></td>
+<td><p>Comportamiento: ¿cómo cambian las cantidades en el tiempo?</p></td>
+</tr>
+<tr class="row-odd"><td><p>Estados discretos: adoptó / no adoptó</p></td>
+<td><p>Variables continuas: precio, capacidad, demanda</p></td>
+</tr>
+<tr class="row-even"><td><p>Topología como determinante</p></td>
+<td><p>Retroalimentaciones y retardos como determinantes</p></td>
+</tr>
+<tr class="row-odd"><td><p>Instantánea o dinámica de estados</p></td>
+<td><p>Evolución temporal de acumulaciones y flujos</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Ambas perspectivas son complementarias, no competitivas. El análisis completo de un sistema energético requiere entender tanto su <strong>estructura</strong> (redes) como su <strong>comportamiento temporal</strong> (dinámica de sistemas). La Semana 6 mostrará cómo integrarlas.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="horizonte-modelamiento-basado-en-agentes-abm">
+<h2>9. Horizonte: modelamiento basado en agentes (ABM)<a class="headerlink" href="#horizonte-modelamiento-basado-en-agentes-abm" title="Link to this heading">#</a></h2>
+<p>Antes de cerrar el módulo de redes, vale la pena señalar un camino natural de profundización que el curso no cubre en detalle pero que el estudiante debería conocer: el <strong>modelamiento basado en agentes</strong> (<em>Agent-Based Modeling</em>, ABM).</p>
+<section id="de-nodos-con-reglas-a-agentes-con-estrategias">
+<h3>De “nodos con reglas” a “agentes con estrategias”<a class="headerlink" href="#de-nodos-con-reglas-a-agentes-con-estrategias" title="Link to this heading">#</a></h3>
+<p>En los modelos de esta semana, los nodos siguen reglas de actualización relativamente simples: adoptan si suficientes vecinos adoptaron, se contagian con cierta probabilidad, fallan si se sobrecargan. Pero en la realidad, los actores del sistema energético son mucho más sofisticados:</p>
+<ul class="simple">
+<li><p>Un generador no solo “opera” o “falla” — decide cuánto producir, a qué precio ofertar, si invierte en nueva capacidad.</p></li>
+<li><p>Una comunidad no solo “adopta” o “no adopta” — evalúa costos, negocia condiciones, observa el comportamiento de empresas y reguladores a lo largo del tiempo, aprende de experiencias pasadas.</p></li>
+<li><p>Un regulador no solo “regula” o “no regula” — ajusta sus reglas en función de los resultados observados, con retardos y con presiones políticas.</p></li>
+</ul>
+<p>El ABM lleva el análisis de redes al siguiente nivel: los nodos se convierten en <strong>agentes</strong> con reglas de comportamiento heterogéneas, capacidad de aprendizaje, memoria y estrategia. Cada agente:</p>
+<ol class="arabic simple">
+<li><p><strong>Percibe</strong> su entorno (incluyendo los estados de sus vecinos en la red).</p></li>
+<li><p><strong>Decide</strong> según una regla que puede ser tan simple como un umbral o tan compleja como un algoritmo de optimización.</p></li>
+<li><p><strong>Actúa</strong>, cambiando su estado y potencialmente el de su entorno.</p></li>
+<li><p><strong>Aprende</strong>, modificando sus reglas futuras en función de los resultados.</p></li>
+</ol>
+</section>
+<section id="framework-mesa-python">
+<h3>Framework Mesa (Python)<a class="headerlink" href="#framework-mesa-python" title="Link to this heading">#</a></h3>
+<p>En el ecosistema Python que usa este curso, la biblioteca <strong>Mesa</strong> proporciona un entorno para construir modelos ABM. Mesa permite definir agentes, ubicarlos en una red (o en un espacio geográfico), especificar sus reglas de comportamiento, y simular la evolución del sistema. Aunque no lo implementaremos en este curso, es la extensión natural para quien quiera profundizar.</p>
+</section>
+<section id="ejemplo-conceptual-mercado-de-energia-peer-to-peer-p2p">
+<h3>Ejemplo conceptual: mercado de energía peer-to-peer (P2P)<a class="headerlink" href="#ejemplo-conceptual-mercado-de-energia-peer-to-peer-p2p" title="Link to this heading">#</a></h3>
+<p>Imaginemos un barrio con 50 casas, algunas con paneles solares y baterías. En un mercado P2P:</p>
+<ul class="simple">
+<li><p>Cada casa es un <strong>agente</strong> con un perfil de generación y consumo.</p></li>
+<li><p>Los agentes pueden comprar y vender energía entre sí, negociando precios.</p></li>
+<li><p>Las decisiones de compra/venta dependen del precio, del nivel de carga de la batería, y de las estrategias aprendidas.</p></li>
+<li><p>La red de transacciones evoluciona: nuevas conexiones se forman, viejas se disuelven.</p></li>
+</ul>
+<p>Un modelo ABM captura esta riqueza. Un modelo de redes puras no podría modelar la negociación de precios; un modelo de dinámica de sistemas no podría capturar la heterogeneidad de 50 agentes individuales. El ABM integra ambas dimensiones.</p>
+<blockquote>
+<div><p><strong>Nota</strong>: el ABM no se evalúa en este curso. Se presenta como horizonte de profundización para el estudiante interesado en continuar su formación en análisis sistémico avanzado.</p>
+</div></blockquote>
+</section>
+</section>
+<hr class="docutils" />
+<section id="resumen-y-conceptos-para-llevar">
+<h2>10. Resumen y conceptos para llevar<a class="headerlink" href="#resumen-y-conceptos-para-llevar" title="Link to this heading">#</a></h2>
+<section id="conceptos-clave-de-la-semana">
+<h3>Conceptos clave de la semana<a class="headerlink" href="#conceptos-clave-de-la-semana" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Dinámica sobre redes</strong>: los nodos tienen estados que cambian en función de los estados de sus vecinos, siguiendo reglas de actualización.</p></li>
+<li><p><strong>Contagio simple</strong>: cada contacto con un adoptante tiene probabilidad independiente <span class="math notranslate nohighlight">\(p\)</span> de causar adopción. Un solo contacto basta. Los hubs y los puentes entre comunidades aceleran la difusión.</p></li>
+<li><p><strong>Contagio complejo</strong>: la adopción requiere refuerzo social múltiple — ver a varios vecinos adoptantes. El clustering (agrupamiento) favorece la difusión. Explica los clústeres geográficos de adopción tecnológica.</p></li>
+<li><p><strong>Modelos de umbral</strong>: cada nodo tiene un umbral <span class="math notranslate nohighlight">\(\theta_i\)</span> — la fracción de vecinos adoptantes necesaria para activarlo. La condición de cascada de Watts: una cascada global requiere un componente conectado de nodos vulnerables.</p></li>
+<li><p><strong>Modelo de Bass</strong>: difusión a nivel agregado con influencia externa (<span class="math notranslate nohighlight">\(p\)</span>) e imitación (<span class="math notranslate nohighlight">\(q\)</span>). Produce la curva en S. Es la versión de campo medio de los modelos de umbral.</p></li>
+<li><p><strong>Fallas en cascada como dinámica</strong>: proceso temporal de falla → redistribución → sobrecarga → nueva falla. La topología determina la velocidad y el alcance de la cascada.</p></li>
+<li><p><strong>Redes de actores</strong>: nodos = actores del sistema energético, aristas = relaciones (contractuales, de supervisión, de influencia). Las métricas de centralidad revelan poder de mercado y riesgo sistémico.</p></li>
+<li><p><strong>Redes bipartitas</strong>: dos tipos de nodos con aristas solo entre tipos distintos. Las proyecciones revelan competencia, dependencia compartida o comunidades ocultas.</p></li>
+<li><p><strong>Detección de comunidades</strong>: identificación de grupos densamente conectados. La modularidad <span class="math notranslate nohighlight">\(Q\)</span> mide la calidad de la partición.</p></li>
+</ol>
+</section>
+<section id="glosario-de-terminos-introducidos">
+<h3>Glosario de términos introducidos<a class="headerlink" href="#glosario-de-terminos-introducidos" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Término en español</p></th>
+<th class="head"><p>Término en inglés</p></th>
+<th class="head"><p>Definición breve</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Contagio simple</p></td>
+<td><p>Simple contagion</p></td>
+<td><p>Modelo de difusión donde un solo contacto con un adoptante puede causar adopción</p></td>
+</tr>
+<tr class="row-odd"><td><p>Contagio complejo</p></td>
+<td><p>Complex contagion</p></td>
+<td><p>Modelo de difusión que requiere refuerzo social múltiple para causar adopción</p></td>
+</tr>
+<tr class="row-even"><td><p>Umbral de adopción</p></td>
+<td><p>Adoption threshold</p></td>
+<td><p>Fracción mínima de vecinos adoptantes requerida para que un nodo adopte</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cascada global</p></td>
+<td><p>Global cascade</p></td>
+<td><p>Proceso donde una perturbación pequeña (semilla) activa una fracción macroscópica de la red</p></td>
+</tr>
+<tr class="row-even"><td><p>Nodo vulnerable</p></td>
+<td><p>Vulnerable node</p></td>
+<td><p>Nodo con umbral suficientemente bajo para ser activado por un solo vecino</p></td>
+</tr>
+<tr class="row-odd"><td><p>Falla en cascada (temporal)</p></td>
+<td><p>Cascading failure (dynamic)</p></td>
+<td><p>Proceso temporal de falla → redistribución → sobrecarga → nueva falla, extendiendo la definición estática de la Semana 2</p></td>
+</tr>
+<tr class="row-even"><td><p>Modelo de Bass</p></td>
+<td><p>Bass diffusion model</p></td>
+<td><p>Modelo agregado de difusión de innovaciones con coeficientes de innovación (<span class="math notranslate nohighlight">\(p\)</span>) e imitación (<span class="math notranslate nohighlight">\(q\)</span>)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Red bipartita</p></td>
+<td><p>Bipartite network</p></td>
+<td><p>Grafo con dos tipos de nodos donde las aristas solo conectan nodos de tipos distintos</p></td>
+</tr>
+<tr class="row-even"><td><p>Proyección</p></td>
+<td><p>Projection</p></td>
+<td><p>Red de un solo tipo de nodo derivada de una red bipartita</p></td>
+</tr>
+<tr class="row-odd"><td><p>Comunidad / módulo</p></td>
+<td><p>Community / module</p></td>
+<td><p>Grupo de nodos más densamente conectados entre sí que con el resto de la red</p></td>
+</tr>
+<tr class="row-even"><td><p>Modularidad</p></td>
+<td><p>Modularity</p></td>
+<td><p>Métrica <span class="math notranslate nohighlight">\(Q\)</span> que evalúa la calidad de una partición en comunidades</p></td>
+</tr>
+<tr class="row-odd"><td><p>Regla de actualización</p></td>
+<td><p>Update rule</p></td>
+<td><p>Función que determina el nuevo estado de un nodo basándose en los estados de sus vecinos</p></td>
+</tr>
+<tr class="row-even"><td><p>ABM</p></td>
+<td><p>Agent-Based Modeling</p></td>
+<td><p>Modelamiento basado en agentes con comportamiento heterogéneo y capacidad de aprendizaje</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="puente-a-la-semana-4">
+<h3>Puente a la Semana 4<a class="headerlink" href="#puente-a-la-semana-4" title="Link to this heading">#</a></h3>
+<p>Tenemos la <strong>estructura</strong> (Semanas 2-3). Ahora necesitamos el <strong>tiempo</strong>.</p>
+<p>En la Semana 4 aprenderemos a construir modelos de <strong>dinámica de sistemas</strong>: stocks que se acumulan, flujos que los llenan o vacían, retroalimentaciones que los conectan, y retardos que generan oscilaciones. Aplicaremos estas herramientas al ciclo de inversión-capacidad en generación eléctrica colombiana — una dinámica que explica por qué el sector oscila entre sobreinversión y escasez, y que los análisis estáticos de VPN jamás podrían capturar.</p>
+<blockquote>
+<div><p><em>“Las redes nos dicen quién está conectado con quién. La dinámica de sistemas nos dice qué pasa con el tiempo. Para entender un sistema energético completo, necesitamos ambas.”</em></p>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="referencias-principales">
+<h3>Referencias principales<a class="headerlink" href="#referencias-principales" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Barabási, A.-L. (2016). <em>Network Science</em>. Cambridge University Press. Capítulos 5-6, 10. [Acceso abierto: <a class="reference external" href="http://networksciencebook.com">networksciencebook.com</a>]</p></li>
+<li><p>Bass, F. M. (1969). A new product growth for model consumer durables. <em>Management Science</em>, 15(5), 215-227.</p></li>
+<li><p>Centola, D. &amp; Macy, M. (2007). Complex contagions and the weakness of long ties. <em>American Journal of Sociology</em>, 113(3), 702-734.</p></li>
+<li><p>Granovetter, M. (1978). Threshold models of collective behavior. <em>American Journal of Sociology</em>, 83(6), 1420-1443.</p></li>
+<li><p>Motter, A. E. &amp; Lai, Y.-C. (2002). Cascade-based attacks on complex networks. <em>Physical Review E</em>, 66(6), 065102.</p></li>
+<li><p>Newman, M. E. J. &amp; Girvan, M. (2004). Finding and evaluating community structure in networks. <em>Physical Review E</em>, 69(2), 026113.</p></li>
+<li><p>Rogers, E. M. (2003). <em>Diffusion of Innovations</em> (5ª ed.). Free Press.</p></li>
+<li><p>Watts, D. J. (2002). A simple model of global cascades on random networks. <em>Proceedings of the National Academy of Sciences</em>, 99(9), 5766-5771.</p></li>
+</ul>
+<hr class="docutils" />
+<p><em>En la Semana 4 daremos el salto de la estructura a la dinámica temporal. Aprenderemos a construir modelos de stocks y flujos — variables que se acumulan y se vacían con el tiempo — para simular el ciclo de inversión-capacidad en generación eléctrica colombiana. Las redes nos dijeron dónde están las vulnerabilidades; la dinámica de sistemas nos dirá qué pasa cuando las activamos.</em></p>
+</section>
+</section>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./semana_03"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../semana_02/notebook.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Semana 2: Redes y Topología</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="notebook.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">Semana 3: Dinámica sobre Redes</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#marco-teorico-systems-analytics-mise-universidad-de-los-andes">Marco Teórico · Systems Analytics — MISE, Universidad de los Andes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apertura-de-la-fotografia-a-la-pelicula">1. Apertura: de la fotografía a la película</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dinamica-sobre-redes-nodos-con-estado">2. Dinámica sobre redes: nodos con estado</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-idea-fundamental">La idea fundamental</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modos-de-actualizacion">Modos de actualización</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contraste-con-la-semana-2">Contraste con la Semana 2</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-de-difusion-y-contagio">3. Modelos de difusión y contagio</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contagio-simple-modelo-si-sir-adaptado">3.1 Contagio simple (modelo SI/SIR adaptado)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#intuicion">Intuición</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-formal">Definición formal</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicacion-energetica">Aplicación energética</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#que-predice">¿Qué predice?</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contagio-complejo-centola-macy">3.2 Contagio complejo (Centola &amp; Macy)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Intuición</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Definición formal</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#por-que-esto-cambia-todo">¿Por qué esto cambia todo?</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Aplicación energética</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-de-umbral-granovetter-watts">3.3 Modelos de umbral (Granovetter, Watts)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Intuición</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Definición formal</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#la-condicion-de-cascada-de-watts">La condición de cascada de Watts</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicacion-energetica-cuando-despega-la-solar-distribuida">Aplicación energética: ¿cuándo “despega” la solar distribuida?</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-de-bass-difusion-a-nivel-agregado">3.4 Modelo de Bass: difusión a nivel agregado</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Intuición</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Definición formal</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#los-parametros-cuentan-una-historia">Los parámetros cuentan una historia</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicacion-energetica-fncer-en-colombia">Aplicación energética: FNCER en Colombia</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#conexion-con-los-modelos-de-red">Conexión con los modelos de red</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fallas-en-cascada-como-dinamica-sobre-redes">4. Fallas en cascada como dinámica sobre redes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-cascada-como-proceso-temporal">La cascada como proceso temporal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-papel-de-la-topologia-en-el-tamano-de-la-cascada">El papel de la topología en el tamaño de la cascada</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#robusto-pero-fragil-ahora-con-dinamica">Robusto-pero-frágil, ahora con dinámica</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#redes-de-actores-y-stakeholders">5. Redes de actores y stakeholders</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#del-cable-al-actor">5.1 Del cable al actor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-mercado-mayorista-colombiano-como-red">5.2 El mercado mayorista colombiano como red</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#que-nos-dice-la-centralidad">¿Qué nos dice la centralidad?</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#y-si-un-hub-sale-del-mercado">¿Y si un hub sale del mercado?</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#redes-bipartitas-y-de-afiliacion">5.3 Redes bipartitas y de afiliación</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-una-red-bipartita">¿Qué es una red bipartita?</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#proyecciones-de-redes-bipartitas">Proyecciones de redes bipartitas</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#redes-de-afiliacion">Redes de afiliación</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deteccion-de-comunidades">6. Detección de comunidades</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-una-comunidad-en-una-red">¿Qué es una comunidad en una red?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modularidad-como-medida">Modularidad como medida</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritmos-de-deteccion">Algoritmos de detección</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-caso-de-la-semana-adopcion-de-energia-solar-distribuida-en-colombia">7. El caso de la semana: adopción de energía solar distribuida en Colombia</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#los-datos">Los datos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#por-que-fallan-los-modelos-puramente-economicos">¿Por qué fallan los modelos puramente económicos?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-papel-del-contagio-social">El papel del contagio social</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicacion-conceptual-de-los-modelos">Aplicación conceptual de los modelos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implicaciones-para-politica-publica">Implicaciones para política pública</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cierre-del-modulo-de-redes-que-aprendimos-y-que-falta">8. Cierre del módulo de redes: ¿qué aprendimos y qué falta?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lo-que-las-redes-si-pueden-hacer">Lo que las redes SÍ pueden hacer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lo-que-las-redes-no-pueden-hacer">Lo que las redes NO pueden hacer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-puente-conceptual">El puente conceptual</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#horizonte-modelamiento-basado-en-agentes-abm">9. Horizonte: modelamiento basado en agentes (ABM)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#de-nodos-con-reglas-a-agentes-con-estrategias">De “nodos con reglas” a “agentes con estrategias”</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#framework-mesa-python">Framework Mesa (Python)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-conceptual-mercado-de-energia-peer-to-peer-p2p">Ejemplo conceptual: mercado de energía peer-to-peer (P2P)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resumen-y-conceptos-para-llevar">10. Resumen y conceptos para llevar</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptos-clave-de-la-semana">Conceptos clave de la semana</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#glosario-de-terminos-introducidos">Glosario de términos introducidos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#puente-a-la-semana-4">Puente a la Semana 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias-principales">Referencias principales</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por Maestria en Ingenieria de Sistemas Energeticos (MISE)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>Material del curso Analisis de Sistemas — MISE, Universidad de los Andes</p>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

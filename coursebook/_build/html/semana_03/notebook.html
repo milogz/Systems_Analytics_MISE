@@ -1,0 +1,1565 @@
+
+<!DOCTYPE html>
+
+
+<html lang="es" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Semana 3: Dinámica sobre Redes &#8212; Analisis de Sistemas para la Industria Energetica</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="../_static/documentation_options.js?v=78d55cf8"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Haz clic para mostrar';</script>
+    <script>let toggleHintHide = 'Haz clic para ocultar';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script src="../_static/translations.js?v=d190bf04"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'semana_03/notebook';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="next" title="Semana 4 — Dinámica de Sistemas I: Stocks, Flujos y el Ciclo de Inversión" href="../semana_04/lectura.html" />
+    <link rel="prev" title="Semana 3 — Dinámica sobre Redes y Redes de Actores: Más Allá de la Estructura Estática" href="lectura.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Saltar al contenido principal</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Volver arriba</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Advertencia de versión"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Navegación del sitio">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="En esta página">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Analisis de Sistemas para la Industria Energetica</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Analisis de Sistemas para la Industria Energetica
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fundamentos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../preludio/lectura.html">Preludio — Los Cimientos Científicos del Análisis de Sistemas Complejos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../preludio/notebook.html">Preludio — Los Cimientos Científicos</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semana 1: Que Significa Sistemico</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../semana_01/lectura.html">Semana 1 — ¿Qué es la complejidad y por qué importa en energía?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../semana_01/notebook.html">Semana 1: Complejidad — ¿Por qué los sistemas nos sorprenden?</a></li>
+
+
+
+
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semana 2: Redes I — Topologia y Vulnerabilidades</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../semana_02/lectura.html">Semana 2 — Redes complejas: la estructura oculta de los sistemas energéticos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../semana_02/notebook.html">Semana 2: Redes y Topología</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semana 3: Redes II — Actores y Difusion</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="lectura.html">Semana 3 — Dinámica sobre Redes y Redes de Actores: Más Allá de la Estructura Estática</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Semana 3: Dinámica sobre Redes</a></li>
+
+
+
+
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semana 4: Dinamica de Sistemas I</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../semana_04/lectura.html">Semana 4 — Dinámica de Sistemas I: Stocks, Flujos y el Ciclo de Inversión</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../semana_04/notebook.html">Semana 4 — Dinámica de Sistemas I: Stocks, Flujos y el Ciclo de Inversión</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semana 5: Dinamica de Sistemas II — Politicas y Escenarios</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../semana_05/lectura.html">Semana 5 — Dinámica de Sistemas II: Políticas, Escenarios e Incertidumbre</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../semana_05/notebook.html">Semana 5 — Dinámica de Sistemas II: Políticas, Escenarios e Incertidumbre</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Cierre e Integracion</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../cierre/integracion.html">Cierre e Integracion (Semanas 6-8)</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/YOUR_USER/Systems_Analytics_MISE" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Repositorio de origen"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/semana_03/notebook.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Descargar archivo fuente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir en PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Tema" data-bs-title="Tema"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Claro"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Oscuro"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="Sistema"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Semana 3: Dinámica sobre Redes</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Semana 3: Dinámica sobre Redes</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#systems-analytics-mise">Systems Analytics — MISE</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-1-nivel-1-intuicion-como-se-propagan-las-cosas-en-redes">Nivel 1 <strong>Nivel 1 —</strong> Intuición: ¿Cómo se propagan las cosas en redes?</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-rumor-en-el-salon-de-clase">1.1 El rumor en el salón de clase</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#por-que-todos-usan-whatsapp-contagio-simple-vs-complejo">1.2 ¿Por qué todos usan WhatsApp? — Contagio simple vs complejo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-modelo-de-umbrales-cuando-ocurre-una-cascada">1.3 El modelo de umbrales — ¿cuándo ocurre una cascada? ️</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-curva-s-de-instagram">1.4 La curva S de Instagram</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-2-nivel-2-energia-difusion-y-redes-en-el-sector-electrico-colombiano">Nivel 2 <strong>Nivel 2 —</strong> Energía: Difusión y redes en el sector eléctrico colombiano</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adopcion-solar-en-un-barrio-cuando-se-alcanza-el-tipping-point">2.1 Adopción solar en un barrio — ¿Cuándo se alcanza el tipping point? ️</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#curva-s-de-las-fncer-en-colombia">2.2 Curva S de las FNCER en Colombia 🇨🇴</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-mercado-mayorista-como-red-bipartita">2.3 El mercado mayorista como red bipartita</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#falla-en-cascada-en-el-sin">2.4 Falla en cascada en el SIN</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comunidades-en-el-mercado-electrico">2.5 Comunidades en el mercado eléctrico ️</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-3-nivel-3-profesional-herramientas-avanzadas-de-difusion-y-resiliencia">Nivel 3 <strong>Nivel 3 —</strong> Profesional: Herramientas avanzadas de difusión y resiliencia</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-basados-en-agentes-abm-con-mesa">3.1 Modelos basados en agentes (ABM) con Mesa</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-de-difusion-para-diseno-de-politica-energetica">3.2 Modelos de difusión para diseño de política energética</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resiliencia-de-redes-mas-alla-del-tipping-point">3.3 Resiliencia de redes: más allá del tipping point ️</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cierre-lo-que-aprendimos-esta-semana">Cierre: Lo que aprendimos esta semana</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proxima-semana-semana-4-dinamica-de-sistemas">Próxima semana: Semana 4 — Dinámica de Sistemas</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="semana-3-dinamica-sobre-redes">
+<h1>Semana 3: Dinámica sobre Redes<a class="headerlink" href="#semana-3-dinamica-sobre-redes" title="Link to this heading">#</a></h1>
+<section id="systems-analytics-mise">
+<h2>Systems Analytics — MISE<a class="headerlink" href="#systems-analytics-mise" title="Link to this heading">#</a></h2>
+<p><strong>Objetivo:</strong> Entender cómo se propagan fenómenos (información, adopción tecnológica, fallas) a través de redes, y aplicar estos modelos al sector energético colombiano.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Nivel</p></th>
+<th class="head"><p>Tema</p></th>
+<th class="head"><p>Enfoque</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Nivel 1 —</strong> Intuición</p></td>
+<td><p>Contagio, umbrales, curva S</p></td>
+<td><p>Algoritmos visibles, analogías</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Nivel 2 —</strong> Energía</p></td>
+<td><p>Adopción solar, mercado mayorista</p></td>
+<td><p>Datos colombianos</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Nivel 3 —</strong> Profesional</p></td>
+<td><p>ABM, resiliencia, política</p></td>
+<td><p>Herramientas avanzadas</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span><span class="p">;</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mise_utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">viz</span><span class="p">,</span> <span class="n">energy_data</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mise_utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">diffusion</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mise_utils.viz</span><span class="w"> </span><span class="kn">import</span> <span class="n">COLORS</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">networkx</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nx</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="n">viz</span><span class="o">.</span><span class="n">apply_mise_style</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Semana 3 cargada correctamente&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   NetworkX </span><span class="si">{</span><span class="n">nx</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Semana 3 cargada correctamente
+   NetworkX 3.1
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="nivel-1-nivel-1-intuicion-como-se-propagan-las-cosas-en-redes">
+<h1>Nivel 1 <strong>Nivel 1 —</strong> Intuición: ¿Cómo se propagan las cosas en redes?<a class="headerlink" href="#nivel-1-nivel-1-intuicion-como-se-propagan-las-cosas-en-redes" title="Link to this heading">#</a></h1>
+<blockquote>
+<div><p>En la Semana 2 aprendimos a <strong>describir</strong> redes. Ahora la pregunta es: ¿qué <strong>sucede</strong> sobre ellas?
+Un rumor, un virus, una tecnología… todos se propagan por las conexiones.</p>
+</div></blockquote>
+<section id="el-rumor-en-el-salon-de-clase">
+<h2>1.1 El rumor en el salón de clase<a class="headerlink" href="#el-rumor-en-el-salon-de-clase" title="Link to this heading">#</a></h2>
+<p>¿Cómo se esparce un rumor? Empecemos con el modelo más simple: <strong>contagio simple (SI)</strong>.</p>
+<p><strong>Regla:</strong> En cada paso de tiempo, cada persona infectada le “cuenta” el rumor a cada vecino con probabilidad β.</p>
+<p>Este es el algoritmo completo — léelo línea por línea:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ═══════════════════════════════════════════════════════════════════</span>
+<span class="c1"># ALGORITMO DE CONTAGIO SIMPLE (SI) — CÓDIGO VISIBLE</span>
+<span class="c1"># ═══════════════════════════════════════════════════════════════════</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">contagio_simple_manual</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">semilla</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="mf">0.15</span><span class="p">,</span> <span class="n">n_pasos</span><span class="o">=</span><span class="mi">20</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Modelo SI paso a paso — el estudiante puede leer cada línea.&quot;&quot;&quot;</span>
+    <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+    
+    <span class="c1"># Paso 0: solo la semilla está infectada</span>
+    <span class="n">infectados</span> <span class="o">=</span> <span class="p">{</span><span class="n">semilla</span><span class="p">}</span>
+    <span class="n">historia</span> <span class="o">=</span> <span class="p">[</span><span class="n">infectados</span><span class="o">.</span><span class="n">copy</span><span class="p">()]</span>
+    
+    <span class="k">for</span> <span class="n">paso</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_pasos</span><span class="p">):</span>
+        <span class="n">nuevos</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>  <span class="c1"># nuevos infectados en ESTE paso</span>
+        
+        <span class="c1"># Cada infectado intenta contagiar a sus vecinos</span>
+        <span class="k">for</span> <span class="n">nodo</span> <span class="ow">in</span> <span class="n">infectados</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">vecino</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="n">nodo</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">vecino</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">infectados</span><span class="p">:</span>       <span class="c1"># solo susceptibles</span>
+                    <span class="k">if</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">beta</span><span class="p">:</span>        <span class="c1"># con probabilidad β</span>
+                        <span class="n">nuevos</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">vecino</span><span class="p">)</span>
+        
+        <span class="c1"># Actualizar: los nuevos se suman a los infectados</span>
+        <span class="n">infectados</span> <span class="o">=</span> <span class="n">infectados</span> <span class="o">|</span> <span class="n">nuevos</span>
+        <span class="n">historia</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">infectados</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
+    
+    <span class="k">return</span> <span class="n">historia</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Función definida. Ahora vamos a usarla.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Función definida. Ahora vamos a usarla.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Crear una red tipo &quot;salón de clase&quot; (small-world)</span>
+<span class="n">G_salon</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">watts_strogatz_graph</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="c1"># Correr el contagio desde el nodo 0</span>
+<span class="n">historia</span> <span class="o">=</span> <span class="n">contagio_simple_manual</span><span class="p">(</span><span class="n">G_salon</span><span class="p">,</span> <span class="n">semilla</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="mf">0.15</span><span class="p">)</span>
+
+<span class="c1"># Graficar la curva de contagio</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">fraccion</span> <span class="o">=</span> <span class="n">diffusion</span><span class="o">.</span><span class="n">curva_contagio</span><span class="p">(</span><span class="n">historia</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">G_salon</span><span class="p">))</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">fraccion</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">COLORS</span><span class="p">[</span><span class="s2">&quot;danger&quot;</span><span class="p">],</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">fraccion</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">COLORS</span><span class="p">[</span><span class="s2">&quot;danger&quot;</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Paso de tiempo&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">% d</span><span class="s2">el salón que conoce el rumor&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Propagación de un rumor en un salón de 30 estudiantes&quot;</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">COLORS</span><span class="p">[</span><span class="s2">&quot;accent&quot;</span><span class="p">],</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;50%&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">El rumor llegó al </span><span class="si">{</span><span class="n">fraccion</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2">% del salón en </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">historia</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="si">}</span><span class="s2"> pasos&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/a9db4c3fa824609662a6eb5c9345ef52bf12a1f1fe80eb5cc19b3a35270797ed.png" src="../_images/a9db4c3fa824609662a6eb5c9345ef52bf12a1f1fe80eb5cc19b3a35270797ed.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>El rumor llegó al 100% del salón en 20 pasos
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Visualizar la propagación en la red</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">diffusion</span><span class="o">.</span><span class="n">plot_propagacion</span><span class="p">(</span><span class="n">G_salon</span><span class="p">,</span> <span class="n">historia</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/86ec2b3976de731a6c4786eb858c727c1b6bb8e902955c7c2f5ccea80489e728.png" src="../_images/86ec2b3976de731a6c4786eb858c727c1b6bb8e902955c7c2f5ccea80489e728.png" />
+</div>
+</div>
+</section>
+<section id="por-que-todos-usan-whatsapp-contagio-simple-vs-complejo">
+<h2>1.2 ¿Por qué todos usan WhatsApp? — Contagio simple vs complejo<a class="headerlink" href="#por-que-todos-usan-whatsapp-contagio-simple-vs-complejo" title="Link to this heading">#</a></h2>
+<p><strong>Contagio simple</strong> (rumor, virus): basta que UN vecino te lo pase → adoptas.</p>
+<p><strong>Contagio complejo</strong> (WhatsApp, paneles solares): necesitas que VARIOS vecinos ya lo usen → adoptas.</p>
+<blockquote>
+<div><p>La diferencia es el <strong>umbral</strong>: ¿cuántos de mis contactos necesitan tenerlo para que yo lo adopte?</p>
+</div></blockquote>
+<p>Comparemos ambos en la misma red:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Red más grande para ver la diferencia</span>
+<span class="n">G_social</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">watts_strogatz_graph</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">semillas</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">}</span>  <span class="c1"># 3 personas empiezan</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">diffusion</span><span class="o">.</span><span class="n">comparar_simple_vs_complejo</span><span class="p">(</span>
+    <span class="n">G_social</span><span class="p">,</span> <span class="n">semillas</span><span class="p">,</span>
+    <span class="n">beta</span><span class="o">=</span><span class="mf">0.08</span><span class="p">,</span>      <span class="c1"># probabilidad de contagio simple</span>
+    <span class="n">umbral</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span>    <span class="c1"># umbral de contagio complejo (25% de vecinos)</span>
+    <span class="n">n_pasos</span><span class="o">=</span><span class="mi">40</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;**Nota:** Observa: el contagio simple es gradual y continuo.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   El contagio complejo puede &#39;estancarse&#39; o &#39;explotar&#39; dependiendo del umbral.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/6877e3a88cf21a97fdf633ebe92cd5e700f993b52837d323ed364c5be2a1c6c6.png" src="../_images/6877e3a88cf21a97fdf633ebe92cd5e700f993b52837d323ed364c5be2a1c6c6.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>**Nota:** Observa: el contagio simple es gradual y continuo.
+   El contagio complejo puede &#39;estancarse&#39; o &#39;explotar&#39; dependiendo del umbral.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="el-modelo-de-umbrales-cuando-ocurre-una-cascada">
+<h2>1.3 El modelo de umbrales — ¿cuándo ocurre una cascada? ️<a class="headerlink" href="#el-modelo-de-umbrales-cuando-ocurre-una-cascada" title="Link to this heading">#</a></h2>
+<p>Cada persona tiene un <strong>umbral personal</strong>: la fracción de vecinos que necesitan haber adoptado para que ella también adopte.</p>
+<p>Este es el algoritmo completo del modelo de cascada por umbrales:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ═══════════════════════════════════════════════════════════════════</span>
+<span class="c1"># MODELO DE CASCADA POR UMBRALES — CÓDIGO VISIBLE</span>
+<span class="c1"># ═══════════════════════════════════════════════════════════════════</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">cascada_umbrales_manual</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">semillas</span><span class="p">,</span> <span class="n">umbrales</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Modelo de umbral paso a paso — el estudiante puede leer cada línea.&quot;&quot;&quot;</span>
+    <span class="n">adoptantes</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">semillas</span><span class="p">)</span>
+    <span class="n">historia</span> <span class="o">=</span> <span class="p">[</span><span class="n">adoptantes</span><span class="o">.</span><span class="n">copy</span><span class="p">()]</span>
+    
+    <span class="k">for</span> <span class="n">paso</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">):</span>  <span class="c1"># máximo 50 pasos</span>
+        <span class="n">nuevos</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        
+        <span class="k">for</span> <span class="n">nodo</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">nodo</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">adoptantes</span><span class="p">:</span>
+                <span class="c1"># Contar vecinos que ya adoptaron</span>
+                <span class="n">vecinos_adoptantes</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span>
+                    <span class="mi">1</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="n">nodo</span><span class="p">)</span> <span class="k">if</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">adoptantes</span>
+                <span class="p">)</span>
+                <span class="c1"># Calcular la fracción</span>
+                <span class="n">fraccion</span> <span class="o">=</span> <span class="n">vecinos_adoptantes</span> <span class="o">/</span> <span class="nb">max</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">(</span><span class="n">nodo</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+                
+                <span class="c1"># ¿Supera mi umbral personal?</span>
+                <span class="k">if</span> <span class="n">fraccion</span> <span class="o">&gt;=</span> <span class="n">umbrales</span><span class="p">[</span><span class="n">nodo</span><span class="p">]:</span>
+                    <span class="n">nuevos</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">nodo</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">nuevos</span><span class="p">:</span>  <span class="c1"># nadie nuevo adoptó → la cascada se detuvo</span>
+            <span class="k">break</span>
+        
+        <span class="n">adoptantes</span> <span class="o">=</span> <span class="n">adoptantes</span> <span class="o">|</span> <span class="n">nuevos</span>
+        <span class="n">historia</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">adoptantes</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
+    
+    <span class="k">return</span> <span class="n">historia</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Función definida.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Función definida.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Comparar: umbrales bajos (cascada) vs altos (sin cascada)</span>
+<span class="n">G_cascada</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">watts_strogatz_graph</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">semillas</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">}</span>
+
+<span class="c1"># Caso 1: umbrales bajos → CASCADA</span>
+<span class="n">umbrales_bajos</span> <span class="o">=</span> <span class="n">diffusion</span><span class="o">.</span><span class="n">generar_umbrales</span><span class="p">(</span><span class="n">G_cascada</span><span class="p">,</span> <span class="s1">&#39;uniforme&#39;</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="c1"># Caso 2: umbrales altos → SIN CASCADA</span>
+<span class="n">umbrales_altos</span> <span class="o">=</span> <span class="p">{</span><span class="n">n</span><span class="p">:</span> <span class="mf">0.45</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">G_cascada</span><span class="o">.</span><span class="n">nodes</span><span class="p">()}</span>
+
+<span class="n">hist_cascada</span> <span class="o">=</span> <span class="n">cascada_umbrales_manual</span><span class="p">(</span><span class="n">G_cascada</span><span class="p">,</span> <span class="n">semillas</span><span class="p">,</span> <span class="n">umbrales_bajos</span><span class="p">)</span>
+<span class="n">hist_no_cascada</span> <span class="o">=</span> <span class="n">cascada_umbrales_manual</span><span class="p">(</span><span class="n">G_cascada</span><span class="p">,</span> <span class="n">semillas</span><span class="p">,</span> <span class="n">umbrales_altos</span><span class="p">)</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">G_cascada</span><span class="p">)</span>
+<span class="n">t1</span><span class="p">,</span> <span class="n">f1</span> <span class="o">=</span> <span class="n">diffusion</span><span class="o">.</span><span class="n">curva_contagio</span><span class="p">(</span><span class="n">hist_cascada</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+<span class="n">t2</span><span class="p">,</span> <span class="n">f2</span> <span class="o">=</span> <span class="n">diffusion</span><span class="o">.</span><span class="n">curva_contagio</span><span class="p">(</span><span class="n">hist_no_cascada</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">f1</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">COLORS</span><span class="p">[</span><span class="s2">&quot;success&quot;</span><span class="p">],</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span>
+        <span class="n">markersize</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Umbrales bajos → CASCADA&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t2</span><span class="p">,</span> <span class="n">f2</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">COLORS</span><span class="p">[</span><span class="s2">&quot;danger&quot;</span><span class="p">],</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">,</span>
+        <span class="n">markersize</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Umbrales altos → SIN cascada&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">f1</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">COLORS</span><span class="p">[</span><span class="s2">&quot;success&quot;</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Paso de tiempo&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">% d</span><span class="s2">e adopción&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Cascada vs estancamiento: el umbral lo cambia todo&quot;</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">105</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/a41e738299a96a652bea6e53bbe4028f2dd3a81ebc4a1a0b6ac2024458aa3569.png" src="../_images/a41e738299a96a652bea6e53bbe4028f2dd3a81ebc4a1a0b6ac2024458aa3569.png" />
+</div>
+</div>
+</section>
+<section id="la-curva-s-de-instagram">
+<h2>1.4 La curva S de Instagram<a class="headerlink" href="#la-curva-s-de-instagram" title="Link to this heading">#</a></h2>
+<p>¿Por qué la adopción de tecnologías tiene forma de <strong>S</strong>?</p>
+<p>El <strong>modelo de Bass</strong> (1969) lo explica con dos fuerzas:</p>
+<ul class="simple">
+<li><p><strong>p</strong> (innovación): personas que adoptan por iniciativa propia (publicidad, curiosidad)</p></li>
+<li><p><strong>q</strong> (imitación): personas que adoptan porque ven que otros lo usan</p></li>
+</ul>
+<p>La ecuación diferencial es:</p>
+<div class="math notranslate nohighlight">
+\[\frac{dF}{dt} = (p + qF)(1 - F)\]</div>
+<p>donde <span class="math notranslate nohighlight">\(F(t)\)</span> es la fracción acumulada de adoptantes.</p>
+<blockquote>
+<div><p><strong>Nota:</strong> <strong>Nota:</strong> Formalizaremos las ecuaciones diferenciales ordinarias (ODEs) en la <strong>Semana 4</strong> sobre Dinámica de Sistemas. Por ahora, enfoquémonos en la <em>intuición</em> de la curva S.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Explorar el modelo de Bass con diferentes parámetros</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="c1"># Caso 1: Dominado por innovación (p alto)</span>
+<span class="n">t1</span><span class="p">,</span> <span class="n">F1</span><span class="p">,</span> <span class="n">dF1</span> <span class="o">=</span> <span class="n">diffusion</span><span class="o">.</span><span class="n">resolver_bass</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">q</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">F1</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">COLORS</span><span class="p">[</span><span class="s2">&quot;primary&quot;</span><span class="p">],</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.5</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">F1</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">COLORS</span><span class="p">[</span><span class="s2">&quot;primary&quot;</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;p=0.05, q=0.1</span><span class="se">\n</span><span class="s2">(Publicidad domina)&quot;</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">% a</span><span class="s2">dopción&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">105</span><span class="p">)</span>
+
+<span class="c1"># Caso 2: Dominado por imitación (q alto)</span>
+<span class="n">t2</span><span class="p">,</span> <span class="n">F2</span><span class="p">,</span> <span class="n">dF2</span> <span class="o">=</span> <span class="n">diffusion</span><span class="o">.</span><span class="n">resolver_bass</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="mf">0.005</span><span class="p">,</span> <span class="n">q</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t2</span><span class="p">,</span> <span class="n">F2</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">COLORS</span><span class="p">[</span><span class="s2">&quot;danger&quot;</span><span class="p">],</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.5</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">t2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">F2</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">COLORS</span><span class="p">[</span><span class="s2">&quot;danger&quot;</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;p=0.005, q=0.5</span><span class="se">\n</span><span class="s2">(Boca a boca domina)&quot;</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">105</span><span class="p">)</span>
+
+<span class="c1"># Caso 3: Mixto (caso típico)</span>
+<span class="n">t3</span><span class="p">,</span> <span class="n">F3</span><span class="p">,</span> <span class="n">dF3</span> <span class="o">=</span> <span class="n">diffusion</span><span class="o">.</span><span class="n">resolver_bass</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">q</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t3</span><span class="p">,</span> <span class="n">F3</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">COLORS</span><span class="p">[</span><span class="s2">&quot;success&quot;</span><span class="p">],</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.5</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">t3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">F3</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">COLORS</span><span class="p">[</span><span class="s2">&quot;success&quot;</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;p=0.01, q=0.3</span><span class="se">\n</span><span class="s2">(Caso típico)&quot;</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">105</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">axes</span><span class="p">:</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Tiempo&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">COLORS</span><span class="p">[</span><span class="s2">&quot;accent&quot;</span><span class="p">],</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Modelo de Bass — La curva S según p y q&quot;</span><span class="p">,</span>
+             <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.02</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;**Nota:** Cuando q &gt;&gt; p, la curva S es más pronunciada (efecto &#39;boca a boca&#39;).&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   Cuando p es alto, la adopción arranca rápido pero sin &#39;explosión&#39; social.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/9e836088d457a10951726646a089e90e53636e24fccbb5f58bca947309bb9d26.png" src="../_images/9e836088d457a10951726646a089e90e53636e24fccbb5f58bca947309bb9d26.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>**Nota:** Cuando q &gt;&gt; p, la curva S es más pronunciada (efecto &#39;boca a boca&#39;).
+   Cuando p es alto, la adopción arranca rápido pero sin &#39;explosión&#39; social.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="nivel-2-nivel-2-energia-difusion-y-redes-en-el-sector-electrico-colombiano">
+<h1>Nivel 2 <strong>Nivel 2 —</strong> Energía: Difusión y redes en el sector eléctrico colombiano<a class="headerlink" href="#nivel-2-nivel-2-energia-difusion-y-redes-en-el-sector-electrico-colombiano" title="Link to this heading">#</a></h1>
+<blockquote>
+<div><p>Ahora aplicamos los modelos de contagio y difusión al contexto energético real.</p>
+</div></blockquote>
+<section id="adopcion-solar-en-un-barrio-cuando-se-alcanza-el-tipping-point">
+<h2>2.1 Adopción solar en un barrio — ¿Cuándo se alcanza el tipping point? ️<a class="headerlink" href="#adopcion-solar-en-un-barrio-cuando-se-alcanza-el-tipping-point" title="Link to this heading">#</a></h2>
+<p>La adopción de paneles solares es un caso clásico de <strong>contagio complejo</strong>:</p>
+<ul class="simple">
+<li><p>No basta con que UN vecino tenga paneles</p></li>
+<li><p>Necesitas ver que VARIOS vecinos lo hicieron (prueba social, información, confianza)</p></li>
+</ul>
+<p>¿Qué pasa si el gobierno <strong>subsidia</strong> la instalación? El subsidio <strong>reduce el umbral</strong> de cada persona.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Crear la red de un barrio</span>
+<span class="n">G_barrio</span> <span class="o">=</span> <span class="n">energy_data</span><span class="o">.</span><span class="n">crear_red_barrio</span><span class="p">(</span><span class="n">n_casas</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">tipo</span><span class="o">=</span><span class="s1">&#39;small_world&#39;</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="c1"># Semillas: 3 innovadores</span>
+<span class="n">semillas</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">}</span>
+
+<span class="c1"># Simular con diferentes niveles de subsidio (que bajan el umbral)</span>
+<span class="n">subsidios</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">60</span><span class="p">]</span>  <span class="c1"># % de subsidio</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">axes</span> <span class="o">=</span> <span class="n">axes</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">subsidio</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">subsidios</span><span class="p">):</span>
+    <span class="c1"># Umbral base depende del ingreso; subsidio lo reduce</span>
+    <span class="n">umbrales</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">G_barrio</span><span class="o">.</span><span class="n">nodes</span><span class="p">():</span>
+        <span class="n">ingreso</span> <span class="o">=</span> <span class="n">G_barrio</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;ingreso&quot;</span><span class="p">,</span> <span class="s2">&quot;medio&quot;</span><span class="p">)</span>
+        <span class="n">base</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;alto&quot;</span><span class="p">:</span> <span class="mf">0.15</span><span class="p">,</span> <span class="s2">&quot;medio&quot;</span><span class="p">:</span> <span class="mf">0.30</span><span class="p">,</span> <span class="s2">&quot;bajo&quot;</span><span class="p">:</span> <span class="mf">0.45</span><span class="p">}[</span><span class="n">ingreso</span><span class="p">]</span>
+        <span class="n">umbrales</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">base</span> <span class="o">-</span> <span class="n">subsidio</span> <span class="o">/</span> <span class="mi">100</span> <span class="o">*</span> <span class="mf">0.3</span><span class="p">)</span>
+    
+    <span class="n">hist</span> <span class="o">=</span> <span class="n">diffusion</span><span class="o">.</span><span class="n">simular_contagio_complejo</span><span class="p">(</span><span class="n">G_barrio</span><span class="p">,</span> <span class="n">semillas</span><span class="p">,</span> <span class="n">umbrales</span><span class="p">)</span>
+    <span class="n">t</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">diffusion</span><span class="o">.</span><span class="n">curva_contagio</span><span class="p">(</span><span class="n">hist</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">G_barrio</span><span class="p">))</span>
+    
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">f</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">COLORS</span><span class="p">[</span><span class="s2">&quot;accent&quot;</span><span class="p">],</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.5</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">f</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">COLORS</span><span class="p">[</span><span class="s2">&quot;accent&quot;</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.15</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Paso de tiempo&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">% d</span><span class="s2">e adopción&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Subsidio: </span><span class="si">{</span><span class="n">subsidio</span><span class="si">}</span><span class="s2">% </span><span class="se">\u2192</span><span class="s2"> </span><span class="si">{</span><span class="n">f</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2">% adopción final&quot;</span><span class="p">,</span>
+                 <span class="n">fontweight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">105</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">COLORS</span><span class="p">[</span><span class="s2">&quot;danger&quot;</span><span class="p">],</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Adopción solar en un barrio según nivel de subsidio&quot;</span><span class="p">,</span>
+             <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.02</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;**Nota:** Existe un &#39;punto de inflexión&#39;: un nivel de subsidio donde la adopción&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   pasa de estancarse a propagarse por toda la red.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   </span><span class="se">\u2192</span><span class="s2"> Esto ayuda a diseñar políticas eficientes de transición energética.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/75d815d9b78b58f16af524ceccdf14af1519ec1e6b33eb7b83e916cf5e4071f3.png" src="../_images/75d815d9b78b58f16af524ceccdf14af1519ec1e6b33eb7b83e916cf5e4071f3.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>**Nota:** Existe un &#39;punto de inflexión&#39;: un nivel de subsidio donde la adopción
+   pasa de estancarse a propagarse por toda la red.
+   → Esto ayuda a diseñar políticas eficientes de transición energética.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="curva-s-de-las-fncer-en-colombia">
+<h2>2.2 Curva S de las FNCER en Colombia 🇨🇴<a class="headerlink" href="#curva-s-de-las-fncer-en-colombia" title="Link to this heading">#</a></h2>
+<p>Las <strong>Fuentes No Convencionales de Energía Renovable</strong> (FNCER) — solar, eólica — están en plena fase de adopción en Colombia.</p>
+<p>Vamos a ajustar el <strong>modelo de Bass</strong> a datos de capacidad solar instalada.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Datos de adopción solar en Colombia (sintéticos pero realistas)</span>
+<span class="n">df_solar</span> <span class="o">=</span> <span class="n">energy_data</span><span class="o">.</span><span class="n">generar_adopcion_solar_colombia</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Datos de adopción solar:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_solar</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Datos de adopción solar:
+ año  capacidad_mw  instalaciones  tasa_crecimiento_pct
+2015           3.0            647                   0.0
+2016           8.5           1711                 183.3
+2017          55.7          12396                 555.3
+2018         102.5          21458                  84.0
+2019         141.8          25923                  38.3
+2020         249.5          51740                  76.0
+2021         409.5          74047                  64.1
+2022         605.6         131760                  47.9
+2023         868.5         172833                  43.4
+2024        1171.9         230047                  34.9
+2025        1530.2         285201                  30.6
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Normalizar datos para ajustar Bass</span>
+<span class="n">anios</span> <span class="o">=</span> <span class="n">df_solar</span><span class="p">[</span><span class="s2">&quot;a</span><span class="se">\u00f1</span><span class="s2">o&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">capacidad</span> <span class="o">=</span> <span class="n">df_solar</span><span class="p">[</span><span class="s2">&quot;capacidad_mw&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">cap_max</span> <span class="o">=</span> <span class="n">capacidad</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">*</span> <span class="mf">1.3</span>  <span class="c1"># estimación del potencial total</span>
+<span class="n">datos_norm</span> <span class="o">=</span> <span class="n">capacidad</span> <span class="o">/</span> <span class="n">cap_max</span>
+
+<span class="c1"># Ajustar p y q</span>
+<span class="n">p_opt</span><span class="p">,</span> <span class="n">q_opt</span><span class="p">,</span> <span class="n">F_ajustada</span> <span class="o">=</span> <span class="n">diffusion</span><span class="o">.</span><span class="n">ajustar_bass</span><span class="p">(</span><span class="n">anios</span><span class="p">,</span> <span class="n">datos_norm</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> Parámetros ajustados del modelo de Bass:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   p (innovación) = </span><span class="si">{</span><span class="n">p_opt</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   q (imitación)  = </span><span class="si">{</span><span class="n">q_opt</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Ratio q/p      = </span><span class="si">{</span><span class="n">q_opt</span><span class="o">/</span><span class="n">p_opt</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Graficar datos vs modelo ajustado</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">anios</span><span class="p">,</span> <span class="n">datos_norm</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">COLORS</span><span class="p">[</span><span class="s2">&quot;accent&quot;</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span>
+           <span class="n">zorder</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Datos observados&quot;</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">linewidths</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">anios</span><span class="p">,</span> <span class="n">F_ajustada</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">COLORS</span><span class="p">[</span><span class="s2">&quot;primary&quot;</span><span class="p">],</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Modelo de Bass (p=</span><span class="si">{</span><span class="n">p_opt</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, q=</span><span class="si">{</span><span class="n">q_opt</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Proyección a futuro</span>
+<span class="n">anios_futuro</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">2035</span><span class="p">)</span>
+<span class="n">t_futuro</span> <span class="o">=</span> <span class="n">anios_futuro</span> <span class="o">-</span> <span class="mi">2015</span>
+<span class="n">F_futuro</span> <span class="o">=</span> <span class="n">diffusion</span><span class="o">.</span><span class="n">bass_analitica</span><span class="p">(</span><span class="n">t_futuro</span><span class="p">,</span> <span class="n">p_opt</span><span class="p">,</span> <span class="n">q_opt</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">anios_futuro</span><span class="p">,</span> <span class="n">F_futuro</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">COLORS</span><span class="p">[</span><span class="s2">&quot;primary&quot;</span><span class="p">],</span>
+        <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Proyección&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">2025</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">COLORS</span><span class="p">[</span><span class="s2">&quot;danger&quot;</span><span class="p">],</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;A</span><span class="se">\u00f1</span><span class="s2">o&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">% d</span><span class="s2">el potencial estimado&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Curva S de adopción solar en Colombia&quot;</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">**Nota:** Interpretación:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   </span><span class="se">\u2022</span><span class="s2"> q/p = </span><span class="si">{</span><span class="n">q_opt</span><span class="o">/</span><span class="n">p_opt</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> </span><span class="se">\u2192</span><span class="s2"> la imitación social domina la adopción&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   </span><span class="se">\u2022</span><span class="s2"> La curva S sugiere que Colombia está entrando en la fase de aceleración&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Parámetros ajustados del modelo de Bass:
+   p (innovación) = 0.00410
+   q (imitación)  = 0.598
+   Ratio q/p      = 146
+</pre></div>
+</div>
+<img alt="../_images/c5a1079142d40b7de6c4421207000d595f9a2a1b6550ec52be8a1232d0cadaa9.png" src="../_images/c5a1079142d40b7de6c4421207000d595f9a2a1b6550ec52be8a1232d0cadaa9.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>**Nota:** Interpretación:
+   • q/p = 146 → la imitación social domina la adopción
+   • La curva S sugiere que Colombia está entrando en la fase de aceleración
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="el-mercado-mayorista-como-red-bipartita">
+<h2>2.3 El mercado mayorista como red bipartita<a class="headerlink" href="#el-mercado-mayorista-como-red-bipartita" title="Link to this heading">#</a></h2>
+<p>El <strong>Mercado de Energía Mayorista (MEM)</strong> de Colombia tiene dos tipos de actores:</p>
+<ul class="simple">
+<li><p><strong>Generadores</strong> (producen electricidad)</p></li>
+<li><p><strong>Comercializadores</strong> (la venden a usuarios finales)</p></li>
+</ul>
+<p>Los contratos bilaterales entre ellos forman una <strong>red bipartita</strong>.</p>
+<blockquote>
+<div><p><strong>¿Quién tiene poder de mercado?</strong> → Centralidad en la red.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Crear la red del mercado mayorista</span>
+<span class="n">G_mercado</span> <span class="o">=</span> <span class="n">energy_data</span><span class="o">.</span><span class="n">crear_red_mercado_mayorista</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="c1"># Visualizar la red bipartita</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">diffusion</span><span class="o">.</span><span class="n">visualizar_red_bipartita</span><span class="p">(</span><span class="n">G_mercado</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/2cf8e458af8dcba0e0ba2a2fbf4bc842b8ea4c239ddecfccedef0988b60d5605.png" src="../_images/2cf8e458af8dcba0e0ba2a2fbf4bc842b8ea4c239ddecfccedef0988b60d5605.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Análisis detallado</span>
+<span class="n">resultados</span> <span class="o">=</span> <span class="n">diffusion</span><span class="o">.</span><span class="n">analizar_red_bipartita</span><span class="p">(</span><span class="n">G_mercado</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Métricas de centralidad en el mercado mayorista:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">resultados</span><span class="p">[</span><span class="s2">&quot;metricas&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> Proyección sobre generadores:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Nodos: </span><span class="si">{</span><span class="n">resultados</span><span class="p">[</span><span class="s1">&#39;proyeccion_gen&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">number_of_nodes</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Aristas: </span><span class="si">{</span><span class="n">resultados</span><span class="p">[</span><span class="s1">&#39;proyeccion_gen&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">number_of_edges</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   (Dos generadores están conectados si comparten un comercializador)&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> Proyección sobre comercializadores:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Nodos: </span><span class="si">{</span><span class="n">resultados</span><span class="p">[</span><span class="s1">&#39;proyeccion_com&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">number_of_nodes</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Aristas: </span><span class="si">{</span><span class="n">resultados</span><span class="p">[</span><span class="s1">&#39;proyeccion_com&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">number_of_edges</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Métricas de centralidad en el mercado mayorista:
+
+            nodo            tipo  grado  betweenness  volumen_gwh
+          ISAGEN       generador      4       0.1498       3485.3
+       Otros Com comercializador      4       0.0828       3096.1
+   Electricaribe comercializador      5       0.2492       3053.8
+             EPM       generador      2       0.0081       2800.7
+            Enel       generador      2       0.0229       2547.9
+            ESSA comercializador      5       0.1905       2366.6
+           Vatia comercializador      5       0.1558       2079.8
+    Codensa/Enel comercializador      2       0.0147       2004.6
+          Celsia       generador      2       0.0149       1513.4
+             AES       generador      2       0.0081       1126.5
+         Gecelca       generador      4       0.0964       1077.8
+Celsia Comercial comercializador      3       0.0823        507.7
+   Solar Guajira       generador      5       0.2366        423.8
+   EPM Comercial comercializador      4       0.1047        321.8
+       Otros Gen       generador      3       0.0923        312.2
+            CHEC comercializador      2       0.0097        230.9
+    Proelectrica       generador      3       0.0844        196.0
+ TermoCandelaria       generador      3       0.0514        177.7
+
+ Proyección sobre generadores:
+   Nodos: 10
+   Aristas: 31
+   (Dos generadores están conectados si comparten un comercializador)
+
+ Proyección sobre comercializadores:
+   Nodos: 8
+   Aristas: 20
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="falla-en-cascada-en-el-sin">
+<h2>2.4 Falla en cascada en el SIN<a class="headerlink" href="#falla-en-cascada-en-el-sin" title="Link to this heading">#</a></h2>
+<p>El <strong>Sistema Interconectado Nacional (SIN)</strong> puede sufrir fallas en cascada:
+si una subestación falla, la carga se redistribuye, y otras subestaciones
+pueden sobrecargarse y fallar también.</p>
+<p>Usamos una versión simplificada del <strong>modelo de Motter-Lai</strong> para visualizar este proceso.</p>
+<blockquote>
+<div><p>[WARN] Modelo pedagógico simplificado. El SIN real tiene protecciones y redundancias.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Crear la red del SIN</span>
+<span class="n">G_sin</span> <span class="o">=</span> <span class="n">energy_data</span><span class="o">.</span><span class="n">crear_red_sin_simplificada</span><span class="p">()</span>
+<span class="n">layout_sin</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">G_sin</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mf">2.0</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">G_sin</span><span class="p">)))</span>
+
+<span class="c1"># Simular falla en cascada desde un hub crítico</span>
+<span class="n">nodo_critico</span> <span class="o">=</span> <span class="s2">&quot;Ancón Sur&quot;</span>  <span class="c1"># Hub de Antioquia</span>
+
+<span class="n">historia_falla</span><span class="p">,</span> <span class="n">cargas</span> <span class="o">=</span> <span class="n">diffusion</span><span class="o">.</span><span class="n">simular_falla_cascada</span><span class="p">(</span>
+    <span class="n">G_sin</span><span class="p">,</span> <span class="n">nodo_critico</span><span class="p">,</span> <span class="n">capacidad_factor</span><span class="o">=</span><span class="mf">1.3</span>
+<span class="p">)</span>
+
+<span class="c1"># Resumen</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; Falla inicial: </span><span class="si">{</span><span class="n">nodo_critico</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Pasos de cascada: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">historia_falla</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Nodos fallados al final: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">historia_falla</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="si">}</span><span class="s2"> de </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">G_sin</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   (</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">historia_falla</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">G_sin</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2">% del sistema)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Visualizar la cascada</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">diffusion</span><span class="o">.</span><span class="n">plot_falla_cascada</span><span class="p">(</span><span class="n">G_sin</span><span class="p">,</span> <span class="n">historia_falla</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="n">layout_sin</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Falla inicial: Ancón Sur
+   Pasos de cascada: 2
+   Nodos fallados al final: 2 de 45
+   (4% del sistema)
+</pre></div>
+</div>
+<img alt="../_images/193b461b4c2432ef947979d91195c6e5d7260673bff230f02a705322ee7ea4e3.png" src="../_images/193b461b4c2432ef947979d91195c6e5d7260673bff230f02a705322ee7ea4e3.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ¿Qué nodo causa la peor cascada?</span>
+<span class="n">nodos_prueba</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Ancón Sur&quot;</span><span class="p">,</span> <span class="s2">&quot;Bacatá&quot;</span><span class="p">,</span> <span class="s2">&quot;Cerromatoso&quot;</span><span class="p">,</span> <span class="s2">&quot;Yumbo&quot;</span><span class="p">,</span> <span class="s2">&quot;Pasto&quot;</span><span class="p">]</span>
+<span class="n">resultados_cascada</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">nodo</span> <span class="ow">in</span> <span class="n">nodos_prueba</span><span class="p">:</span>
+    <span class="n">hist</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">diffusion</span><span class="o">.</span><span class="n">simular_falla_cascada</span><span class="p">(</span><span class="n">G_sin</span><span class="p">,</span> <span class="n">nodo</span><span class="p">,</span> <span class="n">capacidad_factor</span><span class="o">=</span><span class="mf">1.3</span><span class="p">)</span>
+    <span class="n">fallados</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">hist</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">resultados_cascada</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+        <span class="s2">&quot;Nodo inicial&quot;</span><span class="p">:</span> <span class="n">nodo</span><span class="p">,</span>
+        <span class="s2">&quot;Región&quot;</span><span class="p">:</span> <span class="n">G_sin</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">nodo</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;region&quot;</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">),</span>
+        <span class="s2">&quot;Nodos fallados&quot;</span><span class="p">:</span> <span class="n">fallados</span><span class="p">,</span>
+        <span class="s2">&quot;</span><span class="si">% d</span><span class="s2">el sistema&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">fallados</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">G_sin</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Pasos cascada&quot;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">hist</span><span class="p">),</span>
+    <span class="p">})</span>
+
+<span class="n">df_cascadas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">resultados_cascada</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Vulnerabilidad del SIN según nodo de falla inicial:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_cascadas</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">**Nota:** Los hubs regionales (Ancón Sur, Bacatá) causan cascadas más severas&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   que los nodos periféricos (Pasto) </span><span class="se">\u2192</span><span class="s2"> importancia de proteger hubs.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Vulnerabilidad del SIN según nodo de falla inicial:
+
+Nodo inicial       Región  Nodos fallados % del sistema  Pasos cascada
+   Ancón Sur    Antioquia               2            4%              2
+      Bacatá Cundinamarca               5           11%              2
+ Cerromatoso        Costa               1            2%              1
+       Yumbo        Valle               2            4%              2
+       Pasto       Nariño               1            2%              1
+
+**Nota:** Los hubs regionales (Ancón Sur, Bacatá) causan cascadas más severas
+   que los nodos periféricos (Pasto) → importancia de proteger hubs.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="comunidades-en-el-mercado-electrico">
+<h2>2.5 Comunidades en el mercado eléctrico ️<a class="headerlink" href="#comunidades-en-el-mercado-electrico" title="Link to this heading">#</a></h2>
+<p>La <strong>detección de comunidades</strong> revela grupos de actores que comercian densamente entre sí.
+Esto puede indicar mercados regionales o concentración.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Detectar comunidades en la proyección de generadores</span>
+<span class="n">proy_gen</span> <span class="o">=</span> <span class="n">resultados</span><span class="p">[</span><span class="s2">&quot;proyeccion_gen&quot;</span><span class="p">]</span>
+
+<span class="k">if</span> <span class="n">proy_gen</span><span class="o">.</span><span class="n">number_of_edges</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">comunidades</span><span class="p">,</span> <span class="n">Q</span> <span class="o">=</span> <span class="n">diffusion</span><span class="o">.</span><span class="n">detectar_comunidades</span><span class="p">(</span><span class="n">proy_gen</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Comunidades detectadas: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">comunidades</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Modularidad Q = </span><span class="si">{</span><span class="n">Q</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">com</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">comunidades</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Comunidad </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">sorted</span><span class="p">(</span><span class="n">com</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+    <span class="n">diffusion</span><span class="o">.</span><span class="n">visualizar_comunidades</span><span class="p">(</span><span class="n">proy_gen</span><span class="p">,</span> <span class="n">comunidades</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Comunidades entre generadores</span><span class="se">\n</span><span class="s2">(comparten comercializadores)&quot;</span><span class="p">,</span>
+                 <span class="n">fontweight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[WARN] La proyección no tiene aristas suficientes para detectar comunidades.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Comunidades detectadas: 2
+   Modularidad Q = 0.112
+
+   Comunidad 1: [&#39;Enel&#39;, &#39;Gecelca&#39;, &#39;Otros Gen&#39;, &#39;Solar Guajira&#39;, &#39;TermoCandelaria&#39;]
+   Comunidad 2: [&#39;AES&#39;, &#39;Celsia&#39;, &#39;EPM&#39;, &#39;ISAGEN&#39;, &#39;Proelectrica&#39;]
+</pre></div>
+</div>
+<img alt="../_images/78b705e65a8e702367bd6570ee0d68f37a9f299625eb0acd4619a62f17a5a04f.png" src="../_images/78b705e65a8e702367bd6570ee0d68f37a9f299625eb0acd4619a62f17a5a04f.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Detectar comunidades en el SIN</span>
+<span class="n">comunidades_sin</span><span class="p">,</span> <span class="n">Q_sin</span> <span class="o">=</span> <span class="n">diffusion</span><span class="o">.</span><span class="n">detectar_comunidades</span><span class="p">(</span><span class="n">G_sin</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Comunidades en el SIN: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">comunidades_sin</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Modularidad Q = </span><span class="si">{</span><span class="n">Q_sin</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">com</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">comunidades_sin</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Comunidad </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">com</span><span class="p">)</span><span class="si">}</span><span class="s2"> nodos): </span><span class="si">{</span><span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">com</span><span class="p">))[:</span><span class="mi">5</span><span class="p">]</span><span class="si">}</span><span class="s2">...&quot;</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">diffusion</span><span class="o">.</span><span class="n">visualizar_comunidades</span><span class="p">(</span><span class="n">G_sin</span><span class="p">,</span> <span class="n">comunidades_sin</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="n">layout_sin</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Comunidades en el SIN </span><span class="se">\u2014</span><span class="s2"> Q=</span><span class="si">{</span><span class="n">Q_sin</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">**Nota:** Las comunidades reflejan la estructura geográfica del SIN:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   corredores regionales con pocas interconexiones.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Comunidades en el SIN: 6
+   Modularidad Q = 0.681
+
+   Comunidad 1 (10 nodos): [&#39;Ancón Sur&#39;, &#39;Barbosa&#39;, &#39;Cartagena&#39;, &#39;Cerromatoso&#39;, &#39;Envigado&#39;]...
+   Comunidad 2 (9 nodos): [&#39;Bacatá&#39;, &#39;Chivor&#39;, &#39;Guavio&#39;, &#39;Paipa&#39;, &#39;Sogamoso&#39;]...
+   Comunidad 3 (8 nodos): [&#39;Barranquilla&#39;, &#39;Colectora Guajira&#39;, &#39;Cuestecitas&#39;, &#39;El Paso Solar&#39;, &#39;Santa Marta&#39;]...
+   Comunidad 4 (7 nodos): [&#39;Alto Anchicayá&#39;, &#39;Jamondino&#39;, &#39;Pasto&#39;, &#39;Popayán&#39;, &#39;Salvajina&#39;]...
+   Comunidad 5 (6 nodos): [&#39;Betania&#39;, &#39;El Quimbo&#39;, &#39;Ibagué&#39;, &#39;La Rosa&#39;, &#39;La Virginia&#39;]...
+   Comunidad 6 (5 nodos): [&#39;Arauca&#39;, &#39;Barranca&#39;, &#39;Bucaramanga&#39;, &#39;Cúcuta&#39;, &#39;Puerto Berrío&#39;]...
+</pre></div>
+</div>
+<img alt="../_images/0b62326741b0fd843506871409acff68f76edc2491e81ebc6536af38b00bbdc1.png" src="../_images/0b62326741b0fd843506871409acff68f76edc2491e81ebc6536af38b00bbdc1.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>**Nota:** Las comunidades reflejan la estructura geográfica del SIN:
+   corredores regionales con pocas interconexiones.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="nivel-3-nivel-3-profesional-herramientas-avanzadas-de-difusion-y-resiliencia">
+<h1>Nivel 3 <strong>Nivel 3 —</strong> Profesional: Herramientas avanzadas de difusión y resiliencia<a class="headerlink" href="#nivel-3-nivel-3-profesional-herramientas-avanzadas-de-difusion-y-resiliencia" title="Link to this heading">#</a></h1>
+<blockquote>
+<div><p>Para quienes quieran ir más allá en sus proyectos profesionales.</p>
+</div></blockquote>
+<section id="modelos-basados-en-agentes-abm-con-mesa">
+<h2>3.1 Modelos basados en agentes (ABM) con Mesa<a class="headerlink" href="#modelos-basados-en-agentes-abm-con-mesa" title="Link to this heading">#</a></h2>
+<p><strong>Agent-Based Modeling</strong> permite simular difusión con agentes heterogéneos:</p>
+<ul class="simple">
+<li><p>Cada hogar es un agente con ingresos, preferencias, vecinos</p></li>
+<li><p>Decisiones basadas en reglas locales (umbrales, imitación, racionalidad limitada)</p></li>
+<li><p>Patrones macro emergen de interacciones micro</p></li>
+</ul>
+<p><strong>Herramienta recomendada:</strong> <a class="reference external" href="https://mesa.readthedocs.io/">Mesa</a> (Python)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejemplo conceptual (NO ejecutar sin instalar mesa)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mesa</span><span class="w"> </span><span class="kn">import</span> <span class="n">Agent</span><span class="p">,</span> <span class="n">Model</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mesa.space</span><span class="w"> </span><span class="kn">import</span> <span class="n">NetworkGrid</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">HogarSolar</span><span class="p">(</span><span class="n">Agent</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unique_id</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">umbral</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">unique_id</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">adoptado</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">umbral</span> <span class="o">=</span> <span class="n">umbral</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">vecinos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">get_neighbors</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pos</span><span class="p">)</span>
+        <span class="n">adoptantes</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">vecinos</span> <span class="k">if</span> <span class="n">v</span><span class="o">.</span><span class="n">adoptado</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">adoptantes</span> <span class="o">/</span> <span class="nb">max</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">vecinos</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">umbral</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">adoptado</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<p><strong>¿Cuándo usar ABM vs modelos de red?</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Característica</p></th>
+<th class="head"><p>Red + umbrales</p></th>
+<th class="head"><p>ABM (Mesa)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Heterogeneidad</p></td>
+<td><p>Limitada</p></td>
+<td><p>Alta</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reglas de decisión</p></td>
+<td><p>Simple (umbral)</p></td>
+<td><p>Complejas</p></td>
+</tr>
+<tr class="row-even"><td><p>Escalabilidad</p></td>
+<td><p>Alta</p></td>
+<td><p>Media</p></td>
+</tr>
+<tr class="row-odd"><td><p>Facilidad</p></td>
+<td><p>Alta</p></td>
+<td><p>Media</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="modelos-de-difusion-para-diseno-de-politica-energetica">
+<h2>3.2 Modelos de difusión para diseño de política energética<a class="headerlink" href="#modelos-de-difusion-para-diseno-de-politica-energetica" title="Link to this heading">#</a></h2>
+<p><strong>Aplicaciones en política pública:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Diseño de subsidios óptimos</strong>: Usar la ventana de cascada para encontrar el umbral mínimo de subsidio que genera adopción masiva.</p></li>
+<li><p><strong>Selección de “semillas”</strong>: ¿Dónde instalar los primeros paneles solares de demostración? Los nodos con alta centralidad son mejores semillas.</p></li>
+<li><p><strong>Predicción con Bass</strong>: Calibrar p y q con datos históricos para proyectar adopción futura y planificar infraestructura.</p></li>
+</ol>
+<p><strong>Referencia clave:</strong></p>
+<ul class="simple">
+<li><p>Rogers, E.M. (2003). <em>Diffusion of Innovations</em>. Free Press.</p></li>
+<li><p>Bass, F.M. (1969). “A New Product Growth for Model Consumer Durables.” <em>Management Science</em>, 15(5).</p></li>
+<li><p>Watts, D.J. (2002). “A simple model of global cascades on random networks.” <em>PNAS</em>.</p></li>
+</ul>
+</section>
+<section id="resiliencia-de-redes-mas-alla-del-tipping-point">
+<h2>3.3 Resiliencia de redes: más allá del tipping point ️<a class="headerlink" href="#resiliencia-de-redes-mas-alla-del-tipping-point" title="Link to this heading">#</a></h2>
+<p><strong>¿Cómo hacer una red más resiliente?</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Redundancia</strong>: Agregar caminos alternativos (el SIN tiene pocos entre regiones)</p></li>
+<li><p><strong>Descentralización</strong>: Generación distribuida reduce dependencia de hubs</p></li>
+<li><p><strong>Detección temprana</strong>: Monitorear métricas de centralidad en tiempo real</p></li>
+</ol>
+<p><strong>Herramientas y referencias:</strong></p>
+<ul class="simple">
+<li><p><strong>Motter &amp; Lai (2002)</strong>: “Cascade-based attacks on complex networks.” <em>Physical Review E</em>.</p></li>
+<li><p><strong>Colorado State University</strong>: <a class="reference external" href="https://www.engr.colostate.edu/">Network Resilience Lab</a></p></li>
+<li><p><strong>Resiltech</strong>: Herramientas de análisis de resiliencia para infraestructura crítica.</p></li>
+</ul>
+<p><strong>En el contexto colombiano:</strong></p>
+<ul class="simple">
+<li><p>La interconexión Guajira es un corredor crítico para los proyectos eólicos</p></li>
+<li><p>El corredor Antioquia-Costa depende de pocos enlaces</p></li>
+<li><p>La generación distribuida (Ley 1715/2014, Ley 2099/2021) diversifica el riesgo</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="cierre-lo-que-aprendimos-esta-semana">
+<h1>Cierre: Lo que aprendimos esta semana<a class="headerlink" href="#cierre-lo-que-aprendimos-esta-semana" title="Link to this heading">#</a></h1>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Concepto</p></th>
+<th class="head"><p>Herramienta</p></th>
+<th class="head"><p>Aplicación energética</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Contagio simple (SI)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">simular_contagio_simple()</span></code></p></td>
+<td><p>Propagación de información</p></td>
+</tr>
+<tr class="row-odd"><td><p>Contagio complejo</p></td>
+<td><p>Modelo de umbrales</p></td>
+<td><p>Adopción solar</p></td>
+</tr>
+<tr class="row-even"><td><p>Curva S</p></td>
+<td><p>Modelo de Bass</p></td>
+<td><p>Proyección de FNCER</p></td>
+</tr>
+<tr class="row-odd"><td><p>Red bipartita</p></td>
+<td><p>Proyecciones</p></td>
+<td><p>Poder de mercado</p></td>
+</tr>
+<tr class="row-even"><td><p>Falla en cascada</p></td>
+<td><p>Motter-Lai</p></td>
+<td><p>Vulnerabilidad del SIN</p></td>
+</tr>
+<tr class="row-odd"><td><p>Comunidades</p></td>
+<td><p>Modularidad</p></td>
+<td><p>Estructura del mercado</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="proxima-semana-semana-4-dinamica-de-sistemas">
+<h2>Próxima semana: Semana 4 — Dinámica de Sistemas<a class="headerlink" href="#proxima-semana-semana-4-dinamica-de-sistemas" title="Link to this heading">#</a></h2>
+<p>En la Semana 4 formalizaremos las <strong>ecuaciones diferenciales</strong> que ya vimos con Bass:</p>
+<ul class="simple">
+<li><p>Diagramas de stocks y flujos</p></li>
+<li><p>Retroalimentación con retardos</p></li>
+<li><p>Modelado con <code class="docutils literal notranslate"><span class="pre">scipy.integrate</span></code> y Vensim/Stella</p></li>
+</ul>
+<blockquote>
+<div><p><strong>Puente conceptual:</strong> El modelo de Bass es una ODE. La dinámica de sistemas toma esta idea y la extiende a sistemas con MÚLTIPLES variables retroalimentadas.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">60</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   Semana 3 completada: Dinámica sobre Redes&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">60</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  Módulos utilizados:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  </span><span class="se">\u2022</span><span class="s2"> diffusion </span><span class="se">\u2014</span><span class="s2"> contagio, umbrales, Bass, bipartitas&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  </span><span class="se">\u2022</span><span class="s2"> energy_data </span><span class="se">\u2014</span><span class="s2"> datos del sector eléctrico colombiano&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  </span><span class="se">\u2022</span><span class="s2"> viz </span><span class="se">\u2014</span><span class="s2"> estilos y visualización&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  </span><span class="se">\u2192</span><span class="s2"> Siguiente: Semana 4 </span><span class="se">\u2014</span><span class="s2"> Dinámica de Sistemas&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>============================================================
+   Semana 3 completada: Dinámica sobre Redes
+============================================================
+
+  Módulos utilizados:
+  • diffusion — contagio, umbrales, Bass, bipartitas
+  • energy_data — datos del sector eléctrico colombiano
+  • viz — estilos y visualización
+
+  → Siguiente: Semana 4 — Dinámica de Sistemas
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./semana_03"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="lectura.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Semana 3 — Dinámica sobre Redes y Redes de Actores: Más Allá de la Estructura Estática</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../semana_04/lectura.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">Semana 4 — Dinámica de Sistemas I: Stocks, Flujos y el Ciclo de Inversión</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Semana 3: Dinámica sobre Redes</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#systems-analytics-mise">Systems Analytics — MISE</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-1-nivel-1-intuicion-como-se-propagan-las-cosas-en-redes">Nivel 1 <strong>Nivel 1 —</strong> Intuición: ¿Cómo se propagan las cosas en redes?</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-rumor-en-el-salon-de-clase">1.1 El rumor en el salón de clase</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#por-que-todos-usan-whatsapp-contagio-simple-vs-complejo">1.2 ¿Por qué todos usan WhatsApp? — Contagio simple vs complejo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-modelo-de-umbrales-cuando-ocurre-una-cascada">1.3 El modelo de umbrales — ¿cuándo ocurre una cascada? ️</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-curva-s-de-instagram">1.4 La curva S de Instagram</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-2-nivel-2-energia-difusion-y-redes-en-el-sector-electrico-colombiano">Nivel 2 <strong>Nivel 2 —</strong> Energía: Difusión y redes en el sector eléctrico colombiano</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adopcion-solar-en-un-barrio-cuando-se-alcanza-el-tipping-point">2.1 Adopción solar en un barrio — ¿Cuándo se alcanza el tipping point? ️</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#curva-s-de-las-fncer-en-colombia">2.2 Curva S de las FNCER en Colombia 🇨🇴</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-mercado-mayorista-como-red-bipartita">2.3 El mercado mayorista como red bipartita</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#falla-en-cascada-en-el-sin">2.4 Falla en cascada en el SIN</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comunidades-en-el-mercado-electrico">2.5 Comunidades en el mercado eléctrico ️</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-3-nivel-3-profesional-herramientas-avanzadas-de-difusion-y-resiliencia">Nivel 3 <strong>Nivel 3 —</strong> Profesional: Herramientas avanzadas de difusión y resiliencia</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-basados-en-agentes-abm-con-mesa">3.1 Modelos basados en agentes (ABM) con Mesa</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-de-difusion-para-diseno-de-politica-energetica">3.2 Modelos de difusión para diseño de política energética</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resiliencia-de-redes-mas-alla-del-tipping-point">3.3 Resiliencia de redes: más allá del tipping point ️</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cierre-lo-que-aprendimos-esta-semana">Cierre: Lo que aprendimos esta semana</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proxima-semana-semana-4-dinamica-de-sistemas">Próxima semana: Semana 4 — Dinámica de Sistemas</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por Maestria en Ingenieria de Sistemas Energeticos (MISE)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>Material del curso Analisis de Sistemas — MISE, Universidad de los Andes</p>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

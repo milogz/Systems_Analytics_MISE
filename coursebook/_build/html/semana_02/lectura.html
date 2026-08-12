@@ -1,0 +1,1449 @@
+
+<!DOCTYPE html>
+
+
+<html lang="es" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Semana 2 — Redes complejas: la estructura oculta de los sistemas energéticos &#8212; Analisis de Sistemas para la Industria Energetica</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="../_static/documentation_options.js?v=78d55cf8"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Haz clic para mostrar';</script>
+    <script>let toggleHintHide = 'Haz clic para ocultar';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script src="../_static/translations.js?v=d190bf04"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'semana_02/lectura';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="next" title="Semana 2: Redes y Topología" href="notebook.html" />
+    <link rel="prev" title="Semana 1: Complejidad — ¿Por qué los sistemas nos sorprenden?" href="../semana_01/notebook.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Saltar al contenido principal</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Volver arriba</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Advertencia de versión"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Navegación del sitio">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="En esta página">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Analisis de Sistemas para la Industria Energetica</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Analisis de Sistemas para la Industria Energetica
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fundamentos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../preludio/lectura.html">Preludio — Los Cimientos Científicos del Análisis de Sistemas Complejos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../preludio/notebook.html">Preludio — Los Cimientos Científicos</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semana 1: Que Significa Sistemico</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../semana_01/lectura.html">Semana 1 — ¿Qué es la complejidad y por qué importa en energía?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../semana_01/notebook.html">Semana 1: Complejidad — ¿Por qué los sistemas nos sorprenden?</a></li>
+
+
+
+
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semana 2: Redes I — Topologia y Vulnerabilidades</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Semana 2 — Redes complejas: la estructura oculta de los sistemas energéticos</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebook.html">Semana 2: Redes y Topología</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semana 3: Redes II — Actores y Difusion</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../semana_03/lectura.html">Semana 3 — Dinámica sobre Redes y Redes de Actores: Más Allá de la Estructura Estática</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../semana_03/notebook.html">Semana 3: Dinámica sobre Redes</a></li>
+
+
+
+
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semana 4: Dinamica de Sistemas I</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../semana_04/lectura.html">Semana 4 — Dinámica de Sistemas I: Stocks, Flujos y el Ciclo de Inversión</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../semana_04/notebook.html">Semana 4 — Dinámica de Sistemas I: Stocks, Flujos y el Ciclo de Inversión</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semana 5: Dinamica de Sistemas II — Politicas y Escenarios</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../semana_05/lectura.html">Semana 5 — Dinámica de Sistemas II: Políticas, Escenarios e Incertidumbre</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../semana_05/notebook.html">Semana 5 — Dinámica de Sistemas II: Políticas, Escenarios e Incertidumbre</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Cierre e Integracion</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../cierre/integracion.html">Cierre e Integracion (Semanas 6-8)</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/YOUR_USER/Systems_Analytics_MISE" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Repositorio de origen"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/semana_02/lectura.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Descargar archivo fuente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir en PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Tema" data-bs-title="Tema"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Claro"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Oscuro"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="Sistema"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Semana 2 — Redes complejas: la estructura oculta de los sistemas energéticos</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#marco-teorico-systems-analytics-mise-universidad-de-los-andes">Marco Teórico · Systems Analytics — MISE, Universidad de los Andes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apertura-por-que-pensar-en-redes">1. Apertura: ¿Por qué pensar en redes?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-revelan-las-redes-que-el-analisis-tradicional-no">¿Qué revelan las redes que el análisis tradicional no?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamentos-el-lenguaje-de-las-redes">2. Fundamentos: el lenguaje de las redes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nodos-y-aristas-los-ladrillos-basicos">2.1 Nodos y aristas: los ladrillos básicos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafos-dirigidos-vs-no-dirigidos">2.2 Grafos dirigidos vs. no dirigidos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafos-ponderados-no-todas-las-conexiones-son-iguales">2.3 Grafos ponderados: no todas las conexiones son iguales</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-matriz-de-adyacencia-la-red-como-numeros">2.4 La matriz de adyacencia: la red como números</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vecinos-caminos-y-componentes-conectados">2.5 Vecinos, caminos y componentes conectados</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metricas-de-redes-que-nos-dicen-sobre-el-sistema">3. Métricas de redes: ¿qué nos dicen sobre el sistema?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metricas-locales-de-nodo">3.1 Métricas locales (de nodo)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#grado-degree">Grado (<em>degree</em>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#centralidad-de-intermediacion-betweenness-centrality">Centralidad de intermediación (<em>betweenness centrality</em>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#centralidad-de-cercania-closeness-centrality">Centralidad de cercanía (<em>closeness centrality</em>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#coeficiente-de-clustering-agrupamiento">Coeficiente de clustering (agrupamiento)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metricas-globales-de-red">3.2 Métricas globales (de red)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#densidad-density">Densidad (<em>density</em>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#diametro-diameter">Diámetro (<em>diameter</em>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#longitud-promedio-de-camino-average-path-length">Longitud promedio de camino (<em>average path length</em>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#distribucion-de-grado-degree-distribution">Distribución de grado (<em>degree distribution</em>)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topologias-de-red-que-forma-tiene-nuestro-sistema">4. Topologías de red: ¿qué forma tiene nuestro sistema?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#redes-aleatorias-erdos-renyi">4.1 Redes aleatorias: Erdős-Rényi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#redes-libres-de-escala-barabasi-albert">4.2 Redes libres de escala: Barabási-Albert</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#redes-de-mundo-pequeno-watts-strogatz">4.3 Redes de mundo pequeño: Watts-Strogatz</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-de-topologias">4.4 Comparación de topologías</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leyes-de-potencia-y-toma-de-decisiones">5. Leyes de potencia y toma de decisiones</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-una-ley-de-potencia">5.1 ¿Qué es una ley de potencia?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#por-que-importa-para-los-sistemas-energeticos">5.2 ¿Por qué importa para los sistemas energéticos?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-cambio-de-paradigma-del-pensamiento-en-promedios-al-pensamiento-en-colas">5.3 El cambio de paradigma: del pensamiento en promedios al pensamiento en colas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-paradoja-robusto-pero-fragil">6. La paradoja “robusto pero frágil”</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#robustez-ante-fallas-aleatorias">6.1 Robustez ante fallas aleatorias</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fragilidad-ante-ataques-dirigidos">6.2 Fragilidad ante ataques dirigidos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implicaciones-para-la-seguridad-del-sin">6.3 Implicaciones para la seguridad del SIN</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-criterio-n-1-y-sus-limitaciones">7. El criterio N-1 y sus limitaciones</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-el-criterio-n-1">7.1 ¿Qué es el criterio N-1?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lo-que-el-n-1-captura-bien">7.2 Lo que el N-1 captura bien</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lo-que-el-n-1-no-captura">7.3 Lo que el N-1 NO captura</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#n-1-redes-una-combinacion-mas-poderosa">7.4 N-1 + redes: una combinación más poderosa</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fallas-en-cascada-el-modelo-capacidad-carga">8. Fallas en cascada: el modelo capacidad-carga</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-intuicion">8.1 La intuición</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-modelo-de-motter-lai">8.2 El modelo de Motter-Lai</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritmo-de-cascada-pseudocodigo">8.3 Algoritmo de cascada (pseudocódigo)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-revela-el-modelo">8.4 ¿Qué revela el modelo?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limitaciones-del-modelo">8.5 Limitaciones del modelo</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-caso-de-la-semana-el-sin-como-red">9. El caso de la semana: el SIN como red</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#construyendo-el-grafo-del-sin">9.1 Construyendo el grafo del SIN</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-revela-el-analisis-topologico">9.2 ¿Qué revela el análisis topológico?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preguntas-que-responde-el-analisis-de-redes">9.3 Preguntas que responde el análisis de redes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lo-que-el-analisis-de-redes-no-reemplaza">9.4 Lo que el análisis de redes NO reemplaza</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conexion-con-lo-que-sigue">10. Conexión con lo que sigue</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-limitacion-de-la-foto-fija">10.1 La limitación de la foto fija</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-semana-3-dinamica-sobre-redes-y-redes-de-actores">10.2 La Semana 3: dinámica sobre redes y redes de actores</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-adelante-la-dimension-temporal">10.3 Más adelante: la dimensión temporal</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resumen-y-conceptos-para-llevar">11. Resumen y conceptos para llevar</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptos-clave-de-la-semana">Conceptos clave de la semana</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#glosario-de-terminos">Glosario de términos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias-principales">Referencias principales</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="semana-2-redes-complejas-la-estructura-oculta-de-los-sistemas-energeticos">
+<h1>Semana 2 — Redes complejas: la estructura oculta de los sistemas energéticos<a class="headerlink" href="#semana-2-redes-complejas-la-estructura-oculta-de-los-sistemas-energeticos" title="Link to this heading">#</a></h1>
+<section id="marco-teorico-systems-analytics-mise-universidad-de-los-andes">
+<h2>Marco Teórico · Systems Analytics — MISE, Universidad de los Andes<a class="headerlink" href="#marco-teorico-systems-analytics-mise-universidad-de-los-andes" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p><em>“La forma en que las cosas están conectadas importa tanto como las cosas en sí mismas.”</em>
+— Albert-László Barabási</p>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="apertura-por-que-pensar-en-redes">
+<h2>1. Apertura: ¿Por qué pensar en redes?<a class="headerlink" href="#apertura-por-que-pensar-en-redes" title="Link to this heading">#</a></h2>
+<p>Abra el mapa del Sistema Interconectado Nacional (SIN) de Colombia publicado por la UPME. Verá líneas de transmisión que cruzan cordilleras, conectan ciudades costeras con centros industriales del interior, y llevan la energía de las hidroeléctricas de Antioquia hasta la península de La Guajira. Lo que está mirando es, literalmente, una <strong>red</strong>: un conjunto de puntos (subestaciones) conectados por líneas (circuitos de transmisión).</p>
+<p>Ahora considere una pregunta aparentemente sencilla: <em>¿qué pasaría si la subestación más conectada del país falla?</em> La respuesta no depende solo de la capacidad de esa subestación ni de la demanda que atiende. Depende de <strong>cómo está conectada al resto del sistema</strong> — de su posición en la red. Una subestación que funciona como puente único entre dos regiones es cualitativamente diferente de una que tiene múltiples rutas alternativas, incluso si ambas manejan la misma potencia.</p>
+<p>Esta es la idea central de este capítulo: <strong>la topología de las conexiones determina el comportamiento del sistema tanto como la capacidad de los componentes individuales</strong>. En la planificación energética tradicional, pensamos en capacidades: MW de generación, MVA de transformación, km de línea. Pero rara vez analizamos la <em>estructura</em> de las conexiones como un objeto de estudio en sí mismo. La ciencia de redes nos da el lenguaje y las herramientas para hacerlo.</p>
+<section id="que-revelan-las-redes-que-el-analisis-tradicional-no">
+<h3>¿Qué revelan las redes que el análisis tradicional no?<a class="headerlink" href="#que-revelan-las-redes-que-el-analisis-tradicional-no" title="Link to this heading">#</a></h3>
+<p>El análisis convencional de sistemas de potencia evalúa flujos de carga, despacho económico y estabilidad transitoria. Son herramientas indispensables. Pero operan sobre el sistema <em>como está configurado en un momento dado</em>, sin preguntarse qué tan vulnerable es la <em>estructura misma</em> de ese sistema. El análisis de redes complementa esta mirada al responder preguntas como:</p>
+<ul class="simple">
+<li><p>¿Cuáles son los <strong>cuellos de botella topológicos</strong> del SIN — las subestaciones cuya falla desconecta regiones enteras?</p></li>
+<li><p>¿La red de transmisión colombiana se parece más a una <strong>malla uniforme</strong> o a un sistema con unos pocos <strong>nodos dominantes</strong> de los que depende todo?</p></li>
+<li><p>¿La conexión de los nuevos parques eólicos en La Guajira hace al sistema <strong>más robusto</strong> o introduce nuevas <strong>fragilidades</strong>?</p></li>
+<li><p>¿Qué tan rápido se <strong>propaga una falla</strong> desde un punto del sistema al resto?</p></li>
+</ul>
+<p>Para responder estas preguntas, necesitamos un lenguaje formal. Ese lenguaje es la <strong>teoría de grafos</strong> (graph theory), y su aplicación a sistemas del mundo real es lo que llamamos <strong>ciencia de redes</strong> (network science).</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="fundamentos-el-lenguaje-de-las-redes">
+<h2>2. Fundamentos: el lenguaje de las redes<a class="headerlink" href="#fundamentos-el-lenguaje-de-las-redes" title="Link to this heading">#</a></h2>
+<section id="nodos-y-aristas-los-ladrillos-basicos">
+<h3>2.1 Nodos y aristas: los ladrillos básicos<a class="headerlink" href="#nodos-y-aristas-los-ladrillos-basicos" title="Link to this heading">#</a></h3>
+<p>Una red (o <strong>grafo</strong>, graph) se compone de dos elementos:</p>
+<ul class="simple">
+<li><p><strong>Nodos</strong> (nodes o vertices): las entidades del sistema. En el SIN, los nodos son las subestaciones de transmisión.</p></li>
+<li><p><strong>Aristas</strong> (edges o links): las conexiones entre entidades. En el SIN, las aristas son las líneas de transmisión y los transformadores que conectan subestaciones.</p></li>
+</ul>
+<p>Formalmente, un grafo <span class="math notranslate nohighlight">\(G\)</span> se define como un par <span class="math notranslate nohighlight">\(G = (V, E)\)</span> donde <span class="math notranslate nohighlight">\(V\)</span> es el conjunto de nodos (vértices) y <span class="math notranslate nohighlight">\(E\)</span> es el conjunto de aristas. Cada arista conecta un par de nodos: si los nodos <span class="math notranslate nohighlight">\(i\)</span> y <span class="math notranslate nohighlight">\(j\)</span> están conectados, escribimos <span class="math notranslate nohighlight">\((i, j) \in E\)</span>.</p>
+<blockquote>
+<div><p><strong>Ejemplo de referencia</strong>: Para construir intuición, trabajaremos con una red pequeña de 6 nodos que representa un sistema eléctrico simplificado. Imagine 6 subestaciones que llamaremos <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(C\)</span>, <span class="math notranslate nohighlight">\(D\)</span>, <span class="math notranslate nohighlight">\(E\)</span> y <span class="math notranslate nohighlight">\(F\)</span>, con las siguientes conexiones:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(A\)</span> se conecta con <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(C\)</span> y <span class="math notranslate nohighlight">\(D\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(B\)</span> se conecta con <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(C\)</span> y <span class="math notranslate nohighlight">\(E\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(C\)</span> se conecta con <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span> y <span class="math notranslate nohighlight">\(D\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(D\)</span> se conecta con <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(C\)</span> y <span class="math notranslate nohighlight">\(F\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(E\)</span> se conecta con <span class="math notranslate nohighlight">\(B\)</span> solamente</p></li>
+<li><p><span class="math notranslate nohighlight">\(F\)</span> se conecta con <span class="math notranslate nohighlight">\(D\)</span> solamente</p></li>
+</ul>
+<p>Note que <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(C\)</span> y <span class="math notranslate nohighlight">\(D\)</span> forman un núcleo densamente conectado, mientras que <span class="math notranslate nohighlight">\(E\)</span> y <span class="math notranslate nohighlight">\(F\)</span> son nodos periféricos con una sola conexión cada uno.</p>
+</div></blockquote>
+</section>
+<section id="grafos-dirigidos-vs-no-dirigidos">
+<h3>2.2 Grafos dirigidos vs. no dirigidos<a class="headerlink" href="#grafos-dirigidos-vs-no-dirigidos" title="Link to this heading">#</a></h3>
+<p>Cuando solo nos importa si dos subestaciones están <strong>físicamente conectadas</strong> — es decir, si existe una línea de transmisión entre ellas —, usamos un <strong>grafo no dirigido</strong> (undirected graph): la arista <span class="math notranslate nohighlight">\((A, B)\)</span> es la misma que <span class="math notranslate nohighlight">\((B, A)\)</span>.</p>
+<p>Pero en otros contextos la dirección importa. Si queremos modelar el <strong>flujo de potencia activa</strong> por las líneas, necesitamos un <strong>grafo dirigido</strong> (directed graph o dígrafo): la arista <span class="math notranslate nohighlight">\((A, B)\)</span> indica que fluye potencia de <span class="math notranslate nohighlight">\(A\)</span> hacia <span class="math notranslate nohighlight">\(B\)</span>, lo cual es diferente de <span class="math notranslate nohighlight">\((B, A)\)</span>. Las flechas importan.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Tipo de grafo</p></th>
+<th class="head"><p>Cuándo usarlo en energía</p></th>
+<th class="head"><p>Ejemplo</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>No dirigido</p></td>
+<td><p>Conectividad física, topología del STN</p></td>
+<td><p>¿Están conectadas las subestaciones Primavera y Bacatá?</p></td>
+</tr>
+<tr class="row-odd"><td><p>Dirigido</p></td>
+<td><p>Flujos de potencia, transacciones comerciales</p></td>
+<td><p>¿En qué dirección fluye la energía entre Antioquia y la Costa?</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Para el análisis topológico de este capítulo, trabajaremos principalmente con <strong>grafos no dirigidos</strong>: nos interesa la <em>estructura de conexiones</em>, no la dirección de los flujos en un instante dado.</p>
+</section>
+<section id="grafos-ponderados-no-todas-las-conexiones-son-iguales">
+<h3>2.3 Grafos ponderados: no todas las conexiones son iguales<a class="headerlink" href="#grafos-ponderados-no-todas-las-conexiones-son-iguales" title="Link to this heading">#</a></h3>
+<p>En un grafo simple, una arista solo dice “existe conexión” o “no existe conexión”. Pero una línea de transmisión de 500 kV con capacidad de 1,500 MW no es igual a una de 110 kV con capacidad de 100 MW. Para capturar estas diferencias, usamos <strong>grafos ponderados</strong> (weighted graphs): cada arista tiene un peso <span class="math notranslate nohighlight">\(w_{ij}\)</span> que representa alguna propiedad cuantitativa.</p>
+<p>En el contexto del SIN, los pesos pueden representar:</p>
+<ul class="simple">
+<li><p><strong>Capacidad de transmisión</strong> (MW): cuánta potencia puede fluir por la línea.</p></li>
+<li><p><strong>Impedancia</strong> (Ω): la resistencia eléctrica de la línea (a mayor impedancia, mayor dificultad para transmitir).</p></li>
+<li><p><strong>Distancia</strong> (km): la longitud física de la línea.</p></li>
+</ul>
+<p>La elección del peso depende de la pregunta que queremos responder. Si nos preguntamos por la capacidad del sistema, ponderamos por MW. Si nos preguntamos por la propagación de fallas eléctricas, ponderamos por impedancia.</p>
+</section>
+<section id="la-matriz-de-adyacencia-la-red-como-numeros">
+<h3>2.4 La matriz de adyacencia: la red como números<a class="headerlink" href="#la-matriz-de-adyacencia-la-red-como-numeros" title="Link to this heading">#</a></h3>
+<p>Toda la información de un grafo puede codificarse en una <strong>matriz de adyacencia</strong> (adjacency matrix) <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>. Para un grafo de <span class="math notranslate nohighlight">\(N\)</span> nodos, <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> es una matriz de <span class="math notranslate nohighlight">\(N \times N\)</span> donde:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A_{ij} = \begin{cases} 1 &amp; \text{si existe una arista entre } i \text{ y } j \\ 0 &amp; \text{en caso contrario} \end{cases}\end{split}\]</div>
+<p>Para grafos no dirigidos, la matriz es simétrica: <span class="math notranslate nohighlight">\(A_{ij} = A_{ji}\)</span>. Para grafos ponderados, reemplazamos el <span class="math notranslate nohighlight">\(1\)</span> por el peso <span class="math notranslate nohighlight">\(w_{ij}\)</span>.</p>
+<p>Volviendo a nuestro ejemplo de 6 nodos (<span class="math notranslate nohighlight">\(A, B, C, D, E, F\)</span>), la matriz de adyacencia es:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathbf{A} = \begin{pmatrix} 0 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 \\ 1 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 \\ 1 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\ 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 1 \\ 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \end{pmatrix}\end{split}\]</div>
+<p>Esta representación puede parecer redundante para una red pequeña, pero es la forma en que las computadoras almacenan y manipulan redes. Cuando el SIN tiene más de 500 subestaciones, es imposible razonar “a ojo” sobre la estructura — necesitamos la matriz y los algoritmos que operan sobre ella.</p>
+</section>
+<section id="vecinos-caminos-y-componentes-conectados">
+<h3>2.5 Vecinos, caminos y componentes conectados<a class="headerlink" href="#vecinos-caminos-y-componentes-conectados" title="Link to this heading">#</a></h3>
+<p>Con el grafo definido, podemos hablar de relaciones entre nodos:</p>
+<ul class="simple">
+<li><p><strong>Vecinos</strong> (neighbors): los nodos directamente conectados a un nodo dado. En nuestro ejemplo, los vecinos de <span class="math notranslate nohighlight">\(A\)</span> son <span class="math notranslate nohighlight">\(\{B, C, D\}\)</span>. Los vecinos de <span class="math notranslate nohighlight">\(E\)</span> son solo <span class="math notranslate nohighlight">\(\{B\}\)</span>.</p></li>
+<li><p><strong>Camino</strong> (path): una secuencia de nodos conectados por aristas sin repetir nodos. Por ejemplo, para ir de <span class="math notranslate nohighlight">\(E\)</span> a <span class="math notranslate nohighlight">\(F\)</span> podemos seguir: <span class="math notranslate nohighlight">\(E \to B \to A \to D \to F\)</span> (un camino de longitud 4) o <span class="math notranslate nohighlight">\(E \to B \to C \to D \to F\)</span> (también longitud 4). No hay un camino más corto.</p></li>
+<li><p><strong>Camino más corto</strong> (shortest path): el camino entre dos nodos que usa el menor número de aristas. La longitud del camino más corto entre <span class="math notranslate nohighlight">\(i\)</span> y <span class="math notranslate nohighlight">\(j\)</span> se llama la <strong>distancia geodésica</strong> <span class="math notranslate nohighlight">\(d(i, j)\)</span>.</p></li>
+<li><p><strong>Componente conectado</strong> (connected component): un subconjunto de nodos donde existe al menos un camino entre cualquier par. En nuestro ejemplo, todos los nodos forman un solo componente conectado. Pero si eliminamos el nodo <span class="math notranslate nohighlight">\(B\)</span>, el nodo <span class="math notranslate nohighlight">\(E\)</span> quedaría <strong>desconectado</strong> del resto — formaría su propio componente. Esta situación en el SIN equivaldría a una isla eléctrica: una región que pierde conectividad con el sistema principal.</p></li>
+</ul>
+<blockquote>
+<div><p><strong>Interpretación energética</strong>: Un componente conectado en el grafo del SIN corresponde a una zona eléctrica operando de forma autónoma. En condiciones normales, el SIN es un solo componente conectado. Cuando se produce un apagón regional — como el que afectó la Costa Caribe colombiana en varias ocasiones —, la red se fragmenta en múltiples componentes. Contar los componentes conectados después de simular una falla nos dice cuántas “islas eléctricas” se forman.</p>
+</div></blockquote>
+</section>
+</section>
+<hr class="docutils" />
+<section id="metricas-de-redes-que-nos-dicen-sobre-el-sistema">
+<h2>3. Métricas de redes: ¿qué nos dicen sobre el sistema?<a class="headerlink" href="#metricas-de-redes-que-nos-dicen-sobre-el-sistema" title="Link to this heading">#</a></h2>
+<p>Tener el grafo es solo el primer paso. Las <strong>métricas de red</strong> nos permiten cuantificar propiedades de la estructura que son invisibles a simple vista. Para cada métrica seguiremos el mismo esquema: significado intuitivo → definición formal → interpretación energética → decisiones que informa.</p>
+<section id="metricas-locales-de-nodo">
+<h3>3.1 Métricas locales (de nodo)<a class="headerlink" href="#metricas-locales-de-nodo" title="Link to this heading">#</a></h3>
+<p>Estas métricas caracterizan a cada nodo individual — nos dicen qué tan importante, central o redundante es un nodo específico dentro de la red.</p>
+<section id="grado-degree">
+<h4>Grado (<em>degree</em>)<a class="headerlink" href="#grado-degree" title="Link to this heading">#</a></h4>
+<p><strong>Intuición</strong>: El grado de un nodo es simplemente su número de conexiones directas. Un nodo con muchas conexiones es un “hub”; uno con pocas es periférico.</p>
+<p><strong>Definición formal</strong>: Para un nodo <span class="math notranslate nohighlight">\(i\)</span> en un grafo no dirigido, el grado <span class="math notranslate nohighlight">\(k_i\)</span> es:</p>
+<div class="math notranslate nohighlight">
+\[k_i = \sum_{j=1}^{N} A_{ij}\]</div>
+<p>Es decir, la suma de la fila <span class="math notranslate nohighlight">\(i\)</span> de la matriz de adyacencia.</p>
+<p><strong>En nuestro ejemplo</strong>: <span class="math notranslate nohighlight">\(k_A = 3\)</span>, <span class="math notranslate nohighlight">\(k_B = 3\)</span>, <span class="math notranslate nohighlight">\(k_C = 3\)</span>, <span class="math notranslate nohighlight">\(k_D = 3\)</span>, <span class="math notranslate nohighlight">\(k_E = 1\)</span>, <span class="math notranslate nohighlight">\(k_F = 1\)</span>. Los nodos del núcleo (<span class="math notranslate nohighlight">\(A\)</span>–<span class="math notranslate nohighlight">\(D\)</span>) tienen grado 3, mientras que los periféricos (<span class="math notranslate nohighlight">\(E\)</span>, <span class="math notranslate nohighlight">\(F\)</span>) tienen grado 1.</p>
+<p><strong>Interpretación energética</strong>: El grado de una subestación indica cuántas líneas de transmisión llegan a ella. Subestaciones como Bacatá (en Cundinamarca) o Cerromatoso (en Córdoba) tienen grados altos porque concentran múltiples líneas de transmisión de distintas direcciones. Una subestación con grado 1 — como las que alimentan zonas no interconectadas o terminales de distribución — es especialmente vulnerable: si su única línea falla, queda aislada.</p>
+<p><strong>Decisión que informa</strong>: Identificar nodos de bajo grado ayuda a priorizar proyectos de redundancia. Un nodo con <span class="math notranslate nohighlight">\(k=1\)</span> es un candidato natural para una segunda línea.</p>
+</section>
+<section id="centralidad-de-intermediacion-betweenness-centrality">
+<h4>Centralidad de intermediación (<em>betweenness centrality</em>)<a class="headerlink" href="#centralidad-de-intermediacion-betweenness-centrality" title="Link to this heading">#</a></h4>
+<p><strong>Intuición</strong>: Imagine que toda la comunicación entre nodos debe fluir por los caminos más cortos. La centralidad de intermediación mide <strong>cuántos de esos caminos pasan por un nodo dado</strong>. Un nodo con alta intermediación es un “cuello de botella”: si lo eliminamos, muchos pares de nodos pierden su ruta más eficiente.</p>
+<p><strong>Definición formal</strong>: Para un nodo <span class="math notranslate nohighlight">\(v\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[C_B(v) = \sum_{s \neq v \neq t} \frac{\sigma_{st}(v)}{\sigma_{st}}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(\sigma_{st}\)</span> es el número total de caminos más cortos entre <span class="math notranslate nohighlight">\(s\)</span> y <span class="math notranslate nohighlight">\(t\)</span>, y <span class="math notranslate nohighlight">\(\sigma_{st}(v)\)</span> es el número de esos caminos que pasan por <span class="math notranslate nohighlight">\(v\)</span>. Frecuentemente se normaliza dividiendo por <span class="math notranslate nohighlight">\((N-1)(N-2)/2\)</span> para que el valor esté entre 0 y 1.</p>
+<p><strong>En nuestro ejemplo</strong>: El nodo <span class="math notranslate nohighlight">\(B\)</span> tiene alta intermediación porque es el <strong>único</strong> camino para que <span class="math notranslate nohighlight">\(E\)</span> se comunique con cualquier otro nodo. Si removemos <span class="math notranslate nohighlight">\(B\)</span>, el nodo <span class="math notranslate nohighlight">\(E\)</span> queda completamente aislado. De manera análoga, <span class="math notranslate nohighlight">\(D\)</span> es el único camino para <span class="math notranslate nohighlight">\(F\)</span>.</p>
+<p><strong>Interpretación energética</strong>: Una subestación con alta centralidad de intermediación es un <strong>cuello de botella sistémico</strong>. No necesariamente es la que más potencia maneja, sino la que está en una posición topológica crítica. Si falla, obliga a los flujos de potencia a tomar rutas mucho más largas (si existen), con las consecuentes pérdidas y congestiones. En el SIN colombiano, las subestaciones que conectan la Costa Caribe con el interior del país (por los corredores de transmisión que cruzan Santander o el Bajo Cauca) probablemente tienen alta intermediación.</p>
+<p><strong>Decisión que informa</strong>: Los nodos de alta intermediación deben ser prioridad en planes de mantenimiento, refuerzo y protección.</p>
+</section>
+<section id="centralidad-de-cercania-closeness-centrality">
+<h4>Centralidad de cercanía (<em>closeness centrality</em>)<a class="headerlink" href="#centralidad-de-cercania-closeness-centrality" title="Link to this heading">#</a></h4>
+<p><strong>Intuición</strong>: Un nodo es “cercano” al resto de la red si puede alcanzar a todos los demás nodos en pocos pasos. Es una medida de qué tan <em>accesible</em> es un nodo, o equivalentemente, qué tan rápido se propaga una perturbación desde ese nodo.</p>
+<p><strong>Definición formal</strong>: Para un nodo <span class="math notranslate nohighlight">\(i\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[C_C(i) = \frac{N - 1}{\sum_{j \neq i} d(i, j)}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(d(i, j)\)</span> es la distancia geodésica (camino más corto) entre <span class="math notranslate nohighlight">\(i\)</span> y <span class="math notranslate nohighlight">\(j\)</span>.</p>
+<p><strong>En nuestro ejemplo</strong>: Los nodos <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(C\)</span> y <span class="math notranslate nohighlight">\(D\)</span> tienen alta cercanía porque están a pocos pasos de todos los demás. Los nodos <span class="math notranslate nohighlight">\(E\)</span> y <span class="math notranslate nohighlight">\(F\)</span> tienen baja cercanía porque deben atravesar varios intermediarios para llegar a nodos distantes.</p>
+<p><strong>Interpretación energética</strong>: Una subestación con alta cercanía está topológicamente “en el centro” del sistema. Una perturbación originada allí (un cortocircuito, una sobrecarga) alcanza al resto del sistema más rápidamente. Inversamente, una señal de control emitida desde un centro de despacho cercano a este nodo llega a más partes del sistema con menor retardo.</p>
+</section>
+<section id="coeficiente-de-clustering-agrupamiento">
+<h4>Coeficiente de clustering (agrupamiento)<a class="headerlink" href="#coeficiente-de-clustering-agrupamiento" title="Link to this heading">#</a></h4>
+<p><strong>Intuición</strong>: El clustering mide qué tan conectados están los vecinos de un nodo <strong>entre sí</strong>. Si los tres amigos de una persona se conocen entre ellos, el clustering es alto. Si ninguno se conoce, es bajo. En redes, un alto clustering indica <strong>redundancia local</strong>: si un nodo falla, sus vecinos aún están conectados entre sí.</p>
+<p><strong>Definición formal</strong>: Para un nodo <span class="math notranslate nohighlight">\(i\)</span> con grado <span class="math notranslate nohighlight">\(k_i\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[C_i = \frac{2 \cdot T_i}{k_i(k_i - 1)}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(T_i\)</span> es el número de aristas que existen entre los vecinos de <span class="math notranslate nohighlight">\(i\)</span>. El denominador <span class="math notranslate nohighlight">\(k_i(k_i-1)/2\)</span> es el máximo número posible de aristas entre <span class="math notranslate nohighlight">\(k_i\)</span> vecinos. Note que <span class="math notranslate nohighlight">\(0 \leq C_i \leq 1\)</span>.</p>
+<p><strong>En nuestro ejemplo</strong>: Los vecinos de <span class="math notranslate nohighlight">\(A\)</span> son <span class="math notranslate nohighlight">\(\{B, C, D\}\)</span>. ¿Cuántas aristas hay entre ellos? <span class="math notranslate nohighlight">\(B\)</span>–<span class="math notranslate nohighlight">\(C\)</span> existe, pero <span class="math notranslate nohighlight">\(B\)</span>–<span class="math notranslate nohighlight">\(D\)</span> no existe, y <span class="math notranslate nohighlight">\(C\)</span>–<span class="math notranslate nohighlight">\(D\)</span> existe. Son 2 aristas de un máximo de 3, así que <span class="math notranslate nohighlight">\(C_A = 2 \cdot 2 / (3 \cdot 2) = 2/3 \approx 0.67\)</span>. Para los nodos <span class="math notranslate nohighlight">\(E\)</span> y <span class="math notranslate nohighlight">\(F\)</span>, el clustering no está definido (o se define como 0) porque tienen grado 1 y no se puede formar un triángulo.</p>
+<p><strong>Interpretación energética</strong>: Una subestación con alto clustering pertenece a una zona de la red donde hay <strong>múltiples rutas alternativas</strong> entre los nodos cercanos. Si esa subestación falla, la energía puede redistribuirse localmente porque los vecinos mantienen conexiones entre sí. Por el contrario, un clustering bajo indica una configuración radial, con pocas alternativas y mayor riesgo de desconexión local.</p>
+</section>
+</section>
+<section id="metricas-globales-de-red">
+<h3>3.2 Métricas globales (de red)<a class="headerlink" href="#metricas-globales-de-red" title="Link to this heading">#</a></h3>
+<p>Estas métricas caracterizan la <strong>red completa</strong> — nos dan una vista panorámica de la estructura del sistema.</p>
+<section id="densidad-density">
+<h4>Densidad (<em>density</em>)<a class="headerlink" href="#densidad-density" title="Link to this heading">#</a></h4>
+<p><strong>Intuición</strong>: ¿Qué fracción de todas las conexiones posibles existen realmente?</p>
+<p><strong>Definición formal</strong>: Para un grafo no dirigido con <span class="math notranslate nohighlight">\(N\)</span> nodos y <span class="math notranslate nohighlight">\(L\)</span> aristas:</p>
+<div class="math notranslate nohighlight">
+\[\rho = \frac{2L}{N(N-1)}\]</div>
+<p>El denominador <span class="math notranslate nohighlight">\(N(N-1)/2\)</span> es el número máximo de aristas posibles. Una red completa (todos conectados con todos) tiene <span class="math notranslate nohighlight">\(\rho = 1\)</span>. Una red sin aristas tiene <span class="math notranslate nohighlight">\(\rho = 0\)</span>.</p>
+<p><strong>En nuestro ejemplo</strong>: <span class="math notranslate nohighlight">\(N = 6\)</span>, <span class="math notranslate nohighlight">\(L = 7\)</span> (cuente las aristas), así que <span class="math notranslate nohighlight">\(\rho = 14/30 = 0.47\)</span>.</p>
+<p><strong>Interpretación energética</strong>: Las redes eléctricas reales tienen densidades muy bajas, típicamente <span class="math notranslate nohighlight">\(\rho &lt; 0.05\)</span>. Construir líneas de transmisión es caro y tiene restricciones geográficas y ambientales; no es viable conectar “todo con todo”. Una densidad baja no es necesariamente un problema — muchas redes eficientes son dispersas —, pero indica que <strong>cada conexión es proporcionalmente más importante</strong>.</p>
+</section>
+<section id="diametro-diameter">
+<h4>Diámetro (<em>diameter</em>)<a class="headerlink" href="#diametro-diameter" title="Link to this heading">#</a></h4>
+<p><strong>Intuición</strong>: El diámetro es la distancia más larga entre cualquier par de nodos, considerando siempre los caminos más cortos. Es el “peor caso” de qué tan lejos pueden estar dos puntos de la red.</p>
+<p><strong>Definición formal</strong>:</p>
+<div class="math notranslate nohighlight">
+\[\text{diámetro}(G) = \max_{i,j \in V} d(i,j)\]</div>
+<p><strong>En nuestro ejemplo</strong>: La mayor distancia es entre <span class="math notranslate nohighlight">\(E\)</span> y <span class="math notranslate nohighlight">\(F\)</span>: <span class="math notranslate nohighlight">\(E \to B \to A \to D \to F\)</span> o <span class="math notranslate nohighlight">\(E \to B \to C \to D \to F\)</span>, ambas de longitud 4. Así que el diámetro es 4.</p>
+<p><strong>Interpretación energética</strong>: Un diámetro grande significa que existen pares de nodos que están topológicamente muy “lejos”. En términos de propagación de disturbios, regulación de frecuencia o redistribución de carga después de una falla, estas distancias largas implican <strong>retardos y pérdidas</strong>.</p>
+</section>
+<section id="longitud-promedio-de-camino-average-path-length">
+<h4>Longitud promedio de camino (<em>average path length</em>)<a class="headerlink" href="#longitud-promedio-de-camino-average-path-length" title="Link to this heading">#</a></h4>
+<p><strong>Intuición</strong>: En promedio, ¿cuántos “saltos” hay que dar para ir de un nodo cualquiera a otro?</p>
+<p><strong>Definición formal</strong>:</p>
+<div class="math notranslate nohighlight">
+\[\langle d \rangle = \frac{1}{N(N-1)} \sum_{i \neq j} d(i,j)\]</div>
+<p><strong>En nuestro ejemplo</strong>: Sumando todas las distancias entre todos los pares de nodos y dividiendo por <span class="math notranslate nohighlight">\(6 \times 5 = 30\)</span>, obtenemos <span class="math notranslate nohighlight">\(\langle d \rangle \approx 2.07\)</span>.</p>
+<p><strong>Interpretación energética</strong>: Una longitud promedio de camino baja indica que el sistema es compacto y que los flujos de potencia pueden redistribuirse eficientemente. Redes con longitudes promedio altas son más susceptibles a congestiones regionales.</p>
+</section>
+<section id="distribucion-de-grado-degree-distribution">
+<h4>Distribución de grado (<em>degree distribution</em>)<a class="headerlink" href="#distribucion-de-grado-degree-distribution" title="Link to this heading">#</a></h4>
+<p><strong>Intuición</strong>: Si hacemos un histograma de los grados de todos los nodos — ¿cuántos nodos tienen grado 1, cuántos grado 2, cuántos grado 3, etc.? — obtenemos la <strong>distribución de grado</strong>. Esta es probablemente la métrica <strong>más importante</strong> de una red, porque su forma nos dice mucho sobre las propiedades globales del sistema.</p>
+<p><strong>Definición formal</strong>: <span class="math notranslate nohighlight">\(P(k)\)</span> es la probabilidad de que un nodo elegido al azar tenga grado <span class="math notranslate nohighlight">\(k\)</span>. Equivalentemente, es la fracción de nodos con grado <span class="math notranslate nohighlight">\(k\)</span>.</p>
+<p><strong>En nuestro ejemplo</strong>: <span class="math notranslate nohighlight">\(P(1) = 2/6 = 1/3\)</span> (nodos <span class="math notranslate nohighlight">\(E\)</span> y <span class="math notranslate nohighlight">\(F\)</span>), <span class="math notranslate nohighlight">\(P(3) = 4/6 = 2/3\)</span> (nodos <span class="math notranslate nohighlight">\(A\)</span>–<span class="math notranslate nohighlight">\(D\)</span>), y <span class="math notranslate nohighlight">\(P(k) = 0\)</span> para cualquier otro <span class="math notranslate nohighlight">\(k\)</span>. Este ejemplo es demasiado pequeño para revelar patrones interesantes, pero cuando analicemos redes de cientos de nodos, la <em>forma</em> de <span class="math notranslate nohighlight">\(P(k)\)</span> será reveladora.</p>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="topologias-de-red-que-forma-tiene-nuestro-sistema">
+<h2>4. Topologías de red: ¿qué forma tiene nuestro sistema?<a class="headerlink" href="#topologias-de-red-que-forma-tiene-nuestro-sistema" title="Link to this heading">#</a></h2>
+<p>Ahora llegamos al corazón conceptual de este capítulo. No todas las redes son iguales. La ciencia de redes ha identificado tres grandes familias de topologías, cada una con propiedades radicalmente diferentes. Conocer a cuál se parece nuestro sistema eléctrico determina qué vulnerabilidades tiene y qué estrategias de protección funcionan.</p>
+<section id="redes-aleatorias-erdos-renyi">
+<h3>4.1 Redes aleatorias: Erdős-Rényi<a class="headerlink" href="#redes-aleatorias-erdos-renyi" title="Link to this heading">#</a></h3>
+<p><strong>El modelo</strong>: En 1959, Paul Erdős y Alfréd Rényi propusieron el modelo más simple de red: tome <span class="math notranslate nohighlight">\(N\)</span> nodos y conecte cada par posible con una probabilidad <span class="math notranslate nohighlight">\(p\)</span>, de manera independiente. El resultado es una red donde todos los nodos tienen <em>aproximadamente</em> el mismo número de conexiones.</p>
+<p><strong>Distribución de grado</strong>: Sigue una distribución de <strong>Poisson</strong>:</p>
+<div class="math notranslate nohighlight">
+\[P(k) = \frac{e^{-\langle k \rangle} \langle k \rangle^k}{k!}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(\langle k \rangle = p(N-1)\)</span> es el grado promedio. La distribución es simétrica y concentrada alrededor de la media, con una “cola” que decae exponencialmente rápido. Es extremadamente improbable encontrar un nodo con un grado mucho mayor que el promedio.</p>
+<p><strong>Analogía energética</strong>: Imagine un sistema eléctrico hipotético donde cada subestación tiene más o menos el mismo número de líneas de transmisión — quizá 3, 4 o 5 — y no existen subestaciones “gigantes” que concentren decenas de conexiones. Este sistema sería democrático: ningún nodo es significativamente más importante que los demás.</p>
+<p><strong>Propiedades clave</strong>:</p>
+<ul class="simple">
+<li><p>Todos los nodos son “iguales en importancia”</p></li>
+<li><p>Resistente a ataques dirigidos (no hay nodos críticos obvios)</p></li>
+<li><p>Pero tampoco tiene la eficiencia de ciertas estructuras jerárquicas</p></li>
+</ul>
+</section>
+<section id="redes-libres-de-escala-barabasi-albert">
+<h3>4.2 Redes libres de escala: Barabási-Albert<a class="headerlink" href="#redes-libres-de-escala-barabasi-albert" title="Link to this heading">#</a></h3>
+<p><strong>El modelo</strong>: En 1999, Albert-László Barabási y Réka Albert observaron que muchas redes del mundo real no siguen el modelo aleatorio. En su lugar, descubrieron que tienen unos pocos nodos con un número enormemente alto de conexiones (<em>hubs</em>) y muchos nodos con muy pocas conexiones. Propusieron un mecanismo generativo simple: <strong>enlace preferencial</strong> (preferential attachment) — “los ricos se hacen más ricos”. Cuando un nuevo nodo se une a la red, es más probable que se conecte a un nodo que ya tiene muchas conexiones.</p>
+<p><strong>Distribución de grado</strong>: Sigue una <strong>ley de potencia</strong> (power law):</p>
+<div class="math notranslate nohighlight">
+\[P(k) \sim k^{-\gamma}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(\gamma\)</span> es el exponente de la ley de potencia, típicamente entre 2 y 3 para redes reales. En escala logarítmica, esta distribución aparece como una línea recta. A diferencia de la distribución de Poisson, la distribución de ley de potencia tiene una “cola pesada” (fat tail): la probabilidad de encontrar nodos con grados extremadamente altos es mucho mayor de lo que sugeriría una distribución gaussiana o Poisson.</p>
+<p><strong>Analogía energética</strong>: El SIN colombiano tiene características de red libre de escala. Unas pocas subestaciones principales — como Bacatá (500/230 kV), Cerromatoso (500/230 kV), La Virginia (230 kV), San Carlos (500/230 kV) — concentran un número desproporcionadamente alto de conexiones, mientras que la gran mayoría de subestaciones regionales tienen solo 2 o 3 líneas. No es una coincidencia: los sistemas eléctricos crecen por enlace preferencial. Cuando se planifica una nueva línea, es natural conectarla a una subestación existente que ya es un nodo importante del sistema — es más eficiente y más económico que crear infraestructura desde cero en un punto remoto.</p>
+<p><strong>Propiedades clave</strong>:</p>
+<ul class="simple">
+<li><p><strong>Hubs</strong>: existencia de nodos con grado mucho mayor que el promedio</p></li>
+<li><p><strong>Tolerancia a fallas aleatorias</strong> pero <strong>vulnerabilidad a ataques dirigidos</strong> (esto es la paradoja “robusto pero frágil” que veremos en detalle más adelante)</p></li>
+<li><p>Distancias promedio cortas (propiedad de mundo pequeño)</p></li>
+</ul>
+</section>
+<section id="redes-de-mundo-pequeno-watts-strogatz">
+<h3>4.3 Redes de mundo pequeño: Watts-Strogatz<a class="headerlink" href="#redes-de-mundo-pequeno-watts-strogatz" title="Link to this heading">#</a></h3>
+<p><strong>El modelo</strong>: En 1998, Duncan Watts y Steven Strogatz propusieron un modelo que captura una propiedad sorprendente de muchas redes reales: tienen <strong>alto clustering</strong> (los vecinos de un nodo tienden a conocerse entre sí) y al mismo tiempo <strong>caminos cortos</strong> entre nodos distantes. Esto se logra comenzando con una red regular (como un anillo donde cada nodo se conecta a sus vecinos más cercanos) y luego “reconectando” aleatoriamente algunas aristas para crear “atajos” de largo alcance.</p>
+<p><strong>Analogía energética</strong>: En el sistema de transmisión, las subestaciones de una misma región (por ejemplo, las del Valle del Cauca) están densamente conectadas entre sí (alto clustering), pero también existen líneas de transmisión de larga distancia (como los corredores 500 kV) que conectan regiones lejanas — estos son los “atajos” que hacen al mundo pequeño. El resultado: cualquier subestación del país puede alcanzar a cualquier otra en relativamente pocos saltos, a pesar de que la red no es densa globalmente.</p>
+<p><strong>Propiedades clave</strong>:</p>
+<ul class="simple">
+<li><p><strong>Alto clustering + caminos cortos</strong>: lo mejor de ambos mundos</p></li>
+<li><p>El alto clustering provee redundancia local</p></li>
+<li><p>Los atajos proveen eficiencia global</p></li>
+</ul>
+</section>
+<section id="comparacion-de-topologias">
+<h3>4.4 Comparación de topologías<a class="headerlink" href="#comparacion-de-topologias" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Propiedad</p></th>
+<th class="head"><p>Aleatoria (E-R)</p></th>
+<th class="head"><p>Libre de escala (B-A)</p></th>
+<th class="head"><p>Mundo pequeño (W-S)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Distribución de grado</p></td>
+<td><p>Poisson (simétrica)</p></td>
+<td><p>Ley de potencia (cola pesada)</p></td>
+<td><p>Similar a regular pero con atajos</p></td>
+</tr>
+<tr class="row-odd"><td><p>Hubs</p></td>
+<td><p>No</p></td>
+<td><p>Sí (pocos, muy conectados)</p></td>
+<td><p>Posibles pero no necesarios</p></td>
+</tr>
+<tr class="row-even"><td><p>Clustering</p></td>
+<td><p>Bajo</p></td>
+<td><p>Bajo a medio</p></td>
+<td><p><strong>Alto</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>Camino promedio</p></td>
+<td><p>Corto</p></td>
+<td><p><strong>Muy corto</strong></p></td>
+<td><p>Corto</p></td>
+</tr>
+<tr class="row-even"><td><p>Robustez a fallas aleatorias</p></td>
+<td><p>Media</p></td>
+<td><p><strong>Alta</strong></p></td>
+<td><p>Media</p></td>
+</tr>
+<tr class="row-odd"><td><p>Robustez a ataques dirigidos</p></td>
+<td><p>Media</p></td>
+<td><p><strong>Baja</strong></p></td>
+<td><p>Media-alta</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="leyes-de-potencia-y-toma-de-decisiones">
+<h2>5. Leyes de potencia y toma de decisiones<a class="headerlink" href="#leyes-de-potencia-y-toma-de-decisiones" title="Link to this heading">#</a></h2>
+<p>Esta sección es un puente conceptual crucial entre la ciencia de redes y la toma de decisiones en el sector energético. Merece atención especial.</p>
+<section id="que-es-una-ley-de-potencia">
+<h3>5.1 ¿Qué es una ley de potencia?<a class="headerlink" href="#que-es-una-ley-de-potencia" title="Link to this heading">#</a></h3>
+<p>Decimos que una variable aleatoria sigue una <strong>ley de potencia</strong> (power law) si su distribución de probabilidad decrece como una potencia del valor observado:</p>
+<div class="math notranslate nohighlight">
+\[P(X \geq x) \sim x^{-\alpha + 1} \quad \text{o equivalentemente} \quad P(X = x) \sim x^{-\alpha}\]</div>
+<p>En contraste, una distribución <strong>gaussiana</strong> (normal) decrece como <span class="math notranslate nohighlight">\(e^{-x^2}\)</span> — exponencialmente rápido. La diferencia práctica es enorme:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Distribución</p></th>
+<th class="head"><p>Probabilidad de un evento 10x más grande que la media</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Gaussiana</p></td>
+<td><p>Prácticamente cero (<span class="math notranslate nohighlight">\(\sim 10^{-23}\)</span>)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ley de potencia (<span class="math notranslate nohighlight">\(\alpha = 2.5\)</span>)</p></td>
+<td><p>Aproximadamente <span class="math notranslate nohighlight">\(10^{-1.5} \approx 3\%\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>En una distribución gaussiana, eventos extremos son esencialmente imposibles. En una ley de potencia, son <strong>raros pero no despreciables</strong> — y su impacto puede ser catastrófico.</p>
+</section>
+<section id="por-que-importa-para-los-sistemas-energeticos">
+<h3>5.2 ¿Por qué importa para los sistemas energéticos?<a class="headerlink" href="#por-que-importa-para-los-sistemas-energeticos" title="Link to this heading">#</a></h3>
+<p>En la Semana 1 hablamos de los <strong>cisnes negros</strong> (black swans): eventos de baja probabilidad pero alto impacto que los modelos convencionales no anticipan. Ahora podemos darle una base cuantitativa a esa idea.</p>
+<p>Considere la distribución de tamaños de apagones en sistemas eléctricos. Estudios empíricos (Carreras et al., 2004; Dobson et al., 2007) han documentado que <strong>la distribución del tamaño de los apagones sigue una ley de potencia</strong>: hay muchos apagones pequeños y pocos grandes, pero los grandes son mucho más frecuentes de lo que una distribución normal predecería. Un apagón que afecta 10 millones de personas no es “10 veces” más raro que uno que afecta 1 millón — es quizá solo 3 veces más raro.</p>
+<p>Esto tiene implicaciones profundas para la evaluación de riesgo:</p>
+<ol class="arabic simple">
+<li><p><strong>El análisis basado en promedios es engañoso</strong>: El “apagón promedio” es pequeño y manejable. Pero el riesgo total del sistema está dominado por los eventos extremos en la cola de la distribución.</p></li>
+<li><p><strong>Los métodos estándar subestiman el riesgo</strong>: Si un planificador asume que los tamaños de apagones siguen una distribución normal y estima que un apagón de cierta magnitud tiene una probabilidad de 1 en 10,000 años, la realidad (bajo una ley de potencia) podría ser 1 en 50 años.</p></li>
+<li><p><strong>El “peor caso razonable” es mucho peor de lo que pensamos</strong>: Los escenarios de estrés diseñados bajo supuestos gaussianos son insuficientes.</p></li>
+</ol>
+</section>
+<section id="el-cambio-de-paradigma-del-pensamiento-en-promedios-al-pensamiento-en-colas">
+<h3>5.3 El cambio de paradigma: del pensamiento en promedios al pensamiento en colas<a class="headerlink" href="#el-cambio-de-paradigma-del-pensamiento-en-promedios-al-pensamiento-en-colas" title="Link to this heading">#</a></h3>
+<p>La ciencia de redes nos obliga a cambiar nuestra forma de pensar sobre el riesgo:</p>
+<ul class="simple">
+<li><p><strong>Pensamiento tradicional</strong>: “¿Cuál es la falla más probable? Diseñemos para ella.”</p></li>
+<li><p><strong>Pensamiento de colas pesadas</strong>: “¿Cuáles son las fallas que, aunque improbables, serían catastróficas? ¿Qué tan improbables son <em>realmente</em>? ¿Estamos seguros de que nuestros modelos de probabilidad son correctos?”</p></li>
+</ul>
+<p>Este cambio de paradigma conecta directamente con la paradoja “robusto pero frágil” que exploraremos a continuación.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="la-paradoja-robusto-pero-fragil">
+<h2>6. La paradoja “robusto pero frágil”<a class="headerlink" href="#la-paradoja-robusto-pero-fragil" title="Link to this heading">#</a></h2>
+<section id="robustez-ante-fallas-aleatorias">
+<h3>6.1 Robustez ante fallas aleatorias<a class="headerlink" href="#robustez-ante-fallas-aleatorias" title="Link to this heading">#</a></h3>
+<p>Considere una red libre de escala con hubs prominentes. Si una falla ocurre <strong>al azar</strong> — un cortocircuito, un rayo, un error de mantenimiento —, ¿a qué nodo afectará más probablemente? Dado que la mayoría de los nodos tienen pocas conexiones (recuerde la ley de potencia: muchos nodos de grado bajo, pocos de grado alto), es estadísticamente mucho más probable que la falla afecte a un nodo periférico de grado bajo. Cuando un nodo periférico falla, el impacto en la red global es mínimo: se pierde una conexión marginal, pero la estructura esencial del sistema — sostenida por los hubs — permanece intacta.</p>
+<p>Esto se puede cuantificar simulando la remoción aleatoria de nodos: incluso después de remover un porcentaje significativo de nodos al azar (digamos el 20%), la red libre de escala mantiene su conectividad — el componente gigante (el grupo más grande de nodos conectados) apenas se reduce.</p>
+</section>
+<section id="fragilidad-ante-ataques-dirigidos">
+<h3>6.2 Fragilidad ante ataques dirigidos<a class="headerlink" href="#fragilidad-ante-ataques-dirigidos" title="Link to this heading">#</a></h3>
+<p>Ahora considere un escenario diferente: un atacante (o una secuencia desafortunada de eventos correlacionados) que deliberadamente apunta a los <strong>hubs</strong>. Si se remueve el nodo de mayor grado, la red pierde su principal articulador. Si se remueve el segundo hub, se pierde la segunda conexión más importante. Con la remoción de unos pocos hubs (quizá el 5% de los nodos), la red libre de escala se fragmenta completamente en componentes desconectados.</p>
+<p>Esta asimetría es la <strong>paradoja “robusto pero frágil”</strong> (robust yet fragile):</p>
+<blockquote>
+<div><p><strong>Las redes libres de escala son extraordinariamente resistentes a fallas aleatorias pero catastróficamente vulnerables a ataques dirigidos contra sus hubs.</strong></p>
+</div></blockquote>
+</section>
+<section id="implicaciones-para-la-seguridad-del-sin">
+<h3>6.3 Implicaciones para la seguridad del SIN<a class="headerlink" href="#implicaciones-para-la-seguridad-del-sin" title="Link to this heading">#</a></h3>
+<p>Si el SIN colombiano tiene características de red libre de escala — como la evidencia empírica sugiere — entonces:</p>
+<ul class="simple">
+<li><p><strong>Buena noticia</strong>: El sistema tolerará bien las fallas aleatorias cotidianas (rayos, errores humanos aislados, fallas de equipos individuales). Estas fallas afectarán mayormente a nodos periféricos de bajo grado sin consecuencias sistémicas.</p></li>
+<li><p><strong>Mala noticia</strong>: El sistema es vulnerable a eventos que afecten selectivamente a los hubs. Estos eventos no tienen que ser “ataques” en sentido militar — pueden ser desastres naturales que afecten una región donde se concentran varios hubs (un terremoto en el Eje Cafetero, por ejemplo, podría afectar subestaciones clave como La Virginia y San Carlos), o fallas correlacionadas durante condiciones extremas (El Niño que reduce simultáneamente la generación hidráulica en múltiples embalses conectados a los mismos hubs de transmisión).</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="el-criterio-n-1-y-sus-limitaciones">
+<h2>7. El criterio N-1 y sus limitaciones<a class="headerlink" href="#el-criterio-n-1-y-sus-limitaciones" title="Link to this heading">#</a></h2>
+<section id="que-es-el-criterio-n-1">
+<h3>7.1 ¿Qué es el criterio N-1?<a class="headerlink" href="#que-es-el-criterio-n-1" title="Link to this heading">#</a></h3>
+<p>En la práctica de planificación y operación del sistema de transmisión colombiano — regulada por la UPME (planificación) y operada por XM —, el criterio más utilizado para evaluar la confiabilidad es el <strong>criterio N-1</strong>:</p>
+<blockquote>
+<div><p><strong>El sistema debe ser capaz de operar de manera segura después de la pérdida de cualquier elemento individual</strong> (una línea, un transformador, una unidad de generación).</p>
+</div></blockquote>
+<p>Formalmente, si el sistema tiene <span class="math notranslate nohighlight">\(N\)</span> elementos, se evalúan <span class="math notranslate nohighlight">\(N\)</span> escenarios de contingencia, cada uno removiendo un solo elemento, y se verifica que en ninguno de ellos se produzcan violaciones de límites térmicos, de tensión o de estabilidad.</p>
+</section>
+<section id="lo-que-el-n-1-captura-bien">
+<h3>7.2 Lo que el N-1 captura bien<a class="headerlink" href="#lo-que-el-n-1-captura-bien" title="Link to this heading">#</a></h3>
+<p>El criterio N-1 es una herramienta probada y valiosa que:</p>
+<ul class="simple">
+<li><p>Identifica elementos cuya pérdida individual causa problemas inmediatos.</p></li>
+<li><p>Es computacionalmente manejable: solo requiere <span class="math notranslate nohighlight">\(N\)</span> simulaciones de flujo de carga.</p></li>
+<li><p>Proporciona un estándar mínimo de confiabilidad que el sistema debe cumplir.</p></li>
+<li><p>Es la base de la planificación de expansión del STN en Colombia.</p></li>
+</ul>
+</section>
+<section id="lo-que-el-n-1-no-captura">
+<h3>7.3 Lo que el N-1 NO captura<a class="headerlink" href="#lo-que-el-n-1-no-captura" title="Link to this heading">#</a></h3>
+<p>Desde la perspectiva de redes complejas, el criterio N-1 tiene limitaciones fundamentales:</p>
+<ol class="arabic simple">
+<li><p><strong>Fallas correlacionadas</strong>: El N-1 evalúa la pérdida de <strong>un solo</strong> elemento. Pero en la realidad, las fallas rara vez son independientes. Un evento climático severo puede causar la pérdida simultánea de varias líneas. Las fallas en cascada — donde la falla de un elemento sobrecarga a los vecinos, provocando fallas adicionales — son, por definición, eventos de múltiples elementos. El criterio N-1 no evalúa estas situaciones (el criterio N-2 lo hace parcialmente, pero es exponencialmente más costoso y tampoco captura cascadas largas).</p></li>
+<li><p><strong>Importancia topológica</strong>: El N-1 evalúa cada elemento con la misma prioridad. Pero como hemos visto, no todos los nodos son iguales en una red libre de escala. La falla de un hub es cualitativamente diferente de la falla de un nodo periférico. El análisis de redes permite <strong>priorizar</strong> qué contingencias N-1 son realmente críticas.</p></li>
+<li><p><strong>Ataques dirigidos</strong>: El N-1 evalúa fallas <em>aleatorias</em> (cualquier elemento). No evalúa la vulnerabilidad ante secuencias estratégicas de fallas que apunten a los nodos topológicamente más críticos. Como vimos en la paradoja “robusto pero frágil”, esta es precisamente la vulnerabilidad más peligrosa de las redes libres de escala.</p></li>
+<li><p><strong>Propagación dinámica</strong>: El N-1 evalúa el estado estacionario después de perder un elemento. No modela la <em>dinámica</em> de cómo una falla se propaga y amplifica a través de la red en los segundos y minutos posteriores al evento inicial.</p></li>
+</ol>
+</section>
+<section id="n-1-redes-una-combinacion-mas-poderosa">
+<h3>7.4 N-1 + redes: una combinación más poderosa<a class="headerlink" href="#n-1-redes-una-combinacion-mas-poderosa" title="Link to this heading">#</a></h3>
+<p>El mensaje no es que el N-1 sea inútil — es que es <strong>necesario pero no suficiente</strong>. El análisis de redes lo complementa de maneras específicas:</p>
+<ul class="simple">
+<li><p><strong>Priorización</strong>: En vez de evaluar las <span class="math notranslate nohighlight">\(N\)</span> contingencias con igual peso, usamos métricas de centralidad para enfocarnos en las contingencias que involucran nodos de alta intermediación.</p></li>
+<li><p><strong>Más allá de N-1</strong>: Simulamos fallas en cascada para evaluar el impacto de la falla de un elemento no solo en los flujos de carga inmediatos, sino en la propagación topológica de sobrecargas.</p></li>
+<li><p><strong>Diseño resiliente</strong>: Usamos el análisis de topología para identificar dónde agregar redundancia (nuevas líneas, nuevas subestaciones) de manera que el sistema sea menos dependiente de hubs individuales.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="fallas-en-cascada-el-modelo-capacidad-carga">
+<h2>8. Fallas en cascada: el modelo capacidad-carga<a class="headerlink" href="#fallas-en-cascada-el-modelo-capacidad-carga" title="Link to this heading">#</a></h2>
+<section id="la-intuicion">
+<h3>8.1 La intuición<a class="headerlink" href="#la-intuicion" title="Link to this heading">#</a></h3>
+<p>Una falla en cascada ocurre cuando la falla de un componente causa la sobrecarga y posterior falla de otros componentes, que a su vez sobrecargan a más componentes, y así sucesivamente hasta que una fracción significativa del sistema colapsa. Es como una fila de fichas de dominó: la caída de una provoca la caída de la siguiente, pero aquí las “fichas” son nodos de una red y las “caídas” son sobrecargas.</p>
+<p>Los apagones masivos más recordados del siglo XXI siguieron exactamente este patrón:</p>
+<ul class="simple">
+<li><p><strong>Noreste de EE.UU., agosto 2003</strong>: Una línea de transmisión en Ohio tocó un árbol y provocó un cortocircuito. La carga se redistribuyó a líneas vecinas, que se sobrecargaron y fallaron. En menos de 3 horas, una cascada dejó sin electricidad a 55 millones de personas en 8 estados y parte de Canadá.</p></li>
+<li><p><strong>India, julio 2012</strong>: El apagón más grande de la historia afectó a 620 millones de personas en 22 estados. La falla inicial fue una sobrecarga en la red norte que se propagó por cascada a la red este y noreste.</p></li>
+</ul>
+</section>
+<section id="el-modelo-de-motter-lai">
+<h3>8.2 El modelo de Motter-Lai<a class="headerlink" href="#el-modelo-de-motter-lai" title="Link to this heading">#</a></h3>
+<p>En 2002, Adilson Motter y Ying-Cheng Lai propusieron un modelo elegante para estudiar fallas en cascada en redes complejas. La idea es sencilla:</p>
+<ol class="arabic simple">
+<li><p><strong>Cada nodo tiene una carga y una capacidad</strong>: La carga <span class="math notranslate nohighlight">\(L_i\)</span> de un nodo <span class="math notranslate nohighlight">\(i\)</span> es proporcional a su importancia topológica, medida por su centralidad de intermediación. La capacidad <span class="math notranslate nohighlight">\(C_i\)</span> es la carga máxima que puede soportar, y se define como:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[C_i = (1 + \alpha) \cdot L_i^{(0)}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(L_i^{(0)}\)</span> es la carga inicial del nodo y <span class="math notranslate nohighlight">\(\alpha &gt; 0\)</span> es un <strong>margen de tolerancia</strong>. Si <span class="math notranslate nohighlight">\(\alpha = 0.2\)</span>, cada nodo puede soportar un 20% más de carga que su carga inicial.</p>
+<ol class="arabic simple" start="2">
+<li><p><strong>Cuando un nodo falla, su carga se redistribuye</strong>: Si un nodo es removido de la red (por falla), los caminos más cortos del sistema cambian. Esto modifica la centralidad de intermediación de todos los demás nodos — es decir, su carga cambia.</p></li>
+<li><p><strong>Si algún nodo excede su capacidad, falla</strong>: Después de la redistribución, si algún nodo <span class="math notranslate nohighlight">\(j\)</span> tiene <span class="math notranslate nohighlight">\(L_j &gt; C_j\)</span>, falla también. Esto provoca otra redistribución, que puede causar más fallas, y así sucesivamente.</p></li>
+</ol>
+</section>
+<section id="algoritmo-de-cascada-pseudocodigo">
+<h3>8.3 Algoritmo de cascada (pseudocódigo)<a class="headerlink" href="#algoritmo-de-cascada-pseudocodigo" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ENTRADA: Grafo G, margen de tolerancia α, nodo_inicial_a_remover
+
+1. Calcular carga inicial L₀(i) = betweenness(i) para todo nodo i
+2. Calcular capacidad C(i) = (1 + α) × L₀(i) para todo nodo i
+3. Remover nodo_inicial de G
+4. nodos_fallados ← {nodo_inicial}
+
+5. REPETIR:
+   a. Recalcular cargas: L(i) = betweenness(i) en el grafo modificado
+   b. nuevas_fallas ← {i : L(i) &gt; C(i) y i ∉ nodos_fallados}
+   c. SI nuevas_fallas está vacío:
+        TERMINAR (la cascada se detuvo)
+   d. Remover todos los nodos de nuevas_fallas del grafo
+   e. nodos_fallados ← nodos_fallados ∪ nuevas_fallas
+
+6. SALIDA: Fracción de nodos supervivientes = 1 − |nodos_fallados| / N
+</pre></div>
+</div>
+</section>
+<section id="que-revela-el-modelo">
+<h3>8.4 ¿Qué revela el modelo?<a class="headerlink" href="#que-revela-el-modelo" title="Link to this heading">#</a></h3>
+<p>El modelo de Motter-Lai captura dinámicas esenciales:</p>
+<ul class="simple">
+<li><p><strong>El margen importa</strong>: Con márgenes altos (<span class="math notranslate nohighlight">\(\alpha\)</span> grande), las cascadas se detienen rápidamente porque los nodos tienen capacidad de sobra para absorber la carga redistribuida. Con márgenes bajos, incluso la remoción de un solo nodo puede colapsar toda la red.</p></li>
+<li><p><strong>La topología importa</strong>: En redes libres de escala, la remoción de un hub produce cascadas mucho más devastadoras que la remoción de un nodo periférico — la redistribución de carga del hub es masiva y sobrecarga rápidamente a sus vecinos.</p></li>
+<li><p><strong>La comparación ataque dirigido vs. falla aleatoria es reveladora</strong>: Si simulamos la remoción de nodos al azar y graficamos la fracción de red superviviente, la red libre de escala se degrada gradualmente. Pero si removemos nodos en orden de mayor intermediación (ataque dirigido), la red colapsa abruptamente después de remover solo unos pocos nodos. Esta es la paradoja “robusto pero frágil” vista en acción dinámica.</p></li>
+</ul>
+</section>
+<section id="limitaciones-del-modelo">
+<h3>8.5 Limitaciones del modelo<a class="headerlink" href="#limitaciones-del-modelo" title="Link to this heading">#</a></h3>
+<p>Es importante señalar que el modelo de Motter-Lai es una <strong>abstracción</strong>. Los sistemas eléctricos reales tienen dinámicas mucho más complejas (protecciones, regulación de frecuencia, redespacho, intervención de operadores). Pero el modelo captura la esencia del fenómeno: la interdependencia topológica entre componentes amplifica las fallas. Los modelos más sofisticados de cascadas en redes eléctricas (como los de Carreras, Lynch, Dobson y colaboradores) incorporan flujos de potencia DC o AC, pero la lección fundamental es la misma.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="el-caso-de-la-semana-el-sin-como-red">
+<h2>9. El caso de la semana: el SIN como red<a class="headerlink" href="#el-caso-de-la-semana-el-sin-como-red" title="Link to this heading">#</a></h2>
+<section id="construyendo-el-grafo-del-sin">
+<h3>9.1 Construyendo el grafo del SIN<a class="headerlink" href="#construyendo-el-grafo-del-sin" title="Link to this heading">#</a></h3>
+<p>El Sistema de Transmisión Nacional (STN) colombiano opera en los niveles de tensión de 500 kV, 230 kV y 110 kV. Para construir su representación como grafo:</p>
+<ul class="simple">
+<li><p><strong>Nodos</strong>: Cada subestación del STN es un nodo. El sistema tiene más de 80 subestaciones principales en 500 kV y 230 kV, y varios cientos en 110 kV.</p></li>
+<li><p><strong>Aristas</strong>: Cada circuito de transmisión que conecta dos subestaciones es una arista. Las líneas de doble circuito pueden representarse como dos aristas paralelas o como una sola arista con peso doble, dependiendo del análisis.</p></li>
+<li><p><strong>Pesos</strong>: La capacidad térmica de la línea (en MVA o MW) es un peso natural. La impedancia de la línea es otro.</p></li>
+</ul>
+</section>
+<section id="que-revela-el-analisis-topologico">
+<h3>9.2 ¿Qué revela el análisis topológico?<a class="headerlink" href="#que-revela-el-analisis-topologico" title="Link to this heading">#</a></h3>
+<p>Aunque el análisis detallado se realizará en el laboratorio con datos reales, podemos anticipar varios hallazgos basados en la estructura conocida del SIN:</p>
+<p><strong>Distribución de grado</strong>: El STN colombiano probablemente muestra una distribución de grado con cola pesada, con unas pocas subestaciones de grado alto (Bacatá, Cerromatoso, La Virginia, San Carlos, Primavera, Guatiguará) y muchas subestaciones de grado bajo (terminales regionales, subestaciones de paso). Esto es consistente con una red que ha crecido orgánicamente durante décadas, donde las nuevas líneas tienden a conectarse a nodos ya prominentes.</p>
+<p><strong>Centralidad de intermediación</strong>: Las subestaciones que funcionan como “puentes” entre regiones tendrán alta intermediación. Los corredores de transmisión que conectan la Costa Caribe con el interior (a través de subestaciones en Santander y el Bajo Cauca) o que conectan el suroccidente con el centro (a través del Eje Cafetero) son candidatos a contener nodos de alta intermediación. Estos son los <strong>cuellos de botella topológicos</strong> del sistema.</p>
+<p><strong>Clustering</strong>: Las subestaciones dentro de una misma área operativa (por ejemplo, las del área Antioquia o las del área Bogotá) probablemente muestran alto clustering — están densamente conectadas entre sí. Pero la conectividad <em>entre</em> áreas depende de pocos corredores de larga distancia.</p>
+<p><strong>La conexión de La Guajira</strong>: La integración de los parques eólicos de La Guajira al SIN es un caso fascinante desde la perspectiva de redes. La Guajira es geográficamente periférica — se conecta al sistema principal a través de un corredor de transmisión relativamente estrecho. Si las líneas colectoras y los circuitos principales (como Colectora–Cuestecitas–Copey) representan los únicos caminos de salida de varios GW de capacidad eólica, entonces:</p>
+<ul class="simple">
+<li><p>El grado de los nodos de conexión será alto (muchos parques alimentando pocas subestaciones colectoras).</p></li>
+<li><p>La intermediación de estos nodos será muy alta (todo el flujo de exportación eólica pasa por ellos).</p></li>
+<li><p>El clustering local será bajo (los parques se conectan a las colectoras, pero no entre sí).</p></li>
+</ul>
+<p>Esta configuración crea un <strong>punto de falla sistémico</strong>: un evento que afecte la línea colectora principal podría desconectar simultáneamente toda la capacidad eólica de La Guajira del SIN. Este riesgo es difícil de detectar con un análisis N-1 convencional (que evalúa un elemento a la vez), pero es inmediatamente visible en el análisis de centralidad de intermediación.</p>
+</section>
+<section id="preguntas-que-responde-el-analisis-de-redes">
+<h3>9.3 Preguntas que responde el análisis de redes<a class="headerlink" href="#preguntas-que-responde-el-analisis-de-redes" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pregunta de planificación</p></th>
+<th class="head"><p>Herramienta de redes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>¿Cuáles son las subestaciones más críticas del SIN?</p></td>
+<td><p>Centralidad de intermediación + grado</p></td>
+</tr>
+<tr class="row-odd"><td><p>¿Dónde conviene agregar una nueva línea para aumentar la resiliencia?</p></td>
+<td><p>Análisis de componentes conectados después de remoción de hubs</p></td>
+</tr>
+<tr class="row-even"><td><p>¿Es la conexión de La Guajira un punto de falla sistémico?</p></td>
+<td><p>Centralidad de intermediación del corredor colector</p></td>
+</tr>
+<tr class="row-odd"><td><p>¿Cuántos apagones regionales puede tolerar el sistema?</p></td>
+<td><p>Simulación de cascadas con diferentes márgenes</p></td>
+</tr>
+<tr class="row-even"><td><p>¿El sistema es más vulnerable a fallas aleatorias o a eventos correlacionados?</p></td>
+<td><p>Comparación de curvas de robustez (ataque aleatorio vs. dirigido)</p></td>
+</tr>
+<tr class="row-odd"><td><p>¿Cómo cambia la vulnerabilidad del sistema con la expansión planificada?</p></td>
+<td><p>Recalcular métricas con y sin los proyectos del Plan de Expansión</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="lo-que-el-analisis-de-redes-no-reemplaza">
+<h3>9.4 Lo que el análisis de redes NO reemplaza<a class="headerlink" href="#lo-que-el-analisis-de-redes-no-reemplaza" title="Link to this heading">#</a></h3>
+<p>Es fundamental ser honestos sobre los límites de la herramienta. El análisis de redes <strong>no reemplaza</strong> el análisis de flujos de potencia, la simulación de estabilidad transitoria o el estudio de cortocircuitos. Estos análisis consideran la física del sistema eléctrico (impedancias, tensiones, ángulos, potencia reactiva) que el grafo topológico ignora. El análisis de redes opera a un nivel de abstracción más alto: ve la <em>estructura</em> de las conexiones, pero no la <em>física</em> de los flujos. Su valor está en revelar vulnerabilidades estructurales que la perspectiva componente-por-componente no puede ver, y en complementar — no sustituir — las herramientas tradicionales de ingeniería eléctrica.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="conexion-con-lo-que-sigue">
+<h2>10. Conexión con lo que sigue<a class="headerlink" href="#conexion-con-lo-que-sigue" title="Link to this heading">#</a></h2>
+<section id="la-limitacion-de-la-foto-fija">
+<h3>10.1 La limitación de la foto fija<a class="headerlink" href="#la-limitacion-de-la-foto-fija" title="Link to this heading">#</a></h3>
+<p>Todo lo que hemos hecho en este capítulo es análisis <strong>estático</strong>: tomamos una foto de la red tal como es en un instante dado y la analizamos. Pero los sistemas energéticos no son estáticos:</p>
+<ul class="simple">
+<li><p>Las redes de actores evolucionan: nuevos inversionistas entran, reguladores cambian reglas, comunidades se organizan.</p></li>
+<li><p>La adopción de tecnologías se difunde a través de las redes sociales.</p></li>
+<li><p>Las fallas en cascada son procesos <em>dinámicos</em> que ocurren en tiempo real.</p></li>
+</ul>
+</section>
+<section id="la-semana-3-dinamica-sobre-redes-y-redes-de-actores">
+<h3>10.2 La Semana 3: dinámica sobre redes y redes de actores<a class="headerlink" href="#la-semana-3-dinamica-sobre-redes-y-redes-de-actores" title="Link to this heading">#</a></h3>
+<p>La próxima semana extenderemos nuestro análisis en dos direcciones:</p>
+<ol class="arabic simple">
+<li><p><strong>Dinámica sobre redes</strong>: Los nodos no son solo puntos pasivos — tienen <em>estados</em> que cambian en función de los estados de sus vecinos. Estudiaremos modelos de difusión, contagio y adopción tecnológica. ¿Por qué la adopción de techos solares en Colombia no sigue un modelo puramente económico? Porque depende de la estructura de la red social: quién conoce a quién, quién influye a quién, quién confía en quién.</p></li>
+<li><p><strong>Redes de actores</strong>: Aplicaremos las mismas herramientas de redes a las relaciones entre actores del sistema energético: reguladores (CREG), operadores (XM), generadores, comercializadores, comunidades. Construiremos y analizaremos una red de actores del mercado mayorista colombiano para identificar nodos dominantes y vulnerabilidades institucionales.</p></li>
+</ol>
+</section>
+<section id="mas-adelante-la-dimension-temporal">
+<h3>10.3 Más adelante: la dimensión temporal<a class="headerlink" href="#mas-adelante-la-dimension-temporal" title="Link to this heading">#</a></h3>
+<p>En las Semanas 4 y 5, daremos un salto conceptual: pasaremos de <em>redes</em> a <em>dinámica de sistemas</em>. Las redes nos dicen <strong>cómo está conectado</strong> el sistema; la dinámica de sistemas nos dice <strong>cómo evoluciona en el tiempo</strong>. La combinación de ambas perspectivas — estructura y comportamiento temporal — es lo que hace al análisis sistémico genuinamente poderoso.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="resumen-y-conceptos-para-llevar">
+<h2>11. Resumen y conceptos para llevar<a class="headerlink" href="#resumen-y-conceptos-para-llevar" title="Link to this heading">#</a></h2>
+<section id="conceptos-clave-de-la-semana">
+<h3>Conceptos clave de la semana<a class="headerlink" href="#conceptos-clave-de-la-semana" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Todo es una red</strong>: El SIN es una red, pero también lo son los mercados eléctricos, las relaciones entre actores y las cadenas de suministro. La ciencia de redes proporciona un lenguaje unificado para analizarlas todas.</p></li>
+<li><p><strong>La topología importa</strong>: La <em>forma</em> de las conexiones determina las propiedades del sistema tanto como las capacidades de los componentes individuales.</p></li>
+<li><p><strong>Las métricas de centralidad identifican nodos críticos</strong>: El grado cuenta conexiones; la intermediación identifica cuellos de botella; la cercanía mide accesibilidad; el clustering mide redundancia local.</p></li>
+<li><p><strong>La distribución de grado es la métrica más reveladora</strong>: Su forma nos dice si el sistema es democrático (aleatorio) o tiene hubs dominantes (libre de escala).</p></li>
+<li><p><strong>Las leyes de potencia cambian las reglas</strong>: Los eventos extremos son mucho más frecuentes de lo que las distribuciones normales predicen. Nuestros métodos de evaluación de riesgo deben adaptarse.</p></li>
+<li><p><strong>La paradoja “robusto pero frágil”</strong>: Las redes con hubs resisten fallas aleatorias pero son vulnerables a ataques dirigidos — exactamente lo opuesto de lo que sugiere la intuición ingenua.</p></li>
+<li><p><strong>El criterio N-1 es necesario pero no suficiente</strong>: Captura fallas individuales independientes, pero no fallas correlacionadas, cascadas ni ataques dirigidos. El análisis de redes lo complementa.</p></li>
+<li><p><strong>Las fallas en cascada son procesos topológicos</strong>: La redistribución de carga después de una falla sigue la estructura de la red. El modelo capacidad-carga captura esta dinámica.</p></li>
+<li><p><strong>La red del SIN revela vulnerabilidades ocultas</strong>: Los corredores de transmisión que conectan regiones y los nodos colectores de generación renovable son puntos de falla sistémicos identificables mediante métricas de centralidad.</p></li>
+<li><p><strong>Las redes son fotos fijas</strong>: No capturan cómo el sistema evoluciona. Para eso necesitaremos la dinámica sobre redes (Semana 3) y la dinámica de sistemas (Semanas 4–5).</p></li>
+</ol>
+</section>
+<section id="glosario-de-terminos">
+<h3>Glosario de términos<a class="headerlink" href="#glosario-de-terminos" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Término en español</p></th>
+<th class="head"><p>Término en inglés</p></th>
+<th class="head"><p>Definición breve</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Nodo (vértice)</p></td>
+<td><p>Node (vertex)</p></td>
+<td><p>Entidad del sistema (subestación, actor, etc.)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Arista (enlace)</p></td>
+<td><p>Edge (link)</p></td>
+<td><p>Conexión entre dos nodos (línea de transmisión, relación)</p></td>
+</tr>
+<tr class="row-even"><td><p>Grafo</p></td>
+<td><p>Graph</p></td>
+<td><p>Conjunto de nodos y aristas</p></td>
+</tr>
+<tr class="row-odd"><td><p>Grafo dirigido</p></td>
+<td><p>Directed graph</p></td>
+<td><p>Grafo donde las aristas tienen dirección</p></td>
+</tr>
+<tr class="row-even"><td><p>Grafo ponderado</p></td>
+<td><p>Weighted graph</p></td>
+<td><p>Grafo donde las aristas tienen un peso numérico</p></td>
+</tr>
+<tr class="row-odd"><td><p>Matriz de adyacencia</p></td>
+<td><p>Adjacency matrix</p></td>
+<td><p>Representación matricial del grafo</p></td>
+</tr>
+<tr class="row-even"><td><p>Vecino</p></td>
+<td><p>Neighbor</p></td>
+<td><p>Nodo directamente conectado</p></td>
+</tr>
+<tr class="row-odd"><td><p>Camino</p></td>
+<td><p>Path</p></td>
+<td><p>Secuencia de nodos conectados</p></td>
+</tr>
+<tr class="row-even"><td><p>Camino más corto</p></td>
+<td><p>Shortest path</p></td>
+<td><p>Camino con el menor número de aristas entre dos nodos</p></td>
+</tr>
+<tr class="row-odd"><td><p>Componente conectado</p></td>
+<td><p>Connected component</p></td>
+<td><p>Subconjunto de nodos donde todos son alcanzables entre sí</p></td>
+</tr>
+<tr class="row-even"><td><p>Grado</p></td>
+<td><p>Degree</p></td>
+<td><p>Número de conexiones de un nodo</p></td>
+</tr>
+<tr class="row-odd"><td><p>Centralidad de intermediación</p></td>
+<td><p>Betweenness centrality</p></td>
+<td><p>Fracción de caminos más cortos que pasan por un nodo</p></td>
+</tr>
+<tr class="row-even"><td><p>Centralidad de cercanía</p></td>
+<td><p>Closeness centrality</p></td>
+<td><p>Inverso de la distancia promedio a todos los demás nodos</p></td>
+</tr>
+<tr class="row-odd"><td><p>Coeficiente de clustering</p></td>
+<td><p>Clustering coefficient</p></td>
+<td><p>Fracción de pares de vecinos que están conectados entre sí</p></td>
+</tr>
+<tr class="row-even"><td><p>Densidad</p></td>
+<td><p>Density</p></td>
+<td><p>Fracción de aristas existentes vs. posibles</p></td>
+</tr>
+<tr class="row-odd"><td><p>Diámetro</p></td>
+<td><p>Diameter</p></td>
+<td><p>Mayor distancia (camino más corto) entre cualquier par de nodos</p></td>
+</tr>
+<tr class="row-even"><td><p>Distribución de grado</p></td>
+<td><p>Degree distribution</p></td>
+<td><p>Histograma de los grados de todos los nodos</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ley de potencia</p></td>
+<td><p>Power law</p></td>
+<td><p>Distribución de probabilidad <span class="math notranslate nohighlight">\(P(k) \sim k^{-\gamma}\)</span> (cola pesada)</p></td>
+</tr>
+<tr class="row-even"><td><p>Red aleatoria</p></td>
+<td><p>Random network (Erdős-Rényi)</p></td>
+<td><p>Red donde las conexiones se forman al azar con igual probabilidad</p></td>
+</tr>
+<tr class="row-odd"><td><p>Red libre de escala</p></td>
+<td><p>Scale-free network</p></td>
+<td><p>Red con distribución de grado de ley de potencia y hubs</p></td>
+</tr>
+<tr class="row-even"><td><p>Red de mundo pequeño</p></td>
+<td><p>Small-world network</p></td>
+<td><p>Red con alto clustering y caminos cortos</p></td>
+</tr>
+<tr class="row-odd"><td><p>Hub</p></td>
+<td><p>Hub</p></td>
+<td><p>Nodo con un número desproporcionadamente alto de conexiones</p></td>
+</tr>
+<tr class="row-even"><td><p>Enlace preferencial</p></td>
+<td><p>Preferential attachment</p></td>
+<td><p>Mecanismo: nuevos nodos prefieren conectarse a nodos bien conectados</p></td>
+</tr>
+<tr class="row-odd"><td><p>Criterio N-1</p></td>
+<td><p>N-1 criterion</p></td>
+<td><p>El sistema opera seguro tras la pérdida de cualquier elemento individual</p></td>
+</tr>
+<tr class="row-even"><td><p>Falla en cascada</p></td>
+<td><p>Cascading failure</p></td>
+<td><p>Falla que se propaga por redistribución de carga en la red</p></td>
+</tr>
+<tr class="row-odd"><td><p>Modelo de Motter-Lai</p></td>
+<td><p>Motter-Lai model</p></td>
+<td><p>Modelo de cascadas basado en capacidad, carga e intermediación</p></td>
+</tr>
+<tr class="row-even"><td><p>Robusto pero frágil</p></td>
+<td><p>Robust yet fragile</p></td>
+<td><p>Propiedad de redes libre de escala: resisten fallas aleatorias pero no ataques dirigidos</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="referencias-principales">
+<h3>Referencias principales<a class="headerlink" href="#referencias-principales" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Barabási, A.-L. <em>Network Science</em>. Cambridge University Press. Disponible en acceso abierto: <a class="reference external" href="http://networksciencebook.com">networksciencebook.com</a>. Capítulos 2–4.</p></li>
+<li><p>Pagani, G. A. &amp; Aiello, M. (2013). “The Power Grid as a Complex Network: A Survey.” <em>Physica A</em>, 392(11), 2688–2700.</p></li>
+<li><p>Motter, A. E. &amp; Lai, Y.-C. (2002). “Cascade-based attacks on complex networks.” <em>Physical Review E</em>, 66, 065102.</p></li>
+<li><p>Carreras, B. A., Lynch, V. E., Dobson, I., &amp; Newman, D. E. (2004). “Complex dynamics of blackouts in power transmission systems.” <em>Chaos</em>, 14(3), 643–652.</p></li>
+<li><p>Albert, R., Albert, I., &amp; Nakarado, G. L. (2004). “Structural vulnerability of the North American power grid.” <em>Physical Review E</em>, 69, 025103.</p></li>
+<li><p>UPME. <em>Plan de Expansión de Referencia — Transmisión</em>. Versión más reciente disponible.</p></li>
+<li><p>XM. Informes de confiabilidad del STN.</p></li>
+<li><p>Newman, M. E. J. <em>Networks: An Introduction</em>. Oxford University Press. Capítulos 6–8 (recomendada).</p></li>
+</ul>
+<hr class="docutils" />
+<p><em>En la próxima semana, daremos vida a las redes: estudiaremos cómo los estados se propagan a través de la estructura de la red (difusión, contagio, adopción tecnológica) y construiremos las redes de actores del sistema energético colombiano. La estructura que hoy analizamos como foto fija se convertirá en un escenario donde ocurren procesos dinámicos.</em></p>
+</section>
+</section>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./semana_02"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../semana_01/notebook.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Semana 1: Complejidad — ¿Por qué los sistemas nos sorprenden?</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="notebook.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">Semana 2: Redes y Topología</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#marco-teorico-systems-analytics-mise-universidad-de-los-andes">Marco Teórico · Systems Analytics — MISE, Universidad de los Andes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apertura-por-que-pensar-en-redes">1. Apertura: ¿Por qué pensar en redes?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-revelan-las-redes-que-el-analisis-tradicional-no">¿Qué revelan las redes que el análisis tradicional no?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamentos-el-lenguaje-de-las-redes">2. Fundamentos: el lenguaje de las redes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nodos-y-aristas-los-ladrillos-basicos">2.1 Nodos y aristas: los ladrillos básicos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafos-dirigidos-vs-no-dirigidos">2.2 Grafos dirigidos vs. no dirigidos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafos-ponderados-no-todas-las-conexiones-son-iguales">2.3 Grafos ponderados: no todas las conexiones son iguales</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-matriz-de-adyacencia-la-red-como-numeros">2.4 La matriz de adyacencia: la red como números</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vecinos-caminos-y-componentes-conectados">2.5 Vecinos, caminos y componentes conectados</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metricas-de-redes-que-nos-dicen-sobre-el-sistema">3. Métricas de redes: ¿qué nos dicen sobre el sistema?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metricas-locales-de-nodo">3.1 Métricas locales (de nodo)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#grado-degree">Grado (<em>degree</em>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#centralidad-de-intermediacion-betweenness-centrality">Centralidad de intermediación (<em>betweenness centrality</em>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#centralidad-de-cercania-closeness-centrality">Centralidad de cercanía (<em>closeness centrality</em>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#coeficiente-de-clustering-agrupamiento">Coeficiente de clustering (agrupamiento)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metricas-globales-de-red">3.2 Métricas globales (de red)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#densidad-density">Densidad (<em>density</em>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#diametro-diameter">Diámetro (<em>diameter</em>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#longitud-promedio-de-camino-average-path-length">Longitud promedio de camino (<em>average path length</em>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#distribucion-de-grado-degree-distribution">Distribución de grado (<em>degree distribution</em>)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topologias-de-red-que-forma-tiene-nuestro-sistema">4. Topologías de red: ¿qué forma tiene nuestro sistema?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#redes-aleatorias-erdos-renyi">4.1 Redes aleatorias: Erdős-Rényi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#redes-libres-de-escala-barabasi-albert">4.2 Redes libres de escala: Barabási-Albert</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#redes-de-mundo-pequeno-watts-strogatz">4.3 Redes de mundo pequeño: Watts-Strogatz</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-de-topologias">4.4 Comparación de topologías</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leyes-de-potencia-y-toma-de-decisiones">5. Leyes de potencia y toma de decisiones</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-una-ley-de-potencia">5.1 ¿Qué es una ley de potencia?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#por-que-importa-para-los-sistemas-energeticos">5.2 ¿Por qué importa para los sistemas energéticos?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-cambio-de-paradigma-del-pensamiento-en-promedios-al-pensamiento-en-colas">5.3 El cambio de paradigma: del pensamiento en promedios al pensamiento en colas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-paradoja-robusto-pero-fragil">6. La paradoja “robusto pero frágil”</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#robustez-ante-fallas-aleatorias">6.1 Robustez ante fallas aleatorias</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fragilidad-ante-ataques-dirigidos">6.2 Fragilidad ante ataques dirigidos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implicaciones-para-la-seguridad-del-sin">6.3 Implicaciones para la seguridad del SIN</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-criterio-n-1-y-sus-limitaciones">7. El criterio N-1 y sus limitaciones</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-el-criterio-n-1">7.1 ¿Qué es el criterio N-1?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lo-que-el-n-1-captura-bien">7.2 Lo que el N-1 captura bien</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lo-que-el-n-1-no-captura">7.3 Lo que el N-1 NO captura</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#n-1-redes-una-combinacion-mas-poderosa">7.4 N-1 + redes: una combinación más poderosa</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fallas-en-cascada-el-modelo-capacidad-carga">8. Fallas en cascada: el modelo capacidad-carga</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-intuicion">8.1 La intuición</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-modelo-de-motter-lai">8.2 El modelo de Motter-Lai</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritmo-de-cascada-pseudocodigo">8.3 Algoritmo de cascada (pseudocódigo)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-revela-el-modelo">8.4 ¿Qué revela el modelo?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limitaciones-del-modelo">8.5 Limitaciones del modelo</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-caso-de-la-semana-el-sin-como-red">9. El caso de la semana: el SIN como red</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#construyendo-el-grafo-del-sin">9.1 Construyendo el grafo del SIN</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-revela-el-analisis-topologico">9.2 ¿Qué revela el análisis topológico?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preguntas-que-responde-el-analisis-de-redes">9.3 Preguntas que responde el análisis de redes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lo-que-el-analisis-de-redes-no-reemplaza">9.4 Lo que el análisis de redes NO reemplaza</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conexion-con-lo-que-sigue">10. Conexión con lo que sigue</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-limitacion-de-la-foto-fija">10.1 La limitación de la foto fija</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-semana-3-dinamica-sobre-redes-y-redes-de-actores">10.2 La Semana 3: dinámica sobre redes y redes de actores</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-adelante-la-dimension-temporal">10.3 Más adelante: la dimensión temporal</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resumen-y-conceptos-para-llevar">11. Resumen y conceptos para llevar</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptos-clave-de-la-semana">Conceptos clave de la semana</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#glosario-de-terminos">Glosario de términos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias-principales">Referencias principales</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por Maestria en Ingenieria de Sistemas Energeticos (MISE)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>Material del curso Analisis de Sistemas — MISE, Universidad de los Andes</p>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
