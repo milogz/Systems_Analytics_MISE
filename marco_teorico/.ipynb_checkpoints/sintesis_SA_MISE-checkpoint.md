@@ -4,30 +4,14 @@
 
 El curso opera en **tres lineas de contenido** que corren en paralelo y se refuerzan mutuamente. Cada semana, el estudiante recibe material de las tres lineas, generando una experiencia que va de lo conceptual a lo computacional a lo aplicado.
 
-```mermaid
-graph LR
-    subgraph MT["Marco Teorico"]
-        MT0[Preludio] --> MT1[S1] --> MT2[S2] --> MT3[S3] --> MT4[S4] --> MT5[S5]
-    end
-    subgraph NB["Notebooks Computacionales"]
-        NB0[Preludio] --> NB1[S1] --> NB2[S2] --> NB3[S3] --> NB4[S4] --> NB5[S5]
-    end
-    subgraph SG["Saga Colombia: Caso Aplicado"]
-        SG1[Identidad] --> SG2[Red Fisica] --> SG3[Red Social] --> SG4[Dinamica] --> SG5[Politica] --> SG6[Gobernanza] --> SG7[Sintesis DSS]
-    end
-    MT1 -.-> NB1
-    MT2 -.-> NB2
-    NB2 -.-> SG2
-    MT4 -.-> NB4
-    NB4 -.-> SG4
-    SG7 -.-> |"Modelo de entregable"| PROY[Proyecto Estudiantil]
-```
 
 | Linea | Proposito | Formato | Audiencia primaria |
 |-------|-----------|---------|-------------------|
 | **Marco Teorico** | Fundamentacion conceptual, historica y cientifica | Markdown (lectura guiada, guion de video) | Estudiante (previo a sesion) |
 | **Notebooks** | Laboratorio computacional, herramientas reproducibles | Jupyter (.ipynb) con celdas interactivas | Estudiante (manos en codigo) |
 | **Saga Colombia** | Caso de estudio integrador del SIN colombiano | Jupyter ejecutivo (DSS, dashboards, recomendaciones) | Profesor (demo), Estudiante (referencia de proyecto) |
+
+![Estructura del material](paquete.png)
 
 ---
 
