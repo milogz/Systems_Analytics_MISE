@@ -32,7 +32,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install jupyter-book==1.0.3
+          pip install "jupyter-book>=1.0,<2"
           pip install numpy pandas matplotlib networkx scipy
 
       - name: Assemble book
