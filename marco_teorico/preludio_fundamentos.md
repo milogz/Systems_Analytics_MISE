@@ -44,7 +44,7 @@ La consecuencia práctica e ineludible del caos es que existe un horizonte de pr
 
 Para nosotros en el campo de la energía, esta es una pregunta fundacional: ¿hasta qué punto podemos predecir los precios de la bolsa de electricidad? ¿Qué tan lejos podemos proyectar la hidrología futura antes de que la incertidumbre natural abrume nuestras proyecciones? Entender y aceptar el límite de predictibilidad es el primer y más honesto paso para diseñar políticas de inversión y regulaciones que sean resilientes ante lo desconocido, en lugar de optimizadas para un pronóstico ilusorio.
 
-### 3. La ecuación logística: piedra Rosetta del caos
+### 3. La ecuación logística: una ventana al caos
 
 A veces, las ideas matemáticas más profundas y revolucionarias se esconden a plena vista en las ecuaciones más sencillas y humildes. En 1976, el brillante ecólogo y físico teórico Robert May escribió un artículo en la revista Nature que sacudió a la comunidad científica. May demostró que no se necesitaban sistemas de fluidos complicados en 3D (como los de Lorenz) para generar dinámicas caóticas; bastaba con una simple, de hecho la más simple posible, ecuación de crecimiento poblacional unidimensional y no lineal.
 
@@ -52,7 +52,7 @@ Consideremos un escenario intuitivo: imaginen una población de conejos en una i
 
 $$x_{n+1} = r \cdot x_n \cdot (1 - x_n)$$
 
-Vamos a desempacar esta fórmula paso a paso, porque es la piedra Rosetta para entender la complejidad.
+Vamos a desempacar esta fórmula paso a paso, porque es la piedra angular para entender la complejidad.
 Aquí, $x$ representa la población como una fracción de la capacidad máxima de la isla (un número entre 0 y 1, donde 0 es la extinción total y 1 es el colapso por hacinamiento y falta de comida). El subíndice $n$ es el año actual, y $n+1$ es el año siguiente.
 El parámetro $r$ representa la "fertilidad" o tasa de crecimiento intrínseca de los conejos.
 
