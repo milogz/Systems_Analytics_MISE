@@ -1,0 +1,271 @@
+﻿
+
+
+PROGRAMA DE FORMACIËN AVANZADA
+
+SYSTEMS ANALYTICS
+Anßlisis SistÚmico de Proyectos EnergÚticos
+
+Pensamiento SistÚmico À Dinßmica de Sistemas À Anßlisis de Escenarios
+
+
+Curso de MaestrÝa | 8 Semanas | 2 CrÚditos AcadÚmicos
+10 horas aut¾nomas + sesi¾n sincr¾nica semanal de evaluaci¾n
+VERSIËN 3.0
+2026
+
+
+1. INFORMACIËN GENERAL DEL CURSO
+2. OBJETIVOS DE APRENDIZAJE 
+Al completar el curso, el estudiante serß capaz de:
+3. DESCRIPCIËN DEL CURSO
+La MISE forma profesionales que puedan "liderar la gesti¾n energÚtica con visi¾n tÚcnica, econ¾mica, ambiental y social." Esto implica que el egresado no solo debe entender la fÝsica del sistema elÚctrico, sino ver el proyecto energÚtico como una forma de integraci¾n de las partes de un sistema complejo donde interact·an infraestructura, mercados, reguladores, comunidades y el clima. El anßlisis convencional de proyectos ù VPN, TIR, anßlisis de sensibilidad estßtico ù no es suficiente cuando el sistema exhibe retroalimentaciones, retardos, comportamiento emergente y futuros radicalmente inciertos.
+Systems Analytics equipa al estudiante con herramientas relevantes en la prßctica profesional del sector: pensamiento sistÚmico y diagramas de lazos causales (la lengua franca de la consultorÝa estratÚgica), dinßmica de sistemas (herramienta consolidada en planificaci¾n energÚtica), y anßlisis de escenarios bajo incertidumbre (prßctica estßndar en utilities, reguladores, consultoras e inversionistas desde McKinsey hasta IRENA y RAND). AsÝ, el curso desarrolla el  pensamiento sistÚmico, aplicado de forma concreta mediante herramientas cuantitativas modernas.
+Un benchmarking contra MIT, TU Delft, ETH Zurich y Stanford revela que los cursos de sistemas energÚticos existentes se centran en anßlisis tecno-econ¾mico (MIT/Sesame), anßlisis de actores cualitativo (Delft), optimizaci¾n matemßtica (ETH/MILP) o fundamentos fÝsicos (Stanford). La MISE se diferencia con un enfoque que integra pensamiento sistÚmico, modelamiento dinßmico y anßlisis de escenarios, todo anclado en casos reales del sector colombiano ù un sistema hÝbrido hidro-tÚrmico expuesto a los fen¾menos del Ni±o y de La Ni±a, con entrada acelerada de FNCER, tensiones de consulta previa y un mercado mayorista con dinßmicas propias.
+4. MODELO PEDAGËGICO: AULA INVERTIDA CON EVALUACIËN SINCRËNICA
+El curso adopta un modelo de aula invertida (flipped classroom, dise±ado para profesionales que requieren flexibilidad en su agenda pero tambiÚn valoran la interacci¾n directa con el profesor para recibir evaluaci¾n y retroalimentaci¾n de alta calidad. Cada semana se estructura en dos bloques claramente diferenciados:
+Caso aplicado como vehÝculo pedag¾gico. Cada semana gira alrededor de un caso energÚtico colombiano real. La teorÝa se introduce al servicio del caso, no al revÚs. El egresado de una maestrÝa profesionalizante debe poder usar lo aprendido  en su dÝa a dÝa.
+Andamiaje gradual. El curso asume que es la primera exposici¾n del estudiante al anßlisis sistÚmico. Las semanas 1-2 son puramente cualitativas (pensar y dibujar). Las semanas 3-4 formalizan con dinßmica de sistemas cuantitativa. Las semanas 5-6 introducen escenarios e incertidumbre. Las semanas 7-8 integran todo en un entregable profesional.
+El proyecto como producto profesional. El proyecto integrador ocupa 3+ horas semanales y 45% de la nota. El entregable final es un informe de consultorÝa sistÚmica: un documento que un tomador de decisiones del sector podrÝa usar como insumo para una decisi¾n real, con lineamientos sobre posibles direccionamientos del proyecto en el futuro.
+Herramientas  prßcticas. Se priorizan las herramientas que efectivamente usan profesionales del sector: diagramas de lazos causales (consultorÝa estratÚgica), dinßmica de sistemas en Vensim (planificaci¾n energÚtica), y anßlisis de escenarios con Python (utilities, reguladores, inversionistas). Herramientas mßs acadÚmicas como  Robust Decision Making formal (Rhodium/PRIM) se presentan como ventanas al estado del arte, no como competencias exigidas.
+La sesi¾n sincr¾nica es el espacio privilegiado de interacci¾n con el profesor. Su prop¾sito central es la evaluaci¾n formativa y sumativa, la retroalimentaci¾n personalizada y la consolidaci¾n del aprendizaje. No es una clase magistral: el contenido se entrega en el bloque aut¾nomo. La sesi¾n sincr¾nica es donde el aprendizaje se verifica, se profundiza y se corrige.
+
+
+Estructura tÝpica de cada sesi¾n sincr¾nica:
+
+El sistema de evaluaci¾n estß dise±ado para aprovechar al mßximo la sesi¾n sincr¾nica como espacio evaluativo. Se combina evaluaci¾n continua aut¾noma con evaluaci¾n sincr¾nica directa del profesor:
+
+Peso del proyecto integrador: 45%. No hay examen parcial: la evaluaci¾n es continua a travÚs del proyecto y los ejercicios en vivo. Calificaci¾n aprobatoria mÝnima: 3.5/5.0.
+
+La divisi¾n del trabajo se propone de la siguiente forma:
+
+
+5. PROGRAMA DETALLADO SEMANA A SEMANA
+
+SEMANA 1
+Fundamentos de Sistemas Complejos para EnergÝa
+Del pensamiento lineal al pensamiento sistÚmico en el sector energÚtico
+Descripci¾n General
+Esta semana establece las bases conceptuales del curso, transitando del anßlisis convencional de proyectos energÚticos hacia el marco de sistemas complejos adaptativos. Se presenta el sector elÚctrico colombiano como sistema complejo, identificando sus agentes, interacciones y propiedades emergentes.
+
+Objetivos de Aprendizaje
+Al finalizar esta semana, el estudiante estarß en capacidad de:
+Explicar los principios de la ciencia de la complejidad y su relevancia para el sector energÚtico.
+Identificar agentes, reglas de interacci¾n y propiedades emergentes del sistema elÚctrico colombiano.
+Distinguir entre problemas complicados y complejos en proyectos energÚticos.
+Construir un diagrama de lazos causales (CLD) de un subsistema energÚtico.
+
+BLOQUE AUTËNOMO ù 10 HORAS DE TRABAJO INDEPENDIENTE
+El estudiante realiza estas actividades a su propio ritmo durante la semana, antes de la sesi¾n sincr¾nica.
+
+SESIËN SINCRËNICA CON EL PROFESOR ù 2 horas
+Evaluaci¾n de comprensi¾n conceptual y primer CLD
+
+Criterios de Evaluaci¾n de la Sesi¾n Sincr¾nica
+CLD: Correcci¾n de lazos de retroalimentaci¾n, claridad del diagrama, identificaci¾n de variables clave (40% de la nota de presentaci¾n).
+Defensa oral: Capacidad de explicar las dinßmicas identificadas y responder preguntas del profesor (30%).
+Mini-quiz en vivo: Respuestas correctas e identificaci¾n precisa de lazos (30%).
+
+Lecturas y Recursos
+Complexity: A Guided Tour (Cap. 1-4) û Melanie Mitchell, Oxford University Press
+Thinking in Systems: A Primer (Cap. 1-3) û Donella Meadows, Chelsea Green Publishing
+Plan EnergÚtico Nacional 2020-2050 (Resumen) û UPME
+El mercado de energÝa mayorista en Colombia û XM (documento tÚcnico)
+
+Entregable de la Semana
+CLD del subsistema energÚtico asignado al grupo, con narrativa explicativa de 800 palabras identificando al menos 3 lazos de retroalimentaci¾n y 2 propiedades emergentes. Se entrega antes de la sesi¾n sincr¾nica y se defiende durante la misma.
+
+SEMANA 2
+Anßlisis de Redes en Sistemas EnergÚticos
+TopologÝa, vulnerabilidades y resiliencia de la infraestructura elÚctrica
+Descripci¾n General
+Se introduce la teorÝa de redes complejas como herramienta para analizar la infraestructura fÝsica, comercial e institucional del sector elÚctrico. Los estudiantes aplican mÚtricas de redes al Sistema de Transmisi¾n Nacional (STN) colombiano, identifican nodos crÝticos y eval·an c¾mo la topologÝa afecta la viabilidad de nuevos proyectos de generaci¾n.
+
+Objetivos de Aprendizaje
+Al finalizar esta semana, el estudiante estarß en capacidad de:
+Aplicar mÚtricas de redes complejas al sistema de transmisi¾n colombiano.
+Identificar nodos crÝticos y vulnerabilidades en la infraestructura elÚctrica.
+Evaluar c¾mo la topologÝa de red condiciona la conexi¾n de proyectos FNCER.
+Simular fallas en cascada y evaluar resiliencia.
+
+BLOQUE AUTËNOMO ù 10 HORAS DE TRABAJO INDEPENDIENTE
+El estudiante realiza estas actividades a su propio ritmo durante la semana, antes de la sesi¾n sincr¾nica.
+
+SESIËN SINCRËNICA CON EL PROFESOR ù 2 horas
+Evaluaci¾n de anßlisis de redes y capacidad de identificar vulnerabilidades
+
+Criterios de Evaluaci¾n de la Sesi¾n Sincr¾nica
+Anßlisis de red: Calidad de la construcci¾n del grafo, correcci¾n de mÚtricas, pertinencia de la identificaci¾n de nodos crÝticos (50%).
+Defensa: Capacidad de explicar implicaciones prßcticas de los hallazgos topol¾gicos (25%).
+Ejercicio en vivo: Precisi¾n en identificaci¾n de nodo crÝtico y justificaci¾n (25%).
+
+Lecturas y Recursos
+Networks: An Introduction (Cap. 6-8) û M.E.J. Newman, Oxford University Press
+Complex Networks in Power Grid Topologies û Pagani & Aiello, Physica A, 2013
+Plan de Expansi¾n de Referencia (Transmisi¾n) û UPME
+Informe de confiabilidad del STN û XM (mßs reciente)
+
+Entregable de la Semana
+Notebook de Python con anßlisis de red del STN + informe de 1,000 palabras con recomendaciones. Entrega 24h antes de sesi¾n sincr¾nica.
+
+SEMANA 3
+Dinßmica de Sistemas Aplicada a Mercados EnergÚticos
+Modelando retroalimentaciones y retardos en el mercado elÚctrico colombiano
+Descripci¾n General
+Se profundiza en la dinßmica de sistemas como herramienta cuantitativa para modelar comportamiento temporal del sector elÚctrico. Los estudiantes construyen modelos en Vensim PLE que capturen dinßmicas de oferta-demanda y ciclos de inversi¾n en generaci¾n, calibrados con datos reales del sistema colombiano.
+
+Objetivos de Aprendizaje
+Al finalizar esta semana, el estudiante estarß en capacidad de:
+Construir modelos de stocks y flujos para dinßmicas energÚticas.
+Modelar ciclos de inversi¾n-capacidad en generaci¾n elÚctrica colombiana.
+Analizar el efecto de retardos regulatorios y constructivos en la respuesta del sistema.
+Evaluar sensibilidad del mercado a cambios en parßmetros crÝticos.
+
+BLOQUE AUTËNOMO ù 10 HORAS DE TRABAJO INDEPENDIENTE
+El estudiante realiza estas actividades a su propio ritmo durante la semana, antes de la sesi¾n sincr¾nica.
+
+SESIËN SINCRËNICA CON EL PROFESOR ù 2 horas
+Evaluaci¾n de modelos Vensim y comprensi¾n de dinßmica de sistemas
+
+Criterios de Evaluaci¾n de la Sesi¾n Sincr¾nica
+Modelo Vensim: Estructura correcta (stocks/flujos), calibraci¾n con datos reales, anßlisis de escenarios coherente (50%).
+Defensa del modelo: Capacidad de explicar decisiones de modelamiento y responder ┐quÚ pasa si...? (25%).
+Ejercicio en vivo: Precisi¾n de la predicci¾n dinßmica (25%).
+
+Lecturas y Recursos
+Business Dynamics (Cap. 1-5) û John Sterman, McGraw-Hill
+Resoluci¾n CREG 071 de 2006 (Cargo por Confiabilidad) û CREG
+Cycles in deregulated electricity markets û Arango & Larsen, Energy Policy, 2011
+Informe de operaci¾n del SIN û XM (datos hist¾ricos)
+
+Entregable de la Semana
+Lab 1: Modelo Vensim funcional del ciclo inversi¾n-capacidad + informe de 1,500 palabras. Se entrega 24h antes de la sesi¾n sincr¾nica. Grupos asignados presentan y defienden en la sesi¾n.
+
+SEMANA 4
+Transiciones EnergÚticas como Transiciones de Fase
+Tipping points, path dependency y dinßmicas de adopci¾n en la descarbonizaci¾n
+Descripci¾n General
+Se explora la transici¾n energÚtica colombiana a travÚs de transiciones de fase y sistemas dinßmicos. Los estudiantes analizan c¾mo las tecnologÝas renovables se difunden, identifican tipping points y eval·an c¾mo las polÝticas p·blicas pueden acelerar o frenar transiciones sistÚmicas.
+
+Objetivos de Aprendizaje
+Al finalizar esta semana, el estudiante estarß en capacidad de:
+Aplicar conceptos de transiciones de fase a la transici¾n energÚtica colombiana.
+Modelar dinßmicas de difusi¾n tecnol¾gica para FNCER.
+Identificar tipping points y lock-in en la matriz energÚtica.
+Evaluar la Ley 2099 desde la perspectiva de sistemas complejos.
+
+BLOQUE AUTËNOMO ù 10 HORAS DE TRABAJO INDEPENDIENTE
+El estudiante realiza estas actividades a su propio ritmo durante la semana, antes de la sesi¾n sincr¾nica.
+
+SESIËN SINCRËNICA CON EL PROFESOR ù 2 horas
+Evaluaci¾n de modelos de difusi¾n y Avance 1 del proyecto integrador
+
+Criterios de Evaluaci¾n de la Sesi¾n Sincr¾nica
+Avance 1 del proyecto: Completitud del mapa sistÚmico, calidad de los CLDs, identificaci¾n de tipping points (5% nota final, formativo).
+Presentaci¾n del avance: Claridad de comunicaci¾n, respuesta a preguntas (parte de 15% sincr¾nico).
+Ejercicio en vivo: Identificaci¾n de consecuencias no previstas con argumentaci¾n sistÚmica.
+
+Lecturas y Recursos
+Technological Transitions and System Innovations (Cap. 1-4) û Frank Geels, Edward Elgar
+Ley 2099 de 2021 û Congreso de la Rep·blica de Colombia
+Colombia Energy Policy Review û IEA
+Sensitive intervention points in the post-carbon transition û Farmer et al., Science, 2019
+
+Entregable de la Semana
+Avance 1 del proyecto integrador (2,000 palabras + diagramas). Se entrega 48h antes de la sesi¾n para que el profesor pueda revisarlo. Se presenta y defiende en la sesi¾n sincr¾nica.
+
+SEMANA 5
+Dimensiones Sociales, Ambientales y de Gobernanza
+El sistema energÚtico como sistema socio-ecol¾gico
+Descripci¾n General
+Se amplÝa el anßlisis sistÚmico para incorporar interacciones con sistemas sociales, ecol¾gicos y de gobernanza. En el contexto colombiano: proyectos e¾licos y comunidades Wayuu, ecosistemas frßgiles, consulta previa y justicia energÚtica en ZNI. Se utilizan herramientas de Ostrom y anßlisis de redes de actores.
+
+Objetivos de Aprendizaje
+Al finalizar esta semana, el estudiante estarß en capacidad de:
+Analizar proyectos energÚticos como sistemas socio-ecol¾gicos.
+Aplicar el marco de gobernanza policÚntrica de Ostrom a la gobernanza energÚtica territorial.
+Modelar dinßmicas de conflicto y cooperaci¾n entre actores.
+Integrar dimensiones sociales y ambientales en la evaluaci¾n sistÚmica.
+
+BLOQUE AUTËNOMO ù 10 HORAS DE TRABAJO INDEPENDIENTE
+El estudiante realiza estas actividades a su propio ritmo durante la semana, antes de la sesi¾n sincr¾nica.
+
+SESIËN SINCRËNICA CON EL PROFESOR ù 2 horas
+Role-play evaluado + Avance 2 del proyecto integrador
+
+Criterios de Evaluaci¾n de la Sesi¾n Sincr¾nica
+Role-play: Preparaci¾n, calidad de argumentaci¾n en rol, capacidad de negociaci¾n, comprensi¾n de la perspectiva de otros actores (30%).
+Avance 2 del proyecto: Integraci¾n coherente de dimensi¾n social, calidad del mapa de actores, anßlisis de gobernanza (5% nota final, formativo).
+Participaci¾n en debrief: Capacidad de reflexi¾n y conexi¾n teorÝa-prßctica (10% de nota sincr¾nica).
+
+Lecturas y Recursos
+Governing the Commons (Cap. 1-3) û Elinor Ostrom, Cambridge University Press
+New frontiers for energy justice û Sovacool et al., Energy Policy, 2017
+Evaluaci¾n de proyectos FNCER en La Guajira û ContralorÝa General de la Rep·blica
+Marco normativo de consulta previa û Ministerio del Interior
+
+Entregable de la Semana
+Avance 2 del proyecto integrador (2,500 palabras + diagramas). Entrega 48h antes de la sesi¾n. Participaci¾n evaluada en role-play y debrief.
+
+SEMANA 6
+Modelamiento de un sistema energÚtico a travÚs del paradigma complejo
+
+
+SEMANA 7
+SÝntesis e Integraci¾n: El Anßlisis SistÚmico Completo
+Ensamblando la visi¾n sistÚmica para la toma de decisiones estratÚgicas
+Descripci¾n General
+La semana final integra todas las herramientas del curso. Los estudiantes completan y presentan sus proyectos integradores ante un panel evaluador (profesor + invitado externo del sector). Se discuten las fronteras del campo y las oportunidades de investigaci¾n aplicada en el sector colombiano.
+
+Objetivos de Aprendizaje
+Al finalizar esta semana, el estudiante estarß en capacidad de:
+Integrar m·ltiples perspectivas sistÚmicas en un anßlisis coherente.
+Traducir anßlisis complejos en recomendaciones estratÚgicas accionables.
+Comunicar hallazgos sistÚmicos a audiencias no tÚcnicas de manera efectiva.
+Identificar fronteras del campo y oportunidades de investigaci¾n.
+
+BLOQUE AUTËNOMO ù 10 HORAS DE TRABAJO INDEPENDIENTE
+El estudiante realiza estas actividades a su propio ritmo durante la semana, antes de la sesi¾n sincr¾nica.
+
+SESIËN SINCRËNICA CON EL PROFESOR ù 2 horas (extendida a 3 horas para presentaciones finales)
+PRESENTACIONES FINALES ante panel evaluador + cierre del curso
+
+Criterios de Evaluaci¾n de la Sesi¾n Sincr¾nica
+Proyecto integrador final: Completitud, rigor analÝtico, integraci¾n de herramientas, calidad de recomendaciones (25% nota final).
+Presentaci¾n oral: Claridad, capacidad de sÝntesis, calidad visual, respuesta a preguntas del panel (5% nota final).
+Dashboard: Funcionalidad, calidad de visualizaci¾n, capacidad de comunicar complejidad a audiencia no tÚcnica (parte de Lab 4, 5%).
+
+Lecturas y Recursos
+Scale (Cap. 1-3) û Geoffrey West, Penguin
+Complexity and the Economy (seleccionados) û W. Brian Arthur, Oxford University Press
+The Model Thinker (Cap. sobre many-model thinking) û Scott Page, Basic Books
+World Energy Outlook (AmÚrica Latina) û IEA
+
+Entregable de la Semana
+ENTREGA FINAL: Proyecto integrador completo (8,000-10,000 palabras) + dashboard interactivo. Entrega 48h antes de la sesi¾n. Presentaci¾n oral de 15 minutos ante panel evaluador durante sesi¾n sincr¾nica extendida (3 horas). Lab 4 (dashboard) evaluado con r·brica.
+
+SEMANA 8
+Trabajo aut¾nomo en el proyecto integrador.
+
+6. PROYECTO INTEGRADOR
+6.1 Descripci¾n
+Grupos de 3 estudiantes seleccionan un proyecto energÚtico real en Colombia para un anßlisis sistÚmico completo a lo largo de 8 semanas. Cada semana incorpora nuevas herramientas. El proyecto se evalua progresivamente en las sesiones sincr¾nicas y culmina con presentaci¾n ante panel.
+6.2 Proyectos Sugeridos
+Proyecto e¾lico Windpeshi (La Guajira): 200 MW, interacciones con comunidades Wayuu, retos de transmisi¾n.
+Proyecto solar El Paso (Cesar): 86 MW, primer solar a gran escala, dinßmicas de mercado.
+HidroelÚctrica Ituango: mega-proyecto, gesti¾n de riesgos, impacto sistÚmico en el SIN.
+Generaci¾n Distribuida Solar: techos solares, medici¾n bidireccional, efectos de red.
+Hidr¾geno Verde en La Guajira: incertidumbre profunda, interconexiones con e¾lica.
+Microgrids renovables en ZNI: gobernanza, sostenibilidad, justicia energÚtica.
+
+6.3 Cronograma de Entregas
+
+7. POL═TICAS DEL CURSO
+7.1 Asistencia a Sesiones Sincr¾nicas
+La asistencia a las sesiones sincr¾nicas es obligatoria dado que concentran el 35% de la evaluaci¾n. Se permite un mßximo de 1 inasistencia justificada. Las sesiones se graban pero la grabaci¾n no sustituye la participaci¾n evaluada. En caso de inasistencia justificada, el estudiante puede presentar un trabajo compensatorio equivalente acordado con el profesor.
+7.2 Entregas para Evaluaci¾n Sincr¾nica
+Los laboratorios y avances del proyecto deben entregarse 24-48 horas antes de la sesi¾n sincr¾nica (seg·n se indique en cada semana). Esto permite al profesor revisar los trabajos y preparar retroalimentaci¾n especÝfica. Las entregas fuera de plazo se reciben con penalizaci¾n de 10% por dÝa, y el grupo pierde la oportunidad de presentar en la sesi¾n sincr¾nica correspondiente.
+7.3 Integridad AcadÚmica
+El uso de herramientas de IA generativa es permitido como herramienta de productividad pero debe declararse. Los entregables deben reflejar comprensi¾n propia. La evaluaci¾n sincr¾nica (presentaciones, defensa oral, ejercicios en vivo) constituye un mecanismo natural de verificaci¾n de autenticidad del aprendizaje.
+7.4 Comunicaci¾n
+Canal principal: foro de anuncios de la plataforma. Para consultas urgentes antes de la sesi¾n sincr¾nica: mensajerÝa interna. Tiempo de respuesta: 24 horas hßbiles. Las dudas tÚcnicas sobre laboratorios pueden resolverse entre pares en el foro, fomentando el aprendizaje colaborativo.

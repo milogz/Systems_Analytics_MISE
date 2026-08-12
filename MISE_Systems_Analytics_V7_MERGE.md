@@ -1,0 +1,499 @@
+# MAESTRÍA EN INNOVACIÓN DE SISTEMAS ENERGÉTICOS — MISE
+## Universidad de los Andes
+
+# SYSTEMS ANALYTICS
+## Análisis Sistémico de Proyectos Energéticos
+### Complejidad · Redes · Dinámica de Sistemas
+### Enfoque de Casos Aplicados al Sector Eléctrico Colombiano
+
+**Curso de Maestría Profesionalizante | 8 Semanas | 2 Créditos**
+**Versión 7 — 2026**
+
+---
+
+# 1. INFORMACIÓN GENERAL DEL CURSO
+
+| Campo | Detalle |
+|-------|---------|
+| Nombre del curso | Systems Analytics — Análisis Sistémico de Proyectos Energéticos |
+| Código | MISE-SYAN |
+| Programa | Maestría en Innovación de Sistemas Energéticos (MISE) |
+| Créditos | 2 créditos (96 horas: 80 autónomas + 16 sincrónicas) |
+| Duración | 8 semanas (12 horas de trabajo semanal) |
+| Modelo pedagógico | Aula invertida: 10 h autónomas + sesión sincrónica semanal de 2 h |
+| Modalidad | Virtual con sesión sincrónica semanal de 2 horas |
+| Prerrequisitos | Fundamentos de sistemas de potencia, economía de la energía, estadística básica. Programación básica en Python deseable pero no obligatoria. |
+| Herramientas | Python 3.x / Jupyter Notebooks (lenguaje único del curso), NetworkX (redes), scipy (dinámica de sistemas), matplotlib / plotly (visualización) |
+
+---
+
+# 2. VISIÓN DEL CURSO
+
+## 2.1 ¿Por qué Systems Analytics en la MISE?
+
+La MISE forma profesionales que deben "liderar la gestión energética con visión técnica, económica, ambiental y social." Esto implica que el egresado no solo debe entender la física del sistema eléctrico, sino ver el proyecto energético como la integración de múltiples partes de un sistema complejo donde interactúan infraestructura, mercados, reguladores, comunidades y el clima. El análisis convencional de proyectos — VPN, TIR, análisis de sensibilidad estático — no es suficiente cuando el sistema exhibe retroalimentaciones, retardos, comportamientos emergentes y estructuras de red no triviales.
+
+Systems Analytics V7 equipa al estudiante con tres pilares complementarios relevantes en la práctica profesional del sector: (i) **pensamiento de complejidad** como marco conceptual (adaptación, no linealidad, eventos extremos); (ii) **análisis de redes complejas** como lenguaje para describir la estructura de la infraestructura y de las interacciones sociales; y (iii) **dinámica de sistemas** como herramienta cuantitativa para simular la evolución temporal del sistema. La integración de estos tres pilares, aplicados a casos reales del sector colombiano, constituye el diferencial formativo del curso. La dimensión social, ambiental y de gobernanza atraviesa los tres pilares como capa transversal.
+
+## 2.2 Posicionamiento Internacional
+
+Un benchmarking contra MIT, TU Delft, ETH Zurich y Stanford revela que los cursos de sistemas energéticos existentes se centran en análisis tecno-económico (MIT/Sesame), análisis de actores cualitativo (Delft), optimización matemática (ETH/MILP) o fundamentos físicos (Stanford). La MISE se diferencia con un enfoque que integra complejidad, redes y dinámica de sistemas, todo anclado en casos reales del sector colombiano — un sistema híbrido hidro-térmico expuesto a los fenómenos del Niño y de La Niña, con entrada acelerada de FNCER, tensiones de consulta previa y un mercado mayorista con dinámicas propias.
+
+## 2.3 Principios de Diseño
+
+**Caso aplicado como vehículo pedagógico.** Cada semana gira alrededor de un caso energético colombiano real. La teoría se introduce al servicio del caso, no al revés. El egresado de una maestría profesionalizante debe poder usar lo aprendido en su día a día.
+
+**Andamiaje gradual en tres pilares.** La semana 1 introduce los conceptos de complejidad de manera cualitativa. Las semanas 2–3 desarrollan el análisis de redes (topología, métricas, dinámica sobre redes, redes de actores). Las semanas 4–5 formalizan la dinámica de sistemas cuantitativa (stocks, flujos, políticas, escenarios). La semana 6 integra la dimensión social y de gobernanza con los modelos cuantitativos en un análisis sistémico completo. Las semanas 7–8 consolidan el proyecto integrador.
+
+**El proyecto como producto profesional.** El proyecto integrador ocupa 3+ horas semanales y 45% de la nota. El entregable final es un informe de consultoría sistémica: un documento que un tomador de decisiones del sector podría usar como insumo para una decisión real, con lineamientos sobre posibles direccionamientos del proyecto.
+
+**Herramientas prácticas — stack unificado en Python.** Todo el curso se desarrolla en Python/Jupyter: NetworkX para análisis de redes; scipy.integrate para dinámica de sistemas; matplotlib y plotly para visualización. Se proporcionan módulos propios del curso (`mise_sd`) que reemplazan las capacidades pedagógicas de herramientas como Vensim, manteniendo un stack unificado que maximiza la transferibilidad profesional. Se asume nivel de programación básico: los notebooks vienen con código base y el estudiante completa secciones específicas.
+
+## 2.4 Arquitectura del Curso
+
+```
+S1: Marco conceptual (complejidad)     ──┐
+S2: Redes I (infraestructura física)   ──┤ Pilar 2: ESTRUCTURA
+S3: Redes II (dinámica y actores)      ──┘
+S4: Dinámica I (stocks y flujos)       ──┐ Pilar 3: COMPORTAMIENTO TEMPORAL
+S5: Dinámica II (políticas/escenarios) ──┘
+S6: Integración + gobernanza           ── Convergencia: estructura + dinámica + gobernanza
+S7: Taller de proyectos               ── Aplicación
+S8: Cierre y presentaciones            ── Síntesis
+```
+
+---
+
+# 3. RESULTADOS OBJETIVOS DEL CURSO
+
+Al completar el curso, el estudiante será capaz de:
+
+| | Resultado |
+|---|-----------|
+| O1 | Analizar proyectos energéticos como parte de un sistema complejo interconectado, identificando adaptación, no linealidad, eventos extremos (cisnes negros), retroalimentaciones y efectos de memoria. |
+| O2 | Aplicar análisis de redes complejas (topología, métricas globales y locales, leyes de potencia, fallas en cascada, dinámica sobre redes) a la infraestructura eléctrica y a las redes sociales e institucionales asociadas a proyectos energéticos. |
+| O3 | Construir modelos de dinámica de sistemas con stocks, flujos, ciclos positivos/negativos y retardos en Python, calibrados con datos del sector eléctrico colombiano, e incorporar intervenciones de política y análisis de escenarios bajo incertidumbre. |
+| O4 | Integrar la dimensión social, ambiental y de gobernanza al análisis sistémico, y formular recomendaciones estratégicas accionables comunicables a distintas audiencias. |
+
+---
+
+# 4. SISTEMA DE EVALUACIÓN
+
+| Componente | Peso | Bloque | Descripción |
+|-----------|------|--------|-------------|
+| Quizzes en videos (8) | 10% | Autónomo | Verifican comprensión básica antes de la sesión sincrónica. |
+| Laboratorios aplicados (4) | 15% | Autónomo | Lab 1 (redes físicas) + Lab 2 (redes sociales/actores) + Lab 3 (SD básico) + Lab 4 (SD con políticas). Notebook + informe. |
+| Participación semanal | 10% | Autónomo | Aportes semanales en las actividades asíncronas del curso. |
+| Presentaciones y defensa en sesión | 10% | Sincrónico | Defensa oral de avances del proyecto. Mínimo 3 por grupo. |
+| Ejercicios evaluativos en vivo (8) | 10% | Sincrónico | Mini-quiz o ejercicio aplicado en cada sesión. Individual. |
+| Proyecto — 3 avances | 15% | Mixto | Tres entregas progresivas (5% c/u). Evaluadas con rúbrica. |
+| Proyecto — informe final | 25% | Mixto | Informe de consultoría sistémica + presentación ante panel. |
+| Presentación oral ante panel | 5% | Sincrónico | Claridad, síntesis, respuesta a preguntas. |
+
+Peso del proyecto integrador: **45%**. No hay examen parcial: la evaluación es continua a través del proyecto y los ejercicios en vivo. Calificación aprobatoria mínima: **3.5/5.0**.
+
+---
+
+# 5. DISTRIBUCIÓN DEL TIEMPO SEMANAL
+
+| Actividad | Horas | Bloque | Evaluación |
+|-----------|-------|--------|------------|
+| Video-lecciones con quizzes | 2.5 | Autónomo | Auto-evaluación |
+| Lectura dirigida (1–2 fuentes) | 1.5 | Autónomo | Actividad semanal + sesión |
+| Laboratorio o ejercicio aplicado | 2.0 | Autónomo | Entregable quincenal |
+| Actividades asíncronas de discusión | 1.0 | Autónomo | Participación evaluada |
+| Proyecto integrador (avance semanal) | 3.0 | Autónomo | Avance progresivo |
+| Sesión sincrónica | 2.0 | Sincrónico | Evaluación en vivo |
+| **TOTAL SEMANAL** | **12.0** | | |
+
+En semanas de entrega de avance (3, 5, 7), las horas de laboratorio se redirigen al proyecto, elevando su dedicación a 4–5 horas.
+
+---
+
+# 6. PROGRAMA DETALLADO SEMANA A SEMANA
+
+---
+
+## SEMANA 1: ¿Qué Significa "Sistémico"?
+**Del pensamiento lineal al pensamiento complejo en sistemas energéticos**
+
+**Caso ancla: La crisis de El Niño 2015–2016 en el sector eléctrico colombiano**
+
+Semana introductoria de bajo umbral técnico. El estudiante descubre por qué el análisis convencional de proyectos (VPN, TIR, sensibilidad estática) resulta insuficiente cuando el proyecto está inmerso en un sistema complejo. Se introduce el paradigma complejo y su vocabulario: adaptación y aprendizaje (efectos de memoria), cisnes negros (eventos extremos), no linealidad, emergencia y retroalimentación. No se programa ni se modela cuantitativamente; se piensa y se dibuja. El caso de El Niño 2015–2016 muestra cómo retroalimentaciones entre hidrología, precios de bolsa, decisiones de generadores térmicos y señales regulatorias amplificaron una crisis que los modelos lineales no anticiparon.
+
+### Bloque Autónomo — 10 horas
+
+| Actividad | Descripción | Horas | Entrega |
+|-----------|-------------|-------|---------|
+| Video-lecciones | 1.1 ¿Por qué falla el análisis convencional? La crisis de El Niño 2015-16 como ejemplo de complejidad sistémica (15 min). 1.2 El vocabulario de la complejidad: agentes, retroalimentaciones (positivas/negativas), emergencia, no linealidad, retardos, path dependency, tipping points (15 min). 1.3 Adaptación, aprendizaje y efectos de memoria en sistemas energéticos. Cisnes negros y eventos extremos: la estadística no gaussiana (12 min). 1.4 Tour de casos internacionales: Blackout del Noreste de EE.UU. (2003) — fallas en cascada; Blackout de India (2012) — escala y fragilidad; Blackout de España (2024-25) — interdependencia; Difusión solar en Alemania (Energiewende) — no linealidad y tipping points; Lock-in de gas natural en Colombia — path dependency (15 min). | 2.5 | Quizzes |
+| Lectura dirigida | Meadows, *Thinking in Systems*, Cap. 1–2. Taleb, *The Black Swan* (extractos seleccionados). Resumen ejecutivo del PEN 2020–2050 (UPME). | 1.5 | Antes de actividad |
+| Ejercicio aplicado | Dibujar un mapa causal informal de la crisis de El Niño 2015–2016 (a mano o herramienta simple). Identificar al menos 3 retroalimentaciones y 2 efectos no lineales. Narrativa explicativa de 800 palabras. | 2.0 | Mapa causal + narrativa |
+| Actividad asíncrona | Identificar un proyecto energético colombiano cuyo resultado no se pudo predecir con un VPN estático. Explicar por qué desde la perspectiva de complejidad (adaptación, no linealidad, cisnes negros). + 2 comentarios a compañeros. | 1.0 | Post + comentarios |
+| Proyecto integrador | Conformar grupo de 3. Seleccionar caso de estudio de la lista sugerida o propuesta libre. Entregar ficha de 1 página: caso, actores relevantes, preguntas de análisis. | 3.0 | Ficha de proyecto |
+| **TOTAL AUTÓNOMO** | | **10** | |
+
+### Sesión Sincrónica — 2 horas
+
+| Momento | Actividad | Duración | Propósito |
+|---------|-----------|----------|-----------|
+| Apertura | Clarificación de dudas sobre complejidad vs. complicación. Quiz conceptual interactivo: ¿complicado vs. complejo? ¿lineal vs. no-lineal? Ejemplos rápidos del sector. | 20 min | Diagnóstico de comprensión inicial. |
+| Caso guiado | Profesor reconstruye la crisis de El Niño 2015–2016 en vivo, identificando retroalimentaciones y adaptaciones de los actores. | 30 min | Demostrar el razonamiento complejo. |
+| Presentación | 3 grupos presentan su mapa causal informal. Retroalimentación constructiva de pares y profesor: ¿los lazos están bien? ¿falta algún actor? ¿dónde están los retardos? | 30 min | Primera práctica de comunicación sistémica. |
+| Ejercicio vivo | Mini-quiz: identificar efectos no lineales y puntos de ruptura en 3 escenarios energéticos breves (individual, 10 min). | 25 min | Evaluación individual de comprensión. |
+| Cierre | Transición a análisis de redes: del mapa informal a la estructura formal. "En las próximas semanas vamos a formalizar esta intuición con herramientas computacionales concretas." Asignación semana 2. | 15 min | Orientar trabajo autónomo. |
+
+### Lecturas y Recursos
+- *Thinking in Systems: A Primer* (Cap. 1–2) — Donella Meadows.
+- *The Black Swan* (extractos seleccionados) — Nassim Taleb.
+- Plan Energético Nacional 2020–2050 (Resumen ejecutivo) — UPME.
+- Informe de gestión de El Niño 2015–2016 — XM.
+- *Complexity: A Guided Tour* (Cap. 1–4) — Melanie Mitchell (recomendada).
+- *Business Dynamics* (Cap. 1, motivación) — John Sterman (recomendada).
+
+---
+
+## SEMANA 2: Redes I — Topología, Vulnerabilidades y Confiabilidad
+**La estructura del sistema eléctrico como red compleja**
+
+**Caso ancla: El Sistema de Transmisión Nacional (STN) colombiano como grafo**
+
+Se introduce el análisis de redes complejas como lenguaje formal para describir la estructura del sistema eléctrico. El estudiante aprende a traducir infraestructura física (subestaciones, líneas de transmisión) en un grafo analizable computacionalmente, calcula métricas topológicas, identifica nodos críticos, y conecta el análisis topológico con la práctica de confiabilidad de la industria. Se estudia la paradoja "robusto pero frágil" y se simula una falla en cascada para observar cómo la topología determina la propagación de fallas.
+
+### Bloque Autónomo — 10 horas
+
+| Actividad | Descripción | Horas | Entrega |
+|-----------|-------------|-------|---------|
+| Video-lecciones | 2.1 De infraestructura a grafo: subestaciones → nodos, líneas → aristas. Grafos dirigidos vs. no dirigidos. Grafos ponderados (capacidad). Visualización básica con NetworkX (15 min). 2.2 Métricas de redes: métricas locales (grado, betweenness, closeness, clustering) y globales (diámetro, densidad, componentes conectados). Interpretación energética: "una subestación con alta betweenness es un cuello de botella del sistema" (15 min). 2.3 Topologías y leyes de potencia: redes aleatorias (Erdős-Rényi) vs. libres de escala (Barabási-Albert) vs. mundo pequeño (Watts-Strogatz). Leyes de potencia y su efecto en la toma de decisiones: los métodos estándar de evaluación de riesgo subestiman la probabilidad de fallas catastróficas. Criterio N-1 de confiabilidad: definición formal, uso en planificación (UPME) y operación (XM). La paradoja "robusto pero frágil" (15 min). 2.4 Fallas en cascada: el modelo capacidad-carga (Motter-Lai). Cuando un nodo falla, su carga se redistribuye según la topología. Demo conceptual conectada con los blackouts de S1 (15 min). | 2.5 | Quizzes |
+| Lectura dirigida | Barabási, *Network Science*, Cap. 2–4 (Open Access). Pagani & Aiello (2013): *The Power Grid as a Complex Network* (extractos). UPME — *Plan de Expansión de Referencia (Transmisión)*. | 1.5 | Antes de actividad |
+| Lab 1 — Análisis de red del STN | Notebook Python guiado (~4h). El estudiante completa secciones marcadas con `# TODO`. (1) Cargar datos del STN (archivo proporcionado, ~100 nodos representativos). (2) Construir el grafo en NetworkX, visualizar. (3) Calcular y visualizar métricas de centralidad (heatmap de betweenness). (4) Analizar distribución de grado: ¿sigue una ley de potencia? (5) Verificación de N-1: remover cada nodo → ¿la red sigue conectada? ¿Cuántos nodos son N-1 críticos? (6) Simular falla en cascada: remover nodo de mayor betweenness → redistribuir carga → verificar sobrecargas → iterar. (7) Graficar: fracción de red conectada vs. número de nodos removidos (ataque dirigido vs. falla aleatoria). | 3.0 | Notebook + informe |
+| Actividad asíncrona | ¿Qué tipo de distribución de grado sigue el STN colombiano (aleatoria, libre de escala, pequeño mundo)? ¿Qué implicaciones tiene para la resiliencia? + 2 comentarios a compañeros. | 1.0 | Post + comentarios |
+| Proyecto integrador | Identificar las redes relevantes del caso del grupo (red física, red de actores, red regulatoria). Definir nodos, aristas y tipo de relación. Entrega: esquema de redes + 600 palabras. | 2.0 | Esquema de redes |
+| **TOTAL AUTÓNOMO** | | **10** | |
+
+### Sesión Sincrónica — 2 horas
+
+| Momento | Actividad | Duración | Propósito |
+|---------|-----------|----------|-----------|
+| Apertura | Dudas sobre NetworkX, construcción de redes a partir de datos y elección de métricas. Quiz conceptual: interpretar métricas, leyes de potencia. | 20 min | Resolver dificultades técnicas. |
+| Evaluación | 3 grupos presentan el Lab 1: construcción de red, métricas, nodos críticos detectados, resultado de falla en cascada, comparación N-1 vs. ataque dirigido. | 35 min | Verificar dominio de la herramienta. |
+| Retroalimentación | Errores comunes: confundir centralidad de grado con intermediación, redes dirigidas vs. no dirigidas, interpretación de leyes de potencia. Discusión: ¿cómo afecta la conexión de parques eólicos en La Guajira a la resiliencia topológica del STN? | 25 min | Corrección colectiva + aplicación. |
+| Ejercicio vivo | Dada una red pequeña en pantalla, calcular a mano densidad, grado promedio e identificar el nodo más central. Predecir efecto de remover un nodo (individual, 15 min). | 25 min | Evaluación individual. |
+| Cierre | Transición a S3: de la red estática a la dinámica sobre redes y las redes de actores. Asignación semana 3. | 15 min | Orientar trabajo autónomo. |
+
+### Lecturas y Recursos
+- *Network Science* (Cap. 2–4) — Albert-László Barabási (Open Access: networksciencebook.com).
+- *The Power Grid as a Complex Network* — Pagani & Aiello, Physica A, 2013.
+- *Plan de Expansión de Referencia (Transmisión)* — UPME (más reciente).
+- Informe de confiabilidad del STN — XM.
+- *Networks: An Introduction* (Cap. 6–8) — M.E.J. Newman (recomendada).
+
+---
+
+## SEMANA 3: Redes II — Dinámica sobre Redes y Redes de Actores
+**Más allá de la topología estática: difusión, contagio y estructura social del sistema energético**
+
+**Caso ancla: Adopción de energía solar distribuida en Colombia + Red de actores del mercado mayorista**
+
+Se extiende el análisis de redes en dos direcciones complementarias. Primero, al dominio dinámico: los estados de los nodos cambian en el tiempo en función de sus vecinos. Se estudian modelos canónicos de difusión y adopción (contagio simple y complejo, modelos con umbral) aplicados a la adopción de tecnologías renovables. Segundo, al dominio social e institucional: las redes modelan relaciones entre actores (reguladores, generadores, comunidades, inversionistas), flujos comerciales en el mercado eléctrico, y redes de influencia. Esta semana cierra el módulo de redes con un wrap-up que incluye las limitaciones del enfoque y las fronteras del campo.
+
+### Bloque Autónomo — 10 horas
+
+| Actividad | Descripción | Horas | Entrega |
+|-----------|-------------|-------|---------|
+| Video-lecciones | 3.1 Dinámica sobre redes: nodos con estado, reglas de actualización. Difusión de información, contagio simple vs. complejo y umbrales de adopción (15 min). 3.2 Modelos de adopción tecnológica: Bass, Watts, Granovetter. Aplicación: ¿por qué la adopción de techos solares en Colombia no sigue un modelo puramente económico? (12 min). 3.3 Redes de actores y stakeholders: el sistema energético como red socio-técnica. Redes bipartitas (generadores–comercializadores), redes de afiliación, proyecciones. El mercado mayorista colombiano como grafo (15 min). 3.4 Wrap-up de Ciencia de Redes + Horizonte ABM: ¿qué aprendimos? Limitación fundamental: las redes son snapshots estáticos; no capturan cómo el sistema evoluciona en el tiempo → por eso necesitamos dinámica de sistemas (S4-S5). Mención conceptual de Agent-Based Modeling (ABM): de "actores como nodos" a "actores como agentes con reglas propias". Framework Mesa (Python). No se implementa en el curso pero se posiciona como vía natural de profundización (12 min). | 2.5 | Quizzes |
+| Lectura dirigida | Barabási, *Network Science*, Cap. 5–6 y Cap. 10 (resumen). Watts (2002): *A simple model of global cascades on random networks*, PNAS. XM — *El mercado de energía mayorista en Colombia* (documento técnico). | 1.5 | Antes de actividad |
+| Lab 2 — Redes sociales y dinámica de adopción | Notebook Python guiado + extensiones libres (~4h). (1) Simular un modelo de adopción con umbral sobre una red social sintética (Watts–Strogatz, Barabási–Albert). Comparar tasas de adopción bajo dos topologías distintas. (2) Construir la red de actores del mercado mayorista colombiano (datos proporcionados). Calcular métricas de centralidad, identificar actores dominantes, detectar comunidades (modularity). (3) Simular escenarios: ¿qué pasa si un hub sale del mercado? (4) Extensión libre: proponer una red relevante para el proyecto integrador del grupo. | 3.0 | Notebook + informe |
+| Actividad asíncrona | ¿La concentración del mercado mayorista colombiano es un riesgo sistémico? Argumentar usando el concepto de redes libres de escala y contagio. + 2 comentarios a compañeros. | 1.0 | Post + comentarios |
+| Proyecto: Avance 1 | Definición del caso + mapa de actores (como red) + CLD preliminar + análisis inicial de métricas de red. 1,500 palabras + diagramas. | 2.0 | Avance 1 |
+| **TOTAL AUTÓNOMO** | | **10** | |
+
+### Sesión Sincrónica — 2 horas
+
+| Momento | Actividad | Duración | Propósito |
+|---------|-----------|----------|-----------|
+| Apertura | Dudas sobre contagio simple vs. complejo, selección de topologías, y redes de actores. | 15 min | Resolver dudas conceptuales. |
+| Evaluación | 3 grupos presentan Avance 1: CLD + esquema de red + resultados de Lab 2. Primer checkpoint formal del proyecto. | 35 min | Retroalimentación directa. |
+| Retroalimentación | Errores comunes: confundir adopción con difusión, umbrales mal calibrados, redes sin interpretación clara, confundir centralidad en redes de actores. | 25 min | Corrección colectiva. |
+| Ejercicio vivo | Ante una red pequeña y umbrales dados, predecir cuántos nodos se activan tras 3 pasos. Luego simular en pantalla. | 25 min | Evaluar intuición dinámica en red. |
+| Cierre | Transición a Dinámica de Sistemas: del comportamiento en red al stock-and-flow agregado. Cierre del módulo de Redes: insights principales, limitaciones. | 20 min | Orientar semana 4. |
+
+### Lecturas y Recursos
+- *Network Science* (Cap. 5–6, 10) — Albert-László Barabási.
+- *A simple model of global cascades on random networks* — Duncan Watts, PNAS, 2002.
+- *El mercado de energía mayorista en Colombia* — XM (documento técnico).
+- *Rogers, Diffusion of Innovations* (extracto, recomendada).
+- *New frontiers for energy justice* — Sovacool et al., Energy Policy, 2017 (recomendada).
+
+---
+
+## SEMANA 4: Dinámica de Sistemas I — Stocks, Flujos y Retroalimentaciones
+**Modelando el comportamiento temporal del sistema energético**
+
+**Caso ancla: El ciclo de inversión-capacidad en generación eléctrica colombiana**
+
+Se introduce la dinámica de sistemas como extensión cuantitativa del pensamiento sistémico. El estudiante aprende la distinción fundamental entre stocks (acumuladores) y flujos (tasas), construye sus primeros modelos simulables en Python (utilizando scipy.integrate y los módulos propios del curso), y practica la notación formal de diagramas de stocks y flujos. El caso del ciclo inversión-capacidad en generación eléctrica — la dinámica que explica por qué el sector oscila entre sobreinversión y escasez — se modela con datos históricos del SIN.
+
+### Bloque Autónomo — 10 horas
+
+| Actividad | Descripción | Horas | Entrega |
+|-----------|-------------|-------|---------|
+| Video-lecciones | 4.1 Del CLD al modelo cuantitativo: los CLDs de la Semana 1 ahora "calculan". Traducir un lazo causal en ecuaciones de stocks y flujos. La bathtub metaphor de Sterman (15 min). 4.2 Los bloques de construcción: stocks (acumuladores), flujos (tasas de cambio), auxiliares (variables intermedias), constantes (parámetros), retardos. Formalismo: dS/dt = Inflow(t) − Outflow(t). Polaridad de flechas, lazos de refuerzo (R) y balance (B) (15 min). 4.3 Diagramas de Stocks y Flujos en Python: introducción al módulo `mise_sd` del curso. Definir stocks, flujos y conexiones de forma declarativa. Renderizado automático del diagrama. Simulación con scipy.integrate. Demo con modelo simple: llenado/vaciado de un embalse (15 min). 4.4 Caso: el ciclo inversión-capacidad en generación eléctrica colombiana. ¿Por qué el sector oscila entre sobreinversión y escasez? Modelo con 3 stocks: Capacidad_Instalada, Proyectos_en_Construcción, Demanda. El retardo constructor (3-5 años) es la clave (15 min). | 2.5 | Quizzes |
+| Lectura dirigida | Sterman, *Business Dynamics*, Cap. 1–3 (resumen ejecutivo). Meadows, *Thinking in Systems*, Cap. 3 (arquetipos sistémicos). | 1.5 | Antes de actividad |
+| Lab 3 — Modelo del ciclo inversión-capacidad | Notebook Python guiado (~4h). El estudiante completa secciones `# TODO`. (1) Definir stocks (Capacidad_Instalada, Pipeline_Construcción, Demanda), flujos (inicio_proyectos, puesta_servicio, retiro, crecimiento_demanda), auxiliares (gap_oferta_demanda, precio_bolsa). (2) Implementar ecuaciones diferenciales. (3) Calibrar con datos históricos colombianos (XM). (4) Simular y observar oscilaciones precio-capacidad. (5) Ejercicio de intuición dinámica: *antes* de simular, ¿qué predices si duplicamos el retardo de construcción? Escribir predicción → simular → comparar. | 3.0 | Notebook + informe |
+| Actividad asíncrona | ¿Qué stock del sector eléctrico colombiano es más crítico y por qué? Argumentar desde la estructura sistémica, no solo desde la magnitud. + 2 comentarios a compañeros. | 1.0 | Post + comentarios |
+| Proyecto integrador | Transformar el CLD del caso del grupo en una estructura de stocks y flujos. Identificar variables clave y documentar supuestos. 1,200 palabras + diagrama. | 2.0 | Estructura SD |
+| **TOTAL AUTÓNOMO** | | **10** | |
+
+### Sesión Sincrónica — 2 horas
+
+| Momento | Actividad | Duración | Propósito |
+|---------|-----------|----------|-----------|
+| Apertura | Dudas sobre Python/scipy y la distinción stock vs. flujo. Quiz: interpretar diagramas S&F, distinguir stock de flujo, predecir comportamiento cualitativo. | 20 min | Resolver dificultades técnicas. |
+| Evaluación | 3 grupos presentan la estructura SD de su proyecto y resultados del Lab 3: modelo y oscilaciones observadas. ¿Por qué oscila? ¿Qué parámetro controla la amplitud? Rúbrica: corrección stock/flujo, claridad de lazos, variables clave. | 35 min | Verificar dominio de la herramienta. |
+| Retroalimentación | Errores comunes: confundir stocks con flujos, unidades incoherentes, modelos sin retardos donde claramente los hay. | 25 min | Corrección colectiva. |
+| Ejercicio vivo | Dado un texto descriptivo de un problema energético, proponer sus 3 stocks y 3 flujos principales en 15 min. | 25 min | Evaluación individual. |
+| Cierre | Preview semana 5: "¿qué pasa cuando agregamos intervenciones regulatorias y exploramos escenarios?" Asignación de presentadores. | 15 min | Orientar semana 5. |
+
+### Lecturas y Recursos
+- *Business Dynamics* (Cap. 1–5) — John Sterman.
+- *Thinking in Systems* (Cap. 3) — Donella Meadows.
+- *Cycles in deregulated electricity markets* — Arango & Larsen, Energy Policy, 2011.
+- Resolución CREG 071/2006 (guía de lectura).
+- Informe de operación del SIN — XM (datos históricos).
+
+---
+
+## SEMANA 5: Dinámica de Sistemas II — Políticas, Escenarios e Incertidumbre
+**Un caso completo: la transición energética colombiana bajo incertidumbre**
+
+**Caso ancla: Efecto del Cargo por Confiabilidad y la entrada de FNCER en el mercado**
+
+Se profundiza en la dinámica de sistemas aplicando ciclos positivos, ciclos negativos y retardos al caso del Cargo por Confiabilidad y la entrada acelerada de FNCER. Se extiende el modelo para incorporar intervenciones de política (CxC, subastas FNCER, impuesto al carbono) y se exploran escenarios bajo incertidumbre. El estudiante transita de "¿cómo se comporta el sistema?" a "¿qué opciones tiene un tomador de decisiones cuando el futuro es radicalmente incierto?" Se introduce la distinción entre riesgo (probabilidades conocidas) e incertidumbre profunda, y el principio de robustez sobre optimalidad: no buscar la estrategia "óptima" para un escenario, sino la que funciona "suficientemente bien" en todos.
+
+### Bloque Autónomo — 10 horas
+
+| Actividad | Descripción | Horas | Entrega |
+|-----------|-------------|-------|---------|
+| Video-lecciones | 5.1 Ciclos de refuerzo: crecimiento exponencial y efectos bola de nieve (12 min). 5.2 Ciclos de balance: búsqueda de meta y oscilación. Retardos: la fuente de oscilaciones e inestabilidad (15 min). 5.3 Intervenciones y palancas de política: agregar al modelo de S4 el Cargo por Confiabilidad (CxC), subastas FNCER y el impuesto al carbono. ¿Dónde se insertan en el diagrama S&F? Análisis de sensibilidad: ¿qué parámetros son más influyentes? (15 min). 5.4 Escenarios bajo incertidumbre: riesgo vs. incertidumbre profunda (Knight). Construcción de 4 escenarios cualitativamente distintos (transición acelerada / status quo / crisis climática / descentralización). Robustez sobre optimalidad: concepto de minimax regret. Introducción conceptual a RDM (RAND) (15 min). | 2.5 | Quizzes |
+| Lectura dirigida | Farmer et al. — *Sensitive intervention points in the post-carbon transition*, Science, 2019. Arango & Larsen (2011). Ley 2099 de 2021 (extractos relevantes). | 1.5 | Antes de actividad |
+| Lab 4 — Modelo SD con políticas y escenarios | Notebook Python (~4h). (1) Extender el modelo de S4 incorporando CxC y FNCER. (2) Definir 4 escenarios (variando: precio gas, factor planta solar, elasticidad demanda, frecuencia El Niño). (3) Simular cada escenario con 3 estrategias de inversión diferentes. (4) Construir tabla de robustez: ¿qué estrategia tiene menor pérdida máxima? (5) Producir recomendaciones accionables para un planificador. | 3.0 | Modelo extendido + informe |
+| Actividad asíncrona | ¿El CxC estabiliza el sistema o crea nuevas oscilaciones? ¿Genera un lock-in en térmica? Argumentar con resultados del modelo y con Arango & Larsen. + 2 comentarios a compañeros. | 1.0 | Post + comentarios |
+| Proyecto: Avance 2 | Modelo de SD calibrado del caso + análisis de ciclos y retardos + análisis de sensibilidad + escenarios preliminares. 2,000 palabras + diagramas. | 2.0 | Avance 2 |
+| **TOTAL AUTÓNOMO** | | **10** | |
+
+### Sesión Sincrónica — 2 horas
+
+| Momento | Actividad | Duración | Propósito |
+|---------|-----------|----------|-----------|
+| Apertura | Dudas sobre retardos (material, de información), análisis de sensibilidad y construcción de escenarios. | 10 min | Resolver dudas técnicas. |
+| Evaluación | Todos los grupos presentan Avance 2 (5 min c/u). Segundo checkpoint formal. | 45 min | Retroalimentación directa a cada grupo. |
+| Retroalimentación | Buenas prácticas: validación con datos, pruebas de condiciones extremas, documentación de supuestos. | 25 min | Mejorar rigor del modelamiento. |
+| Ejercicio vivo | 3 políticas posibles para un modelo simplificado: ¿cuál produce mejor resultado a 10 años? Predecir y luego simular. | 25 min | Evaluar intuición dinámica. |
+| Cierre | Cierre del módulo de Dinámica. Introducción a S6: "el modelo no captura todo — necesitamos incorporar la dimensión humana, social y de gobernanza." | 15 min | Orientar semana 6. |
+
+### Lecturas y Recursos
+- *Sensitive intervention points in the post-carbon transition* — Farmer et al., Science, 2019.
+- *Cycles in deregulated electricity markets* — Arango & Larsen, Energy Policy, 2011.
+- Colombia Energy Policy Review — IEA.
+- Ley 2099 de 2021.
+- Escenarios UPME de demanda energética.
+- *Decision Making under Deep Uncertainty* — Marchau et al., Cap. 1 (Open Access, recomendada).
+
+---
+
+## SEMANA 6: Integración — Análisis Sistémico Completo con Dimensión de Gobernanza
+**Convergencia de redes, dinámica de sistemas y la dimensión social**
+
+**Caso ancla: Proyecto eólico Windpeshi (La Guajira, 200 MW) — comunidades Wayuu, consulta previa y licencia social**
+
+Semana integradora que demuestra cómo combinar todas las herramientas del curso (redes, dinámica de sistemas) con la dimensión que los modelos cuantitativos no capturan: actores con intereses en conflicto, gobernanza policéntrica, justicia energética y consulta previa. En Colombia, la licencia social es tan determinante para la viabilidad de un proyecto como su TIR financiera. El estudiante analiza el caso Windpeshi desde cuatro capas complementarias (estructura física, dinámica de mercado, red de actores, gobernanza) y produce un informe de consultoría sistémica integrado que sirve como "ensayo general" del proyecto final. La sesión sincrónica incluye una actividad experiencial breve de negociación multi-actor.
+
+### Bloque Autónomo — 10 horas
+
+| Actividad | Descripción | Horas | Entrega |
+|-----------|-------------|-------|---------|
+| Video-lecciones | 6.1 Integrando redes y dinámica: el framework multi-capa. Cómo la topología de red condiciona las dinámicas: la centralidad de un nodo determina su exposición a fallas; las redes de actores condicionan la velocidad de adopción de políticas (15 min). 6.2 El proyecto energético como sistema socio-técnico-ambiental. Gobernanza policéntrica de Ostrom aplicada a energía colombiana: múltiples centros de autoridad (gobierno, CREG, XM, comunidades, municipios). Consulta previa y licencia social como dinámica sistémica (12 min). 6.3 Las 3 dimensiones de justicia energética (Sovacool): distributiva (¿cómo se reparten costos y beneficios?), procedimental (¿quién participa en las decisiones?), de reconocimiento (¿se respetan las identidades culturales?). Aplicación al caso La Guajira-Wayuu (10 min). 6.4 Comunicando complejidad a audiencias no técnicas: del análisis a la recomendación accionable (10 min). | 2.5 | Quizzes |
+| Lectura dirigida | Ostrom, *Governing the Commons*, Cap. 1 (resumen provisto). Informe Contraloría sobre FNCER en La Guajira. Sovacool et al. (2017): *New frontiers for energy justice*. | 1.5 | Antes de actividad |
+| Caso integrador: Windpeshi | Cada grupo recibe el dossier completo del Proyecto Windpeshi y produce un análisis sistémico integrado con cuatro capas: (1) **Estructura física** — NetworkX: ¿dónde se conecta al STN? ¿cuáles son los cuellos de botella topológicos? (2) **Dinámica de mercado** — Modelo S&F (extensión del modelo de S4-S5): ¿qué pasa con precios y capacidad al incorporar 200 MW eólicos? (3) **Red de actores** — Grafo de actores: ¿quién tiene poder? ¿dónde están los conflictos y alianzas? (4) **Gobernanza y justicia** — Análisis cualitativo estructurado: ¿la consulta previa está garantizada? ¿cómo se distribuyen costos y beneficios? ¿qué retroalimentaciones sociales están fuera del modelo cuantitativo? | 4.0 | Informe integrador (2,000 palabras + diagramas y código) |
+| Preparación role-play breve | Cada estudiante recibe un rol para la actividad sincrónica (desarrollador EPM, líder Wayuu, regulador CREG, autoridad ambiental ANLA). Prepara posición e intereses en 1 página. | 1.0 | Ficha de rol |
+| Proyecto integrador | Integrar dimensión social, ambiental y de gobernanza al análisis del caso del grupo: mapa de actores, análisis de gobernanza, dinámicas de conflicto/cooperación. | 1.0 | Sección social borrador |
+| **TOTAL AUTÓNOMO** | | **10** | |
+
+### Sesión Sincrónica — 2 horas
+
+| Momento | Actividad | Duración | Propósito |
+|---------|-----------|----------|-----------|
+| Apertura | Encuadre: la integración de lo cuantitativo y lo cualitativo. Contextualización del caso Windpeshi. | 10 min | Enmarcar la sesión. |
+| Presentación integradora | 3 grupos presentan su análisis de 4 capas del caso Windpeshi. Estructura: "La red" → "La dinámica" → "Los actores y la gobernanza" → "Recomendaciones integradas". | 45 min | Verificar capacidad de integración. |
+| Role-play breve | Negociación multi-actor: socialización del proyecto eólico. 3 mesas simultáneas (10 min). Debrief colectivo: ¿qué dinámicas emergieron? ¿se replicó lo que ocurre en la realidad? Conexión con Ostrom y pensamiento sistémico. | 30 min | Experiencia vivencial + reflexión. |
+| Discusión | ¿Qué dimensiones del sistema escapan a nuestras herramientas cuantitativas? ¿Cómo integrar lo social en el proyecto del grupo? | 20 min | Orientar integración al informe final. |
+| Cierre | Orientaciones para semana 7: desarrollo intensivo del proyecto + peer review. | 15 min | Preparar semana taller. |
+
+### Lecturas y Recursos
+- *Governing the Commons* (Cap. 1) — Elinor Ostrom.
+- Evaluación de proyectos FNCER en La Guajira — Contraloría General.
+- *New frontiers for energy justice* — Sovacool et al., Energy Policy, 2017.
+- Marco normativo de consulta previa — Ministerio del Interior.
+
+---
+
+## SEMANA 7: Construcción del Proyecto — Integración y Recomendaciones
+**Semana taller — desarrollo por caso de los grupos; no se introduce contenido nuevo**
+
+Semana dedicada al desarrollo intensivo del proyecto por parte de cada grupo, integrando las tres capas de análisis (complejidad, redes y dinámica de sistemas) con la dimensión social y de gobernanza. El estudiante transita de "analista" a "consultor": debe traducir hallazgos complejos en recomendaciones estratégicas accionables para un tomador de decisiones específico. Las sesiones se centran en retroalimentación profunda al proyecto de cada grupo, con un componente de evaluación entre pares.
+
+### Bloque Autónomo — 10 horas
+
+| Actividad | Descripción | Horas | Entrega |
+|-----------|-------------|-------|---------|
+| Video-lecciones | 7.1 Marco integrado de análisis sistémico: de los datos a la recomendación (15 min). 7.2 Comunicando complejidad a audiencias no técnicas (12 min). | 1.5 | Quiz |
+| Lectura dirigida | Page, *The Model Thinker* — capítulo sobre many-model thinking (resumen). | 1.0 | — |
+| Proyecto: Avance 3 | Integración completa: complejidad + redes + SD + dimensión social + recomendaciones preliminares. 2,500 palabras + diagramas + código. | 4.5 | Avance 3 |
+| Peer review | Cada grupo publica resumen ejecutivo de 1 párrafo. Pares evalúan: ¿la recomendación es accionable? ¿Qué falta? ¿Le serviría a un tomador de decisiones? | 1.0 | Post + review |
+| Preparación presentación | Diseñar presentación de 15 minutos para panel evaluador. Ensayar. | 2.0 | Borrador slides |
+| **TOTAL AUTÓNOMO** | | **10** | |
+
+### Sesión Sincrónica — 2 horas
+
+| Momento | Actividad | Duración | Propósito |
+|---------|-----------|----------|-----------|
+| Apertura | Dudas finales sobre integración de los tres pilares y dimensión social. | 10 min | Resolver dudas. |
+| Evaluación | Todos los grupos presentan Avance 3 (7 min c/u). Último checkpoint. | 50 min | Retroalimentación detallada. |
+| Retroalimentación | Señalamiento de fortalezas y brechas de cada proyecto. Orientaciones específicas para el informe final. | 30 min | Guía para la entrega final. |
+| Ensayo | Simulacro breve: cada grupo practica 3 minutos. Retroalimentación de comunicación. | 20 min | Mejorar presentación. |
+| Cierre | Logística semana 8. | 10 min | |
+
+### Lecturas y Recursos
+- *The Model Thinker* — Scott Page (capítulo sobre many-model thinking).
+- Guías de la UPME para informes de consultoría energética.
+
+---
+
+## SEMANA 8: Cierre — Presentaciones Finales y Horizontes Futuros
+**Del análisis sistémico a la acción estratégica**
+
+Los estudiantes presentan sus informes de consultoría sistémica ante un panel compuesto por el profesor y un profesional invitado del sector energético colombiano. El bloque autónomo se dedica exclusivamente a pulir el informe y la presentación, e incluye una video-lección de cierre sobre herramientas avanzadas que constituyen el horizonte natural de profundización.
+
+### Bloque Autónomo — 10 horas
+
+| Actividad | Descripción | Horas | Entrega |
+|-----------|-------------|-------|---------|
+| Video-lección | 8.1 Fronteras del campo: modelos basados en agentes con Mesa (Wilensky & Rand), Robust Decision Making formal con PRIM/Rhodium (RAND Corporation), y aprendizaje automático aplicado a redes y sistemas energéticos como horizonte futuro. Mensaje: "El toolkit de este curso es el primer piso, no el techo. Cada herramienta presentada aquí es una vía completa de profundización." (15 min). | 1.0 | Quiz final |
+| Informe final | Informe de consultoría sistémica (6,000–8,000 palabras): análisis de complejidad, análisis de redes (física y/o social), modelo de dinámica de sistemas, dimensión social y de gobernanza, recomendaciones estratégicas accionables. | 5.0 | Informe final |
+| Presentación | Refinar presentación de 15 minutos incorporando retroalimentación de semana 7. | 2.0 | Slides finales |
+| Reflexión individual | Ensayo de 500 palabras: ¿cómo cambió mi forma de analizar proyectos energéticos después de este curso? | 1.0 | Ensayo |
+| Notebooks | Revisión y documentación final de los Notebooks de Python (redes + dinámica). | 1.0 | Código final |
+| **TOTAL AUTÓNOMO** | | **10** | |
+
+### Sesión Sincrónica — 3 horas (extendida)
+
+| Momento | Actividad | Duración | Propósito |
+|---------|-----------|----------|-----------|
+| Recapitulación | "¿Qué sabemos hacer hoy que no sabíamos en S1?" Recorrido visual del arco del curso. | 15 min | Cerrar arco narrativo. |
+| Panel | Presentaciones de todos los grupos (15 min + 10 min preguntas c/u). Panel: profesor + profesional invitado. Se evalúa: integración de herramientas, calidad de recomendaciones, capacidad de defensa. | 120 min | Evaluación sumativa final. |
+| Deliberación | El panel delibera. Retroalimentación general y reconocimientos. | 15 min | Cierre evaluativo. |
+| Cierre | Reflexión sobre el viaje de 8 semanas. Conexión con la práctica profesional. Invitación a publicar, implementar o seguir profundizando. | 10 min | Cierre del curso. |
+
+Nota sobre la video-lección 8.1: el profesor presenta herramientas avanzadas que constituyen el horizonte natural de profundización: modelos basados en agentes con Mesa (Wilensky & Rand, Weidlich & Veit), Robust Decision Making formal con PRIM/Rhodium (RAND Corporation), y aprendizaje automático sobre redes y series temporales energéticas. Esto posiciona al estudiante para seguir aprendiendo y le muestra que el toolkit del curso es el primer piso, no el techo.
+
+---
+
+# 7. PROYECTO INTEGRADOR: INFORME DE CONSULTORÍA SISTÉMICA
+
+## 7.1 Descripción
+
+El proyecto es el eje central del curso (45% de la nota). Grupos de 3 estudiantes seleccionan un caso energético real en Colombia y producen un informe de consultoría sistémica que integra progresivamente las herramientas del curso. El entregable final no es un ejercicio académico: es un documento que un tomador de decisiones del sector (inversionista, regulador, comunidad) podría usar como insumo para una decisión real.
+
+## 7.2 Casos Sugeridos
+
+| Caso | Descripción y preguntas orientadoras |
+|------|--------------------------------------|
+| Proyecto eólico Windpeshi (La Guajira) | 200 MW. Actores: EPM, comunidades Wayuu, MME, ANLA. Dinámicas de consulta previa. Retardos de transmisión. ¿Es viable sistémicamente? |
+| Proyecto solar El Paso (Cesar) | 86 MW, primer solar a gran escala. Dinámicas de mercado y precio. ¿Qué aprendizajes sistémicos deja para proyectos futuros? |
+| Hidroeléctrica Ituango | Mega-proyecto con crisis. Dinámicas de gestión de riesgo, retardos, impacto en el SIN. ¿Qué estrategia minimiza el regret? |
+| Generación distribuida solar urbana | Techos solares en Bogotá/Medellín. Adopción vía redes sociales, tipping points, regulación. ¿Qué política acelera la transición? |
+| Hidrógeno verde en La Guajira | Incertidumbre profunda en costos y demanda. ¿Vale la pena la apuesta bajo qué condiciones? |
+| Microgrids en ZNI | Zonas No Interconectadas. Gobernanza comunitaria, sostenibilidad técnica y social. ¿Qué diseño institucional maximiza la resiliencia? |
+
+## 7.3 Cronograma de Entregas
+
+| Sem. | Entregable | Contenido clave | Peso | Evaluación |
+|------|-----------|-----------------|------|------------|
+| 1 | Ficha de proyecto | Caso, actores, preguntas | Formativo | Autónomo |
+| 2 | Esquema de redes | Redes del caso + 600 palabras | Formativo | Sincrónico |
+| 3 | Avance 1: CLD + análisis de red | 1,500 palabras | 5% | Sincrónico |
+| 5 | Avance 2: SD calibrado + escenarios | 2,000 palabras | 5% | Sincrónico |
+| 7 | Avance 3: Integración completa | 2,500 palabras | 5% | Sincrónico |
+| 8 | Informe final + Presentación | 6,000–8,000 palabras | 25% + 5% | Panel |
+
+## 7.4 Estructura del Informe Final
+
+| Sección | Contenido |
+|---------|-----------|
+| 1. Caso y contexto | Descripción del proyecto, contexto regulatorio colombiano, pregunta central de análisis. |
+| 2. Análisis de complejidad | Identificación de adaptación, no linealidad, eventos extremos, retroalimentaciones, efectos de memoria. |
+| 3. Análisis de redes | Red física y/o social relevante: topología, métricas, nodos críticos, dinámica sobre la red si aplica. Leyes de potencia, verificación N-1, fallas en cascada. |
+| 4. Modelo de dinámica de sistemas | Modelo en Python: stocks, flujos, ciclos positivos/negativos, retardos, calibración, intervenciones de política, análisis de escenarios y resultados. |
+| 5. Dimensión social, ambiental y gobernanza | Mapa de actores, análisis de gobernanza (Ostrom), consulta previa si aplica, justicia energética (distributiva, procedimental, de reconocimiento). |
+| 6. Recomendaciones estratégicas | Dirigidas a un tomador de decisiones específico. Accionables, priorizadas, con condiciones de validez. Tabla de robustez si aplica. |
+| 7. Limitaciones y horizonte futuro | Qué no captura el análisis. Qué herramientas adicionales (ABM, RDM formal, ML sobre redes) serían valiosas para profundizar. |
+
+---
+
+# 8. VENTANAS AL ESTADO DEL ARTE: HERRAMIENTAS AVANZADAS
+
+El curso se concentra en las herramientas de uso profesional consolidado: complejidad, redes y dinámica de sistemas implementadas en Python. El campo tiene sin embargo un horizonte mucho más amplio. Esta sección documenta tres familias de herramientas avanzadas que el estudiante encontrará referenciadas en la video-lección 8.1 y que constituyen caminos naturales de profundización posterior.
+
+## 8.1 Modelos Basados en Agentes (Mesa, Python)
+
+Permiten simular sistemas desde abajo: cada actor (generador, prosumidor, regulador) es un agente con reglas de decisión propias. El comportamiento macro del sistema (precios, adopción, congestión) emerge de las interacciones micro. Es particularmente útil cuando el comportamiento del sistema no se puede derivar del "agente representativo" — por ejemplo, cuando la adopción de techos solares depende de imitación social entre vecinos, no solo de cálculo económico individual. 
+
+Referencias: *An Introduction to Agent-Based Modeling* — Wilensky & Rand. *Agent-based wholesale electricity market models* — Weidlich & Veit, 2008. Documentación Mesa.
+
+## 8.2 Robust Decision Making Formal (PRIM, Rhodium)
+
+Extiende el análisis de escenarios del curso al siguiente nivel computacional: en lugar de 4 futuros cualitativos, se generan miles de futuros posibles mediante muestreo (Latin Hypercube), y algoritmos como PRIM identifican automáticamente las "regiones de vulnerabilidad" de cada estrategia. El marco XLRM estructura el análisis. Es la metodología de RAND Corporation para decisiones de infraestructura bajo incertidumbre profunda.
+
+Referencias: *Decision Making under Deep Uncertainty* — Marchau et al. (Open Access). *Robust Decision Making* — RAND Corporation. Rhodium — reed.cee.cornell.edu/software.
+
+## 8.3 Aprendizaje Automático Aplicado a Sistemas Energéticos
+
+La inteligencia artificial y el aprendizaje automático (machine learning) amplían el análisis de sistemas energéticos con capacidades predictivas y de reconocimiento de patrones: pronóstico de demanda, detección de anomalías en la operación del SIN, clasificación de escenarios de riesgo, y análisis avanzado sobre grafos (Graph Neural Networks) para predicción de fallas en cascada y detección de comunidades. Estas técnicas complementan la electiva MISE de IA y constituyen una frontera activa de investigación aplicada.
+
+Referencias: *Graph Representation Learning* — William Hamilton (Open Access). PyTorch Geometric. Aplicaciones recientes en *Energy and AI*.
+
+---
+
+# 9. POLÍTICAS DEL CURSO
+
+## 9.1 Asistencia a Sesiones Sincrónicas
+
+La asistencia es obligatoria dado que las sesiones concentran evaluación directa (ejercicios en vivo, presentaciones). Se permite un máximo de 1 inasistencia justificada con trabajo compensatorio acordado con el profesor. Las sesiones se graban, pero la grabación no sustituye la participación evaluada.
+
+## 9.2 Entregas
+
+Los avances del proyecto y laboratorios deben entregarse 24–48 horas antes de la sesión sincrónica para que el profesor pueda preparar retroalimentación específica. Entregas fuera de plazo: penalización de 10% por día. Los grupos que no entregan pierden la oportunidad de presentar en la sesión correspondiente.
+
+## 9.3 Integridad Académica e IA Generativa
+
+El uso de herramientas de IA generativa es permitido y alentado como herramienta de productividad (depurar código en Python, sintetizar lecturas, iterar sobre borradores). Sin embargo, debe declararse explícitamente y los entregables deben reflejar comprensión propia. La evaluación sincrónica (presentaciones, defensa oral, ejercicios en vivo) es el mecanismo de verificación: quien no entiende su propio trabajo no puede defenderlo ante el profesor y sus pares.
+
+## 9.4 Comunicación
+
+Canal principal: foro de anuncios de la plataforma. Consultas urgentes: mensajería interna. Tiempo de respuesta: 24 horas hábiles. Las dudas técnicas sobre Python, NetworkX o los módulos del curso pueden y deben resolverse primero entre pares, fomentando el aprendizaje colaborativo.
+
+---
+
+# 10. STACK TECNOLÓGICO DEL CURSO
+
+| Herramienta | Uso | Semanas |
+|-------------|-----|---------|
+| **Python 3.x** | Lenguaje único del curso | Todas |
+| **NetworkX** | Modelado y análisis de redes complejas | S2-S3, S6 |
+| **scipy.integrate** | Simulación de modelos de Stocks & Flujos (ODEs) | S4-S5, S6 |
+| **Módulo `mise_sd`** (propio del curso) | Definición declarativa de diagramas S&F, renderizado automático, panel interactivo de simulación y sensibilidad | S4-S5 |
+| **matplotlib / plotly** | Visualización de datos, redes y resultados de simulación | Todas |
+| **Jupyter Notebooks** | Entorno de trabajo, entrega de laboratorios y proyecto | Todas |
+| **Google Colab** (opcional) | Entorno pre-configurado en la nube para estudiantes sin instalación local | Todas |
+
+El curso asume nivel de programación básico. Los notebooks vienen con código base funcional y el estudiante completa secciones específicas (estilo "fill-in-the-blanks"). Se proporciona entorno pre-configurado (Google Colab o repositorio GitHub con `environment.yml`).

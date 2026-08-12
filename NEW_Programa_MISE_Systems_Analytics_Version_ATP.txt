@@ -1,0 +1,261 @@
+Programa del curso
+Systems Analytics for Energy Systems
+1. Identificación del curso
+Facultad o departamento
+Facultad de Ingeniería
+Programa
+Maestría en Innovación de Sistemas Energéticos (MISE)
+Año y semestre
+2026-1
+Nombre del curso
+Systems Analytics for Energy Systems
+Duración en semanas
+8 semanas
+Sesiones sincrónicas
+Horario: por definir · Sala de Zoom: por definir
+Número de créditos y horas de dedicación esperada del estudiante
+2 créditos · 12 horas semanales de dedicación del estudiante (10 h autónomas + 2 h sincrónicas)
+Información del/la profesor(a)
+Nombre: por definir · Correo electrónico institucional: por definir · Horario de atención: por definir
+Información tutor(a)
+Nombre: por definir · Correo electrónico institucional: por definir · Horario de atención: por definir
+2. Aspectos generales del curso
+Descripción
+Análisis sistémico de proyectos energéticos es un curso que equipa al estudiante con las herramientas analíticas necesarias para diseñar, evaluar y comunicar proyectos energéticos comprendidos como sistemas complejos. La MISE forma profesionales que deben liderar la gestión energética con visión técnica, económica, ambiental y social; esto implica que el egresado no solo debe entender la física del sistema eléctrico, sino ver el proyecto energético como la integración de múltiples partes de un sistema complejo donde interactúan infraestructura, mercados, reguladores, comunidades y el clima.
+El análisis convencional de proyectos resulta insuficiente cuando el sistema exhibe retroalimentaciones, retardos, comportamientos emergentes y estructuras de red no triviales. Por ello, el curso articula tres pilares analíticos complementarios: (i) pensamiento de complejidad como marco conceptual (adaptación, no linealidad, eventos extremos); (ii) análisis de redes complejas como lenguaje para describir la estructura de la infraestructura y de las interacciones sociales; y (iii) dinámica de sistemas como herramienta cuantitativa para simular la evolución temporal del sistema. La dimensión social, ambiental y de gobernanza atraviesa los tres pilares como capa transversal.
+El curso se diferencia al integrar complejidad, redes y dinámica de sistemas en una misma secuencia, anclada en casos reales del sector colombiano: un sistema híbrido hidro-térmico expuesto a los fenómenos de El Niño y La Niña, con entrada acelerada de FNCER, tensiones de consulta previa y un mercado mayorista con dinámicas propias. A lo largo de 8 semanas el estudiante construye un Informe de Consultoría Sistémica sobre un caso energético colombiano real que un tomador de decisiones del sector podría usar como insumo para una decisión real.
+Resultados de aprendizaje del curso y alineación con el programa
+En el siguiente listado encuentra los Resultados de Aprendizaje del Curso (RAC) y posteriormente, en la tabla, podrá ver su alineación con los Resultados de Aprendizaje del programa MISE y las competencias disciplinares y transversales a las que el curso aporta.
+RAC 1. Analizar proyectos energéticos bajo el paradigma de sistemas complejos, incorporando interrelaciones y causalidades entre actores y componentes del sistema, a lo largo de la cadena de valor de la energía, identificando adaptación, no linealidad, eventos extremos, retroalimentaciones y efectos de memoria, para evaluar el potencial y los riesgos sistémicos de tecnologías de generación, transporte, almacenamiento y descarbonización.
+RAC 2. Aplicar análisis de redes complejas (topología, métricas globales y locales, dinámica sobre redes y redes de actores) a la infraestructura eléctrica y a las redes socio-institucionales asociadas a proyectos energéticos, para identificar nodos críticos, riesgos de cascada y palancas de adopción tecnológica relevantes para la transición energética.
+RAC 3. Formular modelos de dinámica de sistemas con stocks, flujos, ciclos de refuerzo/balance y retardos, calibrados con datos del sector eléctrico colombiano, incorporando intervenciones de política, restricciones normativas y análisis de escenarios bajo incertidumbre profunda, para evaluar la viabilidad técnico-económica y la robustez de proyectos energéticos innovadores.
+RAC 4. Integrar la dimensión social, ambiental, ética y de gobernanza al análisis sistémico, asegurando el cumplimiento normativo en la cadena de valor de la energía, y formular recomendaciones estratégicas accionables comunicables a audiencias técnicas y no técnicas, demostrando habilidades efectivas de comunicación y colaboración interdisciplinaria.
+
+Resultados de aprendizaje del curso (RAC)
+Resultados de aprendizaje del programa
+Competencias del programa
+RAC 1. Analizar proyectos energéticos bajo el paradigma de sistemas complejos.
+RA1.5. Evaluar la viabilidad técnica y económica de nuevas tecnologías y de la transición energética.
+Disciplinares: Materias Primas y Procesos Energéticos (analizar y diseñar sistemas energéticos basados en un enfoque integral de la cadena de valor energética); Sostenibilidad y Cambio Climático (desarrollar proyectos que promuevan la sostenibilidad energética y la mitigación del cambio climático).
+Transversales: Aprendizaje Continuo.
+RAC 2. Aplicar análisis de redes para estudiar la estructura interconectada de la infraestructura y los actores en sistemas energéticos.
+RA2.5. Identificar retos en transporte y almacenamiento (sistemas centralizados y distribuidos).
+Disciplinares: Almacenamiento y Transporte Energético (evaluar y proponer soluciones para la infraestructura de transporte y almacenamiento de energía); Materias Primas y Procesos Energéticos.
+Transversales: Aprendizaje Continuo.
+RAC 3. Formular modelos de dinámica de sistemas para evaluar decisiones y políticas considerando su influencia causal en el comportamiento del sistema energético completo.
+RA3.2. Aplicar herramientas económicas y modelos de negocio para descarbonización.
+Disciplinares: Sostenibilidad y Cambio Climático (tecnologías y políticas de descarbonización); Materias Primas y Procesos Energéticos.
+Transversales: Aprendizaje Continuo.
+RAC 4. Integrar dimensión socio-ambiental con análisis técnico-económico para evaluar y comunicar recomendaciones estratégicas en sistemas energéticos.
+RA4. Asegurar cumplimiento normativo y socioambiental en la cadena de valor energética.
+Disciplinares: Sostenibilidad y Cambio Climático.
+Transversales: Ética (identificar y abordar desafíos éticos en la transición energética); Comunicación (comunicar conceptos técnicos a diversas audiencias para facilitar la colaboración multidisciplinaria); Aprendizaje Continuo.
+3. Metodología
+a. Metodología
+El curso adopta una metodología híbrida que combina tres estrategias didácticas complementarias: aprendizaje basado en proyectos (un proyecto integrador transversal de 8 semanas que constituye el 45% de la nota); estudio de caso (cada semana gira alrededor de un caso energético colombiano real que actúa como vehículo pedagógico, con la teoría introduciéndose al servicio del caso); y aprendizaje basado en problemas (laboratorios aplicados en Python/Jupyter con datos reales del sector). La integración de estas tres estrategias produce una secuencia coherente con la naturaleza profesionalizante de la MISE.
+Cada semana sigue una secuencia didáctica homogénea de cinco momentos: Motivación (Mo) — apertura con un caso real o dato impactante que detona la curiosidad; Contenidos (Co) — video-lecciones del profesor con quizzes embebidos y lectura dirigida; Práctica (Pr) — laboratorio en Python/Jupyter o ejercicio aplicado sobre datos reales; Evaluación (Ev) — mecanismos formativos y sumativos (foros, quizzes, ejercicios en vivo); y Proyecto (Proy) — avance semanal del proyecto integrador. Esta repetición rítmica reduce la carga cognitiva de navegación y permite al estudiante concentrarse en aprender.
+
+b. Estructura del curso
+El curso se organiza en tres módulos articulados por el proyecto integrador. La última columna indica si la semana tiene encuentro sincrónico (todas lo tienen, ya que el curso opera bajo el modelo virtual con sesión sincrónica semanal de 2 horas, ampliada a 3 horas en la Semana 8 para el panel evaluador).
+Módulo
+Semana
+Título y descripción
+Módulo 1. Complejidad y Redes en Sistemas Energéticos
+1
+Introducción a los Sistemas Complejos. Caso ancla: crisis de El Niño 2015–2016 en el sector eléctrico colombiano. Vocabulario de complejidad (adaptación, no linealidad, eventos extremos, retroalimentación, emergencia) sin programación.
+
+2
+Redes I — Topología y Métricas. Caso ancla: el Sistema Interconectado Nacional (SIN) como red física. Construcción de grafos en NetworkX, centralidades, criterio N-1, simulación de fallas en cascada.
+
+3
+Redes II — Dinámica sobre Redes y Redes de Actores. Caso ancla: adopción de energía solar distribuida en Bogotá/Medellín. Modelos de contagio, redes de actores del mercado mayorista. Checkpoint Avance 1.
+Módulo 2. Dinámica de Sistemas y Decisiones bajo Incertidumbre
+4
+Dinámica de Sistemas I — Pensamiento Sistémico, Stocks y Flujos. Caso ancla: ciclo de inversión-capacidad en generación eléctrica colombiana. Modelos en scipy.integrate, oscilaciones precio-capacidad.
+
+5
+Dinámica de Sistemas II — Políticas, Escenarios e Incertidumbre. Caso ancla: efecto del Cargo por Confiabilidad y la entrada de FNCER. Análisis de escenarios y robustez. Checkpoint Avance 2.
+Módulo 3. Integración Sistémica y Proyecto de Consultoría
+6
+Integración — Análisis Sistémico Completo con Dimensión de Gobernanza. Caso ancla: proyecto eólico Windpeshi (La Guajira) — comunidades Wayuu, consulta previa y licencia social. Role-play multi-actor en sincrónica.
+
+7
+Construcción del Proyecto — Integración y Recomendaciones. Semana taller: desarrollo intensivo por caso de los grupos. Tránsito de analista a consultor. Checkpoint Avance 3.
+
+8
+Cierre — Actividad de Evaluación Sumativa. Presentación del Informe de Consultoría Sistémica ante panel (profesor + profesional invitado del sector). Cápsula sobre fronteras del campo (ABM, RDM, GNN).
+4. Evaluación
+La evaluación está diseñada como un sistema de evidencias: cada componente evaluativo produce evidencia específica de uno o varios Resultados de Aprendizaje del Curso (RAC). No hay examen parcial; la evaluación es continua y se distribuye en tres componentes: bloque autónomo (40%), bloque sincrónico (15%) y proyecto integrador transversal (45%). La trazabilidad es bidireccional: desde el RAC se identifica qué evidencia lo soporta, y desde cada evidencia se lee qué RAC verifica.
+Actividades de evaluación
+Actividades de evaluación
+Tipo de entrega
+Porcentaje
+Fecha de entrega
+PROYECTO INTEGRADOR
+
+45%
+
+Ficha de proyecto (caso, actores, preguntas)
+Grupal
+Formativa
+Semana 1
+Esquema de redes del caso (~600 palabras + diagrama)
+Grupal
+Formativa
+Semana 2
+Avance 1: CLD + análisis de red (~1.500 palabras)
+Grupal
+5%
+Semana 3
+Avance 2: modelo SD calibrado + sensibilidad + normativa (~2.000 palabras)
+Grupal
+5%
+Semana 5
+Avance 3: integración completa (~2.500 palabras)
+Grupal
+5%
+Semana 7
+Informe final de Consultoría Sistémica (5.000–7.000 palabras)
+Grupal
+25%
+Semana 8
+Presentación oral ante panel evaluador
+Grupal
+5%
+Semana 8
+BLOQUE AUTÓNOMO
+
+40%
+
+Quizzes embebidos en video-lecciones (8 quizzes)
+Individual
+5%
+Semanas 1–8
+Laboratorios aplicados en Python/Jupyter (4 labs): Lab 1 redes físicas (SIN) · Lab 2 redes sociales/actores · Lab 3 SD básico · Lab 4 SD con políticas y escenarios
+Individual / Grupal
+25%
+Semanas 2, 3, 4, 5
+Participación en foros del caso (8 foros)
+Individual
+5%
+Semanas 1–8
+Reflexión individual final (~500 palabras)
+Individual
+Formativa
+Semana 8
+BLOQUE SINCRÓNICO
+
+15%
+
+Ejercicios evaluativos en vivo (8 ejercicios, uno por sesión)
+Individual
+10%
+Semanas 1–8
+Presentaciones y defensa oral de avances en sesión (mínimo 3 por grupo)
+Grupal
+5%
+Semanas 3, 5, 7
+TOTAL
+
+100%
+
+Cronograma de evaluación por semana
+Módulo
+Semana
+Actividades de evaluación
+Tipo de entrega
+Porcentaje
+Módulo 1. Complejidad y Redes
+1
+Quiz video-lecciones · Foro del caso · Ejercicio en vivo · Mapa causal informal · Ficha de proyecto
+Individual / Grupal
+≈ 2% (continua)
+
+2
+Quiz · Foro · Ejercicio en vivo · Lab 1 (redes físicas SIN) · Esquema de redes del proyecto
+Individual / Grupal
+≈ 8%
+
+3
+Quiz · Foro · Ejercicio en vivo · Lab 2 (redes sociales/actores) · Avance 1 del proyecto · Defensa oral
+Individual / Grupal
+≈ 13%
+Módulo 2. Dinámica de Sistemas
+4
+Quiz · Foro · Ejercicio en vivo · Lab 3 (SD básico — ciclo inversión-capacidad) · Estructura SD preliminar
+Individual / Grupal
+≈ 8%
+
+5
+Quiz · Foro · Ejercicio en vivo · Lab 4 (SD con políticas y escenarios) · Avance 2 del proyecto · Defensa oral
+Individual / Grupal
+≈ 13%
+Módulo 3. Integración Sistémica
+6
+Quiz · Foro de justicia energética · Ejercicio en vivo (role-play multi-actor) · Análisis 4 capas del caso Windpeshi
+Individual / Grupal
+≈ 3%
+
+7
+Quiz · Foro de revisión por pares · Ejercicio en vivo · Avance 3 del proyecto · Defensa oral
+Individual / Grupal
+≈ 8%
+
+8
+Quiz final · Reflexión individual · Informe final de Consultoría Sistémica · Presentación ante panel evaluador
+Individual / Grupal
+≈ 35%
+Política de entregas tardías
+Las entregas del proyecto integrador (Avance 1, Avance 2, Avance 3 e Informe Final) son improrrogables: se reciben hasta las 23:59 horas del día indicado en el cronograma. Por cada día calendario de retraso se descontará un 10% sobre la nota máxima del entregable. Después de 3 días calendario, la entrega no será aceptada y se calificará con cero (0.0). Para laboratorios, quizzes y foros aplica la misma política. Las solicitudes de extensión deben presentarse al profesor por correo electrónico con al menos 48 horas de anticipación y solo serán consideradas en circunstancias excepcionales debidamente sustentadas.
+5. Asistencia a clases
+La asistencia a las sesiones sincrónicas es obligatoria. De conformidad con el Reglamento General de Estudiantes de Maestría de la Universidad de los Andes, el profesor define si lleva control de asistencia y establece las consecuencias académicas en caso de que la inasistencia supere el veinte por ciento (20%).
+Para el caso de este curso se llevará registro de asistencia a través de la plataforma de Zoom (lista de asistentes). La inasistencia a más de 2 sesiones sincrónicas (sin justificación válida) tendrá las siguientes implicaciones: el estudiante no podrá presentar el ejercicio evaluativo en vivo correspondiente a esas sesiones (calificación 0.0 en cada uno) y se notificará al programa MISE si se supera el 20% de inasistencias en el semestre.
+En caso de no asistir a una sesión sincrónica, el estudiante deberá justificar su ausencia dentro de los tres (3) días calendario siguientes a la sesión. Se recomienda informar por correo al profesor la razón de la ausencia dentro de las 24 horas siguientes a la fecha de la actividad académica.
+Algunas sesiones sincrónicas, anunciadas desde el inicio del curso, incluirán actividades evaluativas (ejercicios en vivo, presentaciones de avances, panel evaluador). La no participación en estas actividades implicará una calificación de cero (0.0), de acuerdo con lo establecido en el reglamento, salvo justificación válida para acceder a supletorio.
+6. Solicitud de supletorios
+En caso de no asistir a una actividad evaluativa realizada durante una sesión sincrónica, el estudiante deberá presentar una justificación debidamente sustentada ante el profesor dentro de los tres (3) días calendario siguientes a la fecha de la evaluación para solicitar la realización de la actividad en otro momento, conforme al Reglamento General de Estudiantes de Maestría. Se recomienda informar por correo al profesor la razón de la ausencia dentro de las 24 horas siguientes a la fecha de la actividad académica.
+El profesor evaluará la justificación presentada y, en caso de considerarla válida, definirá la forma, fecha y condiciones de la actividad supletoria, la cual deberá realizarse dentro de las dos semanas siguientes a la aceptación de la justificación presentada. Las solicitudes deberán sustentarse en circunstancias excepcionales y verificables. La no presentación de la justificación en los tiempos establecidos, o su no aprobación, podrá dar lugar a la asignación de la calificación cero (0) en la actividad correspondiente.
+7. Bibliografía
+Bibliografía obligatoria
+Meadows, D. (2008). Thinking in Systems: A Primer. Chelsea Green Publishing. (Cap. 1–3)
+Sterman, J. (2000). Business Dynamics: Systems Thinking and Modeling for a Complex World. McGraw-Hill. (Cap. 1–5)
+Barabási, A.-L. Network Science. Cambridge University Press. (Cap. 2–6, 10). Open Access: networksciencebook.com
+Mitchell, M. (2009). Complexity: A Guided Tour. Oxford University Press. (Cap. 1–4)
+Taleb, N. N. (2007). The Black Swan: The Impact of the Highly Improbable. Random House. (Extractos seleccionados)
+Ostrom, E. (1990). Governing the Commons. Cambridge University Press. (Cap. 1)
+Pagani, G. A., & Aiello, M. (2013). The Power Grid as a Complex Network: A Survey. Physica A: Statistical Mechanics and its Applications, 392(11), 2688–2700.
+Watts, D. J. (2002). A Simple Model of Global Cascades on Random Networks. PNAS, 99(9), 5766–5771.
+Sovacool, B. K., Burke, M., Baker, L., Kotikalapudi, C. K., & Wlokas, H. (2017). New Frontiers and Conceptual Frameworks for Energy Justice. Energy Policy, 105, 677–691.
+Arango, S., & Larsen, E. R. (2011). Cycles in Deregulated Electricity Markets: Empirical Evidence from Two Decades. Energy Policy, 39(5), 2457–2466.
+Farmer, J. D., Hepburn, C., Ives, M. C., Hale, T., Wetzer, T., Mealy, P., Rafaty, R., Srivastav, S., & Way, R. (2019). Sensitive Intervention Points in the Post-carbon Transition. Science, 364(6436), 132–134.
+Bibliografía recomendada
+Newman, M. E. J. (2018). Networks: An Introduction (2nd ed.). Oxford University Press. (Cap. 6–8)
+Rogers, E. M. (2003). Diffusion of Innovations (5th ed.). Free Press.
+Marchau, V. A. W. J., Walker, W. E., Bloemen, P. J. T. M., & Popper, S. W. (Eds.). (2019). Decision Making under Deep Uncertainty: From Theory to Practice. Springer. (Cap. 1, Open Access)
+Page, S. E. (2018). The Model Thinker: What You Need to Know to Make Data Work for You. Basic Books.
+Wilensky, U., & Rand, W. (2015). An Introduction to Agent-Based Modeling. MIT Press.
+Weidlich, A., & Veit, D. (2008). A Critical Survey of Agent-Based Wholesale Electricity Market Models. Energy Economics, 30(4), 1728–1759.
+Hamilton, W. L. (2020). Graph Representation Learning. Morgan & Claypool. (Open Access)
+Fuentes del contexto colombiano
+UPME (2020). Plan Energético Nacional 2020–2050.
+UPME. Plan de Expansión de Referencia (Transmisión) — versión más reciente.
+XM. Informe de operación del Sistema Interconectado Nacional (SIN). Series históricas.
+XM. Informe de gestión de El Niño 2015–2016.
+XM. El mercado de energía mayorista en Colombia (documento técnico).
+Congreso de la República de Colombia. Ley 2099 de 2021 (Transición Energética).
+Comisión de Regulación de Energía y Gas (CREG). Resolución CREG 071 de 2006 (Cargo por Confiabilidad).
+Contraloría General de la República. Evaluación de proyectos FNCER en La Guajira.
+Ministerio del Interior. Marco normativo de consulta previa.
+IEA. Colombia Energy Policy Review.
+8. Uso de Inteligencia Artificial
+En este curso está permitido el uso de herramientas de inteligencia artificial generativa siempre que los estudiantes sigan las siguientes buenas prácticas de uso:
+(1) Uso informado: informarse previamente sobre cómo funciona la herramienta, sus limitaciones y riesgos, consultando los Lineamientos para el uso de inteligencia artificial generativa (IAG) de la Universidad de los Andes.
+(2) Uso transparente: reportar qué herramienta usaron y cómo la usaron en cada entregable (incluir una sección o anexo de uso de IA). En este curso, en particular, se exige reportar el uso de IA en los avances del proyecto y el informe final.
+(3) Uso íntegro: no presentar como propio el material generado por la herramienta y seguir las reglas de citación de fuentes que correspondan. La generación de modelos de dinámica de sistemas o análisis de redes asistida por IA es bienvenida siempre que el estudiante verifique, calibre y argumente los resultados.
+(4) Evaluación crítica: contrastar toda respuesta obtenida a través de la herramienta con fuentes de información confiables. Las cifras del sector energético colombiano deben verificarse con fuentes oficiales (XM, UPME, CREG, ANLA).
+(5) Uso responsable: no incluir información personal o confidencial (propia o ajena) al introducir instrucciones (prompts).
+Para una orientación más detallada sobre buenas prácticas y usos recomendados, véase los Lineamientos para el uso de inteligencia artificial generativa (IAG) en la Universidad de los Andes.
+9. Políticas de momentos difíciles
+Todas las personas pueden pasar por un momento difícil que de alguna manera pueda afectar nuestra vida en la Universidad. Pueden ser problemas en casa, con la pareja, incluso estrés por esta u otra materia. Si usted siente que está pasando por un momento complicado, sin importar el motivo, siéntase con la tranquilidad de hablar con el profesor para pedir tiempo o apoyo. Ningún trabajo o entrega puede sobrepasar su salud mental y física. Su bienestar es lo más importante.
+10. Nombres identitarios
+Usted podrá solicitar ser identificado/a con el nombre y los pronombres que usted prefiera y que pueden coincidir o no con su nombre legal registrado en banner. Por favor informe al docente al respecto. Si desea modificar su nombre registrado en banner y en todos los sistemas de la Universidad contáctese con cade@uniandes.edu.co

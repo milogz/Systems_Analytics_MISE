@@ -1,0 +1,127 @@
+﻿
+MAESTR═A EN INNOVACIËN DE SISTEMAS ENERG╔TICOS ù MISE
+Universidad de los Andes
+
+SYSTEMS ANALYTICS
+
+Anßlisis SistÚmico de Proyectos EnergÚticos
+
+Pensamiento SistÚmico À Dinßmica de Sistemas À Anßlisis de Escenarios
+
+Enfoque de Casos Aplicados al Sector ElÚctrico Colombiano
+Curso de MaestrÝa Profesionalizante | 8 Semanas | 2 CrÚditos
+
+2026
+
+1. INFORMACIËN GENERAL DEL CURSO
+2. VISIËN DEL CURSO
+2.1 ┐Por quÚ Systems Analytics en la MISE?
+La MISE forma profesionales que puedan "liderar la gesti¾n energÚtica con visi¾n tÚcnica, econ¾mica, ambiental y social." Esto implica que el egresado no solo debe entender la fÝsica del sistema elÚctrico, sino ver el proyecto energÚtico como una forma de integraci¾n de las partes de un sistema complejo  donde interact·an infraestructura, mercados, reguladores, comunidades y el clima. El anßlisis convencional de proyectos ù VPN, TIR, anßlisis de sensibilidad estßtico ù no es suficiente cuando el sistema exhibe retroalimentaciones, retardos, comportamiento emergente y futuros radicalmente inciertos.
+Systems Analytics equipa al estudiante con herramientas relevantes en la prßctica profesional del sector: pensamiento sistÚmico y diagramas de lazos causales (la lengua franca de la consultorÝa estratÚgica), dinßmica de sistemas (herramienta consolidada en planificaci¾n energÚtica), y anßlisis de escenarios bajo incertidumbre (prßctica estßndar en utilities, reguladores, consultoras e inversionistas desde McKinsey hasta IRENA y RAND). AsÝ, el curso desarrolla el pensamiento sistÚmico, aplicado de forma concreta mediante herramientas cuantitativas modernas.
+2.2 Posicionamiento Internacional
+Un benchmarking contra MIT, TU Delft, ETH Zurich y Stanford revela que los cursos de sistemas energÚticos existentes se centran en anßlisis tecno-econ¾mico (MIT/Sesame), anßlisis de actores cualitativo (Delft), optimizaci¾n matemßtica (ETH/MILP) o fundamentos fÝsicos (Stanford). La MISE se diferencia con un enfoque que integra pensamiento sistÚmico, modelamiento dinßmico y anßlisis de escenarios, todo anclado en casos reales del sector colombiano ù un sistema hÝbrido hidro-tÚrmico expuesto a los fen¾menos del Ni±o y de La Ni±a, con entrada acelerada de FNCER, tensiones de consulta previa y un mercado mayorista con dinßmicas propias.
+2.3 Principios de Dise±o
+Caso aplicado como vehÝculo pedag¾gico. Cada semana gira alrededor de un caso energÚtico colombiano real. La teorÝa se introduce al servicio del caso, no al revÚs. El egresado de una maestrÝa profesionalizante debe poder usar lo aprendido  en su dÝa a dÝa.
+Andamiaje gradual. El curso asume que es la primera exposici¾n del estudiante al anßlisis sistÚmico. Las semanas 1-2 son puramente cualitativas (pensar y dibujar). Las semanas 3-4 formalizan con dinßmica de sistemas cuantitativa. Las semanas 5-6 introducen escenarios e incertidumbre. Las semanas 7-8 integran todo en un entregable profesional.
+El proyecto como producto profesional. El proyecto integrador ocupa 3+ horas semanales y 45% de la nota. El entregable final es un informe de consultorÝa sistÚmica: un documento que un tomador de decisiones del sector podrÝa usar como insumo para una decisi¾n real, con lineamientos sobre posibles direccionamientos del proyecto en el futuro.
+Herramientas  prßcticas. Se priorizan las herramientas que efectivamente usan profesionales del sector: diagramas de lazos causales (consultorÝa estratÚgica), dinßmica de sistemas en Vensim (planificaci¾n energÚtica), y anßlisis de escenarios con Python (utilities, reguladores, inversionistas). Herramientas mßs acadÚmicas como  Robust Decision Making formal (Rhodium/PRIM) se presentan como ventanas al estado del arte, no como competencias exigidas.
+
+3. RESULTADOS OBJETIVOS DEL CURSO
+Al completar el curso, el estudiante serß capaz de:
+4. SISTEMA DE EVALUACIËN
+Peso del proyecto integrador: 45%. No hay examen parcial: la evaluaci¾n es continua a travÚs del proyecto y los ejercicios en vivo. Calificaci¾n aprobatoria mÝnima: 3.5/5.0.
+5. DISTRIBUCIËN DEL TIEMPO SEMANAL
+En semanas de entrega de avance (3, 5, 7), las horas de laboratorio se redirigen al proyecto, elevando su dedicaci¾n a 4-5 horas.
+
+6. PROGRAMA DETALLADO SEMANA A SEMANA
+SEMANA 1: ┐Por QuÚ Pensamiento SistÚmico?
+Caso ancla: La crisis de El Ni±o 2015-2016 en el sector elÚctrico colombiano
+Semana introductoria de bajo umbral tÚcnico. El estudiante descubre por quÚ el anßlisis convencional de proyectos (VPN, TIR, sensibilidad estßtica) resulta insuficiente cuando el proyecto estß inmerso en un sistema complejo. Se introduce el vocabulario bßsico: agentes, retroalimentaciones, emergencia, no linealidad, retardos. No se programa ni se modela cuantitativamente; se piensa y se dibuja. El caso de El Ni±o 2015-2016 muestra c¾mo retroalimentaciones entre hidrologÝa, precios de bolsa, decisiones de generadores tÚrmicos y se±ales regulatorias amplificaron una crisis que los modelos lineales no anticiparon.
+Bloque Aut¾nomo ù 10 horas
+Sesi¾n Sincr¾nica ù 2 horas
+Lecturas y Recursos
+Thinking in Systems: A Primer (Cap. 1-2) ù Donella Meadows. Plan EnergÚtico Nacional 2020-2050 (Resumen ejecutivo) ù UPME. Informe de gesti¾n de El Ni±o 2015-2016 ù XM.
+
+SEMANA 2: Diagramas de Lazos Causales ù La Herramienta Fundamental
+Caso ancla: El ciclo precio-oferta-demanda de la bolsa de energÝa colombiana
+Se formaliza el mapa causal de la semana anterior en un Diagrama de Lazos Causales (CLD) riguroso ù la herramienta mßs utilizada en consultorÝa estratÚgica para comunicar dinßmicas sistÚmicas. El estudiante aprende la notaci¾n formal: polaridad de flechas, lazos de refuerzo (R) y balance (B), retardos, y arquetipos sistÚmicos. El caso de la bolsa de energÝa colombiana permite practicar: ┐por quÚ el precio oscila? ┐QuÚ lazos amplifican y cußles estabilizan?
+Bloque Aut¾nomo ù 10 horas
+Sesi¾n Sincr¾nica ù 2 horas
+Lecturas y Recursos
+Thinking in Systems (Cap. 3) ù Meadows. El mercado de energÝa mayorista en Colombia ù XM. Business Dynamics (Cap. 5: Causal Loop Diagrams) ù John Sterman (lectura opcional para profundizar).
+
+SEMANA 3: Dinßmica de Sistemas I ù Stocks, Flujos y Retardos
+Caso ancla: El ciclo de inversi¾n-capacidad en generaci¾n elÚctrica colombiana
+Se introduce la dinßmica de sistemas como extensi¾n cuantitativa del CLD: los diagramas ahora "calculan". El estudiante aprende a distinguir stocks de flujos, a representar retardos y a construir modelos simulables en Vensim PLE. El Lab 1 consiste en un modelo del ciclo inversi¾n-capacidad en generaci¾n elÚctrica ù la dinßmica que explica por quÚ el sector oscila entre sobreinversi¾n y escasez ù calibrado con datos hist¾ricos de XM.
+Bloque Aut¾nomo ù 10 horas
+Sesi¾n Sincr¾nica ù 2 horas
+Lecturas y Recursos
+Business Dynamics (Cap. 1-3) ù John Sterman. Cycles in deregulated electricity markets ù Arango & Larsen, Energy Policy, 2011. Resoluci¾n CREG 071/2006 (guÝa de lectura). Informe de operaci¾n del SIN ù XM (datos hist¾ricos).
+
+SEMANA 4: Dinßmica de Sistemas II ù PolÝticas, Sensibilidad e Intuici¾n Dinßmica
+Caso ancla: Efecto del Cargo por Confiabilidad y la entrada de FNCER en el mercado
+Se profundiza en la dinßmica de sistemas con un modelo mßs completo que incorpora intervenciones regulatorias. El estudiante extiende su modelo para incluir el Cargo por Confiabilidad y la entrada de FNCER, y desarrolla la intuici¾n dinßmica: la capacidad de anticipar el comportamiento de sistemas con retardos y retroalimentaciones m·ltiples antes de simular. Se introduce tambiÚn el concepto de anßlisis de sensibilidad como puente hacia el anßlisis de escenarios de la semana 5.
+Bloque Aut¾nomo ù 10 horas
+Sesi¾n Sincr¾nica ù 2 horas
+Lecturas y Recursos
+Escenarios de demanda de energÝa ù UPME. Colombia Energy Policy Review ù IEA (resumen). Resoluci¾n CREG 071/2006.
+
+SEMANA 5: Escenarios e Incertidumbre ù Robustez sobre Optimalidad
+Caso ancla: Inversi¾n en expansi¾n de generaci¾n bajo escenarios de El Ni±o y transici¾n energÚtica
+Semana bisagra. Se pasa de "┐c¾mo se comporta el sistema?" a "┐quÚ decidir cuando el futuro es radicalmente incierto?". Se introduce la distinci¾n entre riesgo (probabilidades conocidas) e incertidumbre profunda (los expertos ni siquiera acuerdan las distribuciones). En lugar de la maquinaria formal de RDM/PRIM/Rhodium ù herramientas de investigaci¾n ù se ense±a el enfoque que efectivamente usan utilities y reguladores: construcci¾n de escenarios cualitativamente distintos, evaluaci¾n de estrategias bajo cada escenario, y selecci¾n de la estrategia mßs robusta (la que funciona "suficientemente bien" en muchos futuros, no la "¾ptima" en uno solo).
+Bloque Aut¾nomo ù 10 horas
+Sesi¾n Sincr¾nica ù 2 horas
+Lecturas y Recursos
+Sensitive intervention points in the post-carbon transition ù Farmer et al., Science, 2019. Ley 2099 de 2021. Colombia Energy Policy Review ù IEA. Escenarios UPME. Recurso opcional: Marchau et al. (2019), Decision Making under Deep Uncertainty, Cap. 1 (Open Access).
+
+SEMANA 6: De los sistemas sociales a la norma. Actores, Gobernanza y Justicia EnergÚtica
+Caso ancla: Proyecto e¾lico en La Guajira ù comunidades Wayuu, consulta previa y licencia social
+Se amplÝa el anßlisis para incorporar lo que los modelos cuantitativos no capturan: actores con intereses en conflicto, gobernanza policÚntrica, justicia energÚtica y consulta previa. En Colombia, la licencia social es tan determinante para la viabilidad de un proyecto como su TIR financiera. Esta semana es deliberadamente cualitativa y experiencial: incluye un role-play de negociaci¾n multi-actor que se ejecuta en la sesi¾n sincr¾nica. El objetivo es que el estudiante entienda que ning·n anßlisis sistÚmico estß completo si ignora a las personas.
+Bloque Aut¾nomo ù 10 horas
+Sesi¾n Sincr¾nica ù 2 horas
+Lecturas y Recursos
+Governing the Commons (Cap. 1) ù Elinor Ostrom. Evaluaci¾n de proyectos FNCER en La Guajira ù ContralorÝa General. New frontiers for energy justice ù Sovacool et al., Energy Policy, 2017. Marco normativo de consulta previa ù Ministerio del Interior.
+
+SEMANA 7: Integraci¾n y Recomendaciones EstratÚgicas
+Semana taller ù no se introduce contenido nuevo
+Semana de consolidaci¾n dedicada a integrar todas las capas del anßlisis (CLD, modelo de SD, escenarios, dimensi¾n social) en un informe de consultorÝa sistÚmica coherente. El estudiante transita de "analista" a "consultor": debe traducir hallazgos complejos en recomendaciones estratÚgicas accionables para un tomador de decisiones especÝfico. Las sesiones se centran en retroalimentaci¾n profunda al proyecto.
+Bloque Aut¾nomo ù 10 horas
+Sesi¾n Sincr¾nica ù 2 horas
+
+SEMANA 8: Presentaciones Finales
+Cierre del ciclo: del anßlisis sistÚmico a la acci¾n estratÚgica
+Los estudiantes presentan sus informes de consultorÝa sistÚmica ante un panel compuesto por el profesor y un profesional invitado del sector energÚtico colombiano. El bloque aut¾nomo se dedica exclusivamente a pulir el informe y la presentaci¾n.
+Bloque Aut¾nomo ù 10 horas
+Sesi¾n Sincr¾nica ù 3 horas (extendida)
+Nota sobre la video-lecci¾n 8.1: En esta lecci¾n final, el profesor presenta herramientas avanzadas que el estudiante no vio en el curso pero que constituyen el horizonte natural de profundizaci¾n: anßlisis de redes complejas con NetworkX (Barabßsi, Due±as-Osorio), modelos basados en agentes con Mesa (Wilensky & Rand, Weidlich & Veit), y Robust Decision Making formal con PRIM/Rhodium (RAND Corporation). Esto posiciona al estudiante para seguir aprendiendo y le muestra que el toolkit del curso es el primer piso, no el techo.
+
+7. PROYECTO INTEGRADOR: INFORME DE CONSULTOR═A SIST╔MICA
+7.1 Descripci¾n
+El proyecto es el eje central del curso (45% de la nota). Grupos de 3 estudiantes seleccionan un caso energÚtico real en Colombia y producen un informe de consultorÝa sistÚmica que integra progresivamente las herramientas del curso. El entregable final no es un ejercicio acadÚmico: es un documento que un tomador de decisiones del sector (inversionista, regulador, comunidad) podrÝa usar como insumo para una decisi¾n real.
+7.2 Casos Sugeridos
+7.3 Cronograma de Entregas
+
+
+7.4 Estructura del Informe Final
+
+8. VENTANAS AL ESTADO DEL ARTE: HERRAMIENTAS AVANZADAS
+El curso se concentra en las herramientas de uso profesional consolidado: pensamiento sistÚmico, dinßmica de sistemas y anßlisis de escenarios. Sin embargo, el campo de la analÝtica de sistemas energÚticos tiene un horizonte mucho mßs amplio. Esta secci¾n documenta tres familias de herramientas avanzadas que el estudiante encontrarß referenciadas en la video-lecci¾n 8.1 y que constituyen caminos naturales de profundizaci¾n posterior.
+8.1 Anßlisis de Redes Complejas (NetworkX, Python)
+Permite analizar la topologÝa de la infraestructura elÚctrica: subestaciones como nodos, lÝneas como aristas. Las mÚtricas de centralidad identifican nodos crÝticos; la simulaci¾n de fallas en cascada revela la paradoja "robusto pero frßgil" de Barabßsi (la red resiste fallas aleatorias pero colapsa ante ataques dirigidos a hubs). Aplicaci¾n directa: evaluar c¾mo la conexi¾n de FNCER en La Guajira afecta la resiliencia topol¾gica del STN.
+Referencias: Network Science ù Barabßsi. Cascading Failures ù Due±as-Osorio. Pagani & Aiello (2013) sobre redes elÚctricas.
+8.2 Modelos Basados en Agentes (Mesa, Python)
+Permiten simular sistemas "desde abajo": cada actor (generador, prosumidor, regulador) es un agente con reglas de decisi¾n propias. El comportamiento macro del sistema (precios, adopci¾n, congesti¾n) emerge de las interacciones micro. Es particularmente ·til cuando el comportamiento del sistema no se puede derivar del comportamiento de un "agente representativo" ù por ejemplo, cuando la adopci¾n de techos solares depende de imitaci¾n social entre vecinos, no solo de cßlculo econ¾mico individual.
+Referencias: An Introduction to Agent-Based Modeling ù Wilensky & Rand. Agent-based wholesale electricity market models ù Weidlich & Veit, 2008. Documentaci¾n Mesa ù mesa.readthedocs.io.
+8.3 Robust Decision Making Formal (PRIM, Rhodium)
+Lleva el anßlisis de escenarios del curso al siguiente nivel computacional: en lugar de 4 escenarios cualitativos, se generan miles de futuros posibles mediante muestreo (Latin Hypercube), y algoritmos como PRIM (Patient Rule Induction Method) identifican automßticamente las "regiones de vulnerabilidad" de cada estrategia. El marco XLRM (eXogenous uncertainties, Levers, Relationships, Metrics) estructura el anßlisis. Es la metodologÝa de RAND Corporation para decisiones de infraestructura bajo incertidumbre profunda.
+Referencias: Decision Making under Deep Uncertainty ù Marchau et al. (Open Access). Robust Decision Making ù RAND Corporation. Rhodium ù reed.cee.cornell.edu/software.
+
+9. POL═TICAS DEL CURSO
+9.1 Asistencia a Sesiones Sincr¾nicas
+La asistencia es obligatoria dado que las sesiones concentran evaluaci¾n directa (ejercicios en vivo, presentaciones). Se permite un mßximo de 1 inasistencia justificada con trabajo compensatorio acordado con el profesor. Las sesiones se graban pero la grabaci¾n no sustituye la participaci¾n evaluada.
+9.2 Entregas
+Los avances del proyecto y laboratorios deben entregarse 24-48 horas antes de la sesi¾n sincr¾nica para que el profesor pueda preparar retroalimentaci¾n especÝfica. Entregas fuera de plazo: penalizaci¾n de 10% por dÝa. Los grupos que no entregan pierden la oportunidad de presentar en la sesi¾n correspondiente.
+9.3 Integridad AcadÚmica e IA Generativa
+El uso de herramientas de IA generativa es permitido y alentado como herramienta de productividad (depurar c¾digo en Vensim o Python, sintetizar lecturas, iterar sobre borradores). Sin embargo, debe declararse explÝcitamente y los entregables deben reflejar comprensi¾n propia. La evaluaci¾n sincr¾nica (presentaciones, defensa oral, ejercicios en vivo) es el mecanismo de verificaci¾n: quien no entiende su propio trabajo no puede defenderlo ante el profesor y sus pares.
+9.4 Comunicaci¾n
+Canal principal: foro de anuncios de la plataforma. Consultas urgentes: mensajerÝa interna. Tiempo de respuesta: 24 horas hßbiles. Las dudas tÚcnicas sobre Vensim o Python pueden y deben resolverse primero entre pares en el foro, fomentando el aprendizaje colaborativo.

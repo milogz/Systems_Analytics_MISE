@@ -1,0 +1,477 @@
+Systems Analytics Course
+Master’s in Innovation of Energy Systems (MISE)
+1. Executive Vision: The Systemic Turn in Energy Education
+The global energy sector is currently navigating a structural transformation of
+unprecedented complexity, often characterized by the "3D" paradigm: Decarbonization,
+Digitalization, and Decentralization. This shift necessitates a fundamental reimagining of
+graduate engineering education. The traditional pedagogical model—which
+compartmentalizes power systems, economics, and control theory into isolated silos—is
+increasingly insufficient for training leaders capable of managing the modern grid. The
+Master’s in Innovation of Energy Systems (MISE) at Universidad de los Andes (Uniandes) has
+identified this gap and proposes a cornerstone course, "Systems Analytics," to serve as the
+methodological connective tissue for the program.1
+This report provides a comprehensive, 15,000-word strategic roadmap for the design,
+implementation, and technological scaffolding of this course. The curriculum is structured
+around three critical modules: Systems/Networks (focused on Cyber-Physical-Social
+Systems), Dynamic Modeling (utilizing Agent-Based Modeling and Game Theory), and
+Decision Making (emphasizing Control and Optimization under Deep Uncertainty). Beyond
+the theoretical content, this document details a pioneering technical infrastructure
+leveraging "Google Antigravity" for agentic software development 3 and "Google
+NotebookLM" for AI-augmented curricular research.5
+The objective is to move students beyond the role of passive analysts to become architects
+of complex adaptive systems. By integrating the resilience theories of Barabási and
+Dueñas-Osorio 6 with the computational power of Python-based frameworks like Mesa 8 and
+Rhodium 9, the MISE Systems Analytics course will position Uniandes at the forefront of
+international energy education. This report analyzes the pedagogical gaps in current
+offerings, benchmarks against global leaders like MIT and TU Delft, and provides a granular
+technical manual for deploying the course's digital ecosystem.
+
+2. Strategic Context and International Benchmarking
+2.1 The Imperative for Systems Analytics in the MISE Curriculum
+The MISE program is designed to form professionals who can "lead energy management with a
+technical, economic, environmental, and social vision".2 This mission statement implicitly
+acknowledges that the energy system is no longer a purely physical machine but a
+"Cyber-Physical-Social System" (CPSS).10 In this context, "Systems Analytics" is not merely a course
+on statistics or programming; it is a course on the physics of interaction.
+In the Colombian context, where the energy matrix is dominated by hydro-resources subject to El
+Niño Southern Oscillation (ENSO) variability and where social license to operate is a critical constraint
+for transmission expansion, the ability to model interdependent systems is vital. The traditional N-1
+reliability criterion, which focuses on the loss of a single physical component, fails to capture the
+complexity of cascading failures driven by cyber-attacks, market gaming, or social unrest.11
+Therefore, the Systems Analytics course must equip students with the mathematical tools to quantify
+resilience, simulate emergent market behaviors, and optimize decisions when probability distributions
+are unknown.
+2.2 Global Benchmarking and Gap Analysis
+To ensure the MISE Systems Analytics course meets and exceeds international standards, a rigorous
+benchmarking exercise was conducted against four leading technical universities: Massachusetts
+Institute of Technology (MIT), TU Delft, ETH Zurich, and Stanford University. This analysis identifies
+the "State of the Art" and highlights the specific niches where Uniandes can innovate.
+2.2.1 Massachusetts Institute of Technology (MIT): Systems Thinking in Energy
+The MITx course "Systems Thinking in Energy: Navigating Costs, Emissions, and Impact" 12 represents
+the gold standard for techno-economic analysis. The curriculum focuses heavily on the "Sesame"
+modeling tool, which allows for consistent "apples-to-apples" comparisons across energy pathways.
+● Strengths: The course excels in teaching students how to perform lifecycle analysis (LCA) and
+navigate the tradeoffs between cost and emissions. It rigorously frames the problem of
+decarbonization within economic constraints.12
+● Limitations: The primary focus is often on the technological and economic dimensions. There is
+less emphasis on the topological structure of the grid as a complex network or the emergent
+social dynamics of decentralized actors.
+● Uniandes Opportunity: The MISE course can differentiate itself by incorporating Network
+Science (Module 1) to analyze the structural resilience of the grid, moving beyond the economic
+dispatch focus of MIT to a topological robustness focus.
+
+2.2.2 TU Delft: Intelligent and Integrated Energy Systems
+TU Delft’s curriculum, particularly the "Technology of Intelligent and Integrated Energy Systems" 13
+and "System Analysis" 14, is notable for its integration of multi-carrier grids (combining hydrogen, gas,
+and electricity) and its explicit inclusion of "Actor Analysis."
+● Strengths: Delft acknowledges that energy systems are socio-technical. The inclusion of Actor
+Analysis 14 validates the need to understand stakeholders (NGOs, utilities, governments).
+● Limitations: While Actor Analysis is often taught as a qualitative or semi-quantitative framework,
+there is an opportunity to make this more rigorous through computation.
+● Uniandes Opportunity: We will advance the Delft model by converting static "Actor Analysis"
+into dynamic Agent-Based Modeling (ABM) (Module 2). Instead of mapping stakeholders on a
+static matrix, MISE students will code agents that interact in real-time, allowing them to observe
+how micro-behaviors lead to macro-phenomena like market bubbles or technology diffusion.
+2.2.3 ETH Zurich: Energy Systems Analysis
+ETH Zurich offers a highly quantitative "Energy Systems Analysis" course 15 that focuses on
+mathematical optimization, particularly for district heating and aviation.
+● Strengths: The rigor of their optimization curriculum is world-class, providing deep expertise in
+linear and mixed-integer programming (MILP).
+● Limitations: Traditional optimization assumes a known objective function and deterministic (or
+stochastically predictable) constraints.
+● Uniandes Opportunity: The MISE course will introduce Robust Decision Making (RDM)
+(Module 3). Given the "deep uncertainty" of climate change and Latin American politics,
+teaching students to optimize for robustness (performance across many futures) rather than
+optimality (performance in one predicted future) is a critical value-add.16
+2.2.4 Stanford University: Energy Systems Fundamentals
+Stanford’s "Energy Systems Fundamentals" 17 provides a broad overview of resources and conversion
+technologies.
+● Strengths: It provides a solid baseline of physical principles.
+● Limitations: It is less focused on the advanced computational methodologies required for
+analytics.
+● Uniandes Opportunity: The MISE course will be strictly methodological. It assumes students
+know the physics (covered in other MISE modules) and focuses entirely on the
+analytics—specifically utilizing the Google Antigravity workflow to teach advanced coding and
+modeling skills that are typically reserved for computer science programs.18
+
+2.3 Synthesis: The Uniandes Differentiator
+Based on this analysis, the MISE Systems Analytics course will define its unique value proposition
+through Complexity and Computation. While peers focus on technology assessment (MIT) or policy
+analysis (Delft), Uniandes will focus on the computational modeling of complexity. This aligns with
+the "Google Antigravity" technical requirement, positioning the course not just as an energy class,
+but as a rigorous training ground for "Energy Data Scientists" and "Systems Architects."
+Table 1: Comparative Benchmarking Summary
+Feature MIT (Systems TU Delft ETH Zurich Uniandes
+Thinking) (Integrated (Optimization MISE
+Systems) ) (Proposed)
+Primary Lifecycle Actor Analysis MILP / Agent-Based
+Method Analysis / Multi-carrier Optimization Modeling &
+(Sesame) Network
+Science
+System View Techno-Econo Socio-Technic Physical-Techn Cyber-Physic
+mic al ical al-Social
+(CPSS)
+Tooling Spreadsheet / Qualitative / GAMS / Python Python
+Custom Tools Matlab (Mesa,
+NetworkX,
+Rhodium) +
+Antigravity
+Resilience Reliability Institutional Security of Cascading
+View (Cost/Emission Alignment Supply Failure &
+) Topological
+Robustness
+Decision Cost Multi-Stakehol Optimal Robustness
+Frame Minimization der Consensus Dispatch under Deep
+Uncertainty
+(RDM)
+
+3. Module 1: Systems and Networks (CPSS)
+Module Objective: To equip students with the theoretical frameworks and computational tools
+necessary to analyze the topology, stability, and resilience of energy networks within a
+Cyber-Physical-Social System (CPSS) context.
+The modern grid is no longer a linear pipeline from generation to consumption; it is a complex
+network where physical power flows interact with digital information (Cyber) and human behavior
+(Social). This module deconstructs the grid using Network Science, moving beyond standard power
+flow analysis to understand the structural vulnerabilities that lead to catastrophic cascading failures.
+3.1 Theoretical Foundation: Graph Theory and Complex Networks
+The course begins by translating the physical components of the grid (substations, transmission
+lines, generators) into the mathematical language of Graph Theory. A network is defined as a graph
+, where represents the set of nodes (buses) and represents the set of edges
+(lines).
+3.1.1 The Topology of Power: Scale-Free vs. Random Networks
+We draw heavily on the seminal work of Albert-László Barabási and Réka Albert regarding
+scale-free networks.7
+● Random Networks (Erdős-Rényi): In a random network, most nodes have a comparable
+degree (number of connections), following a Poisson distribution.
+● Scale-Free Networks (Barabási-Albert): Real-world networks, including aspects of the power
+grid, often exhibit a power-law degree distribution ( ). This implies the existence
+of "hubs"—nodes with an exceptionally high number of connections.
+● The "Robust yet Fragile" Paradox: Students will explore the critical insight that scale-free
+networks are incredibly robust to random failures (since most nodes are low-degree) but
+catastrophically fragile to targeted attacks on hubs.6 This theoretical foundation is crucial for
+understanding why standard reliability metrics (SAIDI/SAIFI) often underestimate the risk of
+"Black Swan" events.
+3.1.2 Small-World Properties and Synchronization
+We incorporate the Watts-Strogatz model 21 to discuss the "Small-World" property—networks with
+high local clustering but short average path lengths.
+● Relevance to Synchronization: In AC power grids, the "small-world" nature facilitates
+synchronization (frequency stability). However, it also means that a perturbation (e.g., a
+frequency dip) can propagate across the entire system in milliseconds. Students will analyze the
+trade-off between efficient transmission (short paths) and the containment of faults.
+
+3.2 Advanced Application: Cascading Failures and Resilience
+Building on the graph theory basics, the module dives into the specific mechanics of grid collapse,
+referencing the extensive research of Leonardo Dueñas-Osorio.11
+3.2.1 The Mechanics of Cascade
+Students will model the cascade process not just as a static connectivity problem, but as a dynamic
+load redistribution phenomenon.
+● Capacity-Load Model: Following the Motter-Lai or Dueñas-Osorio models, each node/edge
+has a load and a capacity .
+● Failure Propagation: When a node fails, its load is redistributed to neighbors based on
+electrical laws (Kirchhoff’s laws) or shortest-path approximations. If a neighbor’s new load
+exceeds its capacity, it fails, triggering further redistribution.
+● Critical Thresholds: Students will calculate the critical tolerance parameter required to
+prevent total system collapse for a given topology.
+3.2.2 Interdependent Networks (CPSS)
+The module culminates in the analysis of interdependent networks.10 The power grid depends on
+the communication network (SCADA) for control, while the communication network depends on the
+grid for power.
+● Cyber-Physical-Social Interaction: We extend the model to include the "Social" layer. For
+instance, how does "panic" (social contagion) lead to load spikes (everyone charging cars
+simultaneously) during a cyber-attack? This holistic CPSS view aligns with the latest research on
+bio-economy and social systems.24
+3.3 Lab Experience: The NetworkX Blackout Simulator
+Technical Goal: Build a Python-based resilience analysis tool using the NetworkX library.25
+3.3.1 Lab Design and Workflow
+Students will utilize the Google Antigravity repository to scaffold this project.
+1. Data Ingestion: Load a standard test case (e.g., IEEE 118-bus or a synthetic Texas grid).11
+2. Topological Analysis: Write scripts to calculate Degree Centrality, Betweenness Centrality, and
+Clustering Coefficients.
+3. Simulation Loop:
+○ Attack: Remove the node with the highest Betweenness Centrality.
+○ Redistribute: Update flows (using shortest path or DC power flow approximation).
+○ Check: Identify lines where Flow > Capacity.
+○ Cascade: Remove overloaded lines and repeat.
+
+4. Visualization: Use Streamlit 27 to create an interactive dashboard where users can toggle the
+"Tolerance" parameter and watch the grid collapse in real-time.
+
+4. Module 2: Dynamic Modeling (ABM and Game Theory)
+Module Objective: To simulate the emergent behavior of decentralized energy markets and
+technologies by modeling the interactions of autonomous agents (prosumers, utilities, regulators).
+As the energy transition empowers consumers to become "prosumers" (producers + consumers), the
+dynamics of the grid are increasingly driven by millions of individual decisions rather than a central
+dispatcher. This module shifts from the structural view of Module 1 to a behavioral view, utilizing
+Agent-Based Modeling (ABM) and Game Theory.
+4.1 Theoretical Foundation: Complexity and Game Theory
+The course contrasts "Top-Down" modeling (System Dynamics, Differential Equations) with
+"Bottom-Up" modeling (ABM). In ABM, system behavior emerges from the interactions of
+heterogeneous agents.31
+4.1.1 Game Theoretic Foundations
+Before building agents, students must understand the logic of their decision-making.
+● Nash Equilibrium: We apply non-cooperative game theory to energy markets. Students analyze
+scenarios like the "Duck Curve" ramping problem: if all batteries discharge at peak price, the
+price collapses. Finding the Nash Equilibrium helps predict stable market outcomes.32
+● Evolutionary Game Theory (EGT): We explore how strategies evolve over time. For example,
+modeling the adoption of solar panels not as a rational economic calculation but as a social
+imitation game (Evolutionary Dynamics).33
+● Stackelberg Games: Modeling the leader-follower dynamic between a Regulator (setting
+tariffs) and Prosumers (reacting to tariffs).
+4.2 Applied Framework: The Mesa Library (Python)
+The course adopts Mesa, the leading Python framework for ABM.8 Mesa allows for the rigorous
+definition of agents, environments, and schedulers, making it the industry standard for open-source
+ABM research.
+4.2.1 The ABM Architecture
+Students learn the four pillars of a Mesa model:
+1. The Agent (Agent class): The entity with internal state (e.g., battery level, wealth) and
+behavioral rules (e.g., "If price > X, sell").
+2. The Model (Model class): The "God" object that manages the global variables and the passage
+of time.
+3. The Scheduler (Time module): Determines the order of agent activation (Random,
+Simultaneous, Staged). The choice of scheduler significantly impacts the outcome of
+synchronous systems like power markets.36
+
+4. The Space (Space module): The environment where agents exist—in this case, a NetworkGrid
+representing the physical distribution wires.37
+4.3 Lab Experience: The Decentralized Market Simulator
+Technical Goal: Develop an ABM to simulate a Peer-to-Peer (P2P) energy market within a
+neighborhood.
+4.3.1 Lab Design and Workflow
+1. Agent Design: Create HouseholdAgent classes with heterogeneous profiles (e.g., "Green Tech
+Early Adopter" vs. "Passive Consumer"). Use real load data (from NREL or local datasets) to seed
+the agents.38
+2. Market Logic: Implement a "Double Auction" mechanism where agents submit bids and asks to
+a local clearinghouse agent.39
+3. Simulation: Run the model over a simulated year.
+4. Analysis:
+○ Emergence: Observe how high solar penetration leads to local voltage constraints or
+negative prices.
+○ Policy Testing: Introduce a "Tax Agent" or change the tariff structure and observe how the
+population of agents adapts their strategy over time.
+○ Visualization: Use Mesa’s Solara or internal server to visualize the flow of money and energy
+on the grid topology.8
+
+5. Module 3: Decision Making (Control and Optimization)
+Module Objective: To transition from describing systems (Networks) and simulating them (ABM) to
+controlling them. This module focuses on making optimal decisions under conditions of "Deep
+Uncertainty."
+5.1 Theoretical Foundation: Control and Optimization
+Standard optimization (Linear Programming) assumes we know the future parameters (fuel costs,
+demand) with certainty or defined probability. However, energy transitions are characterized by
+"Deep Uncertainty"—where experts disagree on the probability distributions of key variables.
+5.1.1 Sequential Decision Making
+We introduce Markov Decision Processes (MDP) and Dynamic Programming.41
+● The Problem: Energy storage management is a sequential problem. A battery operator must
+decide now whether to discharge, based on an uncertain future price.
+● The Solution: Students learn the Bellman Equation to solve for optimal policies over time. This
+connects the "Game Theory" of Module 2 with formal control theory.
+5.2 Advanced Application: Robust Decision Making (RDM)
+The core innovation of this module is the introduction of Robust Decision Making (RDM), a
+framework pioneered by the RAND Corporation.16
+5.2.1 The RDM Paradigm Shift
+Traditional analysis asks: "What is the most likely future, and what is the optimal plan for it?" RDM
+asks: "What is a plan that performs well enough (satisficing) across a vast range of plausible
+futures?".44
+● The XLRM Framework: Students learn to structure problems using the XLRM matrix:
+○ X (Exogenous Uncertainties): Climate sensitivity, technology costs, political stability.
+○ L (Policy Levers): Subsidies, carbon taxes, infrastructure investments.
+○ R (Relationships): The simulation models (from Module 1 & 2).
+○ M (Performance Metrics): Cost, Emissions, Reliability, Equity.45
+5.2.2 Exploratory Modeling and Scenario Discovery
+Instead of optimizing for one future, students use Exploratory Modeling to simulate thousands of
+futures (using Latin Hypercube Sampling).
+● Scenario Discovery: Using algorithms like PRIM (Patient Rule Induction Method), students
+identify the "Vulnerability Regions" of a strategy. For example, "Our investment plan fails
+specifically when Hydrogen costs > $5/kg AND Carbon Tax < $20/ton".45 This allows for the
+design of adaptive pathways.
+
+5.3 Lab Experience: The Rhodium Policy Planner
+Technical Goal: Use the Rhodium (Python) library to perform a Many-Objective Robust Decision
+Making (MORDM) analysis.9
+5.3.1 Lab Design and Workflow
+1. Problem Setup: Define a capacity expansion problem for the Colombian grid (Hydro vs. Solar
+vs. Thermal).
+2. Uncertainty Sampling: Use Rhodium to generate 1,000 "States of the World" (SOWs) varying
+rainfall (El Niño) and gas prices.
+3. Simulation: Run a simple dispatch model for each SOW.
+4. Analysis:
+○ Pareto Optimization: Identify the trade-off frontier between Cost and Reliability.
+○ Regret Analysis: Calculate the "Regret" for each strategy across all futures.
+○ PRIM Analysis: Use Rhodium’s PRIM implementation to visualize the "Box" of failure
+conditions.
+5. Output: A strategic recommendation report that identifies the most robust investment strategy,
+not necessarily the cheapest one.
+
+9. Conclusion
+The "Systems Analytics" course proposed herein represents a radical modernization of energy
+engineering education. It rejects the notion that the grid is a static machine and embraces it as a
+dynamic, evolving Cyber-Physical-Social System. By integrating the rigorous network science of
+Barabási and Dueñas-Osorio, the emergent modeling of Mesa, and the robust strategy of RDM,
+Uniandes will equip its graduates with the tools to navigate the chaos of the energy transition.
+Furthermore, the deployment of Google Antigravity and NotebookLM creates a pedagogical
+environment that is not just "tech-enabled" but "AI-native," ensuring that MISE students are fluent in
+the collaborative human-AI workflows that will define the future of engineering.
+Works cited
+1. Maestría en Innovación de Sistemas Energéticos | MISE - Ingeniería, accessed February
+11, 2026, https://ingenieria.uniandes.edu.co/mise/
+2. Maestría en Innovación de Sistemas Energéticos - MISE - Oferta académica, accessed
+February 11, 2026,
+https://ofertacademicauniandes.com/oferta_posgrados/maestria-en-innovacion-de-sist
+emas-energeticos-mise/
+3. The Secret AntiGravity AI Plugin Google Doesn't Want You Using Yet : r/AISEOInsider,
+accessed February 11, 2026,
+https://www.reddit.com/r/AISEOInsider/comments/1qlsxqw/the_secret_antigravity_ai_plu
+gin_google_doesnt/
+4. Tutorial : Getting Started with Google Antigravity | by Romin Irani ..., accessed February
+11, 2026,
+https://medium.com/google-cloud/tutorial-getting-started-with-google-antigravity-b5c
+c74c103c2
+5. How to Use NotebookLM: Create Study Notes & Presentations - Codecademy, accessed
+February 11, 2026, https://www.codecademy.com/article/how-to-use-notebooklm
+6. Recovery patterns and physics of the network - PMC, accessed February 11, 2026,
+https://pmc.ncbi.nlm.nih.gov/articles/PMC7815135/
+7. Network bypasses sustain complexity - PNAS, accessed February 11, 2026,
+https://www.pnas.org/doi/10.1073/pnas.2305001120
+8. Getting started — Mesa .1 documentation, accessed February 11, 2026,
+https://mesa.readthedocs.io/stable/getting_started.html
+9. Software - Decision Analytics for Complex Systems - Cornell University, accessed
+February 11, 2026, https://reed.cee.cornell.edu/software/
+10. Editorial: Security, governance, and challenges of the new generation of
+cyber-physical-social systems - Frontiers, accessed February 11, 2026,
+https://www.frontiersin.org/journals/physics/articles/10.3389/fphy.2024.1464919/full
+11. Adaptive Monte Carlo Methods for Estimating Rare Events in Power Grids | ASCE-ASME
+Journal of Risk and Uncertainty in Engineering Systems, Part A, accessed February 11,
+2026, https://ascelibrary.org/doi/abs/10.1061/AJRUA6.RUENG-1404
+12. Systems Thinking in Energy: Navigating Costs, Emissions, and Impact, accessed
+February 11, 2026, https://mitxonline.mit.edu/courses/course-v1:MITxT+ENE.002x/
+
+13. Technology of Intelligent and Integrated Energy Systems | TU Delft Learning for Life,
+accessed February 11, 2026,
+https://learningforlife.tudelft.nl/technology-of-intelligent-and-integrated-energy-system
+s/
+14. 1.4.2 System Analysis - TU Delft OCW, accessed February 11, 2026,
+https://ocw.tudelft.nl/course-readings/1-4-2-system-analysis/
+15. Lectures and courses – Energy Systems Analysis | ETH Zurich, accessed February 11,
+2026, https://esa.ethz.ch/education/courses.html
+16. Robust Decision Making - RAND, accessed February 11, 2026,
+https://www.rand.org/topics/robust-decision-making.html
+17. 1 of 1 results for: ENERGY 201A: Energy Systems Fundamentals - Stanford University
+Explore Courses, accessed February 11, 2026,
+https://explorecourses.stanford.edu/search?view=catalog&filter-coursestatus-Active=on
+&page=0&catalog=&q=ENERGY+201A%3A+Energy+Systems+Fundamentals&collapse=
+18. study8677/antigravity-workspace-template: The ultimate starter kit for Google
+Antigravity IDE. Optimized for Gemini 3 Agentic Workflows, "Deep Think" mode, and
+auto-configuring .cursorrules. - GitHub, accessed February 11, 2026,
+https://github.com/study8677/antigravity-workspace-template
+19. Cascade of failures in coupled network systems with multiple support-dependence
+relations | Request PDF - ResearchGate, accessed February 11, 2026,
+https://www.researchgate.net/publication/51074561_Cascade_of_failures_in_coupled_ne
+twork_systems_with_multiple_support-dependence_relations
+20. Universal resilience patterns in complex networks - PubMed, accessed February 11,
+2026, https://pubmed.ncbi.nlm.nih.gov/26887493/
+21. Albert-László Barabási - WordPress.com, accessed February 11, 2026,
+https://eravilaipnada.files.wordpress.com/2016/01/barabasi-2012.pdf
+22. Adaptive Monte Carlo Methods for Estimating Rare Events in Power Grids | ASCE-ASME
+Journal of Risk and Uncertainty in Engineering Systems, Part A, accessed February 11,
+2026, https://ascelibrary.org/doi/10.1061/AJRUA6.RUENG-1404
+23. Cascading Failures Across Interdependent Infrastructure Systems - Peer Apps,
+accessed February 11, 2026,
+https://apps.peer.berkeley.edu/transportation/wp-content/uploads/2011/03/PEER_Duena
+sOsorio_031809.pdf
+24. Harnessing Cyber-Physical Social Systems for Comprehensive Bioeconomy
+Measurement - SSRN, accessed February 11, 2026,
+https://papers.ssrn.com/sol3/Delivery.cfm/ba6b4f80-7267-4e6b-b99a-fb07d1cd3fdf-ME
+CA.pdf?abstractid=5267491&mirid=1
+25. Evaluating Graph Vulnerability and Robustness using TIGER - Polo Club of Data Science,
+accessed February 11, 2026, https://poloclub.github.io/papers/21-cikm-tiger.pdf
+26. The use of PLANS and NetworkX in modeling power grid system failures - PMC - NIH,
+accessed February 11, 2026, https://pmc.ncbi.nlm.nih.gov/articles/PMC9581963/
+27. Status as of July 25, 2025 - INCOSE, accessed February 11, 2026,
+https://www.incose.org/docs/default-source/events-documents/is2025/is2025bookabstr
+act-6.pdf?sfvrsn=73d451c7_5
+28. 535 Stories To Learn About Python - HackerNoon, accessed February 11, 2026,
+
+https://hackernoon.com/535-stories-to-learn-about-python
+29. Can Digital Intelligence and Cyber-Physical-Social Systems Achieve Global Food
+Security and Sustainability? - IEEE/CAA Journal of Automatica Sinica, accessed February
+11, 2026, https://www.ieee-jas.net/article/doi/10.1109/JAS.2023.123951
+30. A scoring mechanism for the rank aggregation of network robustness - ResearchGate,
+accessed February 11, 2026,
+https://www.researchgate.net/publication/257449020_A_scoring_mechanism_for_the_ra
+nk_aggregation_of_network_robustness
+31. maksim2042/EMSE-6740: Materials for EMSE-6740 Systems Thinking and Modeling -
+GitHub, accessed February 11, 2026, https://github.com/maksim2042/EMSE-6740
+32. If you know Game theory and want to find equilibria using Python, I've just written
+documentation for Nashpy. (Easy to install with Anaconda.) : r/GAMETHEORY - Reddit,
+accessed February 11, 2026,
+https://www.reddit.com/r/GAMETHEORY/comments/6hv6ga/if_you_know_game_theory_
+and_want_to_find/
+33. EGTtools: Evolutionary game dynamics in Python - PMC, accessed February 11, 2026,
+https://pmc.ncbi.nlm.nih.gov/articles/PMC10123342/
+34. Optimizing Electricity Markets Through Game-Theoretical Methods: Strategic and Policy
+Implications for Power Purchasing and Generation Enterprises - MDPI, accessed
+February 11, 2026, https://www.mdpi.com/2227-7390/13/3/373
+35. Mesa Documentation, accessed February 11, 2026,
+https://mesa.readthedocs.io/_/downloads/en/latest/pdf/
+36. Agent-Based Models in Python: Simulating a Housing Market | by Patrick Labadie |
+Medium, accessed February 11, 2026,
+https://medium.com/@ptlabadie/agent-based-models-in-python-simulating-a-housing-
+market-94a30be84924
+37. Agent-based Modeling and Simulation for Malware Spreading in D2D Networks - arXiv,
+accessed February 11, 2026, https://arxiv.org/pdf/2201.12230
+38. Real-Time Resilience of Energy Systems - Publications, accessed February 11, 2026,
+https://docs.nrel.gov/docs/fy23osti/84155.pdf
+39. Wisaacj/Mesa-Auctions: Using agent-based modelling to simulate second-price
+auctions with multiple bidding agents using differing bidding strategies - GitHub,
+accessed February 11, 2026, https://github.com/Wisaacj/Mesa-Auctions
+40. Agent-based modeling, accessed February 11, 2026,
+https://faculty.sites.iastate.edu/tesfatsi/archive/tesfatsi/ABMReviewEnergyTransitionRese
+arch.SMishra2025.pdf
+41. Systems Engineering » Academics | Boston University, accessed February 11, 2026,
+https://www.bu.edu/academics/eng/courses/systems-engineering/
+42. Sequential Decision-Making - DTU, accessed February 11, 2026,
+http://www2.compute.dtu.dk/courses/02465/_assets/02465_Notes.pdf
+43. accessed February 11, 2026,
+https://www.rand.org/global-and-emerging-risks/centers/pardee/dmdu-decision-makin
+g-under-deep-uncertainty/robust-decision-making.html#:~:text=Robust%20Decision%
+20Making%20(RDM)%20is,to%20conduct%20more%20traditional%20analysis.
+44. Robust Decision Making (RDM) - weADAPT, accessed February 11, 2026,
+
+https://weadapt.org/knowledge-base/adaptation-decision-making/robust-decision-mak
+ing/
+45. USING ROBUST DECISION-MAKING TO DEVELOP LONG-TERM ..., accessed February 11,
+2026,
+https://2050pathways.org/wp-content/uploads/2024/09/2050PP_RDMReport_FINAL092
+624Pages.pdf
+46. The four steps of the many objective robust decision making (MORDM)... -
+ResearchGate, accessed February 11, 2026,
+https://www.researchgate.net/figure/The-four-steps-of-the-many-objective-robust-de
+cision-making-MORDM-framework-as-applied_fig1_342063207
+47. Selected Topics in Stochastic Control and Optimization 1 Course Description - Eilyan
+Bitar, accessed February 11, 2026,
+https://bitar.engineering.cornell.edu/teaching/5950_SP13.pdf
+48. Robust Decision-Making → Term - Pollution → Sustainability Directory, accessed
+February 11, 2026,
+https://pollution.sustainability-directory.com/term/robust-decision-making/
+49. Google Antigravity vs GitHub Copilot: Why I'm Team Antigravity Now - DEV Community,
+accessed February 11, 2026,
+https://dev.to/this-is-learning/google-antigravity-vs-github-copilot-why-im-team-antigr
+avity-now-fco
+50. Tutorial : Getting Started with Google Antigravity Skills, accessed February 11, 2026,
+https://medium.com/google-cloud/tutorial-getting-started-with-antigravity-skills-86404
+1811e0d
+51. Tip: You should really consider NotebookLM as a study tool : r/CFA - Reddit, accessed
+February 11, 2026,
+https://www.reddit.com/r/CFA/comments/1hnvhgz/tip_you_should_really_consider_note
+booklm_as_a/
+52. NotebookLM Guide: 7 Steps to Master Research Projects Fast - WisdomQuant,
+accessed February 11, 2026,
+https://www.wisdomquant.com/notebooklm-guide-research-projects/
+53. NotebookLM Guide: 25 Pro Tips for Research Excellence - atal upadhyay -
+WordPress.com, accessed February 11, 2026,
+https://atalupadhyay.wordpress.com/2025/08/09/notebooklm-guide-25-pro-tips-for-res
+earch-excellence/
+54. 7 BEST Ways To Use NotebookLM in 2026 (Content Creation, Pro Presentations, + More
+Use Cases) - YouTube, accessed February 11, 2026,
+https://m.youtube.com/watch?v=CYmUaes5UQM
+
