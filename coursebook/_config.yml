@@ -1,6 +1,6 @@
 title: "Analisis de Sistemas para la Industria Energetica"
 author: "Maestria en Ingenieria de Sistemas Energeticos (MISE)"
-logo: ""
+logo: logo.jpg
 copyright: "2025"
 
 execute:
@@ -19,19 +19,26 @@ parse:
     - substitution
 
 html:
-  favicon: ""
+  favicon: logo.jpg
   use_issues_button: false
   use_repository_button: true
   use_edit_page_button: false
   home_page_in_navbar: true
   extra_footer: |
-    <p>Material del curso Analisis de Sistemas — MISE, Universidad de los Andes</p>
+    <p style="font-size: 0.85em; text-align: center; color: #666;">
+      Material del curso Analisis de Sistemas — MISE, Universidad de los Andes
+    </p>
 
 repository:
-  url: https://github.com/YOUR_USER/Systems_Analytics_MISE
+  url: https://github.com/milogz/Systems_Analytics_MISE
   branch: main
 
 sphinx:
   config:
     language: es
     html_show_copyright: true
+    html_static_path: ["_static"]
+    html_css_files: ["custom.css"]
+    html_theme_options:
+      show_navbar_depth: 2
+      toc_title: "Contenido"

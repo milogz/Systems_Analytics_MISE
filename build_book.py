@@ -130,8 +130,15 @@ def main():
     if '--build' in sys.argv:
         print("\nBuilding book...")
         import subprocess
+        import shutil
+        jb_exe = shutil.which('jupyter-book')
+        if jb_exe is None:
+            # Fallback: look in Python's Scripts directory
+            import sysconfig
+            scripts = sysconfig.get_path('scripts')
+            jb_exe = os.path.join(scripts, 'jupyter-book')
         result = subprocess.run(
-            [sys.executable, '-m', 'jupyter_book', 'build', BOOK_DIR],
+            [jb_exe, 'build', BOOK_DIR],
             cwd=ROOT
         )
         if result.returncode == 0:

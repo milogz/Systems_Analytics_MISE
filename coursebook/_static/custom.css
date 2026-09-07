@@ -1,0 +1,148 @@
+/* ============================================================
+   Systems Analytics MISE — Custom Jupyter Book Styles
+   Universidad de los Andes
+   ============================================================ */
+
+/* --- Paleta institucional UniAndes --- */
+:root {
+    --uniandes-dark: #002855;
+    --uniandes-gold: #FFC72C;
+    --mise-accent: #1A365D;
+    --mise-light: #EBF5FB;
+    --mise-border: #D5E8F0;
+}
+
+/* --- Sidebar --- */
+.bd-sidebar-primary {
+    border-right: 2px solid var(--uniandes-gold);
+}
+
+.sidebar-primary-items__start .navbar-brand img {
+    border-radius: 8px;
+}
+
+/* --- Admonitions / callouts más limpios --- */
+.admonition {
+    border-radius: 8px;
+    border-left-width: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    margin: 1.5em 0;
+}
+
+.admonition.note {
+    border-left-color: var(--uniandes-dark);
+    background-color: #f0f4f8;
+}
+
+.admonition.tip {
+    border-left-color: #2ca02c;
+    background-color: #f0faf0;
+}
+
+.admonition.warning {
+    border-left-color: #e67e22;
+    background-color: #fef9f0;
+}
+
+.admonition.important {
+    border-left-color: #d62728;
+    background-color: #fdf0f0;
+}
+
+/* --- Tablas con zebra striping --- */
+table.docutils tbody tr:nth-child(odd) {
+    background-color: #f8f9fa;
+}
+
+table.docutils {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1em 0;
+}
+
+table.docutils th {
+    background-color: var(--uniandes-dark);
+    color: white;
+    padding: 0.6em 1em;
+    text-align: left;
+    font-weight: 600;
+}
+
+table.docutils td {
+    padding: 0.5em 1em;
+    border-bottom: 1px solid #e1e4e8;
+}
+
+/* --- Code blocks --- */
+div.cell_input {
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    margin-bottom: 0.5em;
+}
+
+div.cell_output {
+    overflow-x: auto;
+    border-radius: 6px;
+}
+
+/* Syntax highlighting border */
+div.highlight {
+    border-radius: 6px;
+}
+
+/* --- Blockquotes (used for "Dos Miradas" boxes) --- */
+blockquote {
+    border-left: 4px solid var(--uniandes-gold);
+    background-color: #fffcf0;
+    padding: 1em 1.5em;
+    margin: 1.5em 0;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+/* --- Heading hierarchy --- */
+h1 {
+    color: var(--uniandes-dark);
+    border-bottom: 3px solid var(--uniandes-gold);
+    padding-bottom: 0.3em;
+}
+
+h2 {
+    color: var(--mise-accent);
+    border-bottom: 1px solid var(--mise-border);
+    padding-bottom: 0.2em;
+    margin-top: 2em;
+}
+
+h3 {
+    color: #34495e;
+}
+
+/* --- Footer --- */
+.footer {
+    font-size: 0.85em;
+    color: #666;
+}
+
+/* --- Responsive images --- */
+.cell_output img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* --- Print-friendly --- */
+@media print {
+    .bd-sidebar-primary,
+    .bd-sidebar-secondary {
+        display: none;
+    }
+
+    blockquote {
+        page-break-inside: avoid;
+    }
+}

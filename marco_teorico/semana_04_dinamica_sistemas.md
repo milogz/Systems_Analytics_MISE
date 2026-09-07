@@ -345,7 +345,25 @@ Lo notable es que estas oscilaciones simuladas coinciden con los ciclos historic
 
 Los fenomenos climaticos como El Nino actuan como **disparadores y amplificadores** de un ciclo que ya reside latente en la estructura del mercado. Aceleran la crisis, sincronizan las respuestas de los agentes y magnifican la amplitud de las oscilaciones, pero no las originan. Un modelo que culpa exclusivamente al clima por las crisis del sector esta confundiendo el catalizador con la causa raiz — un error analitico que conduce a politicas ineficaces.
 
+**Parametros empiricos para la calibracion (Saga 0 — Radiografia de Datos):**
+
+Los datos reales del SIN colombiano (fuente: API publica de XM, 2000-2025) permiten calibrar el modelo con evidencia empirica directa:
+
+| Parametro del modelo | Valor supuesto | Valor empirico (XM) | Observacion |
+|---------------------|---------------|---------------------|-------------|
+| Precio de equilibrio | 150 COP/kWh | 180 COP/kWh (promedio 2000-2024) | El modelo subestima ligeramente el precio base |
+| Precio maximo modelable | 600 COP/kWh | 2,822 COP/kWh (El Nino 2015) | El modelo subestima los picos por un factor de ~5x |
+| Retardo de construccion | 4 anos | 3-5 anos (cross-correlacion precio-capacidad) | Confirmado empiricamente |
+| Crecimiento de demanda | 2.5%/ano | ~3%/ano (crecimiento real 2000-2024) | El modelo subestima ligeramente |
+| Generacion 2024 | — | 83 TWh | Condicion de referencia para validacion |
+| Demanda maxima 2024 | — | 11.7 GW | Techo de capacidad requerida |
+| Relacion embalse-precio | Lineal (k_precio) | **Exponencial** (R$^2$ = 0.13 en log-space) | El modelo necesita no-linealidad exponencial |
+| Curtosis de precios | Normal (3) | **22.2** | Confirma distribuciones fat-tailed |
+
+Estos parametros se utilizan directamente en los notebooks de la Saga para calibrar y validar el modelo de inversion-capacidad.
+
 ---
+
 
 ## 7. Python para dinamica de sistemas
 

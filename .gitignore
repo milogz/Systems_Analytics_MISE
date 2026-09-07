@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+
+# Jupyter Book build output
+coursebook/_build/
+
+# Reference material (not part of the project)
+ejemplo referencia*/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.venv/
