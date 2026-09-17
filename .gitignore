@@ -17,3 +17,6 @@ Thumbs.db
 # Environment
 .env
 .venv/
+
+# Utility scripts (one-time use)
+fix_notebook_tildes.py

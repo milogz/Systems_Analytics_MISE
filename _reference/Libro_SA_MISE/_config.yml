@@ -1,0 +1,15 @@
+title: "Análisis de sistemas para decisiones energéticas"
+author: "Material de trabajo SA-MISE — revisión docente"
+copyright: "2026"
+only_build_toc_files: true
+execute:
+  execute_notebooks: "off"
+parse:
+  myst_enable_extensions:
+    - dollarmath
+    - colon_fence
+    - amsmath
+sphinx:
+  config:
+    language: es
+    suppress_warnings: []

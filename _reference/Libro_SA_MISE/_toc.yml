@@ -1,0 +1,16 @@
+format: jb-book
+root: intro
+chapters:
+  - file: cuadernos_integrados/preludio
+  - file: cuadernos_integrados/semana_01
+  - file: cuadernos_integrados/semana_02
+  - file: cuadernos_integrados/semana_03
+  - file: cuadernos_integrados/semana_04
+  - file: cuadernos_integrados/semana_05
+  - file: cuadernos_integrados/semana_06
+  - file: cuadernos_integrados/semana_07
+  - file: cuadernos_integrados/semana_08
+  - file: FUENTES
+  - file: datos/CONTRATO_DATOS
+  - file: BITACORA_REVISION
+  - file: ALINEACION_CURRICULAR

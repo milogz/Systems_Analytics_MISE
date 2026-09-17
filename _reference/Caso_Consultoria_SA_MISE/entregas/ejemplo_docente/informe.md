@@ -1,0 +1,106 @@
+# BORRADOR DOCENTE — NO ES UNA RECOMENDACIÓN
+
+Caso: ejemplo_docente. Versión de esquema: 2.
+
+Las cifras exploratorias no describen una inversión real. Validar fuentes y competencias antes de decidir.
+
+## Evidencia
+
+**hallazgo:** Año 2024: generación 83262.923 GWh y pico 11704.365 MW; son magnitudes diferentes
+
+**nivel:** descripcion
+
+**fuente:** Extractos locales y/o supuestos identificados en DOSSIER y esta etapa
+
+**transformacion:** Transformaciones, calendario y unidades explícitos en las celdas precedentes
+
+**limite:** No constituye evaluación completa del SIN; distinguir cada resultado observado de los sintéticos
+
+**decision_estudiante:** POR COMPLETAR
+
+## Identidad
+
+**hallazgo:** Asociaciones mensuales: {'meses': 264, 'correlacion_bruta': -0.3654022452929349, 'correlacion_residual': -0.5459860648178948, 'interpretacion': 'Asociación; controles aditivos no identifican causalidad ni corrigen toda no estacionariedad'}
+
+**nivel:** descripcion
+
+**fuente:** Extractos locales y/o supuestos identificados en DOSSIER y esta etapa
+
+**transformacion:** Transformaciones, calendario y unidades explícitos en las celdas precedentes
+
+**limite:** No constituye evaluación completa del SIN; distinguir cada resultado observado de los sintéticos
+
+**decision_estudiante:** POR COMPLETAR
+
+## Infraestructura
+
+**hallazgo:** Contraste de topología, reactancia y límites en cinco barras ficticias; no resultados del STN
+
+**nivel:** exploracion
+
+**fuente:** Extractos locales y/o supuestos identificados en DOSSIER y esta etapa
+
+**transformacion:** Transformaciones, calendario y unidades explícitos en las celdas precedentes
+
+**limite:** No constituye evaluación completa del SIN; distinguir cada resultado observado de los sintéticos
+
+**decision_estudiante:** POR COMPLETAR
+
+## Mercado
+
+**hallazgo:** Universo observado: 364 recursos; captura con perfil sintético: 680.0163237302804
+
+**nivel:** exploracion
+
+**fuente:** Extractos locales y/o supuestos identificados en DOSSIER y esta etapa
+
+**transformacion:** Transformaciones, calendario y unidades explícitos en las celdas precedentes
+
+**limite:** No constituye evaluación completa del SIN; distinguir cada resultado observado de los sintéticos
+
+**decision_estudiante:** POR COMPLETAR
+
+## Dinamica
+
+**hallazgo:** Comparación con iguales aportes: [['Estacional', np.float64(2160000.0), np.int64(0), np.float64(331912.48612138955), np.float64(193687.5138786104)], ['Desplazado 4 meses', np.float64(2160000.0), np.int64(0), np.float64(285599.99999999994), np.float64(240000.0)], ['Concentrado', np.float64(2160000.0), np.float64(711456.0), np.float64(1514400.0), np.float64(0.0)]]
+
+**nivel:** exploracion
+
+**fuente:** Extractos locales y/o supuestos identificados en DOSSIER y esta etapa
+
+**transformacion:** Transformaciones, calendario y unidades explícitos en las celdas precedentes
+
+**limite:** No constituye evaluación completa del SIN; distinguir cada resultado observado de los sintéticos
+
+**decision_estudiante:** POR COMPLETAR
+
+## Decision
+
+**hallazgo:** Comparación física de 20 combinaciones y ventana financiera separada
+
+**nivel:** exploracion
+
+**fuente:** Extractos locales y/o supuestos identificados en DOSSIER y esta etapa
+
+**transformacion:** Transformaciones, calendario y unidades explícitos en las celdas precedentes
+
+**limite:** No constituye evaluación completa del SIN; distinguir cada resultado observado de los sintéticos
+
+**decision_estudiante:** POR COMPLETAR
+
+## Gobernanza
+
+**hallazgo:** Demora solar: faltante a tiempo=257932.4750185014; tardío=273269.9750185014
+
+**nivel:** exploracion
+
+**fuente:** Extractos locales y/o supuestos identificados en DOSSIER y esta etapa
+
+**transformacion:** Transformaciones, calendario y unidades explícitos en las celdas precedentes
+
+**limite:** No constituye evaluación completa del SIN; distinguir cada resultado observado de los sintéticos
+
+**decision_estudiante:** POR COMPLETAR
+
+## Decisión y revisión humana
+Integrar alternativas, responsables, costos, umbrales y evidencia adversa. El software no aprueba el proyecto.

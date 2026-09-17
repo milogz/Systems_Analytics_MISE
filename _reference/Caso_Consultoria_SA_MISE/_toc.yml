@@ -1,0 +1,18 @@
+format: jb-book
+root: intro
+chapters:
+  - file: cuadernos_integrados/etapa_00
+  - file: cuadernos_integrados/etapa_01
+  - file: cuadernos_integrados/etapa_02
+  - file: cuadernos_integrados/etapa_03
+  - file: cuadernos_integrados/etapa_04
+  - file: cuadernos_integrados/etapa_05
+  - file: cuadernos_integrados/etapa_06
+  - file: cuadernos_integrados/etapa_07
+  - file: DOSSIER
+  - file: RUBRICA_Y_ENTREGAS
+  - file: ANEXO_NEGOCIO
+  - file: FUENTES
+  - file: datos/CONTRATO_DATOS
+  - file: BITACORA_REVISION
+  - file: ALINEACION_CURRICULAR

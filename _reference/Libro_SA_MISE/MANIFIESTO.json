@@ -1,0 +1,54 @@
+{
+  "edicion": "3.0.0-didactica",
+  "fecha": "2026-09-15",
+  "corte_series": "2024, años completos",
+  "fuentes_editables": [
+    "marco_teorico/*.md",
+    "practica_computacional/*.ipynb",
+    "sa_mise/*.py"
+  ],
+  "derivados": [
+    "cuadernos_integrados/*.ipynb",
+    "_build/",
+    "entregas/ejemplo_docente/"
+  ],
+  "estado_editorial": "Revisión didáctica: intuición, técnica y juicio profesional",
+  "unidades": [
+    {
+      "lectura": "preludio_fundamentos.md",
+      "practica": "preludio.ipynb"
+    },
+    {
+      "lectura": "semana_01_complejidad_y_evidencia.md",
+      "practica": "semana_01.ipynb"
+    },
+    {
+      "lectura": "semana_02_redes_e_infraestructura.md",
+      "practica": "semana_02.ipynb"
+    },
+    {
+      "lectura": "semana_03_mercados_actores_y_adopcion.md",
+      "practica": "semana_03.ipynb"
+    },
+    {
+      "lectura": "semana_04_dinamica_calibracion_y_validacion.md",
+      "practica": "semana_04.ipynb"
+    },
+    {
+      "lectura": "semana_05_negocio_regulacion_y_robustez.md",
+      "practica": "semana_05.ipynb"
+    },
+    {
+      "lectura": "semana_06_gobernanza_justicia_y_viabilidad.md",
+      "practica": "semana_06.ipynb"
+    },
+    {
+      "lectura": "semana_07_integracion_y_consultoria.md",
+      "practica": "semana_07.ipynb"
+    },
+    {
+      "lectura": "semana_08_defensa_y_aprendizaje_profesional.md",
+      "practica": "semana_08.ipynb"
+    }
+  ]
+}

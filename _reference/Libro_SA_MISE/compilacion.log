@@ -1,0 +1,96 @@
+Running Jupyter-Book v1.0.4.post1
+Source Folder: C:\Users\ch.gomez171\Documents\Codex\2026-09-14\en-la-carpeta-del-proyecto-est\outputs\Edicion_didactica_2026_09_15\Libro SA-MISE
+Config Path: C:\Users\ch.gomez171\Documents\Codex\2026-09-14\en-la-carpeta-del-proyecto-est\outputs\Edicion_didactica_2026_09_15\Libro SA-MISE\_config.yml
+Output Path: C:\Users\ch.gomez171\Documents\Codex\2026-09-14\en-la-carpeta-del-proyecto-est\outputs\Edicion_didactica_2026_09_15\Libro SA-MISE\_build\html
+[01mRunning Sphinx v7.4.7[39;49;00m
+[01mloading translations [es]... [39;49;00mdone
+[01mmaking output directory... [39;49;00mdone
+[etoc] Changing master_doc to 'intro'
+[etoc] Excluded 23 extra file(s) not in toc
+[01mmyst v3.0.1:[39;49;00m MdParserConfig(commonmark_only=False, gfm_only=False, enable_extensions={'colon_fence', 'amsmath', 'dollarmath'}, disable_syntax=[], all_links_external=False, links_external_new_tab=False, url_schemes=('mailto', 'http', 'https'), ref_domains=None, fence_as_directive=set(), number_code_blocks=[], title_to_header=False, heading_anchors=0, heading_slug_func=None, html_meta={}, footnote_transition=True, words_per_minute=200, substitutions={}, linkify_fuzzy_links=True, dmath_allow_labels=True, dmath_allow_space=True, dmath_allow_digits=True, dmath_double_inline=False, update_mathjax=True, mathjax_classes='tex2jax_process|mathjax_process|math|output_area', enable_checkboxes=False, suppress_warnings=[], highlight_code_blocks=True)
+[01mmyst-nb v1.4.0:[39;49;00m NbParserConfig(custom_formats={}, metadata_key='mystnb', cell_metadata_key='mystnb', kernel_rgx_aliases={}, eval_name_regex='^[a-zA-Z_][a-zA-Z0-9_]*$', execution_mode='off', execution_cache_path='', execution_excludepatterns=[], execution_timeout=30, execution_in_temp=False, execution_allow_errors=False, execution_raise_on_error=False, execution_show_tb=False, merge_streams=False, render_plugin='default', remove_code_source=False, remove_code_outputs=False, scroll_outputs=False, code_prompt_show='Show code cell {type}', code_prompt_hide='Hide code cell {type}', number_source_lines=False, output_stderr='show', render_text_lexer='myst-ansi', render_error_lexer='ipythontb', render_image_options={}, render_figure_options={}, render_markdown_format='commonmark', output_folder='build', append_css=True, metadata_to_fm=False)
+Using jupyter-cache at: C:\Users\ch.gomez171\Documents\Codex\2026-09-14\en-la-carpeta-del-proyecto-est\outputs\Edicion_didactica_2026_09_15\Libro SA-MISE\_build\.jupyter_cache
+[01msphinx-multitoc-numbering v0.1.3:[39;49;00m Loaded
+[01mbuilding [mo]: [39;49;00mtargets for 0 po files that are out of date
+[01mwriting output... [39;49;00m
+[01mbuilding [html]: [39;49;00mtargets for 14 source files that are out of date
+[01mupdating environment: [39;49;00m[new config] 14 added, 0 changed, 0 removed
+[01mreading sources... [39;49;00m[  7%] [35mALINEACION_CURRICULAR[39;49;00m
+[01mreading sources... [39;49;00m[ 14%] [35mBITACORA_REVISION[39;49;00m
+[01mreading sources... [39;49;00m[ 21%] [35mFUENTES[39;49;00m
+[01mreading sources... [39;49;00m[ 29%] [35mcuadernos_integrados/preludio[39;49;00m
+[01mreading sources... [39;49;00m[ 36%] [35mcuadernos_integrados/semana_01[39;49;00m
+[01mreading sources... [39;49;00m[ 43%] [35mcuadernos_integrados/semana_02[39;49;00m
+[01mreading sources... [39;49;00m[ 50%] [35mcuadernos_integrados/semana_03[39;49;00m
+[01mreading sources... [39;49;00m[ 57%] [35mcuadernos_integrados/semana_04[39;49;00m
+[01mreading sources... [39;49;00m[ 64%] [35mcuadernos_integrados/semana_05[39;49;00m
+[01mreading sources... [39;49;00m[ 71%] [35mcuadernos_integrados/semana_06[39;49;00m
+[01mreading sources... [39;49;00m[ 79%] [35mcuadernos_integrados/semana_07[39;49;00m
+[01mreading sources... [39;49;00m[ 86%] [35mcuadernos_integrados/semana_08[39;49;00m
+[01mreading sources... [39;49;00m[ 93%] [35mdatos/CONTRATO_DATOS[39;49;00m
+[01mreading sources... [39;49;00m[100%] [35mintro[39;49;00m
+
+[01mlooking for now-outdated files... [39;49;00mnone found
+[01mpickling environment... [39;49;00mdone
+[01mchecking consistency... [39;49;00mdone
+[01mpreparing documents... [39;49;00mdone
+[01mcopying assets... [39;49;00m
+[01mcopying static files... [39;49;00mdone
+[01mcopying extra files... [39;49;00mdone
+[01mcopying assets: [39;49;00mdone
+[01mwriting output... [39;49;00m[  7%] [32mALINEACION_CURRICULAR[39;49;00m
+[01mwriting output... [39;49;00m[ 14%] [32mBITACORA_REVISION[39;49;00m
+[01mwriting output... [39;49;00m[ 21%] [32mFUENTES[39;49;00m
+[01mwriting output... [39;49;00m[ 29%] [32mcuadernos_integrados/preludio[39;49;00m
+[01mwriting output... [39;49;00m[ 36%] [32mcuadernos_integrados/semana_01[39;49;00m
+[01mwriting output... [39;49;00m[ 43%] [32mcuadernos_integrados/semana_02[39;49;00m
+[01mwriting output... [39;49;00m[ 50%] [32mcuadernos_integrados/semana_03[39;49;00m
+[01mwriting output... [39;49;00m[ 57%] [32mcuadernos_integrados/semana_04[39;49;00m
+[01mwriting output... [39;49;00m[ 64%] [32mcuadernos_integrados/semana_05[39;49;00m
+[01mwriting output... [39;49;00m[ 71%] [32mcuadernos_integrados/semana_06[39;49;00m
+[01mwriting output... [39;49;00m[ 79%] [32mcuadernos_integrados/semana_07[39;49;00m
+[01mwriting output... [39;49;00m[ 86%] [32mcuadernos_integrados/semana_08[39;49;00m
+[01mwriting output... [39;49;00m[ 93%] [32mdatos/CONTRATO_DATOS[39;49;00m
+[01mwriting output... [39;49;00m[100%] [32mintro[39;49;00m
+
+[01mgenerating indices... [39;49;00mgenindex done
+[01mwriting additional pages... [39;49;00msearch done
+[01mcopying images... [39;49;00m[  5%] [33mC:/Users/ch.gomez171/Documents/Codex/2026-09-14/en-la-carpeta-del-proyecto-est/outputs/Edicion_didactica_2026_09_15/Libro SA-MISE/_build/jupyter_execute/d723e91c1ef93bbf8e01a0043c46b6908032eb127e76df5230153b625b3fc7a4.png[39;49;00m
+[01mcopying images... [39;49;00m[ 11%] [33mC:/Users/ch.gomez171/Documents/Codex/2026-09-14/en-la-carpeta-del-proyecto-est/outputs/Edicion_didactica_2026_09_15/Libro SA-MISE/_build/jupyter_execute/1abb1f7b489542574bae95fdbe39b7a71485df885c874c828cc9c79a28aaf481.png[39;49;00m
+[01mcopying images... [39;49;00m[ 16%] [33mC:/Users/ch.gomez171/Documents/Codex/2026-09-14/en-la-carpeta-del-proyecto-est/outputs/Edicion_didactica_2026_09_15/Libro SA-MISE/_build/jupyter_execute/3e1dd709b17919d6b1470caad1f390199e93568804e9c251d8c234db16a10a3d.png[39;49;00m
+[01mcopying images... [39;49;00m[ 21%] [33mC:/Users/ch.gomez171/Documents/Codex/2026-09-14/en-la-carpeta-del-proyecto-est/outputs/Edicion_didactica_2026_09_15/Libro SA-MISE/_build/jupyter_execute/6d81bb7e3510672252b2e4203eba3e2350e744ff328529016589441e74adb876.png[39;49;00m
+[01mcopying images... [39;49;00m[ 26%] [33mC:/Users/ch.gomez171/Documents/Codex/2026-09-14/en-la-carpeta-del-proyecto-est/outputs/Edicion_didactica_2026_09_15/Libro SA-MISE/_build/jupyter_execute/6c00c3bd1c07d32ad3e17f38ef2d6df8de0d70347f05b20e4ace30cd789d6bc7.png[39;49;00m
+[01mcopying images... [39;49;00m[ 32%] [33mC:/Users/ch.gomez171/Documents/Codex/2026-09-14/en-la-carpeta-del-proyecto-est/outputs/Edicion_didactica_2026_09_15/Libro SA-MISE/_build/jupyter_execute/90fa0cf877d4f1dfc9f84cf3c092ed5a56a8ffcc39f6eafe3f2130728be1acbb.png[39;49;00m
+[01mcopying images... [39;49;00m[ 37%] [33mC:/Users/ch.gomez171/Documents/Codex/2026-09-14/en-la-carpeta-del-proyecto-est/outputs/Edicion_didactica_2026_09_15/Libro SA-MISE/_build/jupyter_execute/8eaea20311cb27177d19f36f7409381122f2763dbcfecf7fbeda91803f4cf716.png[39;49;00m
+[01mcopying images... [39;49;00m[ 42%] [33mC:/Users/ch.gomez171/Documents/Codex/2026-09-14/en-la-carpeta-del-proyecto-est/outputs/Edicion_didactica_2026_09_15/Libro SA-MISE/_build/jupyter_execute/53ab53504181996891edb38b15b75211ad7b87502993b6a8a8253746ac93edf0.png[39;49;00m
+[01mcopying images... [39;49;00m[ 47%] [33mC:/Users/ch.gomez171/Documents/Codex/2026-09-14/en-la-carpeta-del-proyecto-est/outputs/Edicion_didactica_2026_09_15/Libro SA-MISE/_build/jupyter_execute/d70a3691ef6cac32dad0d346b47687a8416e430dd9da55d0921d43275d79670a.png[39;49;00m
+[01mcopying images... [39;49;00m[ 53%] [33mC:/Users/ch.gomez171/Documents/Codex/2026-09-14/en-la-carpeta-del-proyecto-est/outputs/Edicion_didactica_2026_09_15/Libro SA-MISE/_build/jupyter_execute/90fe66ee2244f2a8c37c26c764f7d35c923378b0d9e7aab238e3c959501e3b81.png[39;49;00m
+[01mcopying images... [39;49;00m[ 58%] [33mC:/Users/ch.gomez171/Documents/Codex/2026-09-14/en-la-carpeta-del-proyecto-est/outputs/Edicion_didactica_2026_09_15/Libro SA-MISE/_build/jupyter_execute/b431270e628983b9e73320f764f8f83cd61077d958b10522edbc3ed7e265c2b7.png[39;49;00m
+[01mcopying images... [39;49;00m[ 63%] [33mC:/Users/ch.gomez171/Documents/Codex/2026-09-14/en-la-carpeta-del-proyecto-est/outputs/Edicion_didactica_2026_09_15/Libro SA-MISE/_build/jupyter_execute/9853d49cdfe90c887ff2ee4b051aa2f2548999d61070110e758bd0aa1bf5ed99.png[39;49;00m
+[01mcopying images... [39;49;00m[ 68%] [33mC:/Users/ch.gomez171/Documents/Codex/2026-09-14/en-la-carpeta-del-proyecto-est/outputs/Edicion_didactica_2026_09_15/Libro SA-MISE/_build/jupyter_execute/f8844926ed80ff478f69a8c05d5834d8d171ea3e831dea86bce096e536b82348.png[39;49;00m
+[01mcopying images... [39;49;00m[ 74%] [33mC:/Users/ch.gomez171/Documents/Codex/2026-09-14/en-la-carpeta-del-proyecto-est/outputs/Edicion_didactica_2026_09_15/Libro SA-MISE/_build/jupyter_execute/16f4d2b87ac8e6639c3b7d03c549ed70979a89380f173636ca70e64bbb9e3cc5.png[39;49;00m
+[01mcopying images... [39;49;00m[ 79%] [33mC:/Users/ch.gomez171/Documents/Codex/2026-09-14/en-la-carpeta-del-proyecto-est/outputs/Edicion_didactica_2026_09_15/Libro SA-MISE/_build/jupyter_execute/170e75adfabc99952a5eb01282cdaa9dddae14ea140d5a1afbb6c000d64e4fcb.png[39;49;00m
+[01mcopying images... [39;49;00m[ 84%] [33mC:/Users/ch.gomez171/Documents/Codex/2026-09-14/en-la-carpeta-del-proyecto-est/outputs/Edicion_didactica_2026_09_15/Libro SA-MISE/_build/jupyter_execute/5882588e2038d5d6dd212b959c49435a32e74cbea9a9d25fada1ecbd8b22fe87.png[39;49;00m
+[01mcopying images... [39;49;00m[ 89%] [33mC:/Users/ch.gomez171/Documents/Codex/2026-09-14/en-la-carpeta-del-proyecto-est/outputs/Edicion_didactica_2026_09_15/Libro SA-MISE/_build/jupyter_execute/815220122bdeca2eb4ad5a89caae51f9ca4a7f81cf79b04b8785daa50d99fb14.png[39;49;00m
+[01mcopying images... [39;49;00m[ 95%] [33mC:/Users/ch.gomez171/Documents/Codex/2026-09-14/en-la-carpeta-del-proyecto-est/outputs/Edicion_didactica_2026_09_15/Libro SA-MISE/_build/jupyter_execute/81ec066a032df690a48f40d7e338a846688d0288394d4c8c629f6b6cfc6f95cb.png[39;49;00m
+[01mcopying images... [39;49;00m[100%] [33mC:/Users/ch.gomez171/Documents/Codex/2026-09-14/en-la-carpeta-del-proyecto-est/outputs/Edicion_didactica_2026_09_15/Libro SA-MISE/_build/jupyter_execute/c0a4a43a6d1bf43bbb2791fe563a269590166d960d5e05f79a21c95fc115a4a6.png[39;49;00m
+
+[01mdumping search index in Spanish (code: es)... [39;49;00mdone
+[01mdumping object inventory... [39;49;00mdone
+[etoc] missing index.html written as redirect to 'intro.html'
+[01mbuild succeeded.[39;49;00m
+
+The HTML pages are in _build\html.
+
+[92m===============================================================================[0m
+
+Finished generating HTML for book.
+Your book's HTML pages are here:
+    _build\html\
+You can look at your book by opening this file in a browser:
+    _build\html\index.html
+Or paste this line directly into your browser bar:
+    file://C:\Users\ch.gomez171\Documents\Codex\2026-09-14\en-la-carpeta-del-proyecto-est\outputs\Edicion_didactica_2026_09_15\Libro SA-MISE\_build\html\index.html            
+
+[92m===============================================================================[0m
+

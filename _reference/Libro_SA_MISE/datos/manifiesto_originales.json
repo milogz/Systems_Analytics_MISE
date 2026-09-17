@@ -1,0 +1,121 @@
+[
+  {
+    "archivo": "test_generacion.csv",
+    "sha256": "a59f55f99dfe3c457cad72e87d0b9b50891f2302b55c16b294d8f8c0803700b5",
+    "procedencia": "Copia del material original; atribuido a XM. No equivale a descarga nueva verificada.",
+    "origen_local": "C:\\Users\\ch.gomez171\\Documents\\GitHub\\Systems_Analytics_MISE\\notebooks\\data\\test_generacion.csv",
+    "fecha_copia": "2026-09-14"
+  },
+  {
+    "archivo": "test_precio_bolsa.csv",
+    "sha256": "d9d34c5b24d957325a07cf4ea00865f30e4549dfb371aff9aba976a791d15560",
+    "procedencia": "Copia del material original; atribuido a XM. No equivale a descarga nueva verificada.",
+    "origen_local": "C:\\Users\\ch.gomez171\\Documents\\GitHub\\Systems_Analytics_MISE\\notebooks\\data\\test_precio_bolsa.csv",
+    "fecha_copia": "2026-09-14"
+  },
+  {
+    "archivo": "test_recursos.csv",
+    "sha256": "e0c0834bc3ffdb9b2a84d6d902be716cf4744d8af3ca7a8d52f0ded35edb769b",
+    "procedencia": "Copia del material original; atribuido a XM. No equivale a descarga nueva verificada.",
+    "origen_local": "C:\\Users\\ch.gomez171\\Documents\\GitHub\\Systems_Analytics_MISE\\notebooks\\data\\test_recursos.csv",
+    "fecha_copia": "2026-09-14"
+  },
+  {
+    "archivo": "xm_capacidad_por_recurso.csv",
+    "sha256": "b13d7b53d49c92f9aacf583629028f8c49fa65610d5d1a26674cb8393cd5aff1",
+    "procedencia": "Copia del material original; atribuido a XM. No equivale a descarga nueva verificada.",
+    "origen_local": "C:\\Users\\ch.gomez171\\Documents\\GitHub\\Systems_Analytics_MISE\\notebooks\\data\\xm_capacidad_por_recurso.csv",
+    "fecha_copia": "2026-09-14"
+  },
+  {
+    "archivo": "xm_demanda_comercial_anual.csv",
+    "sha256": "c7394db178e1601c28bc0c51c5ffedc5acf52de321d103f2d1fcafb9918abbbd",
+    "procedencia": "Copia del material original; atribuido a XM. No equivale a descarga nueva verificada.",
+    "origen_local": "C:\\Users\\ch.gomez171\\Documents\\GitHub\\Systems_Analytics_MISE\\notebooks\\data\\xm_demanda_comercial_anual.csv",
+    "fecha_copia": "2026-09-14"
+  },
+  {
+    "archivo": "xm_demanda_comercial_raw.csv",
+    "sha256": "73d0e1068e900d8eeffecc70b117575a1a9ca937b77814469022cd17246c7832",
+    "procedencia": "Copia del material original; atribuido a XM. No equivale a descarga nueva verificada.",
+    "origen_local": "C:\\Users\\ch.gomez171\\Documents\\GitHub\\Systems_Analytics_MISE\\notebooks\\data\\xm_demanda_comercial_raw.csv",
+    "fecha_copia": "2026-09-14"
+  },
+  {
+    "archivo": "xm_demanda_max_anual.csv",
+    "sha256": "e1a720bfff49f1805fde7f42dff3b5c907327eec093f3bc5f6e899427098be86",
+    "procedencia": "Copia del material original; atribuido a XM. No equivale a descarga nueva verificada.",
+    "origen_local": "C:\\Users\\ch.gomez171\\Documents\\GitHub\\Systems_Analytics_MISE\\notebooks\\data\\xm_demanda_max_anual.csv",
+    "fecha_copia": "2026-09-14"
+  },
+  {
+    "archivo": "xm_demanda_max_raw.csv",
+    "sha256": "82ac31e237f659ecf7d926f6e0ee1e95e8013c514b9226b16883d5334018a280",
+    "procedencia": "Copia del material original; atribuido a XM. No equivale a descarga nueva verificada.",
+    "origen_local": "C:\\Users\\ch.gomez171\\Documents\\GitHub\\Systems_Analytics_MISE\\notebooks\\data\\xm_demanda_max_raw.csv",
+    "fecha_copia": "2026-09-14"
+  },
+  {
+    "archivo": "xm_embalses_pct_mensual.csv",
+    "sha256": "d64e5a6af89f70e716262c5a1489dfe85eb234d7d89c0a8988a6659eceffac4d",
+    "procedencia": "Copia del material original; atribuido a XM. No equivale a descarga nueva verificada.",
+    "origen_local": "C:\\Users\\ch.gomez171\\Documents\\GitHub\\Systems_Analytics_MISE\\notebooks\\data\\xm_embalses_pct_mensual.csv",
+    "fecha_copia": "2026-09-14"
+  },
+  {
+    "archivo": "xm_embalses_pct_raw.csv",
+    "sha256": "d103f28e30f57d219551e9af3ab86716fcad908607cac97c0432ebb0643a2ee3",
+    "procedencia": "Copia del material original; atribuido a XM. No equivale a descarga nueva verificada.",
+    "origen_local": "C:\\Users\\ch.gomez171\\Documents\\GitHub\\Systems_Analytics_MISE\\notebooks\\data\\xm_embalses_pct_raw.csv",
+    "fecha_copia": "2026-09-14"
+  },
+  {
+    "archivo": "xm_generacion_anual.csv",
+    "sha256": "7bb4b7035536c6f89dc94a44d349585a7b72621234f9551084fb23b6fa9cfd4b",
+    "procedencia": "Copia del material original; atribuido a XM. No equivale a descarga nueva verificada.",
+    "origen_local": "C:\\Users\\ch.gomez171\\Documents\\GitHub\\Systems_Analytics_MISE\\notebooks\\data\\xm_generacion_anual.csv",
+    "fecha_copia": "2026-09-14"
+  },
+  {
+    "archivo": "xm_generacion_mensual.csv",
+    "sha256": "f2db20076983b79a7fc65790c7d8397fe66811a7b54a97c604927c88502d0034",
+    "procedencia": "Copia del material original; atribuido a XM. No equivale a descarga nueva verificada.",
+    "origen_local": "C:\\Users\\ch.gomez171\\Documents\\GitHub\\Systems_Analytics_MISE\\notebooks\\data\\xm_generacion_mensual.csv",
+    "fecha_copia": "2026-09-14"
+  },
+  {
+    "archivo": "xm_generacion_raw.csv",
+    "sha256": "ee8e2ee3a25e087c8ddc63e6cc32965f11d8631e02679a5dd4e00a265b930f67",
+    "procedencia": "Copia del material original; atribuido a XM. No equivale a descarga nueva verificada.",
+    "origen_local": "C:\\Users\\ch.gomez171\\Documents\\GitHub\\Systems_Analytics_MISE\\notebooks\\data\\xm_generacion_raw.csv",
+    "fecha_copia": "2026-09-14"
+  },
+  {
+    "archivo": "xm_precio_bolsa_anual.csv",
+    "sha256": "300d75402614f23f55b34ea4888033c12d96d8f268f2b79d0c2835ea87f73588",
+    "procedencia": "Copia del material original; atribuido a XM. No equivale a descarga nueva verificada.",
+    "origen_local": "C:\\Users\\ch.gomez171\\Documents\\GitHub\\Systems_Analytics_MISE\\notebooks\\data\\xm_precio_bolsa_anual.csv",
+    "fecha_copia": "2026-09-14"
+  },
+  {
+    "archivo": "xm_precio_bolsa_mensual.csv",
+    "sha256": "f162ef247deb24fddfeb6683e1c7fedd4962ed5fc147322b7ed3fb0fff7c8aba",
+    "procedencia": "Copia del material original; atribuido a XM. No equivale a descarga nueva verificada.",
+    "origen_local": "C:\\Users\\ch.gomez171\\Documents\\GitHub\\Systems_Analytics_MISE\\notebooks\\data\\xm_precio_bolsa_mensual.csv",
+    "fecha_copia": "2026-09-14"
+  },
+  {
+    "archivo": "xm_precio_bolsa_raw.csv",
+    "sha256": "b82e37d85f47f57cfbdd5eabce39e2d5a2956765e76d7ee9dc4c6a89d6d1f726",
+    "procedencia": "Copia del material original; atribuido a XM. No equivale a descarga nueva verificada.",
+    "origen_local": "C:\\Users\\ch.gomez171\\Documents\\GitHub\\Systems_Analytics_MISE\\notebooks\\data\\xm_precio_bolsa_raw.csv",
+    "fecha_copia": "2026-09-14"
+  },
+  {
+    "archivo": "xm_recursos_plantas.csv",
+    "sha256": "c6d3c021dff0572b89e14f6cdbf86f313d97a3cca9f958cd08876c4776cfbeae",
+    "procedencia": "Copia del material original; atribuido a XM. No equivale a descarga nueva verificada.",
+    "origen_local": "C:\\Users\\ch.gomez171\\Documents\\GitHub\\Systems_Analytics_MISE\\notebooks\\data\\xm_recursos_plantas.csv",
+    "fecha_copia": "2026-09-14"
+  }
+]

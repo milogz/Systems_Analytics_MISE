@@ -1,4 +1,15 @@
-# Cierre e Integracion (Semanas 6-8)
+# ⚠️ Archivo Supersedido
+
+> **Nota**: Este archivo ha sido reemplazado por las lecturas semanales dedicadas:
+> - `semana_06/lectura.md` — Gobernanza, Justicia Energética y la Dimensión Humana
+> - `semana_07/lectura.md` — Integración y Consultoría Sistémica
+> - `semana_08/lectura.md` — Horizontes Futuros y Cierre
+>
+> Se conserva únicamente como referencia histórica.
+
+---
+
+# Cierre e Integración (Semanas 6-8)
 
 Las semanas finales del curso no introducen herramientas computacionales nuevas. En su lugar, integran todo lo aprendido en un ejercicio de consultoria sistemica completa.
 

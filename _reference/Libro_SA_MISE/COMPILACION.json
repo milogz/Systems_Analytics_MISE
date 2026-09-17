@@ -1,0 +1,6 @@
+{
+  "comando": "jupyter-book build . -W --keep-going",
+  "exit_code": 0,
+  "html": "C:\\Users\\ch.gomez171\\Documents\\Codex\\2026-09-14\\en-la-carpeta-del-proyecto-est\\outputs\\Edicion_didactica_2026_09_15\\Libro SA-MISE\\_build\\html\\index.html",
+  "advertencias_como_errores": true
+}

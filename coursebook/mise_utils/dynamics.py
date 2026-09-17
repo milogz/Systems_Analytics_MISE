@@ -323,7 +323,7 @@ def modelo_inversion_capacidad(params=None, T=30, dt=0.1):
     precio = p['precio_base'] * np.exp(p['k_precio'] * gap)
     precio = np.minimum(precio, p['precio_techo'])
 
-    margen = (cap - dem) / np.maximum(dem, 1) * 100  # % de margen
+    diferencia_contable_pct = (cap - dem) / np.maximum(dem, 1) * 100  # % de margen
 
     return pd.DataFrame({
         't': sol.t,
@@ -333,7 +333,7 @@ def modelo_inversion_capacidad(params=None, T=30, dt=0.1):
         'demanda_MW': dem,
         'gap': gap,
         'precio_bolsa': precio,
-        'margen_pct': margen,
+        'diferencia_contable_pct': diferencia_contable_pct,
     })
 
 
@@ -516,6 +516,14 @@ ESTRATEGIAS_INVERSION = {
         'cap_renovable_inicial': 1000,
         'pipeline_renovable_inicial': 1200,
         'cxc_activo': True,
+    },
+    'Do Nothing': {
+        'nombre': 'Do Nothing (Sin inversión)',
+        'sensibilidad_inversion': 0,
+        'inversion_maxima': 0,
+        'cap_renovable_inicial': 0,
+        'pipeline_renovable_inicial': 0,
+        'cxc_activo': False,
     },
 }
 
@@ -804,19 +812,19 @@ def plot_ciclo_inversion(df, titulo=None):
                         color=viz.COLORS['success'], alpha=0.1)
         ax.set_ylabel('Participación renovable (%)')
         ax.set_title('Participación Renovable en la Matriz')
-    elif 'margen_pct' in df.columns:
-        ax.plot(df['año'], df['margen_pct'], color=viz.COLORS['success'],
+    elif 'diferencia_contable_pct' in df.columns:
+        ax.plot(df['año'], df['diferencia_contable_pct'], color=viz.COLORS['success'],
                 linewidth=2)
-        ax.axhline(y=0, color=viz.COLORS['danger'], linestyle='--', alpha=0.7,
-                   label='Margen = 0 (déficit)')
-        ax.fill_between(df['año'], 0, df['margen_pct'],
-                        where=df['margen_pct'] > 0, alpha=0.1,
+        ax.axhline(0, color='red', linestyle='--', alpha=0.5,
+                   label='Diferencia = 0 (déficit)')
+        ax.fill_between(df['año'], 0, df['diferencia_contable_pct'],
+                        where=df['diferencia_contable_pct'] > 0, alpha=0.1,
                         color=viz.COLORS['success'])
-        ax.fill_between(df['año'], 0, df['margen_pct'],
-                        where=df['margen_pct'] < 0, alpha=0.1,
+        ax.fill_between(df['año'], 0, df['diferencia_contable_pct'],
+                        where=df['diferencia_contable_pct'] < 0, alpha=0.1,
                         color=viz.COLORS['danger'])
-        ax.set_ylabel('Margen de reserva (%)')
-        ax.set_title('Margen de Reserva')
+        ax.set_ylabel('Dif. contable Gen-Dem (%)')
+        ax.set_title('Diferencia Contable Gen-Dem')
         ax.legend(fontsize=9)
     else:
         gap_pct = df['gap'] * 100

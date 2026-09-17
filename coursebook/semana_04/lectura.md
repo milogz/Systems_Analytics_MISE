@@ -187,7 +187,7 @@ Donde:
 - $r$ es la "tasa fraccional de crecimiento" neta (natalidad menos mortalidad, tasa de interés, factor de contagio). Se mide en unidades de $[1/Tiempo]$.
 
 **La Solución Analítica y el Comportamiento:**
-Cualquier estudiante de cálculo diferencial sabe que la única función que es proporcional a su propia derivada es la función exponencial. Al resolver la ecuación por separación de variables, obtenemos la solución analítica exacta:
+Cualquier estudiante de cálculo diferencial sabe que la única función qué es proporcional a su propia derivada es la función exponencial. Al resolver la ecuación por separación de variables, obtenemos la solución analítica exacta:
 $$ N(t) = N_0 \cdot e^{r \cdot t} $$
 
 Donde $N_0$ es el valor inicial del stock en el tiempo $t=0$, y $e$ es la base de los logaritmos naturales (aproximadamente 2.71828).
@@ -264,7 +264,7 @@ Por ejemplo, consideremos la percepción de los agentes ante un incremento súbi
 
 Los retardos son profundamente desestabilizadores y "peligrosos" porque traen como consecuencia la dislocación y el desacople temporal de las acciones correctivas con respecto a sus impactos futuros.
 
-En la vida humana diaria e intuitiva (pensamiento lineal y de corto plazo), operamos asumiendo que "causa y efecto están próximos en el tiempo y el espacio". Pero en sistemas con retardos largos, este atajo evolutivo mental es la receta del desastre: la decisión que resulta matemática y contextualmente "correcta, racional y justificada" en el tiempo actual $t$ basándose en la información visible en el hoy, puede llegar a ser una decisión trágicamente catastrófica en el tiempo futuro $t + 5$ años. ¿Por qué? Porque cuando se complete el retardo de 5 años para que el proyecto nazca, las condiciones exógenas e interconectadas del sistema completo ya han mutado dramáticamente (quizás la economía entró en recesión derrumbando el consumo de energía, o lo que es peor, porque docenas de competidores cayeron exactamente en la misma trampa ilusoria y tomaron colectivamente la misma decisión "racional" al mismo tiempo que nosotros, generando un colapso del mercado).
+En la vida humana diaria e intuitiva (pensamiento lineal y de corto plazo), operamos asumiendo que "causa y efecto están próximos en el tiempo y el espacio". Pero en sistemas con retardos largos, este atajo evolutivo mental es la receta del desastre: la decisión que resulta matemática y contextualmente "correcta, racional y justificada" en el tiempo actual $t$ basándose en la información visible en el hoy, puede llegar a ser una decisión trágicamente catastrófica en el tiempo futuro $t + 5$ años. ¿Por qué? Porque cuando se complete el retardo de 5 años para que el proyecto nazca, las condiciones exógenas e interconectadas del sistema completo ya han mutado dramáticamente (quizás la economía entró en recesión derrumbando el consumo de energía, o lo qué es peor, porque docenas de competidores cayeron exactamente en la misma trampa ilusoria y tomaron colectivamente la misma decisión "racional" al mismo tiempo que nosotros, generando un colapso del mercado).
 
 ### La Analogía de la Ducha (La alegoría perfecta)
 
@@ -335,45 +335,45 @@ Finalmente, una gran y gruesa flecha curva de información macro cierra y sella 
 
 ### Calibracion Realista y Resultados Dinamicos
 
-Cuando calibramos este modelo con parametros colombianos historicos — un retardo de construccion promedio de $\tau \approx 4$ a $6$ anos para grandes proyectos hidroelectricos, una vida util infraestructural de aproximadamente $40$ anos, y un crecimiento tendencial de la demanda del $3\%$ al $4\%$ anual —, la simulacion produce un resultado revelador.
+Cuando calibramos este modelo con parametros colombianos historicos — un retardo de construccion promedio de $\tau \approx 4$ a $6$ años para grandes proyectos hidroelectricos, una vida util infraestructural de aproximadamente $40$ años, y un crecimiento tendencial de la demanda del $3\%$ al $4\%$ anual —, la simulación produce un resultado revelador.
 
-Sin necesidad de introducir ninguna perturbacion externa (sin fenomenos de El Nino, sin crisis geopoliticas, sin shocks de precios de combustibles), el modelo genera endogenamente **oscilaciones sostenidas** con periodos de aproximadamente 7 a 12 anos. Estas ondas alternan entre fases de sobreinversion euforica (boom) y fases prolongadas de sequia de inversion (bust), con los precios de bolsa oscilando violentamente entre picos de escasez y valles de sobreoferta.
+Sin necesidad de introducir ninguna perturbacion externa (sin fenomenos de El Niño, sin crisis geopoliticas, sin shocks de precios de combustibles), el modelo genera endogenamente **oscilaciones sostenidas** con periodos de aproximadamente 7 a 12 años. Estas ondas alternan entre fases de sobreinversion euforica (boom) y fases prolongadas de sequia de inversión (bust), con los precios de bolsa oscilando violentamente entre picos de escasez y valles de sobreoferta.
 
-Lo notable es que estas oscilaciones simuladas coinciden con los ciclos historicos observados en el mercado electrico colombiano desde la reestructuracion de los anos noventa. Esto nos conduce al insight central de la Semana 4:
+Lo notable es que estas oscilaciones simuladas coinciden con los ciclos historicos observados en el mercado eléctrico colombiano desde la reestructuracion de los años noventa. Esto nos conduce al insight central de la Semana 4:
 
-> **Las oscilaciones del mercado electrico no son primariamente causadas por eventos climaticos externos como El Nino. Son el producto inevitable de la estructura interna del sistema: la combinacion de retardos largos de construccion con la no-linealidad exponencial de la formacion de precios.**
+> **Las oscilaciones del mercado eléctrico no son primariamente causadas por eventos climaticos externos como El Niño. Son el producto inevitable de la estructura interna del sistema: la combinacion de retardos largos de construccion con la no-linealidad exponencial de la formacion de precios.**
 
-Los fenomenos climaticos como El Nino actuan como **disparadores y amplificadores** de un ciclo que ya reside latente en la estructura del mercado. Aceleran la crisis, sincronizan las respuestas de los agentes y magnifican la amplitud de las oscilaciones, pero no las originan. Un modelo que culpa exclusivamente al clima por las crisis del sector esta confundiendo el catalizador con la causa raiz — un error analitico que conduce a politicas ineficaces.
+Los fenomenos climaticos como El Niño actuan como **disparadores y amplificadores** de un ciclo que ya reside latente en la estructura del mercado. Aceleran la crisis, sincronizan las respuestas de los agentes y magnifican la amplitud de las oscilaciones, pero no las originan. Un modelo que culpa exclusivamente al clima por las crisis del sector esta confundiendo el catalizador con la causa raiz — un error analitico que conduce a politicas ineficaces.
 
 **Parametros empiricos para la calibracion (Saga 0 — Radiografia de Datos):**
 
 Los datos reales del SIN colombiano (fuente: API publica de XM, 2000-2025) permiten calibrar el modelo con evidencia empirica directa:
 
-| Parametro del modelo | Valor supuesto | Valor empirico (XM) | Observacion |
+| Parametro del modelo | Valor supuesto | Valor empírico (XM) | Observacion |
 |---------------------|---------------|---------------------|-------------|
 | Precio de equilibrio | 150 COP/kWh | 180 COP/kWh (promedio 2000-2024) | El modelo subestima ligeramente el precio base |
-| Precio maximo modelable | 600 COP/kWh | 2,822 COP/kWh (El Nino 2015) | El modelo subestima los picos por un factor de ~5x |
-| Retardo de construccion | 4 anos | 3-5 anos (cross-correlacion precio-capacidad) | Confirmado empiricamente |
-| Crecimiento de demanda | 2.5%/ano | ~3%/ano (crecimiento real 2000-2024) | El modelo subestima ligeramente |
-| Generacion 2024 | — | 83 TWh | Condicion de referencia para validacion |
+| Precio maximo modelable | 600 COP/kWh | 2,822 COP/kWh (El Niño 2015) | El modelo subestima los picos por un factor de ~5x |
+| Retardo de construccion | 4 años | 3-5 años (cross-correlacion precio-capacidad) | Confirmado empiricamente |
+| Crecimiento de demanda | 2.5%/año | ~3%/año (crecimiento real 2000-2024) | El modelo subestima ligeramente |
+| Generación 2024 | — | 83 TWh | Condicion de referencia para validacion |
 | Demanda maxima 2024 | — | 11.7 GW | Techo de capacidad requerida |
 | Relacion embalse-precio | Lineal (k_precio) | **Exponencial** (R$^2$ = 0.13 en log-space) | El modelo necesita no-linealidad exponencial |
 | Curtosis de precios | Normal (3) | **22.2** | Confirma distribuciones fat-tailed |
 
-Estos parametros se utilizan directamente en los notebooks de la Saga para calibrar y validar el modelo de inversion-capacidad.
+Estos parametros se utilizan directamente en los notebooks de la Saga para calibrar y validar el modelo de inversión-capacidad.
 
 ---
 
 
-## 7. Python para dinamica de sistemas
+## 7. Python para dinámica de sistemas
 
 ### Por que Python y no Vensim
 
-La Dinamica de Sistemas tiene una larga tradicion de software especializado con interfaces graficas de arrastrar y soltar: Vensim, Stella/iThink, AnyLogic. Estas herramientas son excelentes para la ensenanza introductoria y para la comunicacion visual con stakeholders no tecnicos. Sin embargo, en un programa de maestria orientado a la analitica avanzada, optamos por Python por tres razones estrategicas:
+La Dinámica de Sistemas tiene una larga tradicion de software especializado con interfaces graficas de arrastrar y soltar: Vensim, Stella/iThink, AnyLogic. Estas herramientas son excelentes para la ensenanza introductoria y para la comunicacion visual con stakeholders no tecnicos. Sin embargo, en un programa de maestria orientado a la analitica avanzada, optamos por Python por tres razones estrategicas:
 
 1. **Reproducibilidad y control de versiones.** Un modelo en Python es codigo fuente puro: se versiona con Git, se revisa en pull requests, se documenta con docstrings. Un modelo en Vensim es un archivo binario opaco que no permite trazabilidad granular de cambios.
 
-2. **Integracion con el ecosistema de datos.** Python permite conectar el modelo SD directamente con pipelines de datos reales (pandas), visualizacion avanzada (matplotlib, plotly), optimizacion (scipy.optimize), analisis de sensibilidad (SALib), y machine learning (scikit-learn). En Vensim, exportar resultados para cruzarlos con otras herramientas requiere pasos manuales fragiles.
+2. **Integracion con el ecosistema de datos.** Python permite conectar el modelo SD directamente con pipelines de datos reales (pandas), visualizacion avanzada (matplotlib, plotly), optimizacion (scipy.optimize), análisis de sensibilidad (SALib), y machine learning (scikit-learn). En Vensim, exportar resultados para cruzarlos con otras herramientas requiere pasos manuales fragiles.
 
 3. **Escalabilidad y despliegue.** Un modelo en Python se puede empaquetar como API, desplegarse en la nube, integrarse en dashboards interactivos (Streamlit, Dash) y ejecutarse en paralelo para miles de escenarios. Estas capacidades son fundamentales para la toma de decisiones robusta que veremos en la Semana 5.
 
@@ -381,12 +381,12 @@ La desventaja es clara: Python requiere programar las ecuaciones explicitamente,
 
 ### Integracion numerica con `scipy.integrate.solve_ivp`
 
-Para resolver sistemas de ecuaciones diferenciales ordinarias (EDOs) en Python, utilizamos la funcion `solve_ivp` del modulo `scipy.integrate`. Esta funcion implementa multiples metodos de integracion numerica (RK45, RK23, Radau, BDF) y maneja automaticamente el control de paso adaptativo para garantizar precision numerica.
+Para resolver sistemas de ecuaciones diferenciales ordinarias (EDOs) en Python, utilizamos la funcion `solve_ivp` del módulo `scipy.integrate`. Esta funcion implementa multiples metodos de integracion numerica (RK45, RK23, Radau, BDF) y maneja automaticamente el control de paso adaptativo para garantizar precision numerica.
 
 El patron de diseno para cualquier modelo SD en Python sigue tres pasos:
 
 1. **Definir la funcion del sistema** que recibe el tiempo $t$, el vector de estados $y$, y los parametros, y retorna el vector de derivadas $dy/dt$.
-2. **Especificar condiciones iniciales** y el horizonte de simulacion.
+2. **Especificar condiciones iniciales** y el horizonte de simulación.
 3. **Llamar a `solve_ivp`** y analizar los resultados.
 
 ```python
@@ -434,13 +434,13 @@ sol = solve_ivp(
 )
 ```
 
-En los laboratorios del curso, utilizaremos el modulo `mise_utils.dynamics`, que encapsula esta logica en funciones de alto nivel como `modelo_inversion_con_cxc_fncer()` y `plot_ciclo_inversion()`, permitiendo enfocarse en la experimentacion de politicas sin preocuparse por la fontaneria numerica.
+En los laboratorios del curso, utilizaremos el módulo `mise_utils.dynamics`, que encapsula esta logica en funciones de alto nivel como `modelo_inversion_con_cxc_fncer()` y `plot_ciclo_inversion()`, permitiendo enfocarse en la experimentacion de politicas sin preocuparse por la fontaneria numerica.
 
 ---
 
 ## 8. Arquetipos sistemicos: comprender antes de calcular
 
-Antes de lanzar simulaciones masivas, el analista senior debe entrenar su capacidad de reconocer patrones. La literatura clasica de Dinamica de Sistemas (Senge, Sterman, Meadows) ha identificado un conjunto reducido de **arquetipos sistemicos**: combinaciones recurrentes de bucles de refuerzo y balance que generan patologias predecibles en organizaciones, mercados e industrias.
+Antes de lanzar simulaciones masivas, el analista senior debe entrenar su capacidad de reconocer patrones. La literatura clasica de Dinámica de Sistemas (Senge, Sterman, Meadows) ha identificado un conjunto reducido de **arquetipos sistemicos**: combinaciones recurrentes de bucles de refuerzo y balance que generan patologias predecibles en organizaciones, mercados e industrias.
 
 Estos arquetipos son herramientas de diagnostico rapido. Permiten al consultor mirar un sistema problematico y decir: *"Reconozco este patron — es un Fixes that Fail"*, antes de invertir semanas en construir un modelo completo.
 
@@ -448,7 +448,7 @@ Estos arquetipos son herramientas de diagnostico rapido. Permiten al consultor m
 
 **Estructura:** Un problema genera un sintoma doloroso. Se aplica una solucion rapida que alivia el sintoma inmediatamente (bucle B rapido), pero que produce consecuencias secundarias retardadas que empeoran el problema original (bucle R lento).
 
-**Ejemplo energetico:** El gobierno impone un tope de precios al mercado spot durante una crisis de escasez para proteger al consumidor. El alivio es inmediato: las facturas no suben. Pero la consecuencia retardada es letal: al suprimir la senal de precio alto, se elimina el incentivo para que los inversionistas construyan nueva capacidad. Meses despues, la escasez se profundiza porque no hubo inversion, y el racionamiento se vuelve inevitable.
+**Ejemplo energetico:** El gobierno impone un tope de precios al mercado spot durante una crisis de escasez para proteger al consumidor. El alivio es inmediato: las facturas no suben. Pero la consecuencia retardada es letal: al suprimir la senal de precio alto, se elimina el incentivo para que los inversionistas construyan nueva capacidad. Meses despues, la escasez se profundiza porque no hubo inversión, y el racionamiento se vuelve inevitable.
 
 **Leccion:** La solucion rapida destruyo la senal que el sistema necesitaba para autocorregirse.
 
@@ -456,7 +456,7 @@ Estos arquetipos son herramientas de diagnostico rapido. Permiten al consultor m
 
 **Estructura:** Ante un problema cronico, se recurre repetidamente a una solucion sintomatica facil en lugar de abordar la solucion fundamental (mas dificil, mas lenta, pero duradera). Con el tiempo, la dependencia de la solucion sintomatica atrofia la capacidad del sistema para implementar la solucion real.
 
-**Ejemplo energetico:** Colombia importa Gas Natural Licuado (GNL) a traves de plantas regasificadoras (FSRU) para cubrir deficits de gas durante picos de demanda, en lugar de invertir en exploracion y produccion domestica de gas o en diversificacion hacia renovables. Cada importacion resuelve la crisis inmediata, pero la dependencia creciente del GNL importado (con precios en dolares, sujeto a volatilidad geopolitica) debilita el incentivo para desarrollar alternativas locales. La capacidad domestica de produccion de gas declina por falta de inversion, haciendo al pais mas vulnerable a cada nueva crisis.
+**Ejemplo energetico:** Colombia importa Gas Natural Licuado (GNL) a traves de plantas regasificadoras (FSRU) para cubrir deficits de gas durante picos de demanda, en lugar de invertir en exploracion y produccion domestica de gas o en diversificacion hacia renovables. Cada importacion resuelve la crisis inmediata, pero la dependencia creciente del GNL importado (con precios en dolares, sujeto a volatilidad geopolitica) debilita el incentivo para desarrollar alternativas locales. La capacidad domestica de produccion de gas declina por falta de inversión, haciendo al pais mas vulnerable a cada nueva crisis.
 
 **Leccion:** La solucion sintomatica se convierte en adiccion, y la solucion fundamental se vuelve cada vez mas inalcanzable.
 
@@ -464,13 +464,13 @@ Estos arquetipos son herramientas de diagnostico rapido. Permiten al consultor m
 
 **Estructura:** Un proceso de crecimiento exitoso (bucle R) eventualmente encuentra una restriccion o limite (bucle B) que frena o revierte el crecimiento. Cuanto mas exito tiene el proceso inicial, mas fuerte se activa el freno.
 
-**Ejemplo energetico:** El boom de energia eolica en La Guajira colombiana (impulsado por excelentes condiciones de viento y costos decrecientes) choca contra los limites de la infraestructura de transmision. Las lineas de alta tension necesarias para evacuar la energia desde La Guajira hacia los centros de consumo toman anos en construirse y enfrentan oposicion de comunidades indigenas. El resultado: miles de MW de proyectos eolicos aprobados y financiados que no pueden operar porque no hay red que los conecte.
+**Ejemplo energetico:** El boom de energía eolica en La Guajira colombiana (impulsado por excelentes condiciones de viento y costos decrecientes) choca contra los limites de la infraestructura de transmision. Las líneas de alta tension necesarias para evacuar la energía desde La Guajira hacia los centros de consumo toman años en construirse y enfrentan oposicion de comunidades indigenas. El resultado: miles de MW de proyectos eolicos aprobados y financiados que no pueden operar porque no hay red que los conecte.
 
 **Leccion:** El exito del crecimiento genera su propia restriccion. La solucion no esta en empujar mas fuerte el motor de crecimiento (mas subastas eolicas), sino en aliviar el cuello de botella (acelerar la transmision).
 
 ### Aplicacion al sector colombiano
 
-En la historia reciente del sector electrico colombiano, los tres arquetipos operan simultaneamente. Las intervenciones de precios para proteger consumidores (Fixes that Fail) conviven con la dependencia de importaciones de GNL (Shifting the Burden) y con el cuello de botella de transmision que frena las FNCER (Limits to Growth). Identificar cual arquetipo domina en cada coyuntura es el primer paso para disenar intervenciones que ataquen las causas estructurales, no los sintomas.
+En la historia reciente del sector eléctrico colombiano, los tres arquetipos operan simultaneamente. Las intervenciones de precios para proteger consumidores (Fixes that Fail) conviven con la dependencia de importaciones de GNL (Shifting the Burden) y con el cuello de botella de transmision que frena las FNCER (Limits to Growth). Identificar cual arquetipo domina en cada coyuntura es el primer paso para disenar intervenciones que ataquen las causas estructurales, no los sintomas.
 
 *(Referencia fundamental: Sterman, J. D. (2000). Business Dynamics, Cap. 5-6; Meadows, D. H. (2008). Thinking in Systems, Cap. 3; Senge, P. (1990). The Fifth Discipline, Cap. 6.)*
 
@@ -478,16 +478,16 @@ En la historia reciente del sector electrico colombiano, los tres arquetipos ope
 
 ## 9. Resumen y puente a Semana 5
 
-En esta Semana 4 hemos dado el salto desde el analisis cualitativo (CLDs) hacia el modelado cuantitativo riguroso. Los conceptos centrales que deben quedar consolidados son:
+En esta Semana 4 hemos dado el salto desde el análisis cualitativo (CLDs) hacia el modelado cuantitativo riguroso. Los conceptos centrales que deben quedar consolidados son:
 
 - **Stock y flujo** son los bloques fundamentales de todo modelo SD. La prueba de la fotografia distingue entre ambos de forma inequivoca.
-- **La ecuacion fundamental** $dS/dt = F_{entrada} - F_{salida}$ es la base matematica de toda la simulacion.
-- **Los retardos** transforman bucles estabilizadores en osciladores. La analogia de la ducha y el ciclo de inversion colombiano son manifestaciones del mismo fenomeno estructural.
+- **La ecuacion fundamental** $dS/dt = F_{entrada} - F_{salida}$ es la base matematica de toda la simulación.
+- **Los retardos** transforman bucles estabilizadores en osciladores. La analogia de la ducha y el ciclo de inversión colombiano son manifestaciones del mismo fenomeno estructural.
 - **La no-linealidad** de la formacion de precios amplifica las oscilaciones, creando la asimetria caracteristica del "palo de hockey".
 - **Los arquetipos** permiten diagnosticar patologias recurrentes sin necesidad de un modelo formal completo.
 - **Python** es la plataforma que nos permite integrar todo esto en un flujo de trabajo reproducible y escalable.
 
-En la **Semana 5**, daremos el siguiente paso: aprenderemos a **intervenir** en estos modelos y a **evaluar** nuestras intervenciones bajo incertidumbre. Pasaremos de preguntarnos "¿por que oscila el sistema?" a preguntarnos "¿que politica funciona mejor cuando no sabemos que futuro enfrentamos?". Introduciremos el pensamiento de escenarios, las tablas de robustez y el criterio de Minimax Regret — herramientas que transforman al analista en consultor estrategico.
+En la **Semana 5**, daremos el siguiente paso: aprenderemos a **intervenir** en estos modelos y a **evaluar** nuestras intervenciones bajo incertidumbre. Pasaremos de preguntarnos "¿por que oscila el sistema?" a preguntarnos "¿que política funciona mejor cuando no sabemos que futuro enfrentamos?". Introduciremos el pensamiento de escenarios, las tablas de robustez y el criterio de Minimax Regret — herramientas que transforman al analista en consultor estrategico.
 
 ---
 

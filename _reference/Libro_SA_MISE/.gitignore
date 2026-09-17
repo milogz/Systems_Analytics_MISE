@@ -1,0 +1,7 @@
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+_build/
+entregas/estudiantes/
+
+.verificacion_tmp/

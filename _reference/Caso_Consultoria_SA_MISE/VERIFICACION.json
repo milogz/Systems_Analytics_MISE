@@ -1,0 +1,57 @@
+{
+  "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+  "dependencias": {
+    "numpy": "2.4.0",
+    "pandas": "2.3.3",
+    "scipy": "1.17.1",
+    "networkx": "3.6.1",
+    "matplotlib": "3.10.8",
+    "nbformat": "5.11.0",
+    "nbclient": "0.11.0"
+  },
+  "practicas": [
+    {
+      "archivo": "etapa_00.ipynb",
+      "celdas_codigo": 5,
+      "errores": 0
+    },
+    {
+      "archivo": "etapa_01.ipynb",
+      "celdas_codigo": 5,
+      "errores": 0
+    },
+    {
+      "archivo": "etapa_02.ipynb",
+      "celdas_codigo": 5,
+      "errores": 0
+    },
+    {
+      "archivo": "etapa_03.ipynb",
+      "celdas_codigo": 5,
+      "errores": 0
+    },
+    {
+      "archivo": "etapa_04.ipynb",
+      "celdas_codigo": 5,
+      "errores": 0
+    },
+    {
+      "archivo": "etapa_05.ipynb",
+      "celdas_codigo": 5,
+      "errores": 0
+    },
+    {
+      "archivo": "etapa_06.ipynb",
+      "celdas_codigo": 5,
+      "errores": 0
+    },
+    {
+      "archivo": "etapa_07.ipynb",
+      "celdas_codigo": 4,
+      "errores": 0
+    }
+  ],
+  "pruebas_semanticas": "superadas",
+  "motor": "IPython local, proceso nuevo por notebook",
+  "alcance": "Ejecución y consistencia del material docente; no certificación de datos externos ni modelo del SIN. El modo local no prueba transporte ni interfaz Jupyter."
+}

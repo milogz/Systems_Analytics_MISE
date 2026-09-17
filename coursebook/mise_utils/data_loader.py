@@ -278,12 +278,15 @@ def serie_anual_integrada():
         df = df.merge(dem_com, on='year', how='left')
     
     # Calcular margen de reserva aproximado
-    # margen = (generación_disponible - demanda) / demanda
-    if 'generacion_GWh' in df.columns and 'demanda_GWh' in df.columns:
+    # diferencia_contable_pct = (generación_disponible - demanda) / demanda
+    # Para esto necesitamos restar la demanda comercial de la generación
+    if 'demanda_GWh' in df.columns and 'generacion_GWh' in df.columns:
         mask = df['demanda_GWh'].notna() & (df['demanda_GWh'] > 0)
-        df.loc[mask, 'margen_reserva_pct'] = (
-            (df.loc[mask, 'generacion_GWh'] - df.loc[mask, 'demanda_GWh'])
-            / df.loc[mask, 'demanda_GWh'] * 100
-        )
+        df.loc[mask, 'diferencia_contable_pct'] = (
+            (df.loc[mask, 'generacion_GWh'] - df.loc[mask, 'demanda_GWh']) / df.loc[mask, 'demanda_GWh']
+        ) * 100
+    
+    # Llenar NaN si quedan en años extremos
+    df['diferencia_contable_pct'] = df['diferencia_contable_pct'].fillna(10.0)
     
     return df.sort_values('year').reset_index(drop=True)

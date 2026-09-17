@@ -1,0 +1,50 @@
+{
+  "edicion": "3.0.0-didactica",
+  "fecha": "2026-09-15",
+  "corte_series": "2024, años completos",
+  "fuentes_editables": [
+    "marco_teorico/*.md",
+    "practica_computacional/*.ipynb",
+    "sa_mise/*.py"
+  ],
+  "derivados": [
+    "cuadernos_integrados/*.ipynb",
+    "_build/",
+    "entregas/ejemplo_docente/"
+  ],
+  "estado_editorial": "Revisión didáctica: intuición, técnica y juicio profesional",
+  "unidades": [
+    {
+      "lectura": "00_evidencia_del_sin.md",
+      "practica": "etapa_00.ipynb"
+    },
+    {
+      "lectura": "01_encargo_y_fronteras.md",
+      "practica": "etapa_01.ipynb"
+    },
+    {
+      "lectura": "02_conexion_y_restricciones.md",
+      "practica": "etapa_02.ipynb"
+    },
+    {
+      "lectura": "03_ingresos_y_contratos.md",
+      "practica": "etapa_03.ipynb"
+    },
+    {
+      "lectura": "04_agua_demanda_y_validacion.md",
+      "practica": "etapa_04.ipynb"
+    },
+    {
+      "lectura": "05_alternativas_y_negocio.md",
+      "practica": "etapa_05.ipynb"
+    },
+    {
+      "lectura": "06_condiciones_y_actores.md",
+      "practica": "etapa_06.ipynb"
+    },
+    {
+      "lectura": "07_recomendacion_y_defensa.md",
+      "practica": "etapa_07.ipynb"
+    }
+  ]
+}

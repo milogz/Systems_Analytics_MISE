@@ -1,0 +1,12 @@
+{
+  "Libro SA-MISE": {
+    "unidades": 9,
+    "motor": "IPython local, proceso nuevo por notebook",
+    "coherencia": "superada"
+  },
+  "Caso Consultoria Sistemica SA-MISE": {
+    "unidades": 8,
+    "motor": "IPython local, proceso nuevo por notebook",
+    "coherencia": "superada"
+  }
+}

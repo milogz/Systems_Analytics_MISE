@@ -107,7 +107,7 @@ Con el grafo definido, podemos hablar de relaciones entre nodos:
 
 ## 3. Métricas de redes: ¿qué nos dicen sobre el sistema?
 
-Tener el grafo es solo el primer paso. Las **métricas de red** nos permiten cuantificar propiedades de la estructura que son invisibles a simple vista. Para cada métrica seguiremos el mismo esquema: significado intuitivo → definición formal → interpretación energética → decisiones que informa.
+Tener el grafo es solo el primer paso. Las **métricas de red** nos permiten cuantificar propiedades de la estructura qué son invisibles a simple vista. Para cada métrica seguiremos el mismo esquema: significado intuitivo → definición formal → interpretación energética → decisiones que informa.
 
 ### 3.1 Métricas locales (de nodo)
 
@@ -390,7 +390,7 @@ Desde la perspectiva de redes complejas, el criterio N-1 tiene limitaciones fund
 
 ### 7.4 N-1 + redes: una combinación más poderosa
 
-El mensaje no es que el N-1 sea inútil — es que es **necesario pero no suficiente**. El análisis de redes lo complementa de maneras específicas:
+El mensaje no es que el N-1 sea inútil — es qué es **necesario pero no suficiente**. El análisis de redes lo complementa de maneras específicas:
 
 - **Priorización**: En vez de evaluar las $N$ contingencias con igual peso, usamos métricas de centralidad para enfocarnos en las contingencias que involucran nodos de alta intermediación.
 - **Más allá de N-1**: Simulamos fallas en cascada para evaluar el impacto de la falla de un elemento no solo en los flujos de carga inmediatos, sino en la propagación topológica de sobrecargas.

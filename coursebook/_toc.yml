@@ -1,49 +1,98 @@
 format: jb-book
 root: intro
 parts:
-  - caption: Fundamentos
+  - caption: "Preludio: Fundamentos Científicos de la Complejidad"
     chapters:
+      - file: preludio/guia
+        title: "Guía Semanal"
       - file: preludio/lectura
-        title: Lectura
+        title: "Lectura: De Poincaré a Lorenz"
       - file: preludio/notebook
-        title: "Practica computacional"
+        title: "Práctica Computacional"
+      - file: preludio/caso_colombia
+        title: "Caso Colombia: Radiografía de Datos del SIN"
 
-  - caption: "Semana 1: Que Significa Sistemico"
+  - caption: "Semana 1: ¿Qué Significa Sistémico?"
     chapters:
+      - file: semana_01/guia
+        title: "Guía Semanal"
       - file: semana_01/lectura
-        title: Lectura
+        title: "Lectura: Del Pensamiento Lineal al Complejo"
       - file: semana_01/notebook
-        title: "Practica computacional"
+        title: "Práctica Computacional"
+      - file: semana_01/caso_colombia
+        title: "Caso Colombia: Identidad del SIN"
 
-  - caption: "Semana 2: Redes I — Topologia y Vulnerabilidades"
+  - caption: "Semana 2: Redes I — Topología y Vulnerabilidades"
     chapters:
+      - file: semana_02/guia
+        title: "Guía Semanal"
       - file: semana_02/lectura
-        title: Lectura
+        title: "Lectura: La Estructura como Red"
       - file: semana_02/notebook
-        title: "Practica computacional"
+        title: "Práctica Computacional"
+      - file: semana_02/caso_colombia
+        title: "Caso Colombia: Estructura Física del STN"
 
-  - caption: "Semana 3: Redes II — Actores y Difusion"
+  - caption: "Semana 3: Redes II — Actores y Difusión"
     chapters:
+      - file: semana_03/guia
+        title: "Guía Semanal"
       - file: semana_03/lectura
-        title: Lectura
+        title: "Lectura: Dinámica sobre Redes"
       - file: semana_03/notebook
-        title: "Practica computacional"
+        title: "Práctica Computacional"
+      - file: semana_03/caso_colombia
+        title: "Caso Colombia: Estructura Social y Mercado"
 
-  - caption: "Semana 4: Dinamica de Sistemas I"
+  - caption: "Semana 4: Dinámica de Sistemas I — Stocks y Flujos"
     chapters:
+      - file: semana_04/guia
+        title: "Guía Semanal"
       - file: semana_04/lectura
-        title: Lectura
+        title: "Lectura: Retroalimentación y Retardos"
       - file: semana_04/notebook
-        title: "Practica computacional"
+        title: "Práctica Computacional"
+      - file: semana_04/caso_colombia
+        title: "Caso Colombia: Dinámica Temporal del SIN"
 
-  - caption: "Semana 5: Dinamica de Sistemas II — Politicas y Escenarios"
+  - caption: "Semana 5: Dinámica de Sistemas II — Políticas y Escenarios"
     chapters:
+      - file: semana_05/guia
+        title: "Guía Semanal"
       - file: semana_05/lectura
-        title: Lectura
+        title: "Lectura: Robustez sobre Optimalidad"
       - file: semana_05/notebook
-        title: "Practica computacional"
+        title: "Práctica Computacional"
+      - file: semana_05/caso_colombia
+        title: "Caso Colombia: Políticas y Escenarios"
 
-  - caption: Cierre e Integracion
+  - caption: "Semana 6: Gobernanza, Justicia y la Dimensión Humana"
     chapters:
-      - file: cierre/integracion
-        title: Integracion
+      - file: semana_06/guia
+        title: "Guía Semanal"
+      - file: semana_06/lectura
+        title: "Lectura: Lo que el Modelo No Captura"
+      - file: semana_06/caso_colombia
+        title: "Caso Colombia: Gobernanza y Justicia Energética"
+
+  - caption: "Semana 7: Integración y Consultoría Sistémica"
+    chapters:
+      - file: semana_07/guia
+        title: "Guía Semanal"
+      - file: semana_07/lectura
+        title: "Lectura: Del Análisis a la Recomendación"
+      - file: semana_07/caso_colombia
+        title: "Caso Colombia: Síntesis Ejecutiva"
+
+  - caption: "Semana 8: Horizontes Futuros y Cierre"
+    chapters:
+      - file: semana_08/guia
+        title: "Guía Semanal"
+      - file: semana_08/lectura
+        title: "Lectura: El Primer Piso, No el Techo"
+
+  - caption: "Referencia: El Sector Eléctrico Colombiano"
+    chapters:
+      - file: caso_colombia/contexto
+        title: "Contexto: Historia y Marco Regulatorio del SIN"
