@@ -48,12 +48,12 @@ Empiece por la **guía semanal**: indica resultado esperado, selección de recur
 
 | Bloque | Recursos y propósito |
 |---|---|
-| **Lecciones** | Lectura y videos/quices del LMS para comprender; ejemplos guiados de Alejandra para observar el procedimiento; práctica computacional para ejecutar e interpretar. |
+| **Lecciones** | Lectura y videos/quices del aula virtual para comprender; ejemplos guiados para observar el procedimiento; práctica computacional para ejecutar e interpretar. |
 | **Proyecto** | Un tramo de la Saga Colombia para observar la aplicación y el trabajo del caso propio para construir evidencia del informe. |
 
-La biblioteca completa sigue disponible. La guía distingue el recorrido principal de la profundización: no se suman todas las páginas, videos y variantes como carga obligatoria. Los videos se incorporan según su disponibilidad en el LMS.
+La biblioteca completa sigue disponible. La guía distingue el recorrido principal de la profundización: no se suman todas las páginas, videos y variantes como carga obligatoria. Consulte en el aula virtual los videos y actividades correspondientes a cada semana.
 
-La [guía del proyecto](proyecto/guia.md) reúne entregas, estructura y criterios a partir del documento de Alejandra. Las [convenciones comunes](proyecto/lenguaje_comun.md) aclaran cómo pasar entre modelos y recursos.
+La [guía del proyecto](proyecto/guia.md) establece las entregas, la estructura del informe y los criterios de evaluación. Las [convenciones comunes](proyecto/lenguaje_comun.md) aclaran cómo pasar entre modelos y recursos.
 
 ---
 
@@ -110,8 +110,8 @@ Fuente: [API pública de XM S.A. E.S.P.](https://servapibi.xm.com.co)
 ## Cómo usar este material
 
 1. Abra la guía de la semana y revise qué debe poder explicar o producir.
-2. Recorra las secciones de lectura y los videos/quices indicados en el LMS.
-3. Siga la selección de ejemplos guiados de Alejandra y aplique el procedimiento en la práctica.
+2. Recorra las secciones de lectura y los videos/quices indicados en el aula virtual.
+3. Siga la selección de ejemplos guiados y aplique el procedimiento en la práctica.
 4. Consulte el fragmento de Saga Colombia señalado y transfiera el aprendizaje al caso propio.
 5. Revise el hito y conserve la evidencia en el repositorio del proyecto.
 

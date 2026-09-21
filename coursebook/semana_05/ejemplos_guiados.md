@@ -1,14 +1,14 @@
-# Ejemplos guiados de Alejandra — Semana 5
+# Ejemplos guiados — Semana 5
 
 **Para qué sirve:** Comparar intervenciones con supuestos explícitos y distinguir sensibilidad, escenarios y robustez.
 
-Esta selección remite al trabajo de **Alejandra, co-líder del curso**, en [Systems Analytics — Guías](https://pozost.github.io/Systems-Analytics-Guias/). Sus ejemplos y simuladores conservan su autoría y contexto. Las preguntas de transferencia de esta página articulan esos recursos con la práctica y el proyecto de SA-MISE.
+Material del equipo docente de **Systems Analytics — MISE**. Los [ejemplos y simuladores del curso](https://pozost.github.io/Systems-Analytics-Guias/) presentan procedimientos resueltos que preparan la práctica y el proyecto integrador.
 
 **Tiempo del recorrido seleccionado: 60 minutos.** Empiece por los fragmentos de la tabla; los desarrollos restantes son opcionales. Las soluciones permiten autocorregirse y no crean entregas adicionales.
 
 ## Selección y secuencia
 
-| Recurso de Alejandra | Qué recorrer |
+| Recurso | Qué recorrer |
 |---|---|
 | [5.05 · Análisis de sensibilidad](https://pozost.github.io/Systems-Analytics-Guias/semana5/05-sensibilidad.html) | Elegir métrica, justificar rangos y comparar una interacción sencilla. |
 | [5.07 · Diseño de escenarios](https://pozost.github.io/Systems-Analytics-Guias/semana5/07-escenarios.html) | Revisión de coherencia entre eje, narrativa y parámetros. |
@@ -18,14 +18,14 @@ Esta selección remite al trabajo de **Alejandra, co-líder del curso**, en [Sys
 ## Antes, durante y después
 
 1. **Antes:** formule una predicción o identifique qué paso no sabría resolver sin ayuda.
-2. **Durante:** siga el razonamiento del ejemplo, revise unidades/supuestos y compare su predicción con la explicación. Si el simulador no está disponible, utilice el ejemplo resuelto y ejecute el experimento equivalente de la práctica oficial cuando corresponda.
+2. **Durante:** siga el razonamiento del ejemplo, revise unidades/supuestos y compare su predicción con la explicación. Si el simulador no está disponible, utilice el ejemplo resuelto y ejecute el experimento equivalente de la práctica computacional cuando corresponda.
 3. **Después:** Anote una condición bajo la cual cambiaría su recomendación. Distinga si proviene del dato, la métrica o una hipótesis estructural. Explore una interacción sin reemplazar los escenarios propios por los ejemplos de las guías.
 
-## Alcance y compatibilidad
+## Criterios de interpretación
 
-Los escenarios exploratorios no tienen probabilidades por contarlos. Las tablas de modelos distintos no comparten necesariamente costos, horizontes o estrategias. El cambio de ranking se investiga y documenta; no se fuerza alterando resultados.
+Los escenarios exploratorios no tienen probabilidades por contarlos. Las tablas de modelos distintos no comparten necesariamente costos, horizontes o estrategias. El cambio de orden de preferencia se investiga y documenta; no se fuerza alterando resultados.
 
-Los nombres de Laboratorios 1–4 o instrucciones de informe que aparezcan en las páginas externas pertenecen a ese material. Para el curso, siga la [guía semanal](guia.md) y la [guía del proyecto](../proyecto/guia.md). No copie la estructura de un caso sustituyendo nombres: documente qué decisión de modelado responde a su propia pregunta.
+Consulte la [guía semanal](guia.md) y la [guía del proyecto](../proyecto/guia.md) para identificar las actividades y entregas correspondientes. Justifique las decisiones de modelado de su caso con su pregunta y evidencia.
 
 
 **Continuar:** [lectura](lectura.md) · [guía y hito de esta semana](guia.md) · [lenguaje común](../proyecto/lenguaje_comun.md).

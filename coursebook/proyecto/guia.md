@@ -1,6 +1,6 @@
 # Proyecto integrador: del caso a una recomendación defendible
 
-Esta es la ruta común del proyecto preparado por Alejandra, co-líder del curso. El [documento rector completo](../_static/proyecto_integrador_alejandra.pdf) conserva sus rúbricas y reglas; esta página organiza su diseño actual (láminas 1–16) junto a las semanas del curso. Las propuestas de rediseño de las láminas 17–20 siguen pendientes de decisión docente y no cambian por sí solas las reglas.
+Esta guía establece el propósito, las entregas y los criterios de evaluación del proyecto integrador de **Systems Analytics — MISE**. Utilícela junto con las guías semanales para planificar el trabajo del grupo.
 
 ## Propósito y resultados de aprendizaje
 
@@ -20,17 +20,16 @@ En grupos de tres, analicen un proyecto o sistema energético colombiano real pa
 | S8 | Informe de 5.000–7.000 palabras | 25 % |
 | S8 | Panel de 15 minutos más preguntas | 5 % |
 
-El proyecto suma **45 %**; las demás actividades del curso suman 55 % y mantienen su distribución oficial. El documento anuncia siete entregas: ficha, esquema, tres avances, informe y panel. Lab 3 y role-play aparecen en el cronograma como actividades de preparación, sin crear avances adicionales. Las fechas concretas y la programación del panel se consultan en el LMS.
+El proyecto suma **45 %**; las demás actividades del curso suman 55 % y mantienen su distribución oficial. El proyecto comprende siete entregas: ficha, esquema, tres avances, informe y panel. Lab 3 y role-play preparan la elaboración de los avances. Las fechas concretas y la programación del panel se consultan en el aula virtual.
 
 Los avances son piezas que se revisan e integran, no documentos adicionales que deban copiarse íntegros en el informe. La realimentación debe incorporarse antes de la entrega siguiente. Sin caso aprobado no se califica el Avance 1.
 
 ## Elección y viabilidad del caso
 
-El diseño actual propone Windpeshi/ola eólica guajira, El Paso solar, Hidroituango, solar distribuida urbana, hidrógeno verde en La Guajira y microrredes en ZNI. Para un caso libre, presenten los seis criterios de la lámina 14: ancla colombiana y decisor, datos accesibles, riqueza dinámica, red pertinente, gobernanza sustantiva y distancia de los ejemplos publicados. La riqueza dinámica del caso libre debe admitir al menos tres stocks con retroalimentación y retardos no triviales. No agreguen stocks artificiales para aumentar el tamaño del modelo.
+Los casos sugeridos son Windpeshi/ola eólica guajira, El Paso solar, Hidroituango, solar distribuida urbana, hidrógeno verde en La Guajira y microrredes en ZNI. Para un caso libre, justifiquen los siguientes criterios: ancla colombiana y decisor, datos accesibles, riqueza dinámica, red pertinente, gobernanza sustantiva y distancia de los ejemplos publicados. La riqueza dinámica del caso libre debe admitir al menos tres stocks con retroalimentación y retardos no triviales. No agreguen stocks artificiales para aumentar el tamaño del modelo.
 
-Empiecen buscando datos en S1 y revisen su disponibilidad con el tutor en S2. Una aprobación debe considerar si la pregunta se puede investigar con los recursos y el tiempo disponibles. Las alternativas de elección libre por defecto y casos fuera de Colombia se discuten en el PDF, pero no se aplican automáticamente.
+Empiecen buscando datos en S1 y revisen su disponibilidad con el tutor en S2. Una aprobación debe considerar si la pregunta se puede investigar con los recursos y el tiempo disponibles.
 
-Los proyectos de referencia Colombia–Panamá, BESS y buses eléctricos mencionados en el PDF no forman parte de los recursos obligatorios de esta ruta: sus archivos completos deberán ser facilitados por el equipo docente antes de asignarlos.
 
 ## Avance 1: explicar la complejidad
 
@@ -74,7 +73,7 @@ La discusión de identificabilidad distingue el nivel sobresaliente: qué combin
 | Dimensión social y gobernanza | 20 % |
 | Plan de ensamble | 10 % |
 
-La rúbrica destaca el cambio de ranking entre escenarios. Investiguen si ocurre y expliquen el resultado. La integridad de la evidencia prevalece: si el ranking permanece estable, justifiquen los escenarios y discutan el hallazgo con el tutor, sin alterar resultados para producir una inversión artificial.
+Analicen si el orden de preferencia de las estrategias cambia entre escenarios. Expliquen tanto los cambios como la estabilidad de los resultados a partir de los supuestos y la evidencia.
 
 ## Informe final y panel
 
@@ -108,6 +107,6 @@ En el **panel**, los tres integrantes presentan y responden ante audiencias téc
 
 Cada cifra lleva fuente o etiqueta de dato sintético. Distingan lo observado de lo estimado, ajustado o supuesto. El evaluador debe poder regenerar tablas y figuras con las instrucciones del repositorio. Documenten fuentes, transformaciones, dependencias y acceso a los datos.
 
-El PDF advierte contra copiar la estructura de un ejemplo cambiando nombres. Reutilicen herramientas y código con atribución y respetando sus condiciones de uso; justifiquen las variables, relaciones y frontera del caso propio. Una explicación de qué se reutilizó y qué se decidió específicamente para el caso hace visible esa diferencia.
+El diseño del modelo debe responder al caso analizado; cambiar los nombres de un ejemplo no constituye una adaptación justificada. Reutilicen herramientas y código con atribución y respetando sus condiciones de uso; justifiquen las variables, relaciones y frontera del caso propio. Una explicación de qué se reutilizó y qué se decidió específicamente para el caso hace visible esa diferencia.
 
-Los cuatro niveles del documento son insuficiente (0–59 %), aceptable (60–74 %), bueno (75–89 %) y sobresaliente (90–100 %). El logro mínimo declarado es **70 %**: no se debe confundir el inicio del nivel aceptable con ese umbral. Consulte las descripciones completas de cada criterio en el PDF.
+Los cuatro niveles de desempeño son insuficiente (0–59 %), aceptable (60–74 %), bueno (75–89 %) y sobresaliente (90–100 %). El logro mínimo requerido es **70 %**: no se debe confundir el inicio del nivel aceptable con ese umbral. Utilice las rúbricas de evaluación publicadas en el aula virtual para revisar cada entrega.

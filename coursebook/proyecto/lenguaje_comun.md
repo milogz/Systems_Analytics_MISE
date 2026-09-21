@@ -19,6 +19,6 @@ Use estas convenciones en lecturas, ejemplos, prácticas e informe. Ayudan a com
 
 ## Cómo pasar entre recursos
 
-Las guías de Alejandra usan ejemplos y simuladores propios; el curso conserva sus notebooks en Python. Las realizaciones de red, ecuaciones, parámetros y cifras pueden diferir. Compare mecanismos y procedimientos; no exija coincidencia numérica entre modelos distintos.
+Los recursos del curso incluyen ejemplos, simuladores y notebooks en Python. Las realizaciones de red, ecuaciones, parámetros y cifras pueden diferir. Compare mecanismos y procedimientos; no exija coincidencia numérica entre modelos distintos.
 
-La lectura mantiene el marco conceptual, los ejemplos muestran un procedimiento y la práctica pide aplicarlo. La Saga Colombia ilustra su integración, con las limitaciones indicadas en cada cuaderno. Para entregas, extensión y rúbricas, use la [guía del proyecto](guia.md); las referencias a otros laboratorios dentro de las guías externas no crean tareas adicionales.
+La lectura mantiene el marco conceptual, los ejemplos muestran un procedimiento y la práctica pide aplicarlo. La Saga Colombia ilustra su integración, con las limitaciones indicadas en cada cuaderno. Para entregas, extensión y rúbricas, use la [guía del proyecto](guia.md) y la guía semanal correspondiente.

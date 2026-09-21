@@ -7,8 +7,8 @@ La semana tiene dos bloques conectados. Primero estudie los conceptos, observe u
 ## 1. Lecciones: comprender, observar y practicar
 
 1. **Lectura seleccionada.** En la [lectura de la semana](lectura.md), priorice: No hay nueva lectura obligatoria. Los horizontes ABM, RDM avanzado y aprendizaje automático quedan disponibles para después del cierre.
-2. **Videos y quices.** Siga la selección publicada por los tutores en el LMS sobre esos mismos conceptos. Los videos se están preparando: mientras un recurso no esté disponible, utilice la lectura y compruebe los conceptos con el ejemplo y la práctica. Las preguntas de autoevaluación externas son formativas; no añaden otro quiz calificado.
-3. **Ejemplo guiado.** [Revisión de comunicación de S7](../semana_07/ejemplos_alejandra.md). Consulte únicamente los fragmentos indicados para el recorrido principal; no se asignan todas las páginas externas completas.
+2. **Videos y quices.** Consulte los recursos y actividades indicados en el aula virtual para esta semana. Utilice las autoevaluaciones de los ejemplos para comprobar su comprensión antes de realizar la práctica.
+3. **Ejemplo guiado.** [Revisión de comunicación de S7](../semana_07/ejemplos_guiados.md). Recorra las secciones indicadas y utilice los desarrollos adicionales como profundización.
 4. **Aplicación.** [Repositorio y criterios del proyecto](../proyecto/guia.md). Comprobación final del repositorio: instrucciones, datos o fuentes accesibles, dependencias y reproducción de tablas/figuras. Sin laboratorio nuevo.
 
 ## 2. Proyecto: observar la transferencia y construir el caso propio
@@ -19,13 +19,13 @@ La semana tiene dos bloques conectados. Primero estudie los conceptos, observe u
 
 **Hito.** **Informe final · 25 %:** 5.000–7.000 palabras; resumen ejecutivo de una página fuera del conteo y apéndice con repositorio. **Panel · 5 %:** 15 minutos más preguntas.
 
-**Al finalizar, conserve:** Informe, repositorio reproducible y defensa. Incluya el cierre reflexivo solicitado en el LMS dentro del tiempo reservado.
+**Al finalizar, conserve:** Informe, repositorio reproducible y defensa. Incluya el cierre reflexivo solicitado en el aula virtual dentro del tiempo reservado.
 
-Use la [guía única del proyecto](../proyecto/guia.md) para requisitos, estructura, pesos y rúbricas. El ejemplo de Alejandra y la Saga preparan esta producción; no constituyen otros proyectos que deban entregarse completos.
+Consulte la [guía del proyecto](../proyecto/guia.md) para requisitos, estructura, ponderaciones y rúbricas. Los ejemplos guiados y el Caso Colombia apoyan la elaboración del hito semanal.
 
 ## 3. Tiempo y prioridad
 
-| Actividad | Presupuesto por estudiante |
+| Actividad | Dedicación estimada por estudiante |
 |---|---:|
 | Guía y orientación | 10 min |
 | Lectura seleccionada | 0 min |
@@ -36,13 +36,13 @@ Use la [guía única del proyecto](../proyecto/guia.md) para requisitos, estruct
 | Sesión sincrónica | 180 min |
 | **Total** | **12 h** |
 
-Bloque de lecciones: **1 h 00 min**; proyecto: **8 h**; sesión: **3 h**. Son presupuestos de planificación, no tiempos medidos. Incluyen las comprobaciones, discusión asíncrona y preparación asignadas al bloque correspondiente. No sume las duraciones completas de todos los recursos disponibles.
+Bloque de lecciones: **1 h 00 min**; proyecto: **8 h**; sesión: **3 h**. La dedicación es orientativa. Incluyen las comprobaciones, discusión asíncrona y preparación asignadas al bloque correspondiente. No sume las duraciones completas de todos los recursos disponibles.
 
-El recorrido principal debe caber en ese presupuesto. Si necesita más tiempo, priorice el resultado esperado y el hito, registre la dificultad y llévela a tutoría. Las variantes avanzadas, referencias extensas y simuladores adicionales quedan para profundizar. Las actividades calificadas y sus fechas se consultan en el LMS; los pesos globales no cambian por añadir recursos de apoyo.
+Si necesita más tiempo, priorice el resultado esperado y el hito, registre la dificultad y llévela a tutoría. Las variantes avanzadas, referencias extensas y simuladores adicionales quedan para profundizar. Consulte las actividades evaluadas y sus fechas en el aula virtual.
 
 ## 4. Fuentes y profundización
 
-La lectura conserva sus referencias. Las fuentes siguientes se consultan en los fragmentos necesarios para el problema o la evidencia; no implican leer cada obra completa además del recorrido principal.
+Consulte las fuentes siguientes para profundizar en los conceptos o sustentar la evidencia de su caso. Priorice los capítulos y fragmentos pertinentes.
 
 
 ### Fuentes de apoyo al recorrido
