@@ -1,0 +1,562 @@
+[
+  {
+    "id": "1.01",
+    "title": "Complicado frente a complejo",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana1/01-complicado-complejo.html",
+    "coverage": "C",
+    "current": "[Lectura S1](https://milogz.github.io/Systems_Analytics_MISE/semana_01/lectura.html)",
+    "increment": "La distinción complicado/complejo ya existe. Cynefin y el contraste entre cálculo financiero y cambios de conducta ofrecen otras vías de explicación.",
+    "decision": "Recurso de nivelación; no añadir Cynefin como nueva competencia evaluada.",
+    "priority": "Opcional"
+  },
+  {
+    "id": "1.02",
+    "title": "Sistema, estructura y comportamiento",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana1/02-sistema-estructura.html",
+    "coverage": "P",
+    "current": "[Lectura S1](https://milogz.github.io/Systems_Analytics_MISE/semana_01/lectura.html); [Contexto/TASCOI](https://milogz.github.io/Systems_Analytics_MISE/caso_colombia/contexto.html)",
+    "increment": "El sistema y su frontera están cubiertos; el iceberg de eventos, patrones, estructura y modelos mentales no tiene un desarrollo equivalente localizado.",
+    "decision": "Una pregunta opcional junto al mapa causal: ¿qué patrón y qué estructura explican el evento?",
+    "priority": "Opcional"
+  },
+  {
+    "id": "1.03",
+    "title": "Retroalimentación y diagramas causales",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana1/03-retroalimentacion.html",
+    "coverage": "C",
+    "current": "[Lectura S1](https://milogz.github.io/Systems_Analytics_MISE/semana_01/lectura.html); [Práctica S1](https://milogz.github.io/Systems_Analytics_MISE/semana_01/notebook.html)",
+    "increment": "Ya se enseñan signos, lazos R/B y diagramas causales. El aporte es la secuencia de ejemplos resueltos y retroalimentación inmediata.",
+    "decision": "Enlace de apoyo a quien necesite practicar polaridades; no repetir la lectura teórica.",
+    "priority": "Opcional"
+  },
+  {
+    "id": "1.04",
+    "title": "No linealidad",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana1/04-no-linealidad.html",
+    "coverage": "P",
+    "current": "[Lectura S1](https://milogz.github.io/Systems_Analytics_MISE/semana_01/lectura.html); [Práctica S1](https://milogz.github.io/Systems_Analytics_MISE/semana_01/notebook.html)",
+    "increment": "La no linealidad está cubierta. El ejemplo cuantitativo del sesgo al usar promedios (Jensen) añade una precaución concreta para decisiones.",
+    "decision": "Ejemplo opcional breve al interpretar precios y VPN; distinguir cifras ilustrativas de datos.",
+    "priority": "Opcional"
+  },
+  {
+    "id": "1.05",
+    "title": "Retardos, memoria y dependencia de la trayectoria",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana1/05-trayectoria.html",
+    "coverage": "C",
+    "current": "[Lectura S1](https://milogz.github.io/Systems_Analytics_MISE/semana_01/lectura.html); [Práctica S1](https://milogz.github.io/Systems_Analytics_MISE/semana_01/notebook.html)",
+    "increment": "Retardos, memoria, lock-in y trayectoria ya se trabajan. La urna de Pólya permite experimentar el mecanismo con otra representación.",
+    "decision": "Mantener como explicación alternativa; no exigir otro simulador.",
+    "priority": "Opcional"
+  },
+  {
+    "id": "1.06",
+    "title": "Adaptación y aprendizaje",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana1/06-adaptacion.html",
+    "coverage": "C",
+    "current": "[Lectura S1](https://milogz.github.io/Systems_Analytics_MISE/semana_01/lectura.html)",
+    "increment": "Adaptación y aprendizaje ya están. La paradoja de Braess es un ejemplo adicional del cambio de conducta ante una intervención.",
+    "decision": "Extensión voluntaria; no equiparar una red de tráfico al flujo eléctrico.",
+    "priority": "Opcional"
+  },
+  {
+    "id": "1.07",
+    "title": "Emergencia y falacia de composición",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana1/07-emergencia.html",
+    "coverage": "P",
+    "current": "[Lectura S1](https://milogz.github.io/Systems_Analytics_MISE/semana_01/lectura.html); [Práctica S1](https://milogz.github.io/Systems_Analytics_MISE/semana_01/notebook.html)",
+    "increment": "La emergencia está cubierta. La falacia de composición y el factor de coincidencia de cargas aportan un desarrollo operacional distinto.",
+    "decision": "Un ejemplo a elección para discusión; no ampliar el bloque obligatorio.",
+    "priority": "Opcional"
+  },
+  {
+    "id": "1.08",
+    "title": "Eventos extremos y colas pesadas",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana1/08-eventos-extremos.html",
+    "coverage": "P",
+    "current": "[Lectura S1](https://milogz.github.io/Systems_Analytics_MISE/semana_01/lectura.html); [Saga 0](https://milogz.github.io/Systems_Analytics_MISE/preludio/caso_colombia.html)",
+    "increment": "Colas pesadas y extremos están ampliamente cubiertos. Se desarrolla mejor la distinción de cisne gris y la dependencia entre fallas.",
+    "decision": "Usar para precisar el vocabulario y evitar tratar fallas de causa común como independientes.",
+    "priority": "Opcional"
+  },
+  {
+    "id": "1.09",
+    "title": "Puntos de inflexión y regímenes",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana1/09-regimenes.html",
+    "coverage": "P",
+    "current": "[Lectura S1](https://milogz.github.io/Systems_Analytics_MISE/semana_01/lectura.html); [Práctica S1](https://milogz.github.io/Systems_Analytics_MISE/semana_01/notebook.html)",
+    "increment": "Ya hay puntos de inflexión y cambios de régimen. La histéresis con umbrales distintos de entrada/salida y las señales de recuperación lenta amplían el análisis.",
+    "decision": "Profundización opcional; los umbrales del modelo no son alertas operativas del SIN.",
+    "priority": "Opcional"
+  },
+  {
+    "id": "1.10",
+    "title": "El mapa causal de la crisis",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana1/10-mapa-causal.html",
+    "coverage": "C",
+    "current": "[Lectura S1](https://milogz.github.io/Systems_Analytics_MISE/semana_01/lectura.html); [Saga S1](https://milogz.github.io/Systems_Analytics_MISE/semana_01/caso_colombia.html)",
+    "increment": "El caso y el CLD ya se trabajan. La construcción por pasos y la revisión de no linealidades, retardos y mecanismos facilitan producir un mapa defendible.",
+    "decision": "P1: seleccionar procedimiento y lista de revisión para preparar el mapa existente; respetar la rúbrica vigente.",
+    "priority": "P1"
+  },
+  {
+    "id": "2.01",
+    "title": "Del sistema al grafo",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana2/01-del-sistema-al-grafo.html",
+    "coverage": "C",
+    "current": "[Lectura S2](https://milogz.github.io/Systems_Analytics_MISE/semana_02/lectura.html#fundamentos-el-lenguaje-de-las-redes); [Práctica S2](https://milogz.github.io/Systems_Analytics_MISE/semana_02/notebook.html)",
+    "increment": "Grafos, adyacencia y tipos de vínculos ya están. Los ejemplos de multigrafos ayudan a no perder circuitos paralelos.",
+    "decision": "Referencia alternativa; conservar la red de la práctica actual.",
+    "priority": "Opcional"
+  },
+  {
+    "id": "2.02",
+    "title": "Grado, distribución y densidad",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana2/02-grado-densidad.html",
+    "coverage": "C",
+    "current": "[Lectura S2](https://milogz.github.io/Systems_Analytics_MISE/semana_02/lectura.html#metricas-de-redes-que-nos-dicen-sobre-el-sistema); [Saga S2](https://milogz.github.io/Systems_Analytics_MISE/semana_02/caso_colombia.html#metricas-de-centralidad)",
+    "increment": "Grado y densidad ya se calculan. La distinción grado/peso y la dependencia de la densidad respecto del tamaño aclaran interpretaciones.",
+    "decision": "Nota opcional al comparar redes; no repetir ejercicios de cálculo.",
+    "priority": "Opcional"
+  },
+  {
+    "id": "2.03",
+    "title": "Caminos, distancia y conectividad",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana2/03-caminos-conectividad.html",
+    "coverage": "P",
+    "current": "[Lectura S2](https://milogz.github.io/Systems_Analytics_MISE/semana_02/lectura.html#metricas-de-redes-que-nos-dicen-sobre-el-sistema)",
+    "increment": "Caminos y conectividad están presentes. Articulaciones, puentes, cortes y caminos independientes amplían la caja de herramientas.",
+    "decision": "Segunda etapa: un ejemplo de puente/articulación sobre el grafo actual; dejar Menger como extensión.",
+    "priority": "Opcional"
+  },
+  {
+    "id": "2.04",
+    "title": "Centralidades",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana2/04-centralidades.html",
+    "coverage": "P",
+    "current": "[Lectura S2](https://milogz.github.io/Systems_Analytics_MISE/semana_02/lectura.html#metricas-de-redes-que-nos-dicen-sobre-el-sistema); [Saga S2](https://milogz.github.io/Systems_Analytics_MISE/semana_02/caso_colombia.html#metricas-de-centralidad)",
+    "increment": "Grado, intermediación y cercanía ya están; centralidad de autovector y comparación explícita de normalizaciones amplían el tratamiento.",
+    "decision": "Optativo; elegir la métrica por la pregunta, sin convertir una cuarta centralidad en requisito.",
+    "priority": "Opcional"
+  },
+  {
+    "id": "2.05",
+    "title": "Agrupamiento y mundo pequeño",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana2/05-mundo-pequeno.html",
+    "coverage": "P",
+    "current": "[Lectura S2](https://milogz.github.io/Systems_Analytics_MISE/semana_02/lectura.html#topologias-de-red-que-forma-tiene-nuestro-sistema)",
+    "increment": "Agrupamiento y Watts–Strogatz ya se explican. Distinguir transitividad/promedio local y comparar con conjuntos aleatorios mejora el diagnóstico.",
+    "decision": "Profundización metodológica; no clasificar una red por apariencia.",
+    "priority": "Opcional"
+  },
+  {
+    "id": "2.06",
+    "title": "Modelos de red",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana2/06-modelos-de-red.html",
+    "coverage": "C",
+    "current": "[Lectura S2](https://milogz.github.io/Systems_Analytics_MISE/semana_02/lectura.html#topologias-de-red-que-forma-tiene-nuestro-sistema); [Saga S2](https://milogz.github.io/Systems_Analytics_MISE/semana_02/caso_colombia.html#distribucion-de-grado)",
+    "increment": "ER, BA y WS están cubiertos. La comparación con múltiples realizaciones aporta un control; aparece una discrepancia sobre la cola de grado del STN.",
+    "decision": "Armonizar primero: nuestra analogía de red libre de escala no equivale al resultado de su red sintética.",
+    "priority": "Armonizar"
+  },
+  {
+    "id": "2.07",
+    "title": "Leyes de potencias y colas pesadas",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana2/07-colas-pesadas.html",
+    "coverage": "P",
+    "current": "[Lectura S2](https://milogz.github.io/Systems_Analytics_MISE/semana_02/lectura.html#leyes-de-potencia-y-toma-de-decisiones)",
+    "increment": "Las leyes de potencia están cubiertas. CCDF, estimación de exponentes y selección del umbral no tienen un tratamiento equivalente localizado.",
+    "decision": "Extensión avanzada; conservar la precaución de no inferir una ley de potencia de una recta visual.",
+    "priority": "Opcional"
+  },
+  {
+    "id": "2.08",
+    "title": "Robustez y criterio N-1",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana2/08-robustez-n1.html",
+    "coverage": "P",
+    "current": "[Lectura S2](https://milogz.github.io/Systems_Analytics_MISE/semana_02/lectura.html#el-criterio-n-1-y-sus-limitaciones); [Saga S2](https://milogz.github.io/Systems_Analytics_MISE/semana_02/caso_colombia.html#test-n-1)",
+    "increment": "Robustez y N-1 ya existen. Ataques adaptativos, carga aislada y distinción entre conectividad y factibilidad eléctrica hacen más explícito el protocolo.",
+    "decision": "P2: lectura breve antes de interpretar el test existente; aclarar qué mide la simulación.",
+    "priority": "P2"
+  },
+  {
+    "id": "2.09",
+    "title": "Fallas en cascada",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana2/09-cascadas.html",
+    "coverage": "C",
+    "current": "[Lectura S2](https://milogz.github.io/Systems_Analytics_MISE/semana_02/lectura.html#fallas-en-cascada-el-modelo-capacidad-carga); [Saga S2](https://milogz.github.io/Systems_Analytics_MISE/semana_02/caso_colombia.html#cascada-sobre-el-stn)",
+    "increment": "El mecanismo capacidad-carga/Motter–Lai ya está. Los barridos de tolerancia y rondas de falla proporcionan más práctica interpretativa.",
+    "decision": "Explicación alternativa; no trasladar rankings ni tamaño de cascada entre redes distintas.",
+    "priority": "Opcional"
+  },
+  {
+    "id": "2.10",
+    "title": "El SIN como red: el Laboratorio 1",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana2/10-sin-como-red.html",
+    "coverage": "C",
+    "current": "[Saga S2](https://milogz.github.io/Systems_Analytics_MISE/semana_02/caso_colombia.html); [Práctica S2](https://milogz.github.io/Systems_Analytics_MISE/semana_02/notebook.html)",
+    "increment": "El laboratorio integrado tiene equivalente en práctica y Saga. Su red y resultados son diferentes, no una solución del cuaderno vigente.",
+    "decision": "Caso adicional optativo claramente rotulado; evitar una segunda entrega.",
+    "priority": "Armonizar"
+  },
+  {
+    "id": "3.01",
+    "title": "Dinámica sobre redes: nodos con estado y reglas locales",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana3/01-dinamica-sobre-redes.html",
+    "coverage": "C",
+    "current": "[Lectura S3](https://milogz.github.io/Systems_Analytics_MISE/semana_03/lectura.html#dinamica-sobre-redes-nodos-con-estado); [Práctica S3](https://milogz.github.io/Systems_Analytics_MISE/semana_03/notebook.html)",
+    "increment": "Estados y actualización síncrona/asíncrona ya se desarrollan. Modelos de mayoría/votante y réplicas aportan ejemplos adicionales.",
+    "decision": "Recurso alternativo; recordar variabilidad entre corridas cuando se interprete una simulación.",
+    "priority": "Opcional"
+  },
+  {
+    "id": "3.02",
+    "title": "Rogers y Bass: la curva en S de la adopción",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana3/02-rogers-bass.html",
+    "coverage": "P",
+    "current": "[Lectura S3](https://milogz.github.io/Systems_Analytics_MISE/semana_03/lectura.html#modelos-de-difusion-y-contagio); [Saga S3](https://milogz.github.io/Systems_Analytics_MISE/semana_03/caso_colombia.html#difusion-solar-en-colombia)",
+    "increment": "Bass y categorías de adopción ya aparecen, y Rogers está recomendado. El límite de identificar el mercado potencial antes de la inflexión recibe mayor desarrollo.",
+    "decision": "Seleccionar la precaución sobre ajuste temprano; categorías y simulador como apoyo.",
+    "priority": "Opcional"
+  },
+  {
+    "id": "3.03",
+    "title": "Contagio simple: SI, SIS y SIR sobre redes",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana3/03-contagio-simple.html",
+    "coverage": "P",
+    "current": "[Lectura S3](https://milogz.github.io/Systems_Analytics_MISE/semana_03/lectura.html#modelos-de-difusion-y-contagio); [Práctica S3](https://milogz.github.io/Systems_Analytics_MISE/semana_03/notebook.html)",
+    "increment": "SI/SIR y contagio simple ya existen. SIS y umbrales vinculados a la heterogeneidad de grado amplían el formalismo.",
+    "decision": "Extensión avanzada; explicitar supuestos antes de generalizar umbrales a cualquier red.",
+    "priority": "Opcional"
+  },
+  {
+    "id": "3.04",
+    "title": "Contagio complejo y umbrales: cuando un vecino no basta",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana3/04-contagio-complejo.html",
+    "coverage": "C",
+    "current": "[Lectura S3](https://milogz.github.io/Systems_Analytics_MISE/semana_03/lectura.html#modelos-de-difusion-y-contagio); [Práctica S3](https://milogz.github.io/Systems_Analytics_MISE/semana_03/notebook.html#el-modelo-de-umbrales-cuando-ocurre-una-cascada)",
+    "increment": "Granovetter, Watts y refuerzo social están cubiertos. Los barridos permiten explorar cuándo conectar más ayuda o dificulta la cascada.",
+    "decision": "Apoyo opcional para contrastar predicciones, manteniendo el experimento actual.",
+    "priority": "Opcional"
+  },
+  {
+    "id": "3.05",
+    "title": "Intervenir la difusión: semillas, subsidios y puntos de inflexión",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana3/05-intervenir-difusion.html",
+    "coverage": "P",
+    "current": "[Práctica S3](https://milogz.github.io/Systems_Analytics_MISE/semana_03/notebook.html#modelos-de-difusion-para-diseno-de-politica-energetica); [Saga S3](https://milogz.github.io/Systems_Analytics_MISE/semana_03/caso_colombia.html#simulacion-de-adopcion-en-un-barrio)",
+    "increment": "Ya hay siembra y subsidios. Comparar a igual presupuesto y mostrar resultados por grupo social desarrolla la tensión eficiencia/equidad.",
+    "decision": "P3: reemplazar una pregunta de interpretación por una comparación distributiva; enlace con S6.",
+    "priority": "P3"
+  },
+  {
+    "id": "3.06",
+    "title": "Redes de actores y comunidades: quién se mueve con quién",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana3/06-redes-actores.html",
+    "coverage": "P",
+    "current": "[Lectura S3](https://milogz.github.io/Systems_Analytics_MISE/semana_03/lectura.html#redes-de-actores-y-stakeholders); [Lectura S3](https://milogz.github.io/Systems_Analytics_MISE/semana_03/lectura.html#deteccion-de-comunidades)",
+    "increment": "Actores, comunidades y modularidad ya están. La evidencia de cada vínculo y las cautelas con relaciones negativas o coparticipación son más explícitas.",
+    "decision": "P3: añadir fuente/tipo de relación al mapa existente; no inferir alianza o colusión de un módulo.",
+    "priority": "P3"
+  },
+  {
+    "id": "3.07",
+    "title": "Redes bipartitas y el mercado mayorista",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana3/07-bipartitas-mercado.html",
+    "coverage": "P",
+    "current": "[Práctica S3](https://milogz.github.io/Systems_Analytics_MISE/semana_03/notebook.html#el-mercado-mayorista-como-red-bipartita); [Saga S3](https://milogz.github.io/Systems_Analytics_MISE/semana_03/caso_colombia.html#comunidades-y-concentracion)",
+    "increment": "Bipartitas, proyecciones y concentración ya existen. La exposición por contraparte muestra pérdidas que el HHI agregado puede esconder.",
+    "decision": "Segunda etapa: contraste corto entre concentración y exposición; no montar otra red de contratos.",
+    "priority": "Opcional"
+  },
+  {
+    "id": "3.08",
+    "title": "Límites del enfoque de redes: de la red al stock agregado",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana3/08-limites-redes.html",
+    "coverage": "P",
+    "current": "[Lectura S3](https://milogz.github.io/Systems_Analytics_MISE/semana_03/lectura.html#cierre-del-modulo-de-redes-que-aprendimos-y-que-falta)",
+    "increment": "El puente redes/SD está planteado. El efecto de la topología sobre el parámetro aparente de Bass explica por qué un buen ajuste no identifica conducta.",
+    "decision": "Apoyo recomendado para decidir red o agregado; matizar nuestra separación demasiado tajante entre ambos.",
+    "priority": "Opcional"
+  },
+  {
+    "id": "3.09",
+    "title": "La adopción solar como sistema en red",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana3/09-adopcion-solar-red.html",
+    "coverage": "C",
+    "current": "[Saga S3](https://milogz.github.io/Systems_Analytics_MISE/semana_03/caso_colombia.html); [Práctica S3](https://milogz.github.io/Systems_Analytics_MISE/semana_03/notebook.html)",
+    "increment": "El caso de adopción solar y mercado mayorista ya articula la semana. La guía combina mejor condiciones de validez y lectura distributiva.",
+    "decision": "Usar solo el cierre interpretativo; no importar cifras, redes o restricciones como si fueran las del cuaderno vigente.",
+    "priority": "Opcional"
+  },
+  {
+    "id": "4.01",
+    "title": "Del diagrama causal al modelo: cuánto, cuándo y por cuánto tiempo",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana4/01-del-cld-al-modelo.html",
+    "coverage": "C",
+    "current": "[Lectura S4](https://milogz.github.io/Systems_Analytics_MISE/semana_04/lectura.html); [Saga S4](https://milogz.github.io/Systems_Analytics_MISE/semana_04/caso_colombia.html#modelo-basico-de-inversion-capacidad)",
+    "increment": "El paso CLD→stocks/flujos está cubierto. La tabla de clasificación y el contraste de conductas bajo un mismo CLD ofrecen otra explicación.",
+    "decision": "Apoyo antes del laboratorio si hace falta; sin duplicar el capítulo.",
+    "priority": "Opcional"
+  },
+  {
+    "id": "4.02",
+    "title": "Stocks y flujos: el criterio de la fotografía",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana4/02-stocks-flujos.html",
+    "coverage": "C",
+    "current": "[Lectura S4](https://milogz.github.io/Systems_Analytics_MISE/semana_04/lectura.html)",
+    "increment": "La bañera, prueba de la fotografía, ecuación de balance y unidades ya están desarrolladas con ejemplos.",
+    "decision": "Nivelación opcional. Precisar que medirse en un instante no basta para ser stock: también lo hacen auxiliares como el precio.",
+    "priority": "Opcional"
+  },
+  {
+    "id": "4.03",
+    "title": "La ecuación del stock y la integración numérica: la contabilidad paso a paso",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana4/03-formalismo-integracion.html",
+    "coverage": "P",
+    "current": "[Lectura S4](https://milogz.github.io/Systems_Analytics_MISE/semana_04/lectura.html); [Práctica S4](https://milogz.github.io/Systems_Analytics_MISE/semana_04/notebook.html)",
+    "increment": "Hay ecuaciones de stock, Euler en la explicación y solve_ivp. La comprobación de convergencia y los ciclos numéricos espurios añaden un protocolo.",
+    "decision": "P4: incorporar prueba de estabilidad numérica adaptada al integrador actual; no cambiarlo por Euler.",
+    "priority": "P4"
+  },
+  {
+    "id": "4.04",
+    "title": "Auxiliares, constantes y funciones de tabla: dónde se dobla el sistema",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana4/04-auxiliares-no-linealidad.html",
+    "coverage": "P",
+    "current": "[Lectura S4](https://milogz.github.io/Systems_Analytics_MISE/semana_04/lectura.html)",
+    "increment": "Auxiliares y no linealidad ya se explican. Funciones de tabla, elasticidad y comparación de formas funcionales amplían la implementación.",
+    "decision": "Extensión opcional cuando una relación empírica no justifique una exponencial.",
+    "priority": "Opcional"
+  },
+  {
+    "id": "4.05",
+    "title": "Polaridad y lazos: deducir el comportamiento sin simular",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana4/05-polaridad-lazos.html",
+    "coverage": "C",
+    "current": "[Lectura S4](https://milogz.github.io/Systems_Analytics_MISE/semana_04/lectura.html)",
+    "increment": "Polaridad, crecimiento y búsqueda de meta ya están. Los ejercicios ayudan a leer relaciones entre lazos.",
+    "decision": "Referencia alternativa; no deducir estabilidad contando signos o cantidad de lazos.",
+    "priority": "Opcional"
+  },
+  {
+    "id": "4.06",
+    "title": "Retardos: por qué el sistema llega tarde",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana4/06-retardos.html",
+    "coverage": "P",
+    "current": "[Lectura S4](https://milogz.github.io/Systems_Analytics_MISE/semana_04/lectura.html); [Saga S4](https://milogz.github.io/Systems_Analytics_MISE/semana_04/caso_colombia.html#sensibilidad-al-retardo-de-construccion)",
+    "increment": "Retardos materiales/informacionales y sensibilidad a su duración ya existen. Comparar orden, distribución y tubería amplía el tratamiento estructural.",
+    "decision": "Segunda etapa: un contraste visual; no ampliar el modelo completo por defecto.",
+    "priority": "Opcional"
+  },
+  {
+    "id": "4.07",
+    "title": "Consistencia dimensional y validación: someter el modelo a pruebas para romperlo",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana4/07-consistencia-validacion.html",
+    "coverage": "P",
+    "current": "[Lectura S4](https://milogz.github.io/Systems_Analytics_MISE/semana_04/lectura.html); [Lectura S5](https://milogz.github.io/Systems_Analytics_MISE/semana_05/lectura.html#analisis-de-sensibilidad)",
+    "increment": "Coherencia dimensional, condiciones extremas y validación ya se mencionan/explican. La guía los convierte en pruebas resueltas y una revisión sistemática.",
+    "decision": "P4: hoja de comprobación del modelo existente antes de interpretar escenarios.",
+    "priority": "P4"
+  },
+  {
+    "id": "4.08",
+    "title": "Calibración: afinar el modelo clavija por clavija",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana4/08-calibracion.html",
+    "coverage": "P",
+    "current": "[Saga S4](https://milogz.github.io/Systems_Analytics_MISE/semana_04/caso_colombia.html#validacion-con-datos-historicos); [Lectura S4](https://milogz.github.io/Systems_Analytics_MISE/semana_04/lectura.html)",
+    "increment": "Ya hay parametrización y comparación histórica. La separación medición/estimación/ajuste, validación separada e identificabilidad profundizan de manera sustantiva.",
+    "decision": "P4: tabla de procedencia de parámetros y límites del ajuste; no afirmar validación empírica con datos sintéticos.",
+    "priority": "P4"
+  },
+  {
+    "id": "4.09",
+    "title": "El modelo completo: anatomía del ciclo inversión-capacidad",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana4/09-modelo-completo.html",
+    "coverage": "C",
+    "current": "[Saga S4](https://milogz.github.io/Systems_Analytics_MISE/semana_04/caso_colombia.html); [Práctica S4](https://milogz.github.io/Systems_Analytics_MISE/semana_04/notebook.html)",
+    "increment": "El ciclo inversión-capacidad completo ya se modela. Su anatomía resuelta y equilibrio de referencia son útiles, pero el motor y parámetros difieren.",
+    "decision": "Caso alternativo; mantener mise_utils y el estado de la Saga.",
+    "priority": "Armonizar"
+  },
+  {
+    "id": "5.01",
+    "title": "Lazos de refuerzo y crecimiento exponencial",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana5/01-refuerzo-exponencial.html",
+    "coverage": "C",
+    "current": "[Lectura S4](https://milogz.github.io/Systems_Analytics_MISE/semana_04/lectura.html); [Lectura S5](https://milogz.github.io/Systems_Analytics_MISE/semana_05/lectura.html)",
+    "increment": "Crecimiento exponencial y curva de Wright ya están. La comparación de subastas tempranas/tardías facilita interpretar aprendizaje acumulado.",
+    "decision": "Apoyo a S5; no mover hacia S5 los fundamentos ya enseñados en S4.",
+    "priority": "Opcional"
+  },
+  {
+    "id": "5.02",
+    "title": "Lazos de balance: búsqueda de meta",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana5/02-busqueda-de-meta.html",
+    "coverage": "C",
+    "current": "[Lectura S4](https://milogz.github.io/Systems_Analytics_MISE/semana_04/lectura.html); [Lectura S5](https://milogz.github.io/Systems_Analytics_MISE/semana_05/lectura.html)",
+    "increment": "Búsqueda de meta y CxC ya están. Las metas efectivas bajo lazos simultáneos proporcionan un ejemplo adicional.",
+    "decision": "Optativo; sus márgenes numéricos son del modelo ilustrativo.",
+    "priority": "Opcional"
+  },
+  {
+    "id": "5.03",
+    "title": "Balance más retardo: oscilación",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana5/03-balance-retardo-oscilacion.html",
+    "coverage": "C",
+    "current": "[Lectura S4](https://milogz.github.io/Systems_Analytics_MISE/semana_04/lectura.html); [Saga S4](https://milogz.github.io/Systems_Analytics_MISE/semana_04/caso_colombia.html#sensibilidad-al-retardo-de-construccion)",
+    "increment": "Oscilación por retroalimentación retardada ya se trabaja. Cartera visible y mapas de amortiguamiento amplían la experimentación.",
+    "decision": "Apoyo; acotar fórmulas y umbrales a la estructura correspondiente, sin universalizarlos.",
+    "priority": "Armonizar"
+  },
+  {
+    "id": "5.04",
+    "title": "Políticas y puntos de apalancamiento",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana5/04-politicas-apalancamiento.html",
+    "coverage": "C",
+    "current": "[Lectura S5](https://milogz.github.io/Systems_Analytics_MISE/semana_05/lectura.html#intervenciones-de-politica-en-modelos-sd)",
+    "increment": "Meadows, palancas y cambios en flujos/reglas ya se enseñan. Explicitar la ecuación modificada y comparar prima fija con regla de subasta fortalece el vínculo causal.",
+    "decision": "Usar la pregunta «¿qué ecuación cambia?» en la actividad existente; no imponer otra jerarquía de niveles.",
+    "priority": "Opcional"
+  },
+  {
+    "id": "5.05",
+    "title": "Análisis de sensibilidad",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana5/05-sensibilidad.html",
+    "coverage": "P",
+    "current": "[Lectura S5](https://milogz.github.io/Systems_Analytics_MISE/semana_05/lectura.html#analisis-de-sensibilidad); [Saga S5](https://milogz.github.io/Systems_Analytics_MISE/semana_05/caso_colombia.html#analisis-de-sensibilidad)",
+    "increment": "OAT, tornado y sus limitaciones ya están. Rangos justificados, cambio de métrica e interacción de dos parámetros están más desarrollados.",
+    "decision": "P5: lectura seleccionada y una interacción sencilla dentro de la sensibilidad ya exigida.",
+    "priority": "P5"
+  },
+  {
+    "id": "5.06",
+    "title": "Riesgo contra incertidumbre profunda",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana5/06-incertidumbre-profunda.html",
+    "coverage": "C",
+    "current": "[Lectura S5](https://milogz.github.io/Systems_Analytics_MISE/semana_05/lectura.html#escenarios-pensar-en-futuros-radicalmente-diferentes)",
+    "increment": "Knight, riesgo e incertidumbre profunda ya están. Los ejemplos ayudan a evitar probabilidades inventadas y a separar muestra de escenarios de distribución.",
+    "decision": "Apoyo opcional al diseño de escenarios; no reiterar el capítulo entero.",
+    "priority": "Opcional"
+  },
+  {
+    "id": "5.07",
+    "title": "Diseño de escenarios",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana5/07-escenarios.html",
+    "coverage": "C",
+    "current": "[Lectura S5](https://milogz.github.io/Systems_Analytics_MISE/semana_05/lectura.html#el-caso-cxc-fncer-bajo-4-escenarios); [Saga S5](https://milogz.github.io/Systems_Analytics_MISE/semana_05/caso_colombia.html#los-4-escenarios)",
+    "increment": "Ya se construyen y ejecutan cuatro escenarios. La conexión explícita ejes→narrativa→parámetros ofrece una pauta de revisión.",
+    "decision": "Comprobar coherencia de los cuatro escenarios actuales; no sustituir sus nombres ni valores.",
+    "priority": "Opcional"
+  },
+  {
+    "id": "5.08",
+    "title": "Robustez y arrepentimiento máximo",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana5/08-robustez-regret.html",
+    "coverage": "C",
+    "current": "[Lectura S5](https://milogz.github.io/Systems_Analytics_MISE/semana_05/lectura.html#robustez-sobre-optimalidad); [Saga S5](https://milogz.github.io/Systems_Analytics_MISE/semana_05/caso_colombia.html#tabla-de-robustez)",
+    "increment": "Tabla de robustez y minimax regret ya se calculan. El contraste con peor caso y el estrés de la métrica afinan la interpretación.",
+    "decision": "Apoyo para leer la tabla actual; no trasladar la estrategia ganadora del otro modelo.",
+    "priority": "Opcional"
+  },
+  {
+    "id": "5.09",
+    "title": "Introducción a la toma de decisiones robusta (RDM)",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana5/09-rdm.html",
+    "coverage": "P",
+    "current": "[Saga S5](https://milogz.github.io/Systems_Analytics_MISE/semana_05/caso_colombia.html#las-3-estrategias-de-inversion); [Lectura S7](https://milogz.github.io/Systems_Analytics_MISE/semana_07/lectura.html); [Lectura S8](https://milogz.github.io/Systems_Analytics_MISE/semana_08/lectura.html)",
+    "increment": "RDM/XLRM ya aparecen y se piden recomendaciones condicionadas. La búsqueda de regiones de falla y señales concretas de cambio están menos desarrolladas.",
+    "decision": "P5: una contingencia con indicador, fuente y umbral; PRIM y grandes conjuntos de futuros quedan optativos.",
+    "priority": "P5"
+  },
+  {
+    "id": "5.10",
+    "title": "El modelo con Cargo por Confiabilidad y FNCER",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana5/10-modelo-politicas.html",
+    "coverage": "C",
+    "current": "[Saga S5](https://milogz.github.io/Systems_Analytics_MISE/semana_05/caso_colombia.html); [Práctica S5](https://milogz.github.io/Systems_Analytics_MISE/semana_05/notebook.html)",
+    "increment": "El modelo con políticas y experimento factorial ya existe. La prueba de recuperar el modelo base al apagar extensiones aporta una buena comprobación.",
+    "decision": "Conservarla como pauta de validación; no migrar a mise_sd ni copiar resultados.",
+    "priority": "Armonizar"
+  },
+  {
+    "id": "6.01",
+    "title": "El marco multicapa",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana6/01-marco-multicapa.html",
+    "coverage": "C",
+    "current": "[Lectura S6](https://milogz.github.io/Systems_Analytics_MISE/semana_06/lectura.html); [Saga S6](https://milogz.github.io/Systems_Analytics_MISE/semana_06/caso_colombia.html#framework-multi-capa)",
+    "increment": "Las cuatro capas y su integración ya están. Pedir relaciones explícitas entre capas hace más concreta la lectura.",
+    "decision": "Apoyo para el cierre de cada diagnóstico; no añadir otra arquitectura del informe.",
+    "priority": "Opcional"
+  },
+  {
+    "id": "6.02",
+    "title": "El proyecto como sistema socio-técnico-ambiental",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana6/02-sistema-sociotecnico.html",
+    "coverage": "P",
+    "current": "[Lectura S6](https://milogz.github.io/Systems_Analytics_MISE/semana_06/lectura.html#modelando-la-consulta-previa); [Saga S6](https://milogz.github.io/Systems_Analytics_MISE/semana_06/caso_colombia.html#lo-que-el-modelo-no-captura)",
+    "increment": "El conflicto y su efecto sobre retardos ya se analizan. Stocks de confianza/agravio y retraso endógeno profundizan la representación.",
+    "decision": "Mantener cualitativo o como hipótesis ilustrativa: nuestro curso pide no inventar índices sociales para simular.",
+    "priority": "Armonizar"
+  },
+  {
+    "id": "6.03",
+    "title": "Gobernanza policéntrica (Ostrom)",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana6/03-ostrom.html",
+    "coverage": "C",
+    "current": "[Lectura S6](https://milogz.github.io/Systems_Analytics_MISE/semana_06/lectura.html); [Saga S6](https://milogz.github.io/Systems_Analytics_MISE/semana_06/caso_colombia.html#gobernanza-policentrica-ostrom)",
+    "increment": "Ostrom y sus principios ya están. Nombrar el común, usuarios y límites y resolver un caso de microrred facilita aplicar el diagnóstico.",
+    "decision": "Apoyo opcional para revisar acuerdos del juego de roles; evitar un cuestionario adicional.",
+    "priority": "Opcional"
+  },
+  {
+    "id": "6.04",
+    "title": "Justicia energética",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana6/04-justicia-energetica.html",
+    "coverage": "P",
+    "current": "[Lectura S6](https://milogz.github.io/Systems_Analytics_MISE/semana_06/lectura.html); [Saga S6](https://milogz.github.io/Systems_Analytics_MISE/semana_06/caso_colombia.html#justicia-energetica-sovacool-jenkins)",
+    "increment": "Las tres dimensiones e indicadores ya se explican. La matriz resuelta, con evidencia o hipótesis en cada celda, sistematiza su aplicación.",
+    "decision": "P6: utilizar el formato en el diagnóstico existente, sin puntuar derechos ni agregar un índice.",
+    "priority": "P6"
+  },
+  {
+    "id": "6.05",
+    "title": "Consulta previa y licencia social",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana6/05-consulta-previa.html",
+    "coverage": "P",
+    "current": "[Lectura S6](https://milogz.github.io/Systems_Analytics_MISE/semana_06/lectura.html#la-consulta-previa-como-dinamica-sistemica); [Saga S6](https://milogz.github.io/Systems_Analytics_MISE/semana_06/caso_colombia.html#lo-que-el-modelo-no-captura)",
+    "increment": "Consulta y licencia social ya están presentes. La cronología del proceso y su diferencia institucional se desarrollan con mayor detalle.",
+    "decision": "Segunda etapa: apoyo contextual; confirmar fuentes normativas/fechas antes de volverlo guía obligatoria.",
+    "priority": "Opcional"
+  },
+  {
+    "id": "6.06",
+    "title": "Redes de actores con poder e intereses",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana6/06-redes-actores.html",
+    "coverage": "P",
+    "current": "[Lectura S3](https://milogz.github.io/Systems_Analytics_MISE/semana_03/lectura.html#redes-de-actores-y-stakeholders); [Saga S6](https://milogz.github.io/Systems_Analytics_MISE/semana_06/caso_colombia.html)",
+    "increment": "Actores, poder e intereses ya se trabajan. Articulaciones, evidencia de vínculos y lectura conjunta de posición/poder afinan el diagnóstico.",
+    "decision": "P6: fuente por vínculo y condición institucional; no equiparar articulación topológica con veto jurídico.",
+    "priority": "P6"
+  },
+  {
+    "id": "6.07",
+    "title": "Comunicar complejidad a audiencias no técnicas",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana6/07-comunicar-complejidad.html",
+    "coverage": "C",
+    "current": "[Lectura S7](https://milogz.github.io/Systems_Analytics_MISE/semana_07/lectura.html#comunicar-complejidad-a-audiencias-no-tecnicas); [Lectura S7](https://milogz.github.io/Systems_Analytics_MISE/semana_07/lectura.html#la-cadena-de-evidencia-el-rastro-de-auditoria)",
+    "increment": "Comunicación ejecutiva y principio de pirámide ya están. Versiones por audiencia y crítica de gráficos ofrecen práctica resuelta.",
+    "decision": "P7: ubicar en nuestra S7; mantener 1–2 páginas de memo y las instrucciones oficiales del curso.",
+    "priority": "P7"
+  },
+  {
+    "id": "6.08",
+    "title": "Windpeshi en cuatro capas",
+    "source": "https://pozost.github.io/Systems-Analytics-Guias/semana6/08-windpeshi-cuatro-capas.html",
+    "coverage": "C",
+    "current": "[Saga S6](https://milogz.github.io/Systems_Analytics_MISE/semana_06/caso_colombia.html#caso-windpeshi-analisis-sistemico-de-4-capas); [Saga S7](https://milogz.github.io/Systems_Analytics_MISE/semana_07/caso_colombia.html)",
+    "increment": "Windpeshi en cuatro capas ya existe. El caso resuelto hace más visibles los acoples y condiciones de las recomendaciones.",
+    "decision": "Ejemplo opcional de integración; no reemplazar fichas de rol, cifras o conclusiones por defecto.",
+    "priority": "Opcional"
+  }
+]
