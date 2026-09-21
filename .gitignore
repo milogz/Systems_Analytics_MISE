@@ -14,6 +14,9 @@ ejemplo referencia*/
 .DS_Store
 Thumbs.db
 
+# Local recovery archives; instructions are tracked in docs/integracion_alejandra/
+/backup/
+
 # Environment
 .env
 .venv/

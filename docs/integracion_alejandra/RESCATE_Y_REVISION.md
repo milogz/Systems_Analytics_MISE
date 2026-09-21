@@ -1,5 +1,7 @@
 # Integración de Alejandra: revisión y rescate
 
+**Actualización:** la integración `1588e92` ya se incorporó a `main` en la carpeta habitual `Systems_Analytics_MISE`, por solicitud del usuario. No se hizo push. El respaldo local anterior está en `backup/antes_integracion_alejandra_2026-09-21/`, con ZIP, manifiesto, historial Git y `LEEME_RESTAURACION.md`. Consulte [ESTADO_EN_CARPETA_PRINCIPAL.md](ESTADO_EN_CARPETA_PRINCIPAL.md) para el estado actual. El resto de este documento conserva el registro de preparación aislada.
+
 Estado de origen: `ec92151bf372d0c6beafda514459fc30ce6f715b` (main). Trabajo aislado en `codex/integracion-alejandra`; no se publica ni se modifica main por preparar esta copia.
 
 ## Puntos de rescate

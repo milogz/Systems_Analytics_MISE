@@ -1,5 +1,7 @@
 # Resultado de verificación
 
+**Registro de la comprobación previa a la integración en main.** La versión verificada se incorporó después a la carpeta principal; consulte [el estado actual](ESTADO_EN_CARPETA_PRINCIPAL.md). La ubicación de la vista previa y los resultados siguientes corresponden a la copia aislada comprobada.
+
 - El libro compila. Conserva las 34 páginas anteriores y agrega 9: siete selecciones de ejemplos y dos referencias del proyecto.
 - Los 1385 archivos originales del espacio principal coinciden con el manifiesto del rescate.
 - Los 14 notebooks fuente conservan exactamente sus 391 celdas originales, incluidas 153 celdas de código y sus salidas. Solo se añadieron siete notas Markdown de alcance en las Sagas.
