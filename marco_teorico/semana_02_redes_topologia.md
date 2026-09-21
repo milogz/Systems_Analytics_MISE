@@ -256,7 +256,7 @@ $$P(k) \sim k^{-\gamma}$$
 
 donde $\gamma$ es el exponente de la ley de potencia, típicamente entre 2 y 3 para redes reales. En escala logarítmica, esta distribución aparece como una línea recta. A diferencia de la distribución de Poisson, la distribución de ley de potencia tiene una "cola pesada" (fat tail): la probabilidad de encontrar nodos con grados extremadamente altos es mucho mayor de lo que sugeriría una distribución gaussiana o Poisson.
 
-**Analogía energética**: El SIN colombiano tiene características de red libre de escala. Unas pocas subestaciones principales — como Bacatá (500/230 kV), Cerromatoso (500/230 kV), La Virginia (230 kV), San Carlos (500/230 kV) — concentran un número desproporcionadamente alto de conexiones, mientras que la gran mayoría de subestaciones regionales tienen solo 2 o 3 líneas. No es una coincidencia: los sistemas eléctricos crecen por enlace preferencial. Cuando se planifica una nueva línea, es natural conectarla a una subestación existente que ya es un nodo importante del sistema — es más eficiente y más económico que crear infraestructura desde cero en un punto remoto.
+**Analogía energética**: Algunas subestaciones concentran más conexiones que otras. Esa heterogeneidad motiva estudiar centralidades, pero no demuestra que el SIN siga una ley de potencia ni que crezca por enlace preferencial. Para clasificar su topología se requiere definir la red y contrastar distribuciones con datos. El modelo Barabási–Albert y el STN simplificado del laboratorio son representaciones distintas; compare sus mecanismos sin trasladar automáticamente sus propiedades al sistema real.
 
 **Propiedades clave**:
 - **Hubs**: existencia de nodos con grado mucho mayor que el promedio
@@ -349,7 +349,7 @@ Esta asimetría es la **paradoja "robusto pero frágil"** (robust yet fragile):
 
 ### 6.3 Implicaciones para la seguridad del SIN
 
-Si el SIN colombiano tiene características de red libre de escala — como la evidencia empírica sugiere — entonces:
+En una red hipotética con hubs y distribución de grado de ley de potencia, se pueden explorar las siguientes hipótesis. Su aplicación al SIN requiere contrastarlas con la red y condiciones de operación correspondientes:
 
 - **Buena noticia**: El sistema tolerará bien las fallas aleatorias cotidianas (rayos, errores humanos aislados, fallas de equipos individuales). Estas fallas afectarán mayormente a nodos periféricos de bajo grado sin consecuencias sistémicas.
 
@@ -540,7 +540,7 @@ En las Semanas 4 y 5, daremos un salto conceptual: pasaremos de *redes* a *diná
 
 3. **Las métricas de centralidad identifican nodos críticos**: El grado cuenta conexiones; la intermediación identifica cuellos de botella; la cercanía mide accesibilidad; el clustering mide redundancia local.
 
-4. **La distribución de grado es la métrica más reveladora**: Su forma nos dice si el sistema es democrático (aleatorio) o tiene hubs dominantes (libre de escala).
+4. **La distribución de grado aporta un diagnóstico parcial**: permite estudiar heterogeneidad, pero la existencia de hubs no demuestra una ley de potencia. Contraste modelos y complemente con métricas y restricciones pertinentes.
 
 5. **Las leyes de potencia cambian las reglas**: Los eventos extremos son mucho más frecuentes de lo que las distribuciones normales predicen. Nuestros métodos de evaluación de riesgo deben adaptarse.
 

@@ -1,60 +1,58 @@
-# Guía Semanal — Semana 6: Integración — Análisis Sistémico Completo con Dimensión de Gobernanza
+# Semana 6: Integrar gobernanza, justicia y viabilidad
 
-> "El modelo computacional asume lo que la política destruye: los actores sociales importan."
+**Resultado esperado — RAC 4, articulado con RAC 2 y 3:** Relacionar las cuatro capas con evidencia y explicar cómo las condiciones institucionales limitan una recomendación.
 
-## Caso Ancla
+La semana tiene dos bloques conectados. Primero estudie los conceptos, observe un procedimiento y practique; después consulte un tramo de la Saga y aplíquelo a su caso. Las selecciones de esta guía delimitan el recorrido principal. Las lecturas y notebooks completos permanecen disponibles para consulta.
 
-**Proyecto eólico Windpeshi (La Guajira, 200 MW) — comunidades Wayuu, consulta previa y licencia social.**
-En esta semana integradora unimos redes, dinámicas y la ineludible dimensión de gobernanza, justicia energética y licenciamiento social para emitir diagnósticos realistas.
+## 1. Lecciones: comprender, observar y practicar
 
-## Objetivos de la Semana
+1. **Lectura seleccionada.** En la [lectura de la semana](lectura.md), priorice: Marco multicapa, Ostrom, dimensiones de justicia energética y consulta previa. Consulte fuentes normativas pertinentes al caso.
+2. **Videos y quices.** Siga la selección publicada por los tutores en el LMS sobre esos mismos conceptos. Los videos se están preparando: mientras un recurso no esté disponible, utilice la lectura y compruebe los conceptos con el ejemplo y la práctica. Las preguntas de autoevaluación externas son formativas; no añaden otro quiz calificado.
+3. **Ejemplo guiado.** [Ejemplos guiados de Alejandra](ejemplos_alejandra.md). Consulte únicamente los fragmentos indicados para el recorrido principal; no se asignan todas las páginas externas completas.
+4. **Aplicación.** [Herramientas de S2](../semana_02/notebook.ipynb) y [S4](../semana_04/notebook.ipynb). No hay notebook nuevo. Prepare el role-play con un diagnóstico breve y use herramientas previas cuando ayuden a responder la pregunta institucional.
 
-- Integrar topología de redes, dinámica de sistemas y análisis de actores en un marco multicapa.
-- Analizar conflictos socio-ambientales con marcos de justicia energética (distributiva, procedimental, reconocimiento).
-- Estructurar gobernanza policéntrica (bienes comunes, Ostrom) en proyectos de infraestructura.
+## 2. Proyecto: observar la transferencia y construir el caso propio
 
-## Material del Curso
+**Referencia aplicada — [Caso Colombia](caso_colombia.ipynb).** Saga 6: Windpeshi como ejemplo de acoples entre infraestructura, mercado, actores y gobernanza. Examine una relación entre capas y su evidencia.
 
-| Componente | Descripción |
-|---|---|
-| **Lectura teórica** | [caso_colombia_sistema_electrico.md] Gobernanza, bienes comunes (Ostrom) y justicia energética (Sovacool). |
-| **Práctica computacional** | No aplica — semana de integración. Uso libre de herramientas. |
-| **Caso Colombia** | [saga_06_gobernanza.ipynb] Caso Windpeshi con modelo multi-capa (EPM, Wayuu, CREG, ANLA) y rol de licencia social. |
+**Trabajo del grupo.** Construyan el diagnóstico social, ambiental, ético y de gobernanza del caso. Revisen estrategias y escenarios a partir de las restricciones identificadas. La síntesis de Windpeshi se trabaja en el taller; eviten escribir un segundo informe paralelo.
 
-## Lecturas y Recursos Recomendados
+**Hito.** **Preparación del role-play y del Avance 3:** matriz de evidencia y restricciones del caso propio. Las actividades evaluadas del LMS conservan sus pesos; el equipo docente articula el ejercicio de Windpeshi con el taller.
 
-### Obligatorias
+**Al finalizar, conserve:** Matriz de justicia/actores y escenarios revisados para Avance 3.
+
+Use la [guía única del proyecto](../proyecto/guia.md) para requisitos, estructura, pesos y rúbricas. El ejemplo de Alejandra y la Saga preparan esta producción; no constituyen otros proyectos que deban entregarse completos.
+
+## 3. Tiempo y prioridad
+
+| Actividad | Presupuesto por estudiante |
+|---|---:|
+| Guía y orientación | 10 min |
+| Lectura seleccionada | 50 min |
+| Videos/quices y comprobación conceptual | 100 min |
+| Ejemplos guiados | 60 min |
+| Práctica o taller de aplicación | 20 min |
+| Proyecto propio, consulta de Saga y preparación | 360 min |
+| Sesión sincrónica | 120 min |
+| **Total** | **12 h** |
+
+Bloque de lecciones: **4 h 00 min**; proyecto: **6 h**; sesión: **2 h**. Son presupuestos de planificación, no tiempos medidos. Incluyen las comprobaciones, discusión asíncrona y preparación asignadas al bloque correspondiente. No sume las duraciones completas de todos los recursos disponibles.
+
+El recorrido principal debe caber en ese presupuesto. Si necesita más tiempo, priorice el resultado esperado y el hito, registre la dificultad y llévela a tutoría. Las variantes avanzadas, referencias extensas y simuladores adicionales quedan para profundizar. Las actividades calificadas y sus fechas se consultan en el LMS; los pesos globales no cambian por añadir recursos de apoyo.
+
+## 4. Fuentes y profundización
+
+La lectura conserva sus referencias. Las fuentes siguientes se consultan en los fragmentos necesarios para el problema o la evidencia; no implican leer cada obra completa además del recorrido principal.
+
+
+### Fuentes de apoyo al recorrido
 - *Governing the Commons* (Cap. 1, resumen provisto) — Elinor Ostrom.
 - *New frontiers for energy justice* — Sovacool et al.
 - Evaluación de proyectos FNCER en La Guajira — Contraloría General.
 
-### Recomendadas
+### Para profundizar
 - Marco normativo de consulta previa — Ministerio del Interior.
 
-## Actividades de Evaluación
 
-| Actividad | Descripción | Modalidad | Peso |
-|---|---|---|---|
-| Quizzes | Gobernanza, justicia y comunicación sistémica | Autónomo | Evaluado |
-| Informe integrador Windpeshi | Análisis grupal combinando redes, SD, y actores socio-políticos | Autónomo | Evaluado |
-| Role-play sincrónico | Negociación multi-actor de socialización de proyecto | Sincrónico | Evaluado |
 
-## Proyecto Integrador
-
-Integrar la dimensión social, ambiental y de gobernanza al análisis del caso del grupo: mapa de actores actualizado, dinámicas de conflicto/cooperación y viabilidad institucional. (1.0 hora de trabajo preliminar para el proyecto).
-
-## Conexión con la Saga Colombia
-
-El `saga_06_gobernanza` es el primer notebook donde los modelos cuantitativos se supeditan al análisis cualitativo: se muestra cómo modelar formalmente la resistencia de las comunidades (retrasos de licenciamiento) y sus impactos sistémicos sobre la confiabilidad del nodo regional.
-
-## Distribución del Tiempo
-
-| Actividad | Horas |
-|---|---|
-| Video-lecciones con quizzes | 2.5 |
-| Lectura dirigida | 1.5 |
-| Caso integrador (Windpeshi) | 4.0 |
-| Preparación role-play | 1.0 |
-| Proyecto integrador | 1.0 |
-| Sesión sincrónica | 2.0 |
-| **Total** | **12** |
+Consulte también las [convenciones comunes](../proyecto/lenguaje_comun.md) antes de comparar resultados entre recursos.

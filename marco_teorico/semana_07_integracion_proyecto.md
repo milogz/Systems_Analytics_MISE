@@ -65,10 +65,10 @@ Sepan distinguir rigurosamente entre los *hechos observados* del mundo real y lo
 
 ## 5. Estructura del Informe de Consultoría Sistémica
 
-El entregable final del proyecto no es un ensayo tradicional, sino un documento ejecutivo diseñado para inducir acción. A continuación se presenta la arquitectura estándar que debe guiar la redacción de su informe integrador (con una extensión recomendada de 6,000 a 8,000 palabras):
+El entregable final del proyecto no es un ensayo tradicional, sino un documento ejecutivo diseñado para inducir acción. A continuación se presenta la arquitectura estándar que debe guiar la redacción de su informe integrador (con una extensión de 5.000 a 7.000 palabras para el cuerpo del informe):
 
 ### 5.1 El Memo Ejecutivo (Resumen Ejecutivo)
-(1-2 páginas máximo)
+(una página, fuera del conteo del cuerpo)
 Debe poder leerse aisladamente. Contiene:
 - **El Problema:** La pregunta central o el dolor del sistema (ej. riesgo de abastecimiento, conflictividad en La Guajira, congestión de red).
 - **El Hallazgo Sistémico:** Cuál es la estructura profunda o el bucle causal subyacente que los métodos tradicionales ignoraron.
@@ -78,10 +78,12 @@ Debe poder leerse aisladamente. Contiene:
 Delimitación precisa de las fronteras espaciales, temporales e institucionales del caso. ¿Qué está adentro y qué es exógeno? Se incluye el mapa inicial de actores y la caracterización de las visiones de mundo en conflicto.
 
 ### 5.3 Diagnóstico Estructural (Complejidad y Redes)
+
+En el informe final separe **sección 2: complejidad** y **sección 3: redes**. Esta lectura agrupa su explicación metodológica, pero no cambia esa estructura.
 Análisis de la topología física y/o institucional del problema. ¿Dónde están los nodos vulnerables? ¿Cuáles son las métricas críticas que determinan la propagación de impactos?
 
 ### 5.4 Diagnóstico Dinámico (Modelo de Sistemas)
-Presentación del modelo de Dinámica de Sistemas (Causal Loop Diagrams y simulación S&F si aplica). Explicación de los bucles dominantes, los retardos críticos y las políticas fallidas del pasado. Simulaciones de los escenarios base frente a las intervenciones propuestas.
+Presentación del modelo de Dinámica de Sistemas (diagramas de lazos causales y modelo de stocks y flujos calibrado requerido por el proyecto). Explicación de los bucles dominantes, los retardos críticos y las políticas fallidas del pasado. Simulaciones de los escenarios base frente a las intervenciones propuestas.
 
 ### 5.5 Análisis de Gobernanza, Institucionalidad y Justicia
 La capa humana (Ostrom, Sovacool). Evaluación de las condiciones habilitantes. ¿Tiene el proyecto o política LSO (Licencia Social)? ¿Se cumple la justicia procedimental? ¿Cómo afectan estas variables institucionales los resultados financieros o técnicos previamente calculados?
@@ -92,7 +94,9 @@ La culminación del informe. Las recomendaciones deben ser:
 - **Asignables:** A un actor con la competencia jurídica o financiera para actuar (MME, UPME, Desarrollador, Comunidad).
 - **Condicionadas / Robustas:** Explicar bajo qué escenarios la recomendación sigue siendo válida y bajo cuáles fracasaría. Incluir una tabla de robustez.
 
-### 5.7 Anexos Técnicos y Metodológicos
+### 5.7 Limitaciones, horizonte y anexos
+
+La **sección 7 del informe** explicita limitaciones y horizonte. El **apéndice A**, separado, contiene el enlace al repositorio; los anexos técnicos sostienen la trazabilidad.
 Repositorio para el rigor que sostiene las afirmaciones. Explicación de los supuestos, ecuaciones diferenciales clave, rutinas de código relevantes y calibración de datos. Garantiza la **reproducibilidad**.
 
 ---

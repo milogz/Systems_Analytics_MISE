@@ -232,7 +232,7 @@ Dinámicamente, lo que ocurre es un desastre organizacional: El tomador de decis
 El tomador de decisiones percibe erróneamente que "nada ha pasado" o "la acción no fue suficiente". Sigue acelerando, sigue invirtiendo dinero a manos llenas. Finalmente, en el futuro, todas las decisiones acumuladas en el "tubo del retardo" llegan de golpe al stock simultáneamente. El stock no solo alcanza el objetivo, sino que lo pulveriza hacia arriba. Esto se llama **sobreimpulso (overshoot)**.
 
 Al darse cuenta de que ahora hay un exceso grotesco (la oferta es muchísimo mayor que la demanda, los precios se desploman al piso), el decisor entra en pánico, frena toda inversión a cero y comienza a desmantelar. Pero, de nuevo, la escasez futura que esta falta de inversión generará no será visible hasta años después. El stock cae vertiginosamente, se hunde por debajo del objetivo (undershoot), disparando de nuevo alarmas frenéticas de escasez y pánico de apagón.
-El resultado matemático es inevitable: en lugar de una convergencia suave, el sistema se transforma en un oscilador amortiguado o en un **oscilador perpetuo** de ciclo límite.
+Según la ganancia, los parámetros y la forma del retardo, el sistema puede converger suavemente, sobrepasar la meta u oscilar. Un lazo de balance con retardo no garantiza un ciclo límite; el régimen debe comprobarse en las ecuaciones y mediante simulación.
 
 > **EL INSIGHT CLAVE:** Esta demostración matemática establece de manera irrefutable que **la sola introducción estructural de un retardo (delay) temporal tiene el poder absoluto de convertir un bucle de balance que fue diseñado para ser inherentemente estable e inteligente, en un sistema crónicamente inestable que oscila de un extremo de crisis a otro sin fin aparente.**
 
@@ -341,7 +341,7 @@ Sin necesidad de introducir ninguna perturbacion externa (sin fenomenos de El Ni
 
 Lo notable es que estas oscilaciones simuladas coinciden con los ciclos historicos observados en el mercado eléctrico colombiano desde la reestructuracion de los años noventa. Esto nos conduce al insight central de la Semana 4:
 
-> **Las oscilaciones del mercado eléctrico no son primariamente causadas por eventos climaticos externos como El Niño. Son el producto inevitable de la estructura interna del sistema: la combinacion de retardos largos de construccion con la no-linealidad exponencial de la formacion de precios.**
+> **El modelo ilustra que una estructura con inversión, retardos y precios no lineales puede generar oscilaciones endógenas. Esto no determina por sí solo cuánto de las oscilaciones históricas proviene de esa estructura o de choques externos como El Niño; esa atribución requiere evidencia y contraste adicionales.**
 
 Los fenomenos climaticos como El Niño actuan como **disparadores y amplificadores** de un ciclo que ya reside latente en la estructura del mercado. Aceleran la crisis, sincronizan las respuestas de los agentes y magnifican la amplitud de las oscilaciones, pero no las originan. Un modelo que culpa exclusivamente al clima por las crisis del sector esta confundiendo el catalizador con la causa raiz — un error analitico que conduce a politicas ineficaces.
 

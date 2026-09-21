@@ -447,7 +447,7 @@ En dos semanas hemos construido un arsenal analítico considerable:
 
 Sin embargo, las redes tienen una **limitación fundamental** que nos obliga a buscar herramientas complementarias:
 
-> Las redes son excelentes para modelar **conexiones** y **estados discretos** (adoptó/no adoptó, operativo/fallado), pero no están diseñadas para modelar la **evolución temporal de cantidades continuas** que se **acumulan** y **fluyen**.
+> Los modelos de redes de esta unidad representan conexiones y estados locales. Una red también puede tener estados continuos; cuando la pregunta se concentra en acumulaciones, flujos y retardos agregados, la dinámica de sistemas ofrece una representación complementaria. La elección depende de la pregunta y del nivel de agregación, no de una prohibición de usar cantidades continuas en redes.
 
 Considere las siguientes preguntas que el análisis de redes no puede responder bien:
 

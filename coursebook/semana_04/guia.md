@@ -1,61 +1,59 @@
-# Guía Semanal — Semana 4: Dinámica de Sistemas I — Stocks, Flujos y Retroalimentaciones
+# Semana 4: Construir, comprobar y calibrar el modelo
 
-> "Modelando por qué el sector eléctrico oscila cíclicamente entre escasez y sobreoferta."
+**Resultado esperado — RAC 3:** Traducir mecanismos a stocks y flujos, y comprobar unidades, comportamiento y procedencia de parámetros.
 
-## Caso Ancla
+La semana tiene dos bloques conectados. Primero estudie los conceptos, observe un procedimiento y practique; después consulte un tramo de la Saga y aplíquelo a su caso. Las selecciones de esta guía delimitan el recorrido principal. Las lecturas y notebooks completos permanecen disponibles para consulta.
 
-**El ciclo de inversión-capacidad en generación eléctrica colombiana.**
-Se pasa de dibujar mapas causales a crear modelos matemáticos simulables que representan los ciclos endógenos, donde los retardos en construcción provocan oscilaciones inevitables en los precios y capacidades del sistema.
+## 1. Lecciones: comprender, observar y practicar
 
-## Objetivos de la Semana
+1. **Lectura seleccionada.** En la [lectura de la semana](lectura.md), priorice: Stocks y flujos; ecuaciones y condiciones iniciales; auxiliares; retardos; ciclo de inversión. Use el ejemplo guiado para la revisión operativa del modelo.
+2. **Videos y quices.** Siga la selección publicada por los tutores en el LMS sobre esos mismos conceptos. Los videos se están preparando: mientras un recurso no esté disponible, utilice la lectura y compruebe los conceptos con el ejemplo y la práctica. Las preguntas de autoevaluación externas son formativas; no añaden otro quiz calificado.
+3. **Ejemplo guiado.** [Ejemplos guiados de Alejandra](ejemplos_alejandra.md). Consulte únicamente los fragmentos indicados para el recorrido principal; no se asignan todas las páginas externas completas.
+4. **Aplicación.** [Práctica computacional](notebook.ipynb). Lab 3: ejecutar un modelo pequeño, identificar sus balances y realizar una prueba extrema y una comprobación numérica. Conserve el entorno y funciones de la práctica actual.
 
-- Diferenciar operativamente variables de stock (acumulación) y variables de flujo (tasas).
-- Construir diagramas formales de Stocks y Flujos y traducirlos a ecuaciones diferenciales.
-- Simular modelos de dinámica de sistemas (SD) con retardos en Python (`scipy.integrate`).
+## 2. Proyecto: observar la transferencia y construir el caso propio
 
-## Material del Curso
+**Referencia aplicada — [Caso Colombia](caso_colombia.ipynb).** Saga 4, secciones 4.1–4.3 y 4.6: datos, estructura, retardo y contraste de comportamiento. Separe parametrización ilustrativa de calibración empírica.
 
-| Componente | Descripción |
-|---|---|
-| **Lectura teórica** | [semana_04_dinamica_sistemas.md] ODEs, lazos de balance/refuerzo y retardos materiales e informacionales. |
-| **Práctica computacional** | [semana_04_dinamica_sistemas.ipynb] Construcción de modelos usando módulos SD y el ciclo del SIN. |
-| **Caso Colombia** | [saga_04_dinamica.ipynb] Calibración del ciclo de inversión del mercado colombiano con datos de XM. |
+**Trabajo del grupo.** Construyan el diagrama y el primer modelo ejecutable de su caso. Usen los datos buscados en S1–S2. Registren parámetros medidos, estimados, ajustados y supuestos; delimiten qué puede identificarse con esos datos.
 
-## Lecturas y Recursos Recomendados
+**Hito.** **Revisión de trabajo para Avance 2:** modelo inicial, diagrama y ficha de comprobación. Este apoyo no añade un informe formal de 1.200 palabras.
 
-### Obligatorias
+**Al finalizar, conserve:** Modelo ejecutable inicial y registro de comprobaciones en el repositorio.
+
+Use la [guía única del proyecto](../proyecto/guia.md) para requisitos, estructura, pesos y rúbricas. El ejemplo de Alejandra y la Saga preparan esta producción; no constituyen otros proyectos que deban entregarse completos.
+
+## 3. Tiempo y prioridad
+
+| Actividad | Presupuesto por estudiante |
+|---|---:|
+| Guía y orientación | 10 min |
+| Lectura seleccionada | 60 min |
+| Videos/quices y comprobación conceptual | 105 min |
+| Ejemplos guiados | 65 min |
+| Práctica o taller de aplicación | 120 min |
+| Proyecto propio, consulta de Saga y preparación | 240 min |
+| Sesión sincrónica | 120 min |
+| **Total** | **12 h** |
+
+Bloque de lecciones: **6 h 00 min**; proyecto: **4 h**; sesión: **2 h**. Son presupuestos de planificación, no tiempos medidos. Incluyen las comprobaciones, discusión asíncrona y preparación asignadas al bloque correspondiente. No sume las duraciones completas de todos los recursos disponibles.
+
+El recorrido principal debe caber en ese presupuesto. Si necesita más tiempo, priorice el resultado esperado y el hito, registre la dificultad y llévela a tutoría. Las variantes avanzadas, referencias extensas y simuladores adicionales quedan para profundizar. Las actividades calificadas y sus fechas se consultan en el LMS; los pesos globales no cambian por añadir recursos de apoyo.
+
+## 4. Fuentes y profundización
+
+La lectura conserva sus referencias. Las fuentes siguientes se consultan en los fragmentos necesarios para el problema o la evidencia; no implican leer cada obra completa además del recorrido principal.
+
+
+### Fuentes de apoyo al recorrido
 - *Business Dynamics* (Cap. 1–3) — John Sterman.
 - *Thinking in Systems* (Cap. 3, arquetipos sistémicos) — Donella Meadows.
 - Informe de operación del SIN — XM (datos históricos).
 
-### Recomendadas
+### Para profundizar
 - *Cycles in deregulated electricity markets* — Arango & Larsen.
 - Resolución CREG 071/2006 (guía de lectura).
 
-## Actividades de Evaluación
 
-| Actividad | Descripción | Modalidad | Peso |
-|---|---|---|---|
-| Quizzes | Identificación de stocks, flujos y retardos | Autónomo | Evaluado |
-| Lab 3 | Notebook simulando el ciclo de inversión-capacidad (calibrado) | Autónomo | Evaluado |
-| Foro asíncrono | Justificación de los stocks más críticos del sector eléctrico colombiano | Autónomo | Evaluado |
 
-## Proyecto Integrador
-
-Transformar el Diagrama de Lazos Causales (CLD) del caso del grupo en una estructura de stocks y flujos. Identificar variables clave, documentar supuestos y ecuaciones iniciales (1,200 palabras + diagrama).
-
-## Conexión con la Saga Colombia
-
-El `saga_04_dinamica` toma los datos históricos del SIN desde el 2000 hasta el 2024 para calibrar nuestro modelo base de 3 stocks. Se mostrará explícitamente cómo el retardo constructor determina la amplitud de la oscilación de precios en la Bolsa de Energía.
-
-## Distribución del Tiempo
-
-| Actividad | Horas |
-|---|---|
-| Video-lecciones con quizzes | 2.5 |
-| Lectura dirigida | 1.5 |
-| Laboratorio / ejercicio aplicado | 3.0 |
-| Actividades asíncronas | 1.0 |
-| Proyecto integrador | 2.0 |
-| Sesión sincrónica | 2.0 |
-| **Total** | **12** |
+Consulte también las [convenciones comunes](../proyecto/lenguaje_comun.md) antes de comparar resultados entre recursos.

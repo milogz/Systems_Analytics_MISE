@@ -1,61 +1,59 @@
-# Guía Semanal — Semana 3: Redes II — Dinámica sobre Redes y Redes de Actores
+# Semana 3: Relacionar difusión, actores y mecanismos
 
-> "Más allá de la topología: cómo fluye el poder, la innovación y el contagio en el sector."
+**Resultado esperado — RAC 2; consolidación de RAC 1:** Interpretar cómo las relaciones y reglas locales afectan la adopción, y sostener un diagnóstico de complejidad del caso.
 
-## Caso Ancla
+La semana tiene dos bloques conectados. Primero estudie los conceptos, observe un procedimiento y practique; después consulte un tramo de la Saga y aplíquelo a su caso. Las selecciones de esta guía delimitan el recorrido principal. Las lecturas y notebooks completos permanecen disponibles para consulta.
 
-**Adopción de energía solar distribuida y la Red de actores del mercado mayorista colombiano.**
-El comportamiento del sistema depende también de cómo los nodos cambian de estado influenciados por sus vecinos (contagio, adopción tecnológica) y cómo se estructuran las relaciones sociales y de mercado.
+## 1. Lecciones: comprender, observar y practicar
 
-## Objetivos de la Semana
+1. **Lectura seleccionada.** En la [lectura de la semana](lectura.md), priorice: Contagio simple/complejo, Bass y umbrales; redes de actores, bipartitas y comunidades.
+2. **Videos y quices.** Siga la selección publicada por los tutores en el LMS sobre esos mismos conceptos. Los videos se están preparando: mientras un recurso no esté disponible, utilice la lectura y compruebe los conceptos con el ejemplo y la práctica. Las preguntas de autoevaluación externas son formativas; no añaden otro quiz calificado.
+3. **Ejemplo guiado.** [Ejemplos guiados de Alejandra](ejemplos_alejandra.md). Consulte únicamente los fragmentos indicados para el recorrido principal; no se asignan todas las páginas externas completas.
+4. **Aplicación.** [Práctica computacional](notebook.ipynb). Lab 2: realice el recorrido de difusión y una lectura de comunidades. Compare dos configuraciones y explique la diferencia; evite añadir todas las variantes de simulación al entregable.
 
-- Simular dinámicas sobre redes (difusión de innovación, modelos de contagio simple y complejo).
-- Evaluar la concentración del mercado mayorista como un grafo bipartito y de afiliación.
-- Conectar la estructura de las redes de actores sociales con riesgos de concentración o resistencia al cambio.
+## 2. Proyecto: observar la transferencia y construir el caso propio
 
-## Material del Curso
+**Referencia aplicada — [Caso Colombia](caso_colombia.ipynb).** Saga 3, secciones 3.3–3.6: comunidades, difusión e interpretación ejecutiva. Distinga relación comercial, posición topológica y poder institucional.
 
-| Componente | Descripción |
-|---|---|
-| **Lectura teórica** | [semana_03_redes_dinamica_actores.md] Redes de actores, difusión y modelos de umbral de contagio. |
-| **Práctica computacional** | [semana_03_redes_dinamica.ipynb] Simulación SIR/Bass y detección de comunidades con NetworkX. |
-| **Caso Colombia** | [saga_03_estructura_social.ipynb] HHI del mercado mayorista, comunidades institucionales y curva S solar. |
+**Trabajo del grupo.** Consoliden caso, pregunta y análisis de complejidad. El trabajo de redes de S2–S3 alimenta la sección 3 del informe; no sustituye los requisitos de complejidad del Avance 1.
 
-## Lecturas y Recursos Recomendados
+**Hito.** **Avance 1 · 1.500 palabras · 5 %:** caso y complejidad; ≥3 retroalimentaciones, ≥2 no linealidades y ≥1 evento extremo, justificados, con CLD. Consulte los criterios del proyecto.
 
-### Obligatorias
+**Al finalizar, conserve:** Avance 1 y archivos de red conservados para el informe final.
+
+Use la [guía única del proyecto](../proyecto/guia.md) para requisitos, estructura, pesos y rúbricas. El ejemplo de Alejandra y la Saga preparan esta producción; no constituyen otros proyectos que deban entregarse completos.
+
+## 3. Tiempo y prioridad
+
+| Actividad | Presupuesto por estudiante |
+|---|---:|
+| Guía y orientación | 10 min |
+| Lectura seleccionada | 45 min |
+| Videos/quices y comprobación conceptual | 105 min |
+| Ejemplos guiados | 40 min |
+| Práctica o taller de aplicación | 100 min |
+| Proyecto propio, consulta de Saga y preparación | 300 min |
+| Sesión sincrónica | 120 min |
+| **Total** | **12 h** |
+
+Bloque de lecciones: **5 h 00 min**; proyecto: **5 h**; sesión: **2 h**. Son presupuestos de planificación, no tiempos medidos. Incluyen las comprobaciones, discusión asíncrona y preparación asignadas al bloque correspondiente. No sume las duraciones completas de todos los recursos disponibles.
+
+El recorrido principal debe caber en ese presupuesto. Si necesita más tiempo, priorice el resultado esperado y el hito, registre la dificultad y llévela a tutoría. Las variantes avanzadas, referencias extensas y simuladores adicionales quedan para profundizar. Las actividades calificadas y sus fechas se consultan en el LMS; los pesos globales no cambian por añadir recursos de apoyo.
+
+## 4. Fuentes y profundización
+
+La lectura conserva sus referencias. Las fuentes siguientes se consultan en los fragmentos necesarios para el problema o la evidencia; no implican leer cada obra completa además del recorrido principal.
+
+
+### Fuentes de apoyo al recorrido
 - *Network Science* (Cap. 5–6 y Cap. 10 resumen) — Albert-László Barabási.
 - *A simple model of global cascades on random networks* — Duncan Watts (PNAS).
 - *El mercado de energía mayorista en Colombia* — XM (documento técnico).
 
-### Recomendadas
+### Para profundizar
 - *Diffusion of Innovations* (extractos) — Rogers.
 - *New frontiers for energy justice* — Sovacool et al.
 
-## Actividades de Evaluación
 
-| Actividad | Descripción | Modalidad | Peso |
-|---|---|---|---|
-| Quizzes | Conceptos de dinámica en redes y ABM | Autónomo | Evaluado |
-| Lab 2 | Notebook simulando la red de actores mayoristas y umbrales de adopción | Autónomo | Evaluado |
-| Foro asíncrono | Debate sobre si la concentración del mercado es un riesgo sistémico | Autónomo | Evaluado |
 
-## Proyecto Integrador
-
-**Avance 1:** Entrega formal. Definición del caso + mapa de actores (como red) + CLD (Diagrama de Lazos Causales) preliminar + análisis inicial de métricas de red. 1,500 palabras + diagramas.
-
-## Conexión con la Saga Colombia
-
-En `saga_03_estructura_social`, los estudiantes explorarán un modelo de adopción solar distribuida (en barrios reales) para observar cómo el "contagio" de vecinos acelera la penetración de renovables, y visualizarán las "comunidades" implícitas en el mercado eléctrico nacional.
-
-## Distribución del Tiempo
-
-| Actividad | Horas |
-|---|---|
-| Video-lecciones con quizzes | 2.5 |
-| Lectura dirigida | 1.5 |
-| Laboratorio / ejercicio aplicado | 0.0 |
-| Actividades asíncronas | 1.0 |
-| Proyecto integrador (Avance 1) | 5.0 |
-| Sesión sincrónica | 2.0 |
-| **Total** | **12** |
+Consulte también las [convenciones comunes](../proyecto/lenguaje_comun.md) antes de comparar resultados entre recursos.

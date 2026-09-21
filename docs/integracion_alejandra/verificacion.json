@@ -1,0 +1,19 @@
+{
+  "archivos_originales_comprobados": 1385,
+  "originales_modificados": [],
+  "notebooks_conservados": 14,
+  "celdas_originales_conservadas": 391,
+  "celdas_codigo_conservadas": 153,
+  "paginas_anteriores": 34,
+  "paginas_actuales": 43,
+  "paginas_nuevas": 9,
+  "enlaces_locales_verificados": 89,
+  "fuentes_alejandra_contrastadas_con_corpus": 23,
+  "enlaces_rotos": [],
+  "nuevos_tipos_advertencia": [],
+  "artefactos_build_restaurados": 308,
+  "pdf_original_identico": true,
+  "presupuesto_semanal_minutos": 720,
+  "revision_visual": "No realizada: política del navegador bloquea file://. Se comprobó el HTML generado y sus enlaces.",
+  "ejecucion_simuladores": "No se ejecutaron; el código y los resultados originales se conservaron."
+}

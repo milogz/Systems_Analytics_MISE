@@ -42,17 +42,18 @@ graph TD
 
 ---
 
-## Tres líneas de contenido por semana
+## Un recorrido semanal en dos bloques
 
-Cada semana del curso opera en **tres líneas paralelas** que se refuerzan mutuamente:
+Empiece por la **guía semanal**: indica resultado esperado, selección de recursos, tiempo e hito del proyecto.
 
-| Línea | Propósito | Formato |
-|-------|-----------|---------|
-| **Lectura teórica** | Fundamentación conceptual, histórica y científica | Markdown — lectura guiada |
-| **Práctica computacional** | Laboratorio con herramientas reproducibles | Jupyter Notebook interactivo |
-| **Caso Colombia** | Aplicación al Sistema Interconectado Nacional | Jupyter Notebook — consultoría sistémica |
+| Bloque | Recursos y propósito |
+|---|---|
+| **Lecciones** | Lectura y videos/quices del LMS para comprender; ejemplos guiados de Alejandra para observar el procedimiento; práctica computacional para ejecutar e interpretar. |
+| **Proyecto** | Un tramo de la Saga Colombia para observar la aplicación y el trabajo del caso propio para construir evidencia del informe. |
 
-Adicionalmente, cada semana incluye una **Guía Semanal** con las lecturas recomendadas, actividades de evaluación, entregas del proyecto integrador y distribución del tiempo.
+La biblioteca completa sigue disponible. La guía distingue el recorrido principal de la profundización: no se suman todas las páginas, videos y variantes como carga obligatoria. Los videos se incorporan según su disponibilidad en el LMS.
+
+La [guía del proyecto](proyecto/guia.md) reúne entregas, estructura y criterios a partir del documento de Alejandra. Las [convenciones comunes](proyecto/lenguaje_comun.md) aclaran cómo pasar entre modelos y recursos.
 
 ---
 
@@ -74,7 +75,7 @@ Adicionalmente, cada semana incluye una **Guía Semanal** con las lecturas recom
 
 ## El Caso Colombia: consultoría sistémica del SIN
 
-Además de los laboratorios semanales, el curso integra un ejercicio longitudinal de **consultoría sistémica** sobre el Sistema Interconectado Nacional (SIN), construido con **datos reales de 25 años** provenientes de la API pública de XM (operador del mercado eléctrico colombiano).
+Además de los laboratorios semanales, el curso integra un ejercicio longitudinal de **consultoría sistémica** sobre el Sistema Interconectado Nacional (SIN), que combina datos públicos del sector, representaciones simplificadas y experimentos pedagógicos. En cada ejercicio distinga la procedencia de los datos y los supuestos del modelo; una red estilizada o una trayectoria simulada no son observaciones del sistema real.
 
 El Caso Colombia recorre 8 notebooks que aplican progresivamente las herramientas de cada semana a un problema real. Cada notebook incluye recuadros **"Dos Miradas"** que contrastan lo que revelaría un análisis convencional versus lo que aporta la perspectiva de sistemas complejos.
 
@@ -108,11 +109,10 @@ Fuente: [API pública de XM S.A. E.S.P.](https://servapibi.xm.com.co)
 
 ## Cómo usar este material
 
-Navega por la barra lateral para acceder a cada semana. Dentro de cada semana encontrarás:
+1. Abra la guía de la semana y revise qué debe poder explicar o producir.
+2. Recorra las secciones de lectura y los videos/quices indicados en el LMS.
+3. Siga la selección de ejemplos guiados de Alejandra y aplique el procedimiento en la práctica.
+4. Consulte el fragmento de Saga Colombia señalado y transfiera el aprendizaje al caso propio.
+5. Revise el hito y conserve la evidencia en el repositorio del proyecto.
 
-1. **Guía Semanal** — mapa de la semana con lecturas, actividades y entregas
-2. **Lectura teórica** — fundamentación conceptual
-3. **Práctica computacional** — laboratorio con código interactivo en Python
-4. **Caso Colombia** — aplicación al Sistema Interconectado Nacional
-
-Los notebooks están pre-ejecutados para que puedas ver los resultados sin necesidad de correr código. Si deseas experimentar, descarga el notebook y ejecútalo en tu entorno local.
+Los notebooks conservan sus resultados guardados para facilitar la lectura. Para el proyecto, el grupo debe poder ejecutar el código que genera sus propias tablas y figuras. Los contenidos avanzados y las variantes no seleccionadas permanecen como profundización.

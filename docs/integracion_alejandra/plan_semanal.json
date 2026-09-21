@@ -1,0 +1,262 @@
+[
+  {
+    "w": 1,
+    "title": "Comprender el sistema y formular la pregunta",
+    "rac": "RAC 1",
+    "goal": "Explicar el problema mediante retroalimentación, no linealidad y una frontera de análisis explícita.",
+    "reading": "Complicado y complejo; adaptación, emergencia, retardos y extremos; signos y lazos del CLD.",
+    "practice": "Recorra un experimento de comportamiento de la práctica y explique el mecanismo. Use el tiempo restante para revisar signos y retardos del mapa causal; las variantes de tráfico y colas quedan para profundización.",
+    "saga": "Saga 1: identidad del SIN, frontera y primer CLD. Observe cómo TASCOI/CATWOE ayuda a delimitar; no necesita repetir todo el inventario sectorial.",
+    "project": "Conformen el grupo de tres. Definan caso, decisor, pregunta y fuentes iniciales. Identifiquen al menos una serie potencialmente útil para el modelo dinámico; registren qué falta conseguir.",
+    "milestone": "**Ficha del caso (sin nota):** caso, decisor, pregunta, fuentes y roles. Preparen su revisión con el equipo docente. El caso debe estar aprobado antes del Avance 1.",
+    "deliver": "Una ficha y un primer mapa de mecanismos que el grupo seguirá revisando.",
+    "times": [
+      10,
+      60,
+      120,
+      60,
+      110,
+      240,
+      120
+    ],
+    "ids": [
+      "1.10",
+      "1.03",
+      "1.04"
+    ],
+    "select": [
+      "Procedimiento de construcción del mapa y revisión de errores; omita el laboratorio completo.",
+      "Ejemplo básico de polaridad y clasificación de un lazo; úselo si la revisión del mapa lo requiere.",
+      "Ejemplo de respuesta no lineal; identifique entrada, salida y consecuencia dinámica."
+    ],
+    "transfer": "Revise tres lazos candidatos de su caso. Para cada flecha escriba la razón de su signo; señale el retardo y la evidencia disponible. Identifique dos relaciones no lineales y un evento extremo relevante, sin atribuir umbrales empíricos a un dibujo ilustrativo.",
+    "boundary": "Los números de los ejemplos son del sistema representado. Un umbral ilustrativo no constituye una alerta operativa del SIN."
+  },
+  {
+    "w": 2,
+    "title": "Representar la estructura y sus vulnerabilidades",
+    "rac": "RAC 2",
+    "goal": "Construir un grafo interpretable y justificar el alcance de sus métricas y pruebas de contingencia.",
+    "reading": "Nodos y aristas; grado, intermediación y cercanía; ER, BA y WS; robustez y alcance del criterio N-1.",
+    "practice": "Lab 1: construir o cargar la red oficial de la práctica, interpretar centralidades y comparar una contingencia con una falla aleatoria. Conserve el código y la explicación en un único producto de laboratorio; no repita el análisis entero en otra red.",
+    "saga": "Saga 2, secciones 2.1–2.5: grafo del STN, centralidades y contingencias. Identifique la naturaleza simplificada de la red antes de interpretar sus resultados.",
+    "project": "Definan nodos, aristas, tipo de vínculo y fuente. Seleccionen métricas por la pregunta del decisor. Comprueben si el caso dispone de datos suficientes para calibrar un modelo pequeño y acuerden el alcance con el equipo docente.",
+    "milestone": "**Esquema de redes (sin nota):** red propuesta, evidencia de vínculos y métricas pertinentes. Completen la aprobación del caso antes de S3; conserven la realimentación.",
+    "deliver": "Esquema de red, diccionario de vínculos y plan de datos del caso.",
+    "times": [
+      10,
+      60,
+      120,
+      50,
+      120,
+      240,
+      120
+    ],
+    "ids": [
+      "2.04",
+      "2.08",
+      "2.03"
+    ],
+    "select": [
+      "Comparación de grado, intermediación y cercanía. Autovector queda como extensión.",
+      "Errores comunes y distinción entre conectividad, carga aislada y cumplimiento eléctrico.",
+      "Un ejemplo sencillo de puente o articulación; la demostración formal de cortes es opcional."
+    ],
+    "transfer": "Escriba qué decisión informa cada métrica elegida. Declare qué mide su contingencia y qué falta para evaluar funcionamiento físico. Para una arista del caso registre origen, destino, relación, fuente y fecha.",
+    "boundary": "La red del curso y la de las guías no son la misma: no compare rankings o tamaños de cascada como si compartieran datos. Hubs no prueban una ley de potencia; conectividad no certifica N-1 eléctrico."
+  },
+  {
+    "w": 3,
+    "title": "Relacionar difusión, actores y mecanismos",
+    "rac": "RAC 2; consolidación de RAC 1",
+    "goal": "Interpretar cómo las relaciones y reglas locales afectan la adopción, y sostener un diagnóstico de complejidad del caso.",
+    "reading": "Contagio simple/complejo, Bass y umbrales; redes de actores, bipartitas y comunidades.",
+    "practice": "Lab 2: realice el recorrido de difusión y una lectura de comunidades. Compare dos configuraciones y explique la diferencia; evite añadir todas las variantes de simulación al entregable.",
+    "saga": "Saga 3, secciones 3.3–3.6: comunidades, difusión e interpretación ejecutiva. Distinga relación comercial, posición topológica y poder institucional.",
+    "project": "Consoliden caso, pregunta y análisis de complejidad. El trabajo de redes de S2–S3 alimenta la sección 3 del informe; no sustituye los requisitos de complejidad del Avance 1.",
+    "milestone": "**Avance 1 · 1.500 palabras · 5 %:** caso y complejidad; ≥3 retroalimentaciones, ≥2 no linealidades y ≥1 evento extremo, justificados, con CLD. Consulte los criterios del proyecto.",
+    "deliver": "Avance 1 y archivos de red conservados para el informe final.",
+    "times": [
+      10,
+      45,
+      105,
+      40,
+      100,
+      300,
+      120
+    ],
+    "ids": [
+      "3.05",
+      "3.06",
+      "3.08"
+    ],
+    "select": [
+      "Ejemplo de comparación de intervenciones con presupuesto comparable y lectura por grupo social.",
+      "Errores al interpretar vínculos y comunidades; contraste una relación documentada y una supuesta.",
+      "Solo si el caso usa Bass: límites de interpretar un parámetro ajustado como conducta individual."
+    ],
+    "transfer": "Reescriba una recomendación indicando resultado total, grupo que podría quedar rezagado y límite de evidencia. No deduzca alianza o colusión de una comunidad detectada por un algoritmo. Use la pauta del CLD de S1 para revisar el Avance 1.",
+    "boundary": "Los volúmenes y redes estilizadas enseñan un procedimiento. No son evidencia de coordinación real entre empresas. Las instrucciones del proyecto del curso determinan qué se entrega."
+  },
+  {
+    "w": 4,
+    "title": "Construir, comprobar y calibrar el modelo",
+    "rac": "RAC 3",
+    "goal": "Traducir mecanismos a stocks y flujos, y comprobar unidades, comportamiento y procedencia de parámetros.",
+    "reading": "Stocks y flujos; ecuaciones y condiciones iniciales; auxiliares; retardos; ciclo de inversión. Use el ejemplo guiado para la revisión operativa del modelo.",
+    "practice": "Lab 3: ejecutar un modelo pequeño, identificar sus balances y realizar una prueba extrema y una comprobación numérica. Conserve el entorno y funciones de la práctica actual.",
+    "saga": "Saga 4, secciones 4.1–4.3 y 4.6: datos, estructura, retardo y contraste de comportamiento. Separe parametrización ilustrativa de calibración empírica.",
+    "project": "Construyan el diagrama y el primer modelo ejecutable de su caso. Usen los datos buscados en S1–S2. Registren parámetros medidos, estimados, ajustados y supuestos; delimiten qué puede identificarse con esos datos.",
+    "milestone": "**Revisión de trabajo para Avance 2:** modelo inicial, diagrama y ficha de comprobación. Este apoyo no añade un informe formal de 1.200 palabras.",
+    "deliver": "Modelo ejecutable inicial y registro de comprobaciones en el repositorio.",
+    "times": [
+      10,
+      60,
+      105,
+      65,
+      120,
+      240,
+      120
+    ],
+    "ids": [
+      "4.01",
+      "4.07",
+      "4.08",
+      "4.03"
+    ],
+    "select": [
+      "Tabla de decisiones al pasar del CLD a stocks, flujos y auxiliares.",
+      "Ejemplo de revisión dimensional y condiciones extremas.",
+      "Procedencia de parámetros y ejemplo de límites del ajuste; no resolver toda la calibración alternativa.",
+      "Ejemplo de artefacto numérico y comprobación de convergencia; adaptar la comprobación al integrador del curso."
+    ],
+    "transfer": "Complete la ficha de comprobación incluida abajo sobre su propio modelo. Identifique qué observación podría refutar su explicación. Si no dispone de una serie suficiente, reduzca o revise el alcance con el tutor; declarar un dato sintético no satisface por sí solo la calibración empírica.",
+    "boundary": "Mantenga mise_utils y su estructura de estados. Los ejemplos con mise_sd explican procedimientos; no requieren instalar otro motor ni reproducir sus valores."
+  },
+  {
+    "w": 5,
+    "title": "Evaluar políticas bajo incertidumbre",
+    "rac": "RAC 3",
+    "goal": "Comparar intervenciones con supuestos explícitos y distinguir sensibilidad, escenarios y robustez.",
+    "reading": "Puntos de intervención; CxC/FNCER como modelos ilustrativos; sensibilidad, riesgo e incertidumbre profunda; escenarios y minimax regret.",
+    "practice": "Use el modelo ya construido para comparar políticas, una sensibilidad y una interacción de dos parámetros. Inicie la tabla de escenarios; no necesita completar el Avance 3 esta semana.",
+    "saga": "Saga 5, secciones 5.1–5.7: observe cómo ecuaciones, métrica y supuestos condicionan la recomendación. No traslade la estrategia ganadora a otro caso.",
+    "project": "Terminen calibración y sensibilidad; documenten normativa que afecta las ecuaciones o restricciones. Propongan ejes, estrategias y métricas para avanzar hacia la matriz del Avance 3.",
+    "milestone": "**Avance 2 · 2.000 palabras · 5 %:** modelo calibrado con datos colombianos, ciclos y retardos, sensibilidad y normativa aplicable. Identificabilidad es una oportunidad de profundización en la rúbrica.",
+    "deliver": "Avance 2, modelo reproducible y borrador de escenarios guardado para S6–S7.",
+    "times": [
+      10,
+      45,
+      105,
+      60,
+      80,
+      300,
+      120
+    ],
+    "ids": [
+      "5.05",
+      "5.07",
+      "5.08",
+      "5.09"
+    ],
+    "select": [
+      "Elegir métrica, justificar rangos y comparar una interacción sencilla.",
+      "Revisión de coherencia entre eje, narrativa y parámetros.",
+      "Leer una tabla de arrepentimiento: comparación dentro de cada escenario.",
+      "Solo la recomendación con condición de fallo y señal de revisión; PRIM y grandes conjuntos de futuros son opcionales."
+    ],
+    "transfer": "Anote una condición bajo la cual cambiaría su recomendación. Distinga si proviene del dato, la métrica o una hipótesis estructural. Explore una interacción sin reemplazar los escenarios propios por los ejemplos de las guías.",
+    "boundary": "Los escenarios exploratorios no tienen probabilidades por contarlos. Las tablas de modelos distintos no comparten necesariamente costos, horizontes o estrategias. El cambio de ranking se investiga y documenta; no se fuerza alterando resultados."
+  },
+  {
+    "w": 6,
+    "title": "Integrar gobernanza, justicia y viabilidad",
+    "rac": "RAC 4, articulado con RAC 2 y 3",
+    "goal": "Relacionar las cuatro capas con evidencia y explicar cómo las condiciones institucionales limitan una recomendación.",
+    "reading": "Marco multicapa, Ostrom, dimensiones de justicia energética y consulta previa. Consulte fuentes normativas pertinentes al caso.",
+    "practice": "No hay notebook nuevo. Prepare el role-play con un diagnóstico breve y use herramientas previas cuando ayuden a responder la pregunta institucional.",
+    "saga": "Saga 6: Windpeshi como ejemplo de acoples entre infraestructura, mercado, actores y gobernanza. Examine una relación entre capas y su evidencia.",
+    "project": "Construyan el diagnóstico social, ambiental, ético y de gobernanza del caso. Revisen estrategias y escenarios a partir de las restricciones identificadas. La síntesis de Windpeshi se trabaja en el taller; eviten escribir un segundo informe paralelo.",
+    "milestone": "**Preparación del role-play y del Avance 3:** matriz de evidencia y restricciones del caso propio. Las actividades evaluadas del LMS conservan sus pesos; el equipo docente articula el ejercicio de Windpeshi con el taller.",
+    "deliver": "Matriz de justicia/actores y escenarios revisados para Avance 3.",
+    "times": [
+      10,
+      50,
+      100,
+      60,
+      20,
+      360,
+      120
+    ],
+    "ids": [
+      "6.03",
+      "6.04",
+      "6.06",
+      "6.05"
+    ],
+    "select": [
+      "Ejemplo de identificar el recurso común, usuarios, reglas y límites.",
+      "Una matriz resuelta: evidencia observable o hipótesis pendiente por dimensión.",
+      "Cruce de posición en red con poder institucional y evidencia de los vínculos.",
+      "Consulta puntual de la distinción consulta previa/licencia social, según la pertinencia del caso."
+    ],
+    "transfer": "Complete la matriz de evidencia incluida abajo. Lleve al role-play una restricción y una propuesta de acuerdo respaldadas por ella. En el caso propio, explique qué cambia en la viabilidad de una estrategia.",
+    "boundary": "Una centralidad no concede autoridad jurídica. Confianza y agravio pueden ayudar como hipótesis cualitativas; no invente una escala cuantitativa para simularlos sin justificación. Revise fecha y fuente de las referencias jurídicas que use."
+  },
+  {
+    "w": 7,
+    "title": "Integrar y comunicar la recomendación",
+    "rac": "RAC 3 y 4; integración de RAC 1 y 2",
+    "goal": "Construir una recomendación trazable y robusta y comunicarla a audiencias diferentes.",
+    "reading": "Pensamiento multimodelo, cadena de evidencia y comunicación ejecutiva. Para extensión y estructura del informe use la guía única del proyecto.",
+    "practice": "Sin notebook nuevo. Complete escenarios y arrepentimiento del proyecto; revise que sus figuras puedan regenerarse.",
+    "saga": "Saga 7: examine la cadena dato → resultado → mecanismo → decisión. Úsela como ejemplo que también tiene límites; su caso necesita una estructura justificada propia.",
+    "project": "Consoliden al menos tres estrategias frente a cuatro escenarios, gobernanza y plan de ensamble. Revisen un argumento de otro grupo y ensayen una respuesta técnica y otra no técnica.",
+    "milestone": "**Avance 3 · 2.500 palabras · 5 %:** ejes justificados, ≥4 escenarios, matriz ≥3 estrategias × 4 escenarios, dimensión social/gobernanza y plan de ensamble.",
+    "deliver": "Avance 3 y borrador de mensaje ejecutivo con figuras seleccionadas.",
+    "times": [
+      10,
+      25,
+      30,
+      45,
+      10,
+      480,
+      120
+    ],
+    "ids": [
+      "6.07",
+      "5.09"
+    ],
+    "select": [
+      "Ejemplo de adaptar un mismo hallazgo a distintas audiencias y revisión de gráficos.",
+      "Señales y contingencias de la recomendación; profundización para el informe final."
+    ],
+    "transfer": "Redacte una recomendación que conserve decisión, razón, condición de validez y límite al cambiar de audiencia. Revise el peor caso y el arrepentimiento. Justifique un ranking estable si los escenarios no lo cambian; no fabrique cambios para satisfacer una expectativa.",
+    "boundary": "Comunicación aparece en la S6 de las guías de Alejandra y se utiliza aquí, en S7. La síntesis del curso no reemplaza las siete secciones ni la extensión del proyecto rector."
+  },
+  {
+    "w": 8,
+    "title": "Entregar, defender y reconocer los límites",
+    "rac": "RAC 1 a 4",
+    "goal": "Defender una recomendación sustentada, reconocer límites y entregar evidencia reproducible.",
+    "reading": "No hay nueva lectura obligatoria. Los horizontes ABM, RDM avanzado y aprendizaje automático quedan disponibles para después del cierre.",
+    "practice": "Comprobación final del repositorio: instrucciones, datos o fuentes accesibles, dependencias y reproducción de tablas/figuras. Sin laboratorio nuevo.",
+    "saga": "Consulte la síntesis de Saga 7 solo si ayuda a revisar un argumento; no hay nuevo caso que ejecutar.",
+    "project": "Integren las siete secciones del informe, revisen referencias y ensayen el panel. Los tres integrantes presentan y responden; distribuyan tiempo y responsabilidades.",
+    "milestone": "**Informe final · 25 %:** 5.000–7.000 palabras; resumen ejecutivo de una página fuera del conteo y apéndice con repositorio. **Panel · 5 %:** 15 minutos más preguntas.",
+    "deliver": "Informe, repositorio reproducible y defensa. Incluya el cierre reflexivo solicitado en el LMS dentro del tiempo reservado.",
+    "times": [
+      10,
+      0,
+      50,
+      0,
+      0,
+      480,
+      180
+    ],
+    "ids": [],
+    "select": [],
+    "transfer": "",
+    "boundary": ""
+  }
+]

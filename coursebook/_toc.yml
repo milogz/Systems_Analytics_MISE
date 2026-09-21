@@ -18,6 +18,8 @@ parts:
         title: "Guía Semanal"
       - file: semana_01/lectura
         title: "Lectura: Del Pensamiento Lineal al Complejo"
+      - file: semana_01/ejemplos_alejandra
+        title: "Ejemplos guiados de Alejandra"
       - file: semana_01/notebook
         title: "Práctica Computacional"
       - file: semana_01/caso_colombia
@@ -29,6 +31,8 @@ parts:
         title: "Guía Semanal"
       - file: semana_02/lectura
         title: "Lectura: La Estructura como Red"
+      - file: semana_02/ejemplos_alejandra
+        title: "Ejemplos guiados de Alejandra"
       - file: semana_02/notebook
         title: "Práctica Computacional"
       - file: semana_02/caso_colombia
@@ -40,6 +44,8 @@ parts:
         title: "Guía Semanal"
       - file: semana_03/lectura
         title: "Lectura: Dinámica sobre Redes"
+      - file: semana_03/ejemplos_alejandra
+        title: "Ejemplos guiados de Alejandra"
       - file: semana_03/notebook
         title: "Práctica Computacional"
       - file: semana_03/caso_colombia
@@ -51,6 +57,8 @@ parts:
         title: "Guía Semanal"
       - file: semana_04/lectura
         title: "Lectura: Retroalimentación y Retardos"
+      - file: semana_04/ejemplos_alejandra
+        title: "Ejemplos guiados de Alejandra"
       - file: semana_04/notebook
         title: "Práctica Computacional"
       - file: semana_04/caso_colombia
@@ -62,6 +70,8 @@ parts:
         title: "Guía Semanal"
       - file: semana_05/lectura
         title: "Lectura: Robustez sobre Optimalidad"
+      - file: semana_05/ejemplos_alejandra
+        title: "Ejemplos guiados de Alejandra"
       - file: semana_05/notebook
         title: "Práctica Computacional"
       - file: semana_05/caso_colombia
@@ -73,6 +83,8 @@ parts:
         title: "Guía Semanal"
       - file: semana_06/lectura
         title: "Lectura: Lo que el Modelo No Captura"
+      - file: semana_06/ejemplos_alejandra
+        title: "Ejemplos guiados de Alejandra"
       - file: semana_06/caso_colombia
         title: "Caso Colombia: Gobernanza y Justicia Energética"
 
@@ -82,6 +94,8 @@ parts:
         title: "Guía Semanal"
       - file: semana_07/lectura
         title: "Lectura: Del Análisis a la Recomendación"
+      - file: semana_07/ejemplos_alejandra
+        title: "Ejemplos guiados de Alejandra"
       - file: semana_07/caso_colombia
         title: "Caso Colombia: Síntesis Ejecutiva"
 
@@ -96,3 +110,10 @@ parts:
     chapters:
       - file: caso_colombia/contexto
         title: "Contexto: Historia y Marco Regulatorio del SIN"
+
+  - caption: "Proyecto integrador"
+    chapters:
+      - file: proyecto/guia
+        title: "Proyecto: hitos y criterios"
+      - file: proyecto/lenguaje_comun
+        title: "Lenguaje común y alcance"

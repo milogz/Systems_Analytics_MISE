@@ -1,59 +1,56 @@
-# Guía Semanal — Semana 8: Cierre — Presentaciones Finales y Horizontes Futuros
+# Semana 8: Entregar, defender y reconocer los límites
 
-> "El toolkit de este curso es el primer piso, no el techo."
+**Resultado esperado — RAC 1 a 4:** Defender una recomendación sustentada, reconocer límites y entregar evidencia reproducible.
 
-## Caso Ancla
+La semana tiene dos bloques conectados. Primero estudie los conceptos, observe un procedimiento y practique; después consulte un tramo de la Saga y aplíquelo a su caso. Las selecciones de esta guía delimitan el recorrido principal. Las lecturas y notebooks completos permanecen disponibles para consulta.
 
-**Sustentación de Informes de Consultoría Sistémica.**
-Semana de socialización, defensa argumental ante un panel experto del sector eléctrico, y exploración de las fronteras computacionales del modelamiento.
+## 1. Lecciones: comprender, observar y practicar
 
-## Objetivos de la Semana
+1. **Lectura seleccionada.** En la [lectura de la semana](lectura.md), priorice: No hay nueva lectura obligatoria. Los horizontes ABM, RDM avanzado y aprendizaje automático quedan disponibles para después del cierre.
+2. **Videos y quices.** Siga la selección publicada por los tutores en el LMS sobre esos mismos conceptos. Los videos se están preparando: mientras un recurso no esté disponible, utilice la lectura y compruebe los conceptos con el ejemplo y la práctica. Las preguntas de autoevaluación externas son formativas; no añaden otro quiz calificado.
+3. **Ejemplo guiado.** [Revisión de comunicación de S7](../semana_07/ejemplos_alejandra.md). Consulte únicamente los fragmentos indicados para el recorrido principal; no se asignan todas las páginas externas completas.
+4. **Aplicación.** [Repositorio y criterios del proyecto](../proyecto/guia.md). Comprobación final del repositorio: instrucciones, datos o fuentes accesibles, dependencias y reproducción de tablas/figuras. Sin laboratorio nuevo.
 
-- Defender recomendaciones de política pública, infraestructura o inversión con solidez conceptual y rigor metodológico.
-- Sintetizar los aprendizajes de complejidad, redes y dinámica aplicada en un ensayo reflexivo personal.
-- Reconocer técnicas avanzadas (ABM, Machine Learning sobre grafos) como pasos futuros naturales.
+## 2. Proyecto: observar la transferencia y construir el caso propio
 
-## Material del Curso
+**Referencia aplicada — [Síntesis de Saga 7](../semana_07/caso_colombia.ipynb).** Consulte la síntesis de Saga 7 solo si ayuda a revisar un argumento; no hay nuevo caso que ejecutar.
 
-| Componente | Descripción |
-|---|---|
-| **Lectura teórica** | Fronteras del campo: ABM (Mesa), RDM robusto (Rhodium), IA y ML aplicado a redes. |
-| **Práctica computacional** | No aplica — semana de integración. |
-| **Caso Colombia** | No aplica — cierre de proyecto. |
+**Trabajo del grupo.** Integren las siete secciones del informe, revisen referencias y ensayen el panel. Los tres integrantes presentan y responden; distribuyan tiempo y responsabilidades.
 
-## Lecturas y Recursos Recomendados
+**Hito.** **Informe final · 25 %:** 5.000–7.000 palabras; resumen ejecutivo de una página fuera del conteo y apéndice con repositorio. **Panel · 5 %:** 15 minutos más preguntas.
 
-### Obligatorias
+**Al finalizar, conserve:** Informe, repositorio reproducible y defensa. Incluya el cierre reflexivo solicitado en el LMS dentro del tiempo reservado.
+
+Use la [guía única del proyecto](../proyecto/guia.md) para requisitos, estructura, pesos y rúbricas. El ejemplo de Alejandra y la Saga preparan esta producción; no constituyen otros proyectos que deban entregarse completos.
+
+## 3. Tiempo y prioridad
+
+| Actividad | Presupuesto por estudiante |
+|---|---:|
+| Guía y orientación | 10 min |
+| Lectura seleccionada | 0 min |
+| Videos/quices y comprobación conceptual | 50 min |
+| Ejemplos guiados | 0 min |
+| Práctica o taller de aplicación | 0 min |
+| Proyecto propio, consulta de Saga y preparación | 480 min |
+| Sesión sincrónica | 180 min |
+| **Total** | **12 h** |
+
+Bloque de lecciones: **1 h 00 min**; proyecto: **8 h**; sesión: **3 h**. Son presupuestos de planificación, no tiempos medidos. Incluyen las comprobaciones, discusión asíncrona y preparación asignadas al bloque correspondiente. No sume las duraciones completas de todos los recursos disponibles.
+
+El recorrido principal debe caber en ese presupuesto. Si necesita más tiempo, priorice el resultado esperado y el hito, registre la dificultad y llévela a tutoría. Las variantes avanzadas, referencias extensas y simuladores adicionales quedan para profundizar. Las actividades calificadas y sus fechas se consultan en el LMS; los pesos globales no cambian por añadir recursos de apoyo.
+
+## 4. Fuentes y profundización
+
+La lectura conserva sus referencias. Las fuentes siguientes se consultan en los fragmentos necesarios para el problema o la evidencia; no implican leer cada obra completa además del recorrido principal.
+
+
+### Fuentes de apoyo al recorrido
 - (No hay nuevas lecturas obligatorias, concentrarse en pulir entregables finales)
 
-### Recomendadas
+### Para profundizar
 - *An Introduction to Agent-Based Modeling* — Wilensky & Rand (ventanas al estado del arte).
 
-## Actividades de Evaluación
 
-| Actividad | Descripción | Modalidad | Peso |
-|---|---|---|---|
-| Quiz final | Fronteras del modelamiento energético | Autónomo | Evaluado |
-| Reflexión individual | Ensayo de 500 palabras sobre el cambio de mentalidad sistémica | Autónomo | Evaluado |
-| Presentación Panel | Defensa oral ante panel de expertos (15 min) | Sincrónico | 5% |
-| Informe Final | Documento definitivo y revisión de notebooks | Autónomo | 25% |
 
-## Proyecto Integrador
-
-**Entrega Final:** Informe de consultoría sistémica (6,000–8,000 palabras) combinando estructura (redes), dinámica (SD), dimensión humana (gobernanza) y estrategia. Documentación final de notebooks en código Python.
-
-## Conexión con la Saga Colombia
-
-La Saga 7 (vista la semana anterior) permanece como la referencia estilística y metodológica final para el empaquetamiento del producto.
-
-## Distribución del Tiempo
-
-| Actividad | Horas |
-|---|---|
-| Video-lección | 1.0 |
-| Informe final | 5.0 |
-| Presentación (preparación) | 2.0 |
-| Reflexión individual | 1.0 |
-| Revisión notebooks (código) | 1.0 |
-| Sesión sincrónica (Panel) | 3.0 |
-| **Total** | **13** |
+Consulte también las [convenciones comunes](../proyecto/lenguaje_comun.md) antes de comparar resultados entre recursos.
